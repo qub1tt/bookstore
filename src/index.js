@@ -1,11 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import DetailsSection from "./pages/layouts/details-section/DetailsSection";
-const root = ReactDOM.createRoot(document.getElementById("root"));
+import ReactDOM from "react-dom";
+import App from './App';
+import { BrowserRouter } from "react-router-dom";
+import "./index.css"
+
+const root = ReactDOM.createRoot(document.getElementById("app"));
+
 root.render(
-  <React.StrictMode>
-    <DetailsSection />
-  </React.StrictMode>
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
 );
+
+

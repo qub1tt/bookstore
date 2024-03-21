@@ -1,0 +1,134 @@
+.content1{
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid black;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.content1_above {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 0 20px;
+}
+
+.content1_above_left {
+    flex: 1;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.content1_above_right {
+    flex: 0;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+/* -------------------------------------------------------------------*/
+
+.content1_below img{
+    width: 120px;
+    height: 180px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.content1_below_book_img{
+    width: 120px;
+    height: 180px;
+    position: relative;
+    display: inline-block;
+}
+
+.content1_below_book_img_hover-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 100px;
+    height: 30px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    padding-top: 5px;
+}
+
+.content1_below_book_img:hover .content1_below_book_img_hover-button {
+    opacity: 1;
+}
+
+.content1_below_book_img:hover img {
+    filter: blur(2px); /* Áp dụng hiệu ứng mờ */
+}
+
+
+
+/* ----------------------------------------------------------- */
+
+.content1_below_book_describe{
+    width: 100px;
+    margin-top: 20px;
+    margin-left: 20px;
+    overflow-wrap: break-word; 
+}
+
+.content1_below_above{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0px;
+    row-gap: 50px;
+    padding-bottom: 30px;
+}
+
+.content1_below_box{
+    display: flex;
+    margin-left: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    width: 270px;
+    background-color: antiquewhite;
+}
+
+@media (max-width: 1300px) { /* Điều chỉnh cho màn hình nhỏ hơn hoặc bằng 768px */
+    .content1_below_above {
+        grid-template-columns: 1fr 1fr; /* Chuyển sang 2 cột khi màn hình nhỏ hơn hoặc bằng 768px */
+    }
+}
+
+@media (max-width: 1000px) { /* Điều chỉnh cho màn hình nhỏ hơn hoặc bằng 768px */
+    .content1_below_above {
+        grid-template-columns: 1fr; /* Chuyển sang 2 cột khi màn hình nhỏ hơn hoặc bằng 768px */
+    }
+}
+
+/* -------------------------------------------------------------- */
+
+.content1_xemthem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding-bottom: 30px;
+    border-radius: 0 0 10px 10px;
+}
+
+.content1_xemthem_bt{
+  width: 100px;
+  height: 30px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  padding-top: 5px;
+}
+
