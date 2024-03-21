@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script
+      src="https://kit.fontawesome.com/02297f1531.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    
+  <img class ="chatbot" src = "bookjpg/robot.jpg">
+      
+
+
+    <nav class="nav1">
+      <div class="main_logo">
+        <a href="#"><img src="bookjpg/logo.jpg" alt="Logo"></a>
+        
+      </div>
+
+
+      <div class="nav1_dropdown">
+        <button class="nav1_dropdown_btn"><i class="fa-solid fa-list fa-2xl" style="padding-bottom:15px; color: #737373;"></i></button>
+        <div class="nav1_dropdown_content">
+          <a href="#">link</a>
+          <a href="#">link</a>
+          <a href="#">link</a>
+        </div>
+      </div>
+      
+
+
+
+      <div class="nav1_searchbox">
+        <input type="text" placeholder="Search...">
+        <span class="nav1_search-icon"><a href=""><i class="fa-solid fa-magnifying-glass" style="color: #737373";></i></a></span>
+      </div>
+      <div class="nav1_items">
+        <li><a href=""><i class="fa-solid fa-bell fa-2xl" style="padding-left: 30px; color: #737373;"></i ></a></li>
+        <li><a href="" ><i class="fa-solid fa-cart-shopping fa-2xl"style="padding-left: 30px;color: #737373;"></i ></a></li>
+        <li><a href=""><i class="fa-solid fa-circle-user fa-2xl" style="padding-left: 30px;color: #737373;"></i ></a></li>
+      </div>
+    </nav>
+
+
+
+
+
+<!-- --------------------------------------------------- -->
+<!-- <div class="nav2container">
+  <div class="nav2">
+    <a href="#"><i class="fa-solid fa-house"></i>Trang chủ</a>
+    <div class="nav2dropdown">
+      <button class="nav2dropbtn"><i class="fa-brands fa-windows"></i>Danh mục sản phẩm</button>
+      <div class="nav2dropdown-content">
+        <a href="#">Sản phẩm 1</a>
+        <a href="#">Sản phẩm 2</a>
+        <a href="#">Sản phẩm 3</a>
+      </div>
+    </div>
+    <a href="#"><i class="fa-solid fa-fire"></i>Xu hướng</a>
+    <a href="#"><i class="fa-solid fa-ticket"></i>Ưu đãi</a>
+    <div class="nav2dropdown">
+      <button class="nav2dropbtn"><i class="fa-solid fa-hands-holding-child"></i>Tiện ích dịch vụ</button>
+      <div class="nav2dropdown-content">
+        <a href="#">Dịch vụ 1</a>
+        <a href="#">Dịch vụ 2</a>
+        <a href="#">Dịch vụ 3</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- ---------------------------------------------------- -->
+
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="bookjpg/bookstore.jpg" class="d-block w-100" alt="..." width="800" height="400">
+    </div>
+    <div class="carousel-item">
+      <img src="bookjpg/bookstore2.jpg" class="d-block w-100" alt="..." width="800" height="400">
+    </div>
+    <div class="carousel-item">
+      <img src="bookjpg/bookstore3.jpg" class="d-block w-100" alt="..." width="800" height="400">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<!-- ------------------------------------------------------- -->
+
+
+<div>
+    <div class="bestseller_and_theloai"> 
+        <div>
+            <div class="xeptheo_bestseller">   
+                <div class="xeptheo_bestseller_left">
+                    <span><strong style="font-size: large; padding-left: 10px">Best seller</strong> </span>
+                </div>
+                    <div class="xeptheo_bestseller_right">
+                    <select id="_bestseller_sort-dropdown"> 
+                        <option value="date">Trong ngày</option>
+                        <option value="month">Trong tháng</option>
+                        <option value="year">Trong năm</option>
+                    </select>
+                </div>
+            </div>
+            <div class="bestsellerline"></div>
+        <div class="bestseller">
+          <li><a href=""><img src="bookjpg/bleach2.jpg" alt=""></a></li>
+          <li>
+            <span class="book_describe">
+              <br>
+              <div class="bestseller_book_name"><strong>Bleach:</strong></div> 
+              <div class="bestseller_book_name"><strong>Unmasked</strong></div>     
+              <div class="bestseller_book_author">Tác giả: <a href="" style="text-decoration: none;">Tite Kubo</a></div>
+              <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+              <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+              <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+              <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+              <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+              <div class="bestseller_book_describe">Bleach là một bộ truyện kể về những cuộc phiêu lưu của Kurosaki Ichigo sau khi anh có được sức mạnh tử thần từ một tử thần khác, Kuchiki Rukia.</div>
+              <br>
+              <a href="" class="bestseller_xemthem">Xem thêm</a>
+            </span>
+          </li>
+        </div>
+        </div>
+        <div>
+            <div class="xeptheo_bestseller">   
+                <div class="xeptheo_bestseller_left">
+                    <span><strong style="font-size: large; padding-left: 10px">Thể loại</strong> </span>
+                </div>
+                    <div class="xeptheo_bestseller_right">
+                    <select id="_bestseller_sort-dropdown"> 
+                        <option value="date">Trong ngày</option>
+                        <option value="month">Trong tháng</option>
+                        <option value="year">Trong năm</option>
+                    </select>
+                </div>
+            </div>
+            <div class="bestsellerline"></div> 
+
+        <div class="theloai">
+
+            <div class="theloai_box"> 
+                <div class="theloai_box_one">
+                  <li><a href=""><i class="fa-solid fa-money-bill-trend-up fa-2xl" style="color: #737373;"></i></a></li>
+                  <li>
+                    <span class="theloai_theloai_book_mieuta" style="padding-left: 10px">
+                      <div class="theloai_tag"><a href="">Kinh tế:</a></div> 
+                      <div class="public_tag"><a href="">Public book:</a><span>2831</span> </div>
+                    </span>
+                  </li>
+                </div>
+
+                <div class="theloai_box_one">
+                  <li><a href=""><i class="fa-solid fa-book fa-2xl" style="color: #737373;"></i></a></li>
+                  <li>
+                    <span class="theloai_theloai_book_mieuta"  style="padding-left: 10px">
+                      <div class="theloai_tag"><a href="">Văn học:</a></div> 
+                      <div class="public_tag"><a href="">Public book:</a><span>432</span> </div>
+                    </span>
+                  </li>
+                </div>
+              </div>
+        
+              
+              <div class="theloai_box">
+                <div class="theloai_box_one">
+                  <li><a href=""><i class="fa-solid fa-users fa-2xl" style="color: #737373;"></i></a></li>
+                  <li>
+                    <span class="theloai_theloai_book_mieuta">
+                      <div class="theloai_tag"><a href="">Tâm lý-kĩ năng sống:</a></div> 
+                      <div class="public_tag"><a href="">Public book:</a><span>5471</span> </div>
+                    </span>
+                  </li>
+                </div>
+
+                <div class="theloai_box_one">  
+                  <li><a href=""><i class="fa-solid fa-school fa-2xl" style="color: #737373;"></i></a></li>
+                  <li>
+                    <span class="theloai_theloai_book_mieuta">
+                      <div class="theloai_tag"><a href="">Sách giáo khoa</a></div> 
+                      <div class="public_tag"><a href="">Public book:</a><span>870</span> </div>
+                    </span>
+                  </li>
+                </div>
+              </div>
+        
+              <div class="theloai_box">
+                <div class="theloai_box_one">
+                  <li><a href=""><i class="fa-solid fa-scale-balanced fa-2xl" style="color: #737373;"></i></a></li>
+                  <li>
+                    <span class="theloai_theloai_book_mieuta">
+                      <div class="theloai_tag"><a href="">Truyện tranh:</a></div> 
+                      <div class="public_tag"><a href="">Public book:</a><span>12345</span> </div>
+                    </span>
+                  </li>
+                </div>
+        
+                <div class="theloai_box_one">  
+                  <li><a href=""><i class="fa-solid fa-microchip fa-2xl" style="color: #737373;"></i></a></li>
+                  <li>
+                    <span class="theloai_theloai_book_mieuta"  style="padding-left: 10px">
+                      <div class="theloai_tag"><a href="">Khoa học-Công nghệ</a></div> 
+                      <div class="public_tag"><a href="">Public book:</a><span>1234</span> </div>
+                    </span>
+                  </li>
+                </div>
+              </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ------------------------------------------------------- -->
+
+  <div>
+    <div class="noibat">
+        <div class="xeptheo">
+          <div class="xeptheo_left">
+            <span>
+              <i class="fa-regular fa-lightbulb fa-2xl"></i>
+              <span style="padding-left: 10px;"><strong>Gợi ý cho bạn:</strong></span>
+            </span>
+          </div>
+          <div class="xeptheo_right">
+            <select id="sort-dropdown">
+              <option value="">Xếp theo</option>
+              <option value="date">Theo ngày</option>
+              <option value="month">Theo tháng</option>
+              <option value="year">Theo năm</option>
+            </select>
+          </div>
+        </div>
+        <div class="book_container">
+          <div class="small_box1"> 
+            <div class="small_box_one">
+              <li><a href=""><img src="bookjpg/bleach1.jpg" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">Bleach vol 1 </div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">Tite Kubo</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+            <div class="small_box_one">
+              <li><a href=""><img src="bookjpg/bleach2.jpg" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">Bleach vol 1 </div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">Tite Kubo</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+            <div class="small_box_one">
+              <li><a href=""><img src="bookjpg/bleach3.jpg" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">Bleach vol 1 </div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">Tite Kubo</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+          </div>
+          <div class="small_box2">
+            <div class="small_box_one">
+              <li><a href=""><img src="bookjpg/bleach4.jpg" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">Bleach vol 1 </div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">Tite Kubo</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+            <div class="small_box_one">  
+              <li><a href=""><img src="bookjpg/bleach5.jpg" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">Bleach vol 1 </div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">Tite Kubo</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+            <div class="small_box_one">
+              <li><a href=""><img src="bookjpg/bleach6.jpg" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">Bleach vol 1 </div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">Tite Kubo</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="noibat_xemthem">
+        <a href="" class="noibat_xemthem_bt">Xem thêm</a>
+      </div>
+
+
+  </div>
+
+
+  <div>
+    <div class="noibat">
+        <div class="xeptheo">
+          <div class="xeptheo_left">
+            <span>
+              <i class="fa-solid fa-chart-line"></i>
+              <span style="padding-left: 10px;"><strong>Sản phẩm bán chạy:</strong></span>
+            </span>
+          </div>
+          <div class="xeptheo_right">
+            <select id="sort-dropdown">
+              <option value="">Xếp theo</option>
+              <option value="date">Theo ngày</option>
+              <option value="month">Theo tháng</option>
+              <option value="year">Theo năm</option>
+            </select>
+          </div>
+        </div>
+        <div class="book_container">
+          <div class="small_box1"> 
+            <div class="small_box_one">
+              <li><a href=""><img src="bookjpg/opm1.webp" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">One Punch Man </div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">ONE</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+            <div class="small_box_one">
+              <li><a href=""><img src="bookjpg/dora.webp" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">Doraemon</div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">Fujiko Fujio</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+            <div class="small_box_one">
+              <li><a href=""><img src="bookjpg/dragon-ball-1.jpg" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">Dragon Ball </div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">Akira Toriyama</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+          </div>
+          <div class="small_box2">
+            <div class="small_box_one">
+              <li><a href=""><img src="bookjpg/dragon-ball-2.jpg" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">Dragon Ball </div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">Akira Toriyama</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+            <div class="small_box_one">  
+              <li><a href=""><img src="bookjpg/bleach5.jpg" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">Bleach vol 1 </div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">Tite Kubo</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+            <div class="small_box_one">
+              <li><a href=""><img src="bookjpg/bleach6.jpg" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">Bleach vol 1 </div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">Tite Kubo</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="noibat_xemthem">
+        <a href="" class="noibat_xemthem_bt">Xem thêm</a>
+      </div>
+
+
+  </div>
+
+  <div>
+    <div class="noibat">
+        <div class="xeptheo">
+          <div class="xeptheo_left">
+            <span>
+              <i class="fa-solid fa-star"></i>
+              <span style="padding-left: 10px;"><strong>Sản phẩm yêu thích:</strong></span>
+            </span>
+          </div>
+          <div class="xeptheo_right">
+            <select id="sort-dropdown">
+              <option value="">Xếp theo</option>
+              <option value="date">Theo ngày</option>
+              <option value="month">Theo tháng</option>
+              <option value="year">Theo năm</option>
+            </select>
+          </div>
+        </div>
+        <div class="book_container">
+          <div class="small_box1"> 
+            <div class="small_box_one">
+              <li><a href=""><img src="bookjpg/opm1.webp" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">One Punch Man </div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">ONE</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+            <div class="small_box_one">
+              <li><a href=""><img src="bookjpg/dora.webp" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">Doraemon</div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">Fujiko Fujio</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+            <div class="small_box_one">
+              <li><a href=""><img src="bookjpg/dragon-ball-1.jpg" alt=""></a></li>
+              <li>
+                <span class="book_describe">
+                  <div class="book_name">- Tên:</div> 
+                  <div class="_name">Dragon Ball </div>
+                  <div class="book_author">- Tác giả: </div>
+                  <div class="_author">Akira Toriyama</div> 
+                  <div class="book_view">- Lượt xem:</div> 
+                  <div class="_view">27.321 <i class="fa-solid fa-eye fa-2xs"></i></div>
+                  <div class="book_sold">- Đã bán: </div>
+                  <div class="_sold">1.200 <i class="fa-solid fa-book fa-2xs"></i></div>
+                </span>
+              </li>
+            </div>
+            <div class="arrows prev"></div>
+            <div class="arrows next"></div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+<!-- ------------------------------------------------------- -->
+  <div>
+    <hr style="color: blue;">
+    <h3 id="contactwithus">contact with us</h3>
+    <div class="footer_icon1">
+        <ul class="footer_icon">
+          <li><a href="" ><i class="fa-brands fa-twitter fa-xl" style="color: #737373;"></i></a></li>
+          <li><a href="" ><i class="fa-brands fa-facebook fa-xl" style="color: #737373;"></i></a></li>
+          <li><a href="" ><i class="fa-solid fa-envelope fa-xl" style="color: #737373;"></i></a></li>
+          <li><a href="" ><i class="fa-solid fa-phone fa-xl" style="color: #737373;"></i></a></li>
+          <li><a href="" ><i class="fa-solid fa-map fa-xl" style="color: #737373;"></i></a></li>
+        </ul>
+      </div>
+
+  </div>
+
+    <footer class="footer">
+        <div class="footer_container">
+         <div class="footer_row">
+           <div class="footer-col">
+             <h2>DỊCH VỤ : </h2>
+             <ul>
+               <li><a href="#">Điều khoản sử dụng</a></li>
+               <li><a href="#">Chính sách bảo mật thông tin cá nhân</a></li>
+               <li><a href="#">Chính sách bảo mật thanh toán</a></li>
+             </ul>
+           </div>
+           <div class="footer-col">
+             <h2>HỖ TRỢ :</h2>
+             <ul>
+               <li><a href="#">Chính sách đổi - trả - hoàn tiền</a></li>
+               <li><a href="#">Chính sách bảo hành - bồi hoàn</a></li>
+               <li><a href="#">Chính sách vận chuyển</a></li>
+               <li><a href="#">Phương thức thanh toán và xuất hóa đơn</a></li>
+             </ul>
+           </div>
+         </div>  <!--row-->
+       </div>  <!--class footer container-->
+    </footer>
+     
+</body>
+</html>
