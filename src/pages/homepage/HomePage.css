@@ -1,22 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Hanken Grotesk;
+}
 
-.container{
-    display: flex;
-    background-color:  #F2E3D0;
+.container {
+  display: flex;
+  background-color: #f2e3d0;
 }
 
 .content {
-    flex: 1;
-    /* padding-left: 100px;
+  flex: 1;
+  /* padding-left: 100px;
     margin-left: 250px; */
 }
 
 /* Media query to hide sidebar when screen width is less than 768px */
 @media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
+  .container {
+    flex-direction: column;
+  }
 
-    .sidebar {
-        display: none;
-    }
+  .sidebar {
+    display: none;
+  }
 }
