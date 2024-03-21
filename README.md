@@ -1,4 +1,4 @@
 # Bookstore website
 
-Tụi em đang build lại web bằng react thầy có thể xem đỡ giao diện ở folder giaodien ạ.
+Tụi em đang build lại web bằng ReactJS thầy có thể xem đỡ giao diện ở folder giaodien ạ.
 
