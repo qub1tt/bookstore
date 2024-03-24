@@ -1,0 +1,149 @@
+.content2{
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid black;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding-right: 30px;
+}
+
+.content2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 1300px) { 
+    .content2{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -------------------------------------------- */
+
+
+/* -------------------------------------------- */
+
+.content2_left_above{
+    display: flex;
+    justify-content: space-between; 
+    border: 1px solid black;
+    border-radius: 10px 10px 0 0;
+    margin: 30px 0 0 30px;  
+    background-color: antiquewhite;
+}
+
+.content2_left_above_left{
+    padding: 10px;
+}
+
+.content2_left_above_right{
+    padding: 10px;
+}
+
+.content2_left_above strong{
+    font-size: larger; 
+    margin: 10px;
+}
+
+#content2_left_above_right_dropdown{
+    border: none;
+    border-radius: 5px;
+    width: 110px;
+    height: 25px;
+    background-color: antiquewhite;
+    color: rgb(123, 124, 124);
+}
+
+
+
+/* -------------------------------------------- */
+
+.content2_left_below {
+    border: 1px solid black;
+    border-radius: 0 0 10px 10px;
+    margin: 0 0 30px 30px;    
+    display: flex;
+    background-color: antiquewhite;
+}
+
+.content2_left_below_img {
+    flex: 0 0 auto;
+    padding: 20px; 
+}
+
+.content2_left_below_img img {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.content2_left_below_describe {
+    flex: 1;
+    padding: 30px 0 0 0;
+}
+
+.content2_left_below_describe strong {
+    font-size: large;
+    display: block; 
+}
+
+.content2_left_below_describe_book{
+    font-size: smaller;
+}
+
+/* -------------------------------------------- */
+
+.content2_right_above{
+    display: flex;
+    justify-content: space-between; 
+    border: 1px solid black;
+    border-radius: 10px 10px 0 0;
+    margin: 30px 0 0 30px;  
+    background-color: antiquewhite;
+}
+
+.content2_right_above_left{
+    padding: 10px;
+}
+
+.content2_right_above strong{
+    font-size: larger; 
+    margin: 10px;
+}
+
+
+.content2_right_below {
+    border: 1px solid black;
+    border-radius: 0 0 10px 10px;
+    margin: 0 0 30px 30px;    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: antiquewhite;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.content2_right_theloai{
+    padding: 20px 0 11px 20px;
+}
+
+
+.content2_right_theloai_title{
+    padding-left: 20px;
+    font-weight: bolder;
+}
+
+.content2_right_theloai_public_book{
+    margin-left: 30px;
+    font-style: italic;
+}
+
+.content2_right_theloai_public_book a{
+    color: rgb(255, 3, 3);
+}
