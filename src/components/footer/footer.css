@@ -1,0 +1,73 @@
+.footer{
+    margin-top: 50px;
+    background-color: white;
+}
+
+#footer_contact_with_us{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 25px;    
+}
+
+.footer_above_icon{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer_above_icon li :hover{
+    color: black;
+}
+
+
+.footer_hr{
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #fff0f5;
+}
+
+/* ---------------------------------------- */
+
+.footer_below_container{
+    margin-top: 30px;
+    display: flex;
+}
+
+.footer_below_content {
+    width: 30%;
+}
+
+.footer_below_content h2{
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: bolder;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.footer_below_content h2::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    background-color: #fff0f5;
+    height: 1px;
+    width: 60px;
+}
+  
+.footer_below_content ul{
+    margin: 0 0 50px 20px;
+}
+  
+.footer_below_content ul li a{
+    font-size: 12px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s ease;
+}
+  
+.footer_below_content ul li a:hover{
+    color: rgba(39, 40, 39, 0.565);
+    padding-left: 8px;
+}
