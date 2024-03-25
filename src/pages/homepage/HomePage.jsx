@@ -15,6 +15,7 @@ const HomePage = () => {
       </div>
       <div className="content">
         <Abovenav />
+        <Content0 />
         <Content1 />
         <Content2 />
         <Footer />  
