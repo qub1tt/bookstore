@@ -1,11 +1,14 @@
 .footer{
-    margin-top: 50px;
-    background-color: white;
+    background-color: #fff;
+    position: absolute;
+    z-index: 1;
+    border: 1px solid black;
+    width: 100%;
 }
 
 #footer_contact_with_us{
     text-align: center;
-    padding-top: 30px;
+    padding-top: 15px;
     font-size: 25px;    
 }
 
@@ -21,26 +24,17 @@
     color: black;
 }
 
-
-.footer_hr{
-    width: 80%;
-    margin: 20px auto;
-    border: 1px solid #fff0f5;
-}
-
 /* ---------------------------------------- */
 
 .footer_below_container{
     margin-top: 30px;
     display: flex;
+    justify-content: space-around;
 }
 
-.footer_below_content {
-    width: 30%;
-}
 
 .footer_below_content h2{
-    padding-left: 20px;
+    margin-left: 20px;
     font-size: 14px;
     font-weight: bolder;
     position: relative;
@@ -70,4 +64,13 @@
 .footer_below_content ul li a:hover{
     color: rgba(39, 40, 39, 0.565);
     padding-left: 8px;
+}
+
+.footer_below_content{
+    width: 20%;
+}
+
+.footer_below_content p{
+    margin-top: 15px;
+    font-size: 12px;
 }

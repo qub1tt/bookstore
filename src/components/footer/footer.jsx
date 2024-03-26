@@ -13,49 +13,6 @@ import { faFacebook ,faTwitter } from "@fortawesome/free-brands-svg-icons";
 const Footer = () => {
     return (
         <div className="footer">
-            <div className="footer_above">
-                <h2 id="footer_contact_with_us">contact with us</h2>
-                    <ul className="footer_above_icon">
-                        <li><a href="">
-                            <FontAwesomeIcon
-                                icon={faTwitter}
-                                size="2xl"
-                                style={{ color: "#FFD43B" }}
-                            />
-                        </a></li>
-                        <li><a href="">
-                            <FontAwesomeIcon
-                                icon={faFacebook}
-                                size="2xl"
-                                style={{ color: "#FFD43B" }}
-                            />
-                        </a></li>
-                        <li><a href="">
-                            <FontAwesomeIcon
-                                icon={faEnvelope}
-                                size="2xl"
-                                style={{ color: "#FFD43B" }}
-                            />
-                        </a></li>
-                        <li><a href="">
-                            <FontAwesomeIcon
-                                icon={faPhone}
-                                size="2xl"
-                                style={{ color: "#FFD43B" }}
-                            />
-                        </a></li>
-                        <li><a href="">
-                            <FontAwesomeIcon
-                                icon={faMapLocationDot}
-                                size="2xl"
-                                style={{ color: "#FFD43B" }}
-                            />
-                        </a></li>
-                    </ul>
-            </div>
-
-                                <hr className="footer_hr" />
-
             <div className="footer_below">
                 <div className="footer_below_container">
                     <div className="footer_below_content">
@@ -74,6 +31,49 @@ const Footer = () => {
                             <li><a href="#">Chính sách vận chuyển</a></li>
                             <li><a href="#">Phương thức thanh toán và xuất hóa đơn</a></li>
                         </ul>
+                    </div>
+                    <div className="foot_below_content">
+                        <h2 id="footer_contact_with_us">contact with us</h2>
+                        <ul className="footer_above_icon">
+                            <li><a href="">
+                                <FontAwesomeIcon
+                                    icon={faTwitter}
+                                    size="2xl"
+                                    style={{ color: "#FFD43B" }}
+                                />
+                            </a></li>
+                            <li><a href="">
+                                <FontAwesomeIcon
+                                    icon={faFacebook}
+                                    size="2xl"
+                                    style={{ color: "#FFD43B" }}
+                                />
+                            </a></li>
+                            <li><a href="">
+                                <FontAwesomeIcon
+                                    icon={faEnvelope}
+                                    size="2xl"
+                                    style={{ color: "#FFD43B" }}
+                                />
+                            </a></li>
+                            <li><a href="">
+                                <FontAwesomeIcon
+                                    icon={faPhone}
+                                    size="2xl"
+                                    style={{ color: "#FFD43B" }}
+                                />
+                            </a></li>
+                            <li><a href="">
+                                <FontAwesomeIcon
+                                    icon={faMapLocationDot}
+                                    size="2xl"
+                                    style={{ color: "#FFD43B" }}
+                                />
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div className="footer_below_content">
+                         <p>Sach.com nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống trên toàn quốc.</p>
                     </div>
                 </div>
             </div>
