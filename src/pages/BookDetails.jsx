@@ -5,8 +5,6 @@ import DetailsSection from "../components/DetailsSection/DetailsSection";
 export default function BookDetailsPage() {
   return (
     <div>
-      <Abovenav />
-      <Sidebar />
       <DetailsSection />
     </div>
   );
