@@ -104,12 +104,28 @@
 }
 
 @media (max-width: 940px) { /* Điều chỉnh cho màn hình nhỏ hơn hoặc bằng 768px */
+    .content1_above {
+        padding: 0;
+    }
     .content1_below_above {
         grid-template-columns: 1fr; /* Chuyển sang 2 cột khi màn hình nhỏ hơn hoặc bằng 768px */
         margin: 0 auto;
     }
     .content1_below_box{
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 390px) { 
+    .content1_below_book_describe{
+        display: none;
+    }
+    .content1_below_box{
+        margin: 0 auto;
+        width: 150px;
+    }
+    .content1_above_left strong{
+        display: none;
     }
 }
 
