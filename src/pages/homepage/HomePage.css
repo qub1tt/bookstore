@@ -5,9 +5,17 @@
   font-family: Hanken Grotesk;
 }
 
-.container {
+/* .container {
   display: flex;
   background-color: #fff0f5;
+} */
+
+.navbar{
+  margin-left: 250px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 .content {
@@ -15,8 +23,10 @@
   /* padding-left: 100px;
     margin-left: 250px; */
   background-color: #fff0f5;
-  padding: 0 50px;
+  padding: 120px 50px 0 50px;
   margin: 0 auto;
+  margin-left: 250px;
+  border-left: 2px solid black;
 }
 
 /* Media query to hide sidebar when screen width is less than 768px */
@@ -27,5 +37,13 @@
 
   .sidebar {
     display: none;
+  }
+  .content {
+    margin-left: 0; /* Loại bỏ margin-left để nội dung chiếm toàn bộ chiều rộng */
+    width: 100%; /* Đặt chiều rộng của nội dung là 100% */
+  }
+  .navbar {
+    margin-left: 0; /* Loại bỏ margin-left để nội dung chiếm toàn bộ chiều rộng */
+    width: 100%; /* Đặt chiều rộng của nội dung là 100% */
   }
 }

@@ -1,8 +1,11 @@
 .sidebar {
   background-color: white;
   width: 250px;
-  height: 1500px;
   padding-top: 22px;
+  position: fixed; 
+  top: 0; 
+  bottom: 0; 
+  left: 0; 
 }
 
 .main_logo {
