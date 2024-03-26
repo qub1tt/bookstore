@@ -4,10 +4,7 @@ import 'swiper/swiper-bundle.css';
 import "./content0.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSearch,
-  faHeart,
-  faEye,
+import { faStar
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -55,7 +52,18 @@ const Content0 = () => {
       return (
         <section className="content0_feature">
 
-          <h1 id="content0_feature">BOOK SWIPER</h1>
+          <div className='content0_title'> 
+            <span>
+                <FontAwesomeIcon
+                icon={faStar}
+                size="2xl"
+                style={{ color: "#FFD43B" }}
+                />
+                <span style={{ paddingLeft: "10px" }}>
+                <strong>Sách yêu thích:</strong>
+                </span>
+            </span>
+          </div>
 
           <div className="swiper content0_feature-slider"  style={{ width: "100%", maxWidth: "1100px" }}>
             <div className="swiper-wrapper">
