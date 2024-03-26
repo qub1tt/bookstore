@@ -5,7 +5,7 @@
   font-family: Hanken Grotesk;
 }
 
-.container {
+.contain {
   display: flex;
   background-color: #fff0f5;
 }
@@ -18,7 +18,7 @@
 
 /* Media query to hide sidebar when screen width is less than 768px */
 @media screen and (max-width: 768px) {
-  .container {
+  .contain {
     flex-direction: column;
   }
 

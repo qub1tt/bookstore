@@ -3,8 +3,8 @@ export const BookData = [
     id: 0,
     book_name: "Chó sủa nhầm cây",
     book_description:
-      "Bạn có biết\n\n- Các thủ khoa hiếm khi trở thành triệu phú, và nhược điểm lớn nhất có khi lại là ưu điểm tuyệt vời nhất mà ai ai cũng khao khát sở hữu.\n\n- Ở công ty, sự chăm chỉ đang bị thổi phồng quá mức, còn những trò nịnh bợ lại thường mang đến kết quả tốt, và liệu đề cao chính nghĩa hay sa vào tà đạo mới là con đường dẫn đến thành công?\n\n- Những người lính Navy SEAL và những nhân viên bán bảo hiểm có một điểm chung quan trọng, và cách sử dụng nguyên tắc WNGF trong thiết kế trò chơi để biến đống bài tập chán ngắt thành những trò chơi hấp dẫn.\n\nRất nhiều lời khuyên về thành công rất logic, đầy cảm hứng, và sai bét. Bằng cách nhìn qua lăng kính khoa học để xem những người cực kỳ thành công khác với mình ở những điểm nào, ta học được cách để trở nên giống họ—và nhận ra trong vài trường hợp, không được như họ hóa ra lại tốt hơn.\n\nCHÓ SỦA NHẦM CÂY - BARKING UP THE WRONG TREE - là quyển sách gây tiếng vang, liên tục nằm trong danh sách bestseller Amazon của tác giả kiêm chủ trang blog Barking up the wrong tree - Eric Barker. Xuyên suốt nội dung sách, Eric sẽ cùng chúng ta lý giải một cách đầy hóm hỉnh nhưng không kém phần chặt chẽ những quan niệm khác nhau về thành công từ trước đến nay. Và ở cuối con đường đó, mỗi người chúng ta sẽ tự tìm thấy ngưỡng cửa thành công cho riêng mình.",
-    book_image: "public\\images\\tamly\\cho-sua-nham-cay.jpg",
+      "Bạn có biết\n\n - Các thủ khoa hiếm khi trở thành triệu phú, và nhược điểm lớn nhất có khi lại là ưu điểm tuyệt vời nhất mà ai ai cũng khao khát sở hữu.\n\n- Ở công ty, sự chăm chỉ đang bị thổi phồng quá mức, còn những trò nịnh bợ lại thường mang đến kết quả tốt, và liệu đề cao chính nghĩa hay sa vào tà đạo mới là con đường dẫn đến thành công?\n\n- Những người lính Navy SEAL và những nhân viên bán bảo hiểm có một điểm chung quan trọng, và cách sử dụng nguyên tắc WNGF trong thiết kế trò chơi để biến đống bài tập chán ngắt thành những trò chơi hấp dẫn.\n\nRất nhiều lời khuyên về thành công rất logic, đầy cảm hứng, và sai bét. Bằng cách nhìn qua lăng kính khoa học để xem những người cực kỳ thành công khác với mình ở những điểm nào, ta học được cách để trở nên giống họ—và nhận ra trong vài trường hợp, không được như họ hóa ra lại tốt hơn.\n\nCHÓ SỦA NHẦM CÂY - BARKING UP THE WRONG TREE - là quyển sách gây tiếng vang, liên tục nằm trong danh sách bestseller Amazon của tác giả kiêm chủ trang blog Barking up the wrong tree - Eric Barker. Xuyên suốt nội dung sách, Eric sẽ cùng chúng ta lý giải một cách đầy hóm hỉnh nhưng không kém phần chặt chẽ những quan niệm khác nhau về thành công từ trước đến nay. Và ở cuối con đường đó, mỗi người chúng ta sẽ tự tìm thấy ngưỡng cửa thành công cho riêng mình.",
+    book_image: require("./../assets/tamly/cho-sua-nham-cay.jpg"),
     print_length: "320",
     language: "Tiếng Việt",
     author_name: "Eric Barker",
@@ -15,7 +15,7 @@ export const BookData = [
     book_name: "Tâm lý Học Nhân Cách",
     book_description:
       "Bạn có từng cảm thấy các đồng nghiệp của mình chỉ là một đám ngốc? Bạn không sao chịu được cách hành xử của họ và đôi khi thậm chí không hiểu được những điều họ nói? Nhưng trên thực tế, họ là những cá nhân xứng đáng được tôn trọng và thấu hiểu.\n\nTrong cuốn sách này, tác giả đã cung cấp chiến lược giao tiếp đơn giản nhưng đột phá nơi văn phòng, dựa trên cơ sở chia con người thành bốn loại tính cách - bốn “màu sắc” Đỏ, Vàng, Xanh Lá, Xanh Dương - đồng thời cung cấp những phương pháp cụ thể để giao tiếp và ứng xử với từng loại. Erikson sẽ giúp bạn thấu hiểu bản thân, trau dồi kỹ năng giao tiếp xã hội, tự tin giải quyết xung đột và hòa đồng hơn với các đồng nghiệp. Ông cũng chia sẻ những thủ thuật về ngôn ngữ cơ thể và cách phòng tránh xung đột.\n\nVới lồi viết hài hước, tác giả đã biến cuốn sách trở nên vô cùng lôi cuốn, dễ đọc với bất cứ ai, dù là những người nghiên cứu sâu về tâm lý hay những người chỉ muốn tìm hiểu sơ qua. Ngoài ra, sách còn có những bài cung cấp kiến thức chuyên sâu về tâm lý học cũng như lịch sử phát triển của bộ môn này, giúp chúng ta hiểu rõ hơn về ngành khoa học đã có lịch sử từ hàng nghìn năm trước.\n\nBất cứ ai cũng có thể sử dụng những khung tham chiếu được dựng nên trong cuốn sách này để tiến triển trong trò chơi cuộc đời. Và hãy nhìn nó theo cách này: Nếu bạn không hiểu rõ và vẫn sử dụng các nguyên tắc, bạn sẽ tiếp tục bị bao quanh bởi những kẻ ngốc. Và không ai muốn điều đó xảy ra cả.\n\nCuốn sách thực sự là một giáo trình toàn diện, cung cấp cho chúng ta những kiến thức để phân loại và đố phó với những người xung quanh, những người mà ta vẫn thường xem là “kẻ ngốc” chỉ bởi không hiểu được họ. Với tất cả những kiến thức này, bạn có thể tự tin rằng không còn “kẻ ngốc” nữa!",
-    book_image: "public\\images\\tamly\\nhancach.png",
+    book_image: require("./../assets/tamly/nhancach.png"),
     print_length: "408",
     language: "Tiếng Việt",
     author_name: "Thomas Erikson",
@@ -26,7 +26,7 @@ export const BookData = [
     book_name: "Hồ Sơ Tâm Lý Học Tâm Thần Hay Kẻ Điên",
     book_description:
       "“Có lúc, chúng ta gọi bệnh tâm thần là bệnh cố chấp, các bệnh nhân đều cố chấp sống trong thế giới kì thú của mình, không chịu hòa nhập với người xung quanh, không thể giống với đám đông, họ cố chấp dằn vặt chính mình.”\n\nNếu không có chuyên môn chúng ta sẽ chẳng thể hiểu nổi điều gì đang thống trị trong thế giới của những kẻ tâm thần. Tuy nhiên, nếu bạn đã sẵn sàng tiến thêm một bước vào mảng tối trong thế giới của họ, hãy cầm cuốn sách này lên.\n\nCuốn sách “Hồ sơ tâm lý học - Tâm thần hay kẻ điên” của tác giả Mục Qua sẽ tái hiện chân thực những khốn cảnh tâm lý của những bệnh nhân tâm thần dưới góc nhìn của bác sĩ, cũng như quá trình đấu tranh và hội phục tâm lý của họ. Từ đó phơi bày những góc khuất của xã hội, môi trường gia đình, bạo lực, tội phạm, mối liên hệ giữa bệnh nhân và xã hội.\n\nCuốn sách bao gồm 13 câu chuyện khác nhau diễn ra trong cùng một bệnh viện tâm thần, nó lột tả chi tiết từng khía cạnh về những căn bệnh tâm thần như chứng cuồng phóng hỏa, rối loạn nhân dạng phân ly, trầm cảm cười, chứng hoang tưởng,ên suốt cuốn sách bạn sẽ bắt gặp một nhóm “người điên” đang sống trong vực thẳm. Họ có thể là những thiên tài kỳ quái với những ý tưởng kỳ lạ không thể hiểu nổi. Là những kẻ lừa đảo có học, giấu đi nhân cách phản xã hội và phản nhân loại một cách đầy hoàn hảo, càng là những kẻ cô độc đến đáng thương, Họ mang trong mình những tâm hồn tan nát song đầy nóng bỏng ẩn sau hai từ “kẻ điên”.\n\nĐặc biệt, những bối cảnh tâm lý trong cuốn sách đều dựa trên những câu chuyện thực tế của chính bản thân tác giả khi làm việc tại Trung Tâm sức khỏe Tâm thần từ khi là thực tập sinh. Dưới ngòi bút của mình, bổ sung thêm kiến thức tâm lý học và trích dẫn lý thuyết một cách rõ ràng cuốn sách sẽ dẫn dắt bạn đi qua tất cả những cung bậc cảm xúc từ hoài nghi, phẫn nỗ đến bi thương và đồng cảm, phá vỡ những định kiến về căn bệnh này.\n\nBiến mình trở thành một đứa trẻ ngoan, giết chết nhân cách vốn có, một đứa trẻ đã phải trải qua những gì để có thể làm hài lòng cha mẹ? Cuốn sách sẽ đưa bạn xuyên qua những khu rừng tăm tối của trái tim con người và chạm vào những mảnh đời đang chờ đợi được sửa chữa. Bởi suy cho cùng những bệnh nhân tâm thần chính là những con người đáng thương nhất khi họ luôn phải chạy trốn trong chính vỏ bọc mà mình tạo ra.",
-    book_image: "public\\images\\tamly\\tamthan.jpg",
+    book_image: require("./../assets/tamly/tamthan.jpg"),
     print_length: "440",
     language: "Tiếng Việt",
     author_name: "Mục Qua",
@@ -38,7 +38,7 @@ export const BookData = [
       "Thao Túng Tâm Lý - Nhận Diện, Thức Tỉnh Và Chữa Lành Những Tổn Thương Tiềm Ẩn",
     book_description:
       "Trong cuốn “Thao túng tâm lý”, tác giả Shannon Thomas giới thiệu đến độc giả những hiểu biết liên quan đến thao túng tâm lý và lạm dụng tiềm ẩn.\n\n“Thao túng tâm lý” là một dạng của lạm dụng tâm lý. Cũng giống như lạm dụng tâm lý, thao túng tâm lý có thể xuất hiện ở bất kỳ môi trường nào, từ bất cứ đối tượng độc hại nào. Đó có thể là bố mẹ ruột, anh chị em ruột, người yêu, vợ hoặc chồng, sếp hay đồng nghiệp… của bạn. Với tính chất bí hiểm, âm thầm gây hại, thao túng, lạm dụng tâm lý làm tổn thương cảm xúc, lòng tự trọng, cuộc sống của mỗi nạn nhân. Những người từng bị lạm dụng tâm lý thường không thể miêu tả rõ ràng điều gì đã xảy ra với mình. Trong nhiều trường hợp, nạn nhân bị thao túng đến mức tự hỏi có phải họ là người có lỗi, thậm chí họ có phải là người độc hại trong mối quan hệ đó.\n\nHành vi của (những) kẻ lạm dụng giống như một trò chơi bí ẩn, tệ hại và lặp đi lặp lại, do một cá nhân hoặc một nhóm người thực hiện với nạn nhân. Những hành vi này được ngụy trang tài tình đến mức hành vi độc ác của họ diễn ra thường xuyên, nhưng không bị phát hiện.\n\nShannon Thomas giới thiệu những kiến thức cơ bản về đặc điểm, các dạng của lạm dụng tâm lý nói chung, thao túng tâm lý nói riêng, và cung cấp cho người đọc hành trình chữa lành gồm 6 giai đoạn:\n\n- Giai đoạn 1: Tuyệt vọng\n\n- Giai đoạn 2: Nhận diện\n\n- Giai đoạn 3: Thức tỉnh\n\n- Giai đoạn 4: Những ranh giới\n\n- Giai đoạn 5: Phục hồi\n\n- Giai đoạn 6: Duy trì\n\nBằng những kiến thức chuyên sâu và sự thấu hiểu, tác giả sẽ giúp bạn từng bước vượt qua những rắc rối của thao túng tâm lý, lạm dụng tiểm ẩn để có cuộc sống ý nghĩa và lành mạnh hơn.",
-    book_image: "public\\images\\tamly\\thaotung.jpg",
+    book_image: require("./../assets/tamly/thaotung.jpg"),
     print_length: "340",
     language: "Tiếng Việt",
     author_name: "Shannon Thomas, LCSW",
@@ -49,7 +49,7 @@ export const BookData = [
     book_name: "Tâm Lý Học Về Tiền",
     book_description:
       "Tiền bạc có ở khắp mọi nơi, nó ảnh hưởng đến tất cả chúng ta, và khiến phần lớn chúng ta bối rối. Mọi người nghĩ về nó theo những cách hơi khác nhau một chút. Nó mang lại những bài học có thể được áp dụng tới rất nhiều lĩnh vực trong cuộc sống, như rủi ro, sự tự tin, và hạnh phúc. Rất ít chủ đề cung cấp một lăng kính phóng to đầy quyền lực giúp giải thích vì sao mọi người lại hành xử theo cách họ làm hơn là về tiền bạc. Đó mới là một trong những chương trình hoành tráng nhất trên thế giới.\n\nChúng ta hiếm khi lâm vào hoàn cảnh nợ ngập đầu ư? Biết tiết kiệm để dành cho lúc khốn khó hơn ư? Chuẩn bị sẵn sàng cho việc nghỉ hưu? Có những cái nhìn thiết thực về mối quan hệ giữa tiền và hạnh phúc của chúng ta hơn phải không?\n\nChúng ta đều làm những điều điên rồ với tiền bạc, bởi vì chúng ta đều còn khá mới mẻ với trò chơi này và điều có vẻ điên rồ với bạn lại có khi hợp lý với tôi. Nhưng không ai là điên rồ cả – chúng ta đều đưa ra các quyết định dựa trên những trải nghiệm độc đáo riêng có mang vẻ hợp lý với mình ở bất cứ thời điểm nào.\n\nMục đích của cuốn sách này là sử dụng những câu chuyện ngắn để thuyết phục bạn rằng những kỹ năng mềm còn quan trọng hơn khía cạnh lý thuyết của đồng tiền. Thông qua một tập hợp những thử nghiệm và sai lầm của nhiều năm chúng ta đã học được cách trở thành những nông dân giỏi giang hơn, những thợ sửa ống nước nhiều kỹ năng hơn, và những nhà hóa học tiên tiến hơn. Nhưng liệu việc thử nghiệm và sai lầm có dạy chúng ta trở nên giỏi hơn trong cách quản lý tài chính cá nhân của chính mình không?\n\nNhiều tiền không liên quan nhiều đến việc bạn thông minh như thế nào mà lại liên quan lớn đến cách bạn hành xử. Và cách hành xử thì rất khó để uốn nắn, ngay cả đối với những người thực sự thông minh.\n\nMột thiên tài không kiểm soát được cảm xúc của anh ta có thể dẫn tới một thảm họa tài chính. Điều ngược lại cũng đúng. Những người bình thường không có kiến thức về tài chính có thể trở nên giàu có nếu họ nắm trong tay những kỹ năng hành xử không liên quan đến những thước đo chính thống về trí thông minh.\n\nSự thành công trong tài chính không phải là một lĩnh vực khoa học khó nhằn. Nó là một kỹ năng mềm, nơi mà cách bạn hành xử quan trọng hơn điều mà bạn biết. Trong “Tâm lý học về tiền”, tác giả từng đoạt giải thưởng Morgan Housel chia sẻ 19 câu chuyện ngắn khám phá những cách kỳ lạ mà mọi người nghĩ về tiền bạc và dạy bạn cách hiểu rõ hơn về một trong những chủ đề quan trọng nhất của cuộc sống.",
-    book_image: "public\\images\\tamly\\tien.jpeg",
+    book_image: require("./../assets/tamly/tien.jpeg"),
     print_length: "384",
     language: "Tiếng Việt",
     author_name: "Morgan Housel",
@@ -60,7 +60,7 @@ export const BookData = [
     book_name: "Danh Tác Văn Học Việt Nam - Chí Phèo (Tái Bản 2023)",
     book_description:
       "Chí Phèo là một truyện ngắn nổi tiếng của nhà văn Nam Cao viết vào tháng 2 năm 1941. Chí Phèo là một tác phẩm xuất sắc, thể hiện nghệ thuật viết truyện độc đáo của Nam Cao, đồng thời là một tấn bi kịch của một người nông dân nghèo bị tha hóa trong xã hội. Hiện nay, truyện đã được đưa vào sách giáo khoa Ngữ Văn 11, tập 1. Chí Phèo cũng là tên nhân vật chính của truyện.\n\nTruyện ngắn Chí Phèo, nguyên có tên là Cái lò gạch cũ; khi in thành sách lần đầu năm 1941, Nhà Xuất bản Đời mới - Hà Nội tự ý đổi tên là Đôi lứa xứng đôi. Đến khi in lại trong Tập Luống cày (do Hội Văn hóa cứu quốc xuất bản, Hà Nội, 1946), Nam Cao đặt lại tên là Chí Phèo.",
-    book_image: "public\\images\\vanhoc\\chipheo.jpg",
+    book_image: require("./../assets/vanhoc/chipheo.jpg"),
     print_length: "328",
     language: "Tiếng Việt",
     author_name: "Nam Cao",
@@ -71,7 +71,7 @@ export const BookData = [
     book_name: "Có Hai Con Mèo Ngồi Bên Cửa Sổ",
     book_description:
       "CÓ HAI CON MÈO NGỒI BÊN CỬA SỔ là tác phẩm đầu tiên của nhà văn Nguyễn Nhật Ánh viết theo thể loại đồng thoại. Đặc biệt hơn nữa là viết về tình bạn của hai loài vốn là thù địch của nhau mèo và chuột. Đó là tình bạn giữa mèo Gấu và chuột Tí Hon.\n\nĐể biết tại sao mèo Gấu lại chơi thân với chuột Tí Hon, thì mời bạn hãy mở sách ra.\n\nCuốn truyện mỏng mảnh vừa phải, hình vẽ của họa sĩ Hoàng Tường sinh động đến từng nét nũng nịu hay kiêu căng của nàng mèo người yêu mèo Gấu, câu chuyện thì hấp dẫn duyên dáng điểm những bài thơ tình lãng mạn nao lòng song đọc to lên thì khiến cười hinh hích…\n\nBạn hãy đọc nhé, để thấy, Nguyễn Nhật Ánh đã viết truyện đồng thoại theo cái cách của riêng mình độc đáo như thế nào.",
-    book_image: "public\\images\\vanhoc\\conmeo.jpg",
+    book_image: require("./../assets/vanhoc/conmeo.jpg"),
     print_length: "210",
     language: "Tiếng Việt",
     author_name: "Nguyễn Nhật Ánh",
@@ -82,7 +82,7 @@ export const BookData = [
     book_name: "Làm Đĩ",
     book_description:
       'Làm đĩ là một thiên tả chân tiểu thuyết mục đích là hô hào nhà đạo đức và bậc làm cha mẹ lo chăm đến hạnh phúc của con cái và phải để ý đến cái sự mà những thành kiến hủ bại vẫn coi là điều bẩn thỉu, tức là cái sự dâm. Làm đĩ không tả lối sống của gái giang hồ mà chỉ vạch lại cái cảnh ngộ đã làm cho Huyền cô gái con nhà tử tế xinh đẹp, có học, thông minh phải sa chân, lỡ bước vào cuộc đời truỵ lạc. Làm đĩ là tiểu thuyết hiện thực đã không ngần ngại đặt ra một vấn đề: Tại sao lại có người phải Làm đĩ, xã hội có nạn mại dâm? Chính tác giả trong "Đoạn cuối" sách đã nói rõ ra với nhân vật chính của mình: "Đối với thiên hạ thì đời một người như em, đương ở chốn yên lành mà vào nơi chông gai, chỉ có đoạn ấy là đáng nói thôi. Tại sao con nhà tử tế hẳn hoi, con nhà quý phái nữa, mà rồi đến nỗi…. trụy lạc, ấy người đời chỉ cần biết rõ những nguyên nhân ấy…"',
-    book_image: "public\\images\\vanhoc\\lamdi.jpg",
+    book_image: require("./../assets/vanhoc/lamdi.jpg"),
     print_length: "264",
     language: "Tiếng Việt",
     author_name: "Vũ Trọng Phụng",
@@ -93,7 +93,7 @@ export const BookData = [
     book_name: "Mắt Biếc",
     book_description:
       "Mắt biếc là một tác phẩm được nhiều người bình chọn là hay nhất của nhà văn Nguyễn Nhật Ánh. Tác phẩm này cũng đã được dịch giả Kato Sakae dịch sang tiếng Nhật để giới thiệu với độc giả Nhật Bản.\n\n“Tôi gửi tình yêu cho mùa hè, nhưng mùa hè không giữ nổi. Mùa hè chỉ biết ra hoa, phượng đỏ sân trường và tiếng ve nỉ non trong lá. Mùa hè ngây ngô, giống như tôi vậy. Nó chẳng làm được những điều tôi ký thác. Nó để Hà Lan đốt tôi, đốt rụi. Trái tim tôi cháy thành tro, rơi vãi trên đường về.”\n\n… Bởi sự trong sáng của một tình cảm, bởi cái kết thúc buồn, rất buồn khi xuyên suốt câu chuyện vẫn là những điều vui, buồn lẫn lộn …  ",
-    book_image: "public\\images\\vanhoc\\matbiec.jpg",
+    book_image: require("./../assets/vanhoc/matbiec.jpg"),
     print_length: "300",
     language: "Tiếng Việt",
     author_name: "Nguyễn Nhật Ánh",
@@ -104,7 +104,7 @@ export const BookData = [
     book_name: "Tôi Thấy Hoa Vàng Trên Cỏ Xanh",
     book_description:
       "Cuốn sách viết về tuổi thơ nghèo khó ở một làng quê, bên cạnh đề tài tình yêu quen thuộc, lần đầu tiên Nguyễn Nhật Ánh đưa vào tác phẩm của mình những nhân vật phản diện và đặt ra vấn đề đạo đức như sự vô tâm, cái ác. 81 chương ngắn là 81 câu chuyện nhỏ của những đứa trẻ xảy ra ở một ngôi làng: chuyện về con cóc Cậu trời, chuyện ma, chuyện công chúa và hoàng tử, bên cạnh chuyện đói ăn, cháy nhà, lụt lội, “Tôi thấy hoa vàng trên cỏ xanh”hứa hẹn đem đến những điều thú vị với cả bạn đọc nhỏ tuổi và người lớn bằng giọng văn trong sáng, hồn nhiên, giản dị của trẻ con cùng nhiều tình tiết thú vị, bất ngờ và cảm động trong suốt hơn 300 trang sách. Cuốn sách, vì thế có sức ám ảnh, thu hút, hấp dẫn không thể bỏ qua.",
-    book_image: "public\\images\\vanhoc\\tuithay.jpg",
+    book_image: require("./../assets/vanhoc/tuithay.jpg"),
     print_length: "378",
     language: "Tiếng Việt",
     author_name: " Nguyễn Nhật Ánh",
@@ -115,7 +115,7 @@ export const BookData = [
     book_name: "Dragon Ball Super - Tập 15: Moro - Kẻ Ăn Hành Tinh",
     book_description:
       "Goku đã sử dụng Bản Năng Vô Cực để dồn Moro vào chân tường. Nhưng Moro lại lợi dụng kho dự trữ trong cánh tay trái bị cắt lìa của Merus để học được tuyệt chiêu này. Đối diện với sức mạnh của thần thánh, Goku sẽ xử trí thế nào?",
-    book_image: "public\\images\\truyen\\dragon-ball-1.jpg",
+    book_image: require("./../assets/truyen/dragon-ball-1.jpg"),
     print_length: "192",
     language: "Tiếng Việt",
     author_name: "Akira Toriyama, Toyotarou",
@@ -126,7 +126,7 @@ export const BookData = [
     book_name: "Dragon Ball Super - Tập 16: Chiến Binh Mạnh Nhất Vũ Trụ",
     book_description:
       "Granola là người hành tinh Cereal cuối cùng còn sống sau trận càn quét của Frieza và quân đội Saiya. Anh đã dùng ngọc rồng của hành tinh Cereal để thực hiện điều ước biến mình thành chiến binh mạnh nhất vũ trụ, trả thù cho quê hương. Trong khi đó, Goku và các bạn lại nhận được yêu cầu tiêu diệt Granola từ một nhóm người tên Heeter.",
-    book_image: "public\\images\\truyen\\dragon-ball-2.jpg",
+    book_image: require("./../assets/truyen/dragon-ball-2.jpg"),
     print_length: "192",
     language: "Tiếng Việt",
     author_name: "Akira Toriyama, Toyotarou",
@@ -137,7 +137,7 @@ export const BookData = [
     book_name: "Naruto Tập 70: Naruto & Lục Đạo Tiên Nhân",
     book_description:
       "Madara đã thâu tóm toàn bộ sức mạnh vĩ thú và có được năng lực Lục Đạo. Để đối đầu hắn, Guy triển khai “Tử Môn” cuối cùng trong Bát Môn Độn Giáp!\n\nTuyệt chiêu quyết tử theo nhẫn đạo của Guy có hiệu quả với Madara không!? Và trong lúc cận kề cái chết, Naruto đã có cuộc gặp gỡ với Lục Đạo Tiên Nhân ở thế giới trong tiềm thức của cậu!?",
-    book_image: "public\\images\\truyen\\naruto.jpg",
+    book_image: require("./../assets/truyen/naruto.jpg"),
     print_length: "208",
     language: "Tiếng Việt",
     author_name: "Masashi Kishimoto",
@@ -148,7 +148,7 @@ export const BookData = [
     book_name: "Doraemon Tập 1: Chú Khủng Long Của Nobita",
     book_description:
       "“Chú khủng long của Nobita” là tác phẩm mở đầu cho xêri Doraemon truyện dài, và đã được chuyển thể thành phim hoạt hình.\n\nTrong tác phẩm này, 5 người nhóm bạn Doraemon đã ngược dòng thời gian, trở về thế giới khủng long Kỉ Bạch Á. Tất cả đã sát cánh bên nhau trải qua bao nhiêu sóng gió hiểm nguy để bảo vệ chú khủng long mới nở Pisuke.",
-    book_image: "public\\images\\truyen\\dora.webp",
+    book_image: require("./../assets/truyen/dora.webp"),
     print_length: "192",
     language: "Tiếng Việt",
     author_name: "Fujiko F Fujio",
@@ -159,7 +159,7 @@ export const BookData = [
     book_name: "Bleach Special",
     book_description:
       "Dark times have come to Hogwarts. After the Dementors' attack on his cousin Dudley, Harry Potter knows that Voldemort will stop at nothing to find him. There are many who deny the Dark Lord's return, but Harry is not alone: a secret order gathers at Grimmauld Place to fight against the Dark forces. Harry must allow Professor Snape to teach him how to protect himself from Voldemort's savage assaults on his mind. But they are growing stronger by the day and Harry is running out of time.",
-    book_image: "public\\images\\truyen\\bleach5.jpg",
+    book_image: require("./../assets/truyen/bleach5.jpg"),
     print_length: "315",
     language: "Tiếng Việt",
     author_name: "Kubo",
@@ -170,7 +170,7 @@ export const BookData = [
     book_name: "Tư Duy Chiến Lược - Lý Thuyết Trò Chơi Thực Hành",
     book_description:
       'Tư duy chiến lược là nghệ thuật vượt qua đối thủ cạnh tranh, với nhận thức rằng họ cũng đang cố gắng vượt qua mình. Mỗi chúng ta đều phải áp dụng tư duy chiến lược, theo cách này hay cách khác, tại nơi làm việc và ngay cả ở nhà. Thương gia và các doanh nghiệp sử dụng các chiến lược cạnh tranh phù hợp để tồn tại. Những huấn luyện viên bóng đá vạch ra các kế hoạch chiến lược để các cầu thủ tiến hành trên sân bóng. Các bậc cha mẹ muốn giáo dục con cái cũng phải trở thành những nhà chiến lược nghiệp dư.\n\nTư duy chiến lược đúng đắn trong nhiều hoàn cảnh khác nhau vẫn luôn là một nghệ thuật. Nhưng nền tảng của nó được xây dựng trên một số nguyên tắc cơ bản – một khoa học về chiến lược. Sau khi đọc cuốn sách này, người đọc từ các lĩnh vực nghề nghiệp khác nhau có thể trở thành những nhà chiến lược giỏi hơn nếu họ biết được những nguyên tắc này.\n\nTư duy chiến lược đã mang đến cho nhiều người một cách nhìn mới về mọi sự kiện, hiện tượng trong xã hội, kể từ văn học, phim ảnh và thể thao cho đến các sự kiện chính trị, lịch sử.\n\nTrong Tư duy chiến lược – Lý thuyết trò chơi thực hành của Avinash K. Dixit và Barry J. Nalebuff, các tác giả trình bày cho nhiều ví dụ minh họa từ những lĩnh vực khác nhau cho mỗi nguyên tắc cơ bản. Người đọc từ nhiều lĩnh vực khác nhau sẽ tìm thấy sự chia sẻ ở đây. Bạn cũng sẽ thấy cách thức mà những nguyên lý cơ bản giống nhau tạo ra chiến lược trong những hoàn cảnh khác nhau; hy vọng mang lại những góc nhìn mới về nhiều sự kiện đã và đang xảy ra.\n\nKhông hề khô khan như nhiều cuốn sách mang nặng tính học thuyết khác, Tư duy chiến lược diễn biến theo kiểu kể chuyện. Nguồn gốc xưa của nó là một khóa học về "trò chơi chiến lược” mà Avinash Dixit triển khai và dạy tại Trường Woodrow Wilson về Các vấn đề cộng đồng và quốc tế thuộc Đại học Princeton. Barry J.Nalebuff sau đó dạy khóa học này, và dạy một khóa học tương tự ở khoa Khoa học ch.ính trị của Đại học Yale và sau đó là tại Trường Tổ chức và Quản trị (SOM) thuộc Đại học Yale.\n\nĐến nay, Tư duy chiến lược - Lý thuyết trò chơi thực hành đã trở thành cẩm nang quen thuộc của nhiều người, nhờ vào tính đúng đắn và khả năng ứng dụng cao trong thực tiễn đời sống của nó. “Tư duy chiến lược, đừng cạnh tranh khi không có nó”',
-    book_image: "public\\images\\kinhte\\chienluoc.png",
+    book_image: require("./../assets/kinhte/chienluoc.png"),
     print_length: "544",
     language: "Tiếng Việt",
     author_name: "Avinash K. Dixit, Barry J. Nalebuff",
@@ -181,7 +181,7 @@ export const BookData = [
     book_name: "Nghĩ Giàu & Làm Giàu",
     book_description:
       "Think and Grow Rich - Nghĩ giàu và làm giàu là một trong những cuốn sách bán chạy nhất mọi thời đại. Đã hơn 60 triệu bản được phát hành với gần trăm ngôn ngữ trên toàn thế giới và được công nhận là cuốn sách tạo ra nhiều triệu phú, một cuốn sách truyền cảm hứng thành công nhiều hơn bất cứ cuốn sách kinh doanh nào trong lịch sử.\n\nTác phẩm này đã giúp tác giả của nó, Napoleon Hill, được tôn vinh bằng danh hiệu “người tạo ra những nhà triệu phú”. Đây cũng là cuốn sách hiếm hoi được đứng trong top của rất nhiều bình chọn theo nhiều tiêu chí khác nhau - bình chọn của độc giả, của giới chuyên môn, của báo chí. Lý do để Think and Grow Rich - Nghĩ giàu và làm giàu có được vinh quang này thật hiển nhiên và dễ hiểu: Bằng việc đọc và áp dụng những phương pháp đơn giản, cô đọng này vào đời sống của mỗi cá nhân mà đã có hàng ngàn người trên thế giới trở thành triệu phú và thành công bền vững.\n\nĐiều thú vị nhất là các bí quyết này có thể được hiểu và áp dụng bởi bất kỳ một người bình thường nào, hoạt động trong bất cứ lĩnh vực nào. Qua hơn 70 năm tồn tại, những đúc kết về thành công của Napoleon Hill đến nay vẫn không hề bị lỗi thời, ngược lại, thời gian chính là minh chứng sống động cho tính đúng đắn của những bí quyết mà ông chia sẻ.\n\nSinh ra trong một gia đình nghèo vùng Tây Virginia, con đường thành công của Napoleon Hill cũng trải qua nhiều thăng trầm. Khởi đầu bằng chân cộng tác viên cho một tờ báo địa phương lúc 15 tuổi, đến năm 19 tuổi Hill trở thành nhà quản lý mỏ than trẻ tuổi nhất, sau đó bỏ ngang để theo đuổi ngành luật. Napoleon Hill còn kinh qua nhiều nghề như kinh doanh gỗ, xe hơi, viết báo về kinh doanh…\n\nĐó là những công việc ông từng nếm trải trước khi 25 tuổi! Song khác với những người thành đạt khác, ông cẩn thận phân tích từng sự kiện trọng đại trong đời mình, rút ra những bài học, rồi tiếp tục rút gọn chúng thành các nguyên tắc căn bản, tổ chức các nguyên tắc ấy thành triết lý sống và rèn luyện...\n\nCơ hội đặc biệt đã đến với Hill trong một lần phỏng vấn để viết về chân dung Andrew Carnegie - ông “vua thép” huyền thoại của Mỹ đã đi lên từ hai bàn tay trắng. Từ lần phỏng vấn đó, Napoleon Hill có dịp tiếp cận với những con người thành đạt và có quyền lực nhất tại Mỹ để tìm hiểu và học hỏi những bí quyết thành công của họ, trong thế so sánh và kiểm chứng với những công thức thành công của Andrew Carnegie. Ông muốn qua đó có thể đúc kết và viết nên một cuốn sách ghi lại những bí quyết giúp các cá nhân bình thường thành những người thành công trong xã hội.\n\nĐể thực hiện cuốn sách này, Napoleon Hill dành hầu như toàn bộ thời gian và công sức trong suốt gần ba mươi năm để phỏng vấn hơn 500 người nổi tiếng và thành công nhất trong nhiều lĩnh vực khác nhau, cùng hàng ngàn doanh nhân khác - cả những kẻ thất bại và những người thành công. Kết quả của những nghiên cứu không mệt mỏi đó là Think and Grow Rich - Nghĩ giàu và làm giàu - công thức, hay “cẩm nang” để trở thành vượt trội và được xã hội nể trọng.\n\nCuốn sách cũng đưa Napoleon Hill vào danh sách một trong những tác giả có tác phẩm bán chạy nhất thế giới từ trước đến nay. Được viết ra từ vô số những câu chuyện có thật, tác phẩm có một sức thuyết phục và lay động rất lớn. Bạn không chỉ được biết bí quyết về sự thành công của các tên tuổi như Edison - nhà phát minh lỗi lạc mà thời gian rèn luyện trong trường học chỉ… vỏn vẹn 3 tháng; như Henry Ford - người bị coi là không có học vấn nhưng đã trở thành ông trùm trong nền công nghiệp xe hơi với một gia tài kếch xù… mà còn của rất nhiều cá nhân trong nhiều lĩnh vực khác nhau đã đi lên từ con số không.",
-    book_image: "public\\images\\kinhte\\giau.jpg",
+    book_image: require("./../assets/kinhte/giau.jpg"),
     print_length: "400",
     language: "Tiếng Việt",
     author_name: "Napoleon Hill",
@@ -192,7 +192,7 @@ export const BookData = [
     book_name: "Kinh Tế Học - Khái Lược Những Tư Tưởng Lớn",
     book_description:
       "Điều gì xảy ra trong giai đoạn khủng hoảng kinh tế? Tiền tệ vận hành ra sao? Vì sao chúng ta phải đóng thuế? Kinh tế học ảnh hưởng đến từng khía cạnh của đời sống của chúng ta, từ việc đi làm đến cách tiêu tiền – và các ý tưởng kinh tế lớn vẫn đang tiếp tục định hình thế giới ngày nay.\n\nKinh tế học - Khái lược những tư tưởng lớn được viết với văn phong đơn giản kèm theo các biểu đồ giải thích ngắn gọn, dễ hiểu các lí thuyết quan trọng. Ngoài ra còn có các câu trích dẫn kinh điển dễ nhớ và các hình minh họa dí dỏm, mang lại niềm hứng thú khi tìm hiểu về kinh tế học.",
-    book_image: "public\\images\\kinhte\\Kinh-te-1.jpg",
+    book_image: require("./../assets/kinhte/Kinh-te-1.jpg"),
     print_length: "192",
     language: "Tiếng Việt",
     author_name: "DK",
@@ -203,7 +203,7 @@ export const BookData = [
     book_name: "Phù Thủy Sàn Chứng Khoán",
     book_description:
       "Cuốn sách gồm một loạt các cuộc phỏng vấn với các nhà giao dịch thành công và nổi tiếng nhất, với nhiều chi tiết nhất về câu chuyện thành công và những bí mật kinh nghiệm chuyên môn của họ. Ngoài ra, cuốn sách không thể thiếu sự thật về sự nghiệp giao dịch của các nhà quản lý quỹ đầu tư vĩ đại nhất, các nhà giao dịch hàng đầu và các nhà đầu tư chứng khoán tư nhân: từ Richard Dennis, huyền thoại của Sàn chứng khoán Chicago kiêm người sáng lập của Turtles; đến nhà vô địch giao dịch Martin “Buzzy” Schwartz; hay William O'Neil trứ danh, và cả Paul Tudor Jones, người đứng đầu của quỹ đầu tư với lợi nhuận hằng năm trong 5 năm liên tục là 100%.\n\nQua cuốn sách, bạn đọc sẽ biết: Các phù thủy trên sàn đã “thao túng” thị trường chứng khoán Mỹ bằng cách nào?",
-    book_image: "public\\images\\kinhte\\phu-thuy-san-chung-khoan.webp",
+    book_image: require("./../assets/kinhte/phu-thuy-san-chung-khoan.webp"),
     print_length: "436",
     language: "Tiếng Việt",
     author_name: "Jack. D. Schwager",
@@ -214,7 +214,7 @@ export const BookData = [
     book_name: "KINH TẾ VĨ MÔ",
     book_description:
       "N.Gregory Mankiw là giáo sư kinh tế Đại học Harvard. Ông có nhiều bài viết và thường xuyên tham gia các chương trình tranh luận về học thuật cũng như các chính sách về kinh tế. Là một trong 25 Nhà kinh tế học nổi tiếng trên thế giới và sách Kinh tế học của ông đã và đang được nhiều trường đại học trên thế giới sử dụng. Ông cũng là tác giả của giáo trình Kinh tế Vĩ mô trình độ trung cấp bán chạy nhất (Nhà xuất bản Worth).\n\nBên cạnh việc giảng dạy, nghiên cứu và viết lách, Giáo sư Mankiw còn là thành viên nghiên cứu của Ban Nghiên cứu Kinh tế Quốc gia, thành viên tư vấn cho Văn phòng Ngân sách Quốc hội, Cục Dự trữ Liên bang khu vực Boston và New York, thành viên Hội đồng phát triển khảo thí ETS - chương trình dự bị đại học nâng cao chuyên ngành kinh tế. Từ 2003 đến 2005 ông là chủ tịch Hội đồng Tư vấn Kinh tế cho Tổng thống Hoa Kỳ.\n\nĐây là lần đầu tiên cuốn sách kinh tế học của tác giả N.Gregory Mankiw được dịch sang Tiếng Việt và phát hành tại Việt Nam. Về nội dung 2 cuốn sách, với các khái niệm phổ biến và khái quát nhất về kinh tế vi mô và vĩ mô cũng như những giải thích về các cơ chế hoạt động của nền kinh tế. Bộ giáo trình gồm 16 phần cung cấp cho người đọc các kiến thức khá toàn diện và chuyên sâu về các nguyên lý kinh tế học như các lý thuyết cổ điển; các lý thuyết về phát triển: nền kinh tế trong dài hạn; các lý thuyết về vòng tròn kinh tế: nền kinh tế trong ngắn hạn; các yếu tố vi mô ẩn sau kinh tế vĩ mô; các tranh luận về chính sách vĩ mô…\n\nTất cả đều được giải thích và đánh giá bởi một vị giáo sư kinh tế hàng đầu thế giới. Các khái niệm trong sách được định nghĩa rất rõ ràng, dễ nắm bắt, dễ hiểu, có tóm tắt các chương tạo điều kiện tốt nhất cho việc ôn tập. Các ví dụ sinh động, gắn liền với thực tế, có độ cập nhật phù hợp với đề cương giảng dạy kinh tế học không chỉ của Trường Đại học Kinh tế TP.HCM mà cả các trường đại học khác tại Việt Nam trong khối kinh tế và quản trị.",
-    book_image: "public\\images\\kinhte\\vimo.jpg",
+    book_image: require("./../assets/kinhte/vimo.jpg"),
     print_length: "596",
     language: "Tiếng Việt",
     author_name: "NGregory Mankiw",
@@ -224,7 +224,7 @@ export const BookData = [
     id: 20,
     book_name: "Sách Giải Tích Lớp 12",
     book_description: "",
-    book_image: "public\\images\\sgk\\giaitich.png",
+    book_image: require("./../assets/sgk/giaitich.png"),
     print_length: "",
     language: "Tiếng Việt",
     author_name: "Nhiều tác giả",
@@ -234,7 +234,7 @@ export const BookData = [
     id: 21,
     book_name: "Sách Tin Học Lớp 12",
     book_description: "",
-    book_image: "public\\images\\sgk\\tin.jpg",
+    book_image: require("./../assets/sgk/tin.jpg"),
     print_length: "",
     language: "Tiếng Việt",
     author_name: "Nhiều tác giả",
@@ -244,7 +244,7 @@ export const BookData = [
     id: 22,
     book_name: "Sách Hóa Lớp 12",
     book_description: "",
-    book_image: "public\\images\\sgk\\hoa.jpg",
+    book_image: require("./../assets/sgk/hoa.jpg"),
     print_length: "",
     language: "Tiếng Việt",
     author_name: "Nhiều tác giả",
@@ -254,7 +254,7 @@ export const BookData = [
     id: 23,
     book_name: "Sách Vật Lý Lớp 12",
     book_description: "",
-    book_image: "public\\images\\sgk\\ly.png",
+    book_image: require("./../assets/sgk/ly.png"),
     print_length: "",
     language: "Tiếng Việt",
     author_name: "Nhiều tác giả",
@@ -264,7 +264,7 @@ export const BookData = [
     id: 24,
     book_name: "Sách Ngữ Văn Lớp 12",
     book_description: "",
-    book_image: "public\\images\\sgk\\nguvan.jpg",
+    book_image: require("./../assets/sgk/nguvan.jpg"),
     print_length: "",
     language: "Tiếng Việt",
     author_name: "Nhiều tác giả",
@@ -275,7 +275,7 @@ export const BookData = [
     book_name: "Introduction to Algorithms 4th edition",
     book_description:
       "Some books on algorithms are rigorous but incomplete; others cover masses of material but lack rigor. Introduction to Algorithms uniquely combines rigor and comprehensiveness. It covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers, with self-contained chapters and algorithms in pseudocode. Since the publication of the first edition, Introduction to Algorithms has become the leading algorithms text in universities worldwide as well as the standard reference for professionals. This fourth edition has been updated throughout.",
-    book_image: "public\\images\\khoahoc\\algorithm.jpg",
+    book_image: require("./../assets/khoahoc/algorithm.jpg"),
     print_length: "1312",
     language: "English",
     author_name:
@@ -287,7 +287,7 @@ export const BookData = [
     book_name: "The C++ Programming Language, 4th Edition",
     book_description:
       "This book features an enhanced, layflat binding, which allows the book to stay open more easily when placed on a flat surface. This special binding method—noticeable by a small space inside the spine—also increases durability. C++11 has arrived: thoroughly master it, with the definitive new guide from C++ creator Bjarne Stroustrup, C++ Programming Language, Fourth Edition! The brand-new edition of the worlds most trusted and widely read guide to C++, it has been comprehensively updated for the long-awaited C++11 standard. Extensively rewritten to present the C++11 language, standard library, and key design techniques as an integrated whole, Stroustrup thoroughly addresses changes that make C++11 feel like a whole new language, offering definitive guidance for leveraging its improvements in performance, reliability, and clarity. C++ programmers around the world recognize Bjarne Stoustrup as the go-to expert for the absolutely authoritative and exceptionally useful information they need to write outstanding C++ programs. Now, as C++11 compilers arrive and development organizations migrate to the new standard, they know exactly where to turn once more: Stoustrup C++ Programming Language, Fourth Edition.",
-    book_image: "public\\images\\khoahoc\\c.jpg",
+    book_image: require("./../assets/khoahoc/c.jpg"),
     print_length: "1376",
     language: "English",
     author_name: "Bjarne Stroustrup",
@@ -298,7 +298,7 @@ export const BookData = [
     book_name: "Computer Systems: A Programmer's Perspective",
     book_description:
       "This book explains the important and enduring concepts underlying all computer systems, and shows the concrete ways that these ideas affect the correctness, performance, and utility of application programs. The book's concrete and hands-on approach will help readers understand what is going on ?under the hood? of a computer system. This book focuses on the key concepts of basic network programming, program structure and execution, running programs on a system, and interaction and communication between programs. For anyone interested in computer organization and architecture as well as computer systems.",
-    book_image: "public\\images\\khoahoc\\cs.jpg",
+    book_image: require("./../assets/khoahoc/cs.jpg"),
     print_length: "978",
     language: "English",
     author_name: "Randal E. Bryant, David Richard O'Hallaron",
@@ -310,7 +310,7 @@ export const BookData = [
       "Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems",
     book_description:
       "Through a recent series of breakthroughs, deep learning has boosted the entire field of machine learning. Now, even programmers who know close to nothing about this technology can use simple, efficient tools to implement programs capable of learning from data. This bestselling book uses concrete examples, minimal theory, and production-ready Python frameworks (Scikit-Learn, Keras, and TensorFlow) to help you gain an intuitive understanding of the concepts and tools for building intelligent systems.\n\nWith this updated third edition, author Aurélien Géron explores a range of techniques, starting with simple linear regression and progressing to deep neural networks. Numerous code examples and exercises throughout the book help you apply what you've learned. Programming experience is all you need to get started.\n\n+Use Scikit-learn to track an example ML project end to end\n\n+Explore several models, including support vector machines, decision trees, random forests, and ensemble methods\n\n+Exploit unsupervised learning techniques such as dimensionality reduction, clustering, and anomaly detection\n\n+Dive into neural net architectures, including convolutional nets, recurrent nets, generative adversarial networks, autoencoders, diffusion models, and transformers\n\n+Use TensorFlow and Keras to build and train neural nets for computer vision, natural language processing, generative models, and deep reinforcement learning",
-    book_image: "public\\images\\khoahoc\\ml.jpg",
+    book_image: require("./../assets/khoahoc/ml.jpg"),
     print_length: "861",
     language: "English",
     author_name: "Aurélien Géron",
@@ -321,7 +321,7 @@ export const BookData = [
     book_name: "Khoa Học Khám Phá - Mật Mã - Từ Cổ Điển Đến Lượng Tử",
     book_description:
       "“Trong hàng ngàn năm, vua chúa cũng như các tướng lĩnh đều dựa vào mạng lưới thông tin liên lạc hiểu quả để cai trị đất nước và chỉ huy quân đội của mình. Đồng thời, tất cả họ đều ý thức được những hậu quả của việc để lọt thông tin của mình vào tay đối phương, để lộ những bí mật quý giá cho các nước thù địch cũng như hậu quả của sự phản bội cung cấp thông tin sống còn cho các lực lượng đối kháng. Chính nỗi lo sợ bị kẻ thù xem trộm đã thúc đẩy sự ra đời và phát triển của mật mã: đó là những kỹ thuật nhằm che giấu, ngụy trang thông tin, khiến cho chỉ những người cần được nhận mới có thề đọc được.\n\nMong muốn giữ bí mật đã khiến các quốc gia thiết lập những cơ quan mật mã, có nhiệm vụ đảm bảo an toàn cho thông tin liên lạc bằng việc phát mình và sử dụng những mật mã tốt nhất có thể được. Trong khi đó, những người phá mã của đối phương cũng lại cố gắng để giải mã và đánh cắp những bí mật. Người giải mã là những nhà “giả kim thuật” về ngôn ngữ, một nhóm người bí ẩn chuyên tìm cách phỏng đoán những từ ngữ có nghĩa từ những ký hiệu vô nghĩa. Lịch sử của mật mã là câu chuyện về cuộc chiến kéo dài hàng thế kỷ giữa người lập mã và người giải mã, cuộc chạy đua vũ khí trí tuệ đã có tác động rất to lớn đến tiến trình của lịch sử.\n\nKhi viết cuốn Mật mã này, tác giả có hai mục đích chính. Một là nhằm phác họa sự tiến hóa của mật mã. Từ tiến hóa dùng ở đây là hoàn toàn thích hợp vì sự phát triển của mật mã cũng có thể coi là một cuộc đấu tranh tiến hoá. Một mật mã luôn bị người phá mã tấn công. Khi người phá mã đã tìm ra một vũ khí mới để phát hiện điểm yếu của một mật mã thì mật mã đó không còn hữu dụng nữa. Khi đó hoặc nó sẽ bị xoá sổ hoặc nó sẽ được cải tiến thành một loại mật mã mới, mạnh hơn. Đến lượt mình, mật mã mới này chỉ phát triển mạnh mẽ cho tới khi người phá mã lại xác định được điểm yếu của nó, và cứ tiếp tục mãi như vậy. Điều này cũng tương tự như tình huống đối mặt với một giống vi khuẩn gây bệnh chẳng hạn. Vi khuẩn sống, phát triển mạnh và tồn tại cho đến khi bác sĩ tìm ra chất kháng sinh làm lộ ra những điểm yếu của vi khuẩn và tiêu diệt nó. Vi khuẩn buộc phải tiến hoá và lừa lại kháng sinh, và nếu thành công thì chúng sẽ lại phát triển mạnh mẽ và tái xác lập trở lại. Vi khuẩn liên tục bị buộc phải tiến hoá để sống sót trước sự tấn công dữ dội của các loại kháng sinh mới.\n\nCuộc chiến liên miên giữa người lập mã và người phá mã đã thúc đẩy hàng loạt những đột phá khoa học đáng kể. Người lập mật mã đã liên tục cố gắng xây dựng những loại mã mạnh hơn bao giờ hết để bảo vệ thông tin, trong khi những người phá mã cũng lại kiên trì tìm ra những phương pháp mạnh hơn nữa để phá vở chúng. Trong những cố gắng nhằm phá vỡ và bảo vệ thông tin bí mật, cả hai phía đã phải huy động nhiều lĩnh vực chuyên môn và công nghệ khác nhau, từ toán học cho tới ngôn ngữ học từ lý thuyết thông tin cho đến lý thuyết lượng tử. Đổi lại, những người lập mã và phá mã cũng đã làm giàu thêm cho những lĩnh vực này và thành quả của họ đã đẩy nhanh tốc độ phát triển cộng nghệ, mà đáng kể nhất là trong lĩnh vực máy tính hiện đại…”",
-    book_image: "public\\images\\khoahoc\\matma.jpg",
+    book_image: require("./../assets/khoahoc/matma.jpg"),
     print_length: "552",
     language: "Tiếng Việt",
     author_name: "Simon Singh",

@@ -6,12 +6,13 @@ import "./HomePage.css";
 
 const HomePage = () => {
   return (
-    <div className="container">
+    <div className="contain">
       <div className="sidebar">
         <Sidebar />
       </div>
       <div className="content">
         <Abovenav />
+
         <Content1 />
       </div>
     </div>

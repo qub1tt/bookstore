@@ -8,12 +8,12 @@ import {
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 
-import Bleach1 from "./../../assets/truyen/bleach5.jpg";
-import C from "./../../assets/khoahoc/c.jpg";
-import Algorithm from "./../../assets/khoahoc/algorithm.jpg";
-import Chienluoc from "./../../assets/kinhte/chienluoc.png";
-import Nhancach from "./../../assets/tamly/nhancach.png";
-import Thaotung from "./../../assets/tamly/thaotung.jpg";
+import Bleach1 from "../../assets/truyen/bleach5.jpg";
+import C from "../../assets/khoahoc/c.jpg";
+import Algorithm from "../../assets/khoahoc/algorithm.jpg";
+import Chienluoc from "../../assets/kinhte/chienluoc.png";
+import Nhancach from "../../assets/tamly/nhancach.png";
+import Thaotung from "../../assets/tamly/thaotung.jpg";
 
 const Content1 = () => {
   return (
