@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .footer_above_icon li :hover{
@@ -29,12 +29,10 @@
 .footer_below_container{
     margin-top: 30px;
     display: flex;
-    justify-content: space-around;
 }
 
 
 .footer_below_content h2{
-    margin-left: 20px;
     font-size: 14px;
     font-weight: bolder;
     position: relative;
@@ -50,9 +48,6 @@
     width: 60px;
 }
   
-.footer_below_content ul{
-    margin: 0 0 50px 20px;
-}
   
 .footer_below_content ul li a{
     font-size: 12px;
@@ -68,9 +63,9 @@
 
 .footer_below_content{
     width: 20%;
+    margin: 0 0 20px 50px;
 }
 
-.footer_below_content p{
-    margin-top: 15px;
-    font-size: 12px;
+.foot_below_content2{
+    margin-left: 200px;
 }

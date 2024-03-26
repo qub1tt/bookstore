@@ -32,7 +32,7 @@ const Footer = () => {
                             <li><a href="#">Phương thức thanh toán và xuất hóa đơn</a></li>
                         </ul>
                     </div>
-                    <div className="foot_below_content">
+                    <div className="foot_below_content2">
                         <h2 id="footer_contact_with_us">contact with us</h2>
                         <ul className="footer_above_icon">
                             <li><a href="">
@@ -72,9 +72,7 @@ const Footer = () => {
                             </a></li>
                         </ul>
                     </div>
-                    <div className="footer_below_content">
-                         <p>Sach.com nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống trên toàn quốc.</p>
-                    </div>
+                    
                 </div>
             </div>
 
