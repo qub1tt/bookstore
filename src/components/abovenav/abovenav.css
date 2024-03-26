@@ -1,10 +1,10 @@
 .abovenav{
-    margin: 0 auto; /* Căn giữa theo chiều ngang */
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    margin-top: 20px; /* Có thể điều chỉnh theo nhu cầu của bạn */
+    padding: 10px 10px 10px 80px;
+    margin-top: 20px;
 }
 
 a {

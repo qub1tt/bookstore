@@ -5,6 +5,7 @@
     width: 90%;
     margin: 0 auto;
     margin-top: 30px;
+    padding-right: 30px;
 }
 
 .content1_above {
@@ -21,7 +22,6 @@
 
 .content1_above_right {
     flex: 0;
-    padding-right: 10px;
     padding-top: 10px;
 }
 
