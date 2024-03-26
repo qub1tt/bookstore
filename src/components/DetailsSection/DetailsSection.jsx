@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BookData } from "../../util/BookData";
-import logo from "./../../assets/tamly/nhancach.png";
 
 export default function DetailsSection() {
   const { id } = useParams();
@@ -24,12 +23,12 @@ export default function DetailsSection() {
   }, [bookData]);
   console.log(bookData.book_image);
   return (
-    <section className="pt-32 pb-32">
+    <section className="pt-12 pb-32">
       <div>
-        <div className="flex items-center gap-32">
-          <div className="w-3/6	text-center">
+        <div className="flex items-center gap-12">
+          <div className="w-3/4	text-center">
             <img
-              className="h-3/5 border border-solid"
+              className="h-1/2 border border-solid"
               src={bookData.book_image}
               alt="book"
             />

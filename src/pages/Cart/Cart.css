@@ -1,0 +1,264 @@
+.primary_col {
+  color: #0dd6b8;
+}
+
+/* Slide danh mục  */
+
+.slide {
+  width: 300px;
+  padding: 16px 0 20px 16px;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  box-shadow: rgb(224, 222, 222) 0px 0px 10px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0dd6b8;
+  margin-bottom: 16px;
+}
+
+/* Thanh trang chủ */
+
+.article {
+  width: 100%;
+  margin-left: 10px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.info_icon {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.info_icon i {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.info_user {
+  display: flex;
+  align-items: center;
+}
+
+.user_icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: 1px solid #cbc8c8;
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.info_user--detail .user_name {
+  font-size: 14px;
+  margin-right: 6px;
+}
+
+.info_user--detail .user_acc {
+  color: #0dd6b8;
+  margin-top: 4px;
+  font-size: 10px;
+}
+
+/* ---  Content ---  */
+
+.contentt {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0px;
+}
+
+/* -- Content trái -- */
+
+.left_content {
+  background-color: white;
+  width: 100%;
+  margin-right: 30px;
+  height: fit-content;
+  border-radius: 5px;
+  box-shadow: rgb(224, 222, 222) 0px 0px 10px;
+}
+
+.left_content--title {
+  font-size: 25px;
+  font-weight: 700;
+  border-bottom: 1px solid #cbc8c8;
+  padding: 20px;
+}
+
+/*  giỏ hàng */
+.cart_item img {
+  display: flex;
+  max-width: 140px;
+  height: auto;
+  padding: 20px 20px 20px 20px;
+  border-radius: 30px;
+}
+
+.cart_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 22px;
+  border-bottom: 1px solid #cbc8c8;
+}
+
+.cart_item:last-child {
+  border-bottom: none;
+}
+
+.cart_item--detail {
+  width: 250px;
+}
+
+.cart_item--name {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.cart_item--status {
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.cart_item--price {
+  font-size: 14px;
+  font-weight: 600;
+  color: #5b5a5a;
+}
+
+.add_amount input {
+  padding: 6px;
+  width: 30px;
+  font-size: 13px;
+  text-align: center;
+  border: 1px solid #898686;
+}
+
+.add_amount button {
+  font-size: 13px;
+  background-color: white;
+  border: 1px solid #898686;
+}
+
+.input {
+  padding: 6px;
+}
+
+.delete button {
+  background-color: red;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+
+.delete button:hover {
+  opacity: 0.6;
+  border-radius: 10px;
+}
+
+.total_price h3 {
+  color: #5b5a5a;
+  font-size: 14px;
+}
+
+/* -- Content phải --  */
+
+.right_content {
+  width: 500px;
+}
+
+.right_content--top {
+  padding: 16px;
+  background-color: white;
+  line-height: 40px;
+  border-radius: 5px;
+  box-shadow: rgb(224, 222, 222) 0px 0px 10px;
+}
+
+.right_content--top .top {
+  border-bottom: 1px solid #cbc8c8;
+}
+
+.mid_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.discount a {
+  text-decoration: none;
+  color: #0dd6b8;
+}
+
+.right_content--top .mid {
+  border-bottom: 1px solid #cbc8c8;
+}
+
+.bot_item--pay {
+  width: 100%;
+  padding: 8px;
+  background-color: #0dd6b8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.bot_item--pay:hover {
+  opacity: 0.8;
+}
+
+.right_content--bot {
+  background-color: white;
+  margin-top: 30px;
+  border-radius: 5px;
+  box-shadow: rgb(224, 222, 222) 0px 0px 10px;
+}
+
+.right_content--item {
+  display: flex;
+  padding: 24px 16px;
+  align-items: center;
+  border-bottom: 1px solid #cbc8c8;
+}
+
+.right_content--item:last-child {
+  border-bottom: none;
+}
+
+.right_content--item i {
+  min-width: 20px;
+  margin-right: 25px;
+  font-weight: 600;
+}
+
+.right_content--item h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.right_content .mid,
+.top span {
+  color: rgb(118, 117, 117);
+}
+
+.right_content .bot span {
+  font-weight: 700;
+}

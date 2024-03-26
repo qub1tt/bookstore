@@ -10,7 +10,7 @@
   background-color: #fff0f5;
 } */
 
-.navbar{
+.navbar {
   margin-left: 250px;
   position: fixed;
   top: 0;
@@ -22,11 +22,11 @@
   flex: 1;
   /* padding-left: 100px;
     margin-left: 250px; */
-  background-color: #fff0f5;
+  background-color: #e0ffff;
   padding: 120px 50px 0 50px;
   margin: 0 auto;
   margin-left: 250px;
-  border-left: 2px solid black;
+  border-left: none;
 }
 
 /* Media query to hide sidebar when screen width is less than 768px */

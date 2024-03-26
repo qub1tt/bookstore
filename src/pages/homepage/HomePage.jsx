@@ -16,13 +16,12 @@ const HomePage = () => {
       <div className="navbar">
         <Abovenav />
       </div>
-        <div className="content"> 
-          <Content0 />
-          <Content1 />
-          <Content2 />
-          <Footer />
+      <div className="content">
+        <Content1 />
+        <Content2 />
+        <Content0 />
+        <Footer />
       </div>
-      
     </div>
   );
 };

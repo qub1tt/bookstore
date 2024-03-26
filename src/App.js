@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/homepage/HomePage";
+import HomePage from "./pages/Homepage/HomePage";
 import BookDetailsPage from "./pages/BookDetails";
-import Cart from "./pages/Cart";
+import Cart from "./pages/Cart/Cart";
 const App = () => {
   return (
     <div>
@@ -16,4 +16,3 @@ const App = () => {
 };
 
 export default App;
-

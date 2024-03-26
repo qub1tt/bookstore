@@ -1,6 +1,6 @@
 import React from "react";
 import "./sidebar.css";
-import logo from "./../../assets/logo.jpg";
+import logo from "./../../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
