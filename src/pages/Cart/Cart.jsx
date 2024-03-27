@@ -176,22 +176,7 @@ export default function Cart() {
                   </div>
                 </div>
 
-                <div class="right_content--bot">
-                  <div class="right_content--item">
-                    <i class="fa-regular fa-square-check"></i>
-                    <h3 class="name">Chính sách bảo mật</h3>
-                  </div>
-
-                  <div class="right_content--item">
-                    <i class="fa-solid fa-truck"></i>
-                    <h3 class="name">Chính sách giao hàng</h3>
-                  </div>
-
-                  <div class="right_content--item">
-                    <i class="fa-solid fa-rotate-left"></i>
-                    <h3 class="name">Chính sách hoàn trả</h3>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>

@@ -225,35 +225,6 @@
   opacity: 0.8;
 }
 
-.right_content--bot {
-  background-color: white;
-  margin-top: 30px;
-  border-radius: 5px;
-  box-shadow: rgb(224, 222, 222) 0px 0px 10px;
-}
-
-.right_content--item {
-  display: flex;
-  padding: 24px 16px;
-  align-items: center;
-  border-bottom: 1px solid #cbc8c8;
-}
-
-.right_content--item:last-child {
-  border-bottom: none;
-}
-
-.right_content--item i {
-  min-width: 20px;
-  margin-right: 25px;
-  font-weight: 600;
-}
-
-.right_content--item h3 {
-  font-size: 16px;
-  font-weight: 500;
-}
-
 .right_content .mid,
 .top span {
   color: rgb(118, 117, 117);

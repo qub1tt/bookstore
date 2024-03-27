@@ -21,45 +21,43 @@ export default function DetailsSection() {
       setFormattedDescription(formattedDescription);
     }
   }, [bookData]);
-  console.log(bookData.book_image);
+
   return (
     <section className="pt-12 pb-32">
-      <div>
-        <div className="flex items-center gap-12">
-          <div className="w-3/4	text-center">
-            <img
-              className="h-1/2 border border-solid"
-              src={bookData.book_image}
-              alt="book"
-            />
-          </div>
+      <div className="flex items-center gap-12">
+        <div className="w-3/4	">
+          <img
+            className="h-auto border border-solid"
+            src={bookData.book_image}
+            alt="book"
+          />
+        </div>
 
-          <div className="w-1/2">
-            <h2 className="text-4xl">{bookData.book_name}</h2>
-            <p className="py-4 px-0">
-              <strong>Tác giả: </strong>
-              {bookData.author_name}
-            </p>
-            <strong>Mô tả: </strong>
-            <p
-              className="py-4 px-0 leading-7"
-              dangerouslySetInnerHTML={{ __html: formattedDescription }}
-            ></p>
-            <p>
-              <b>Language</b>: {bookData.language}
-            </p>
-            <p>
-              <b>Book Length</b> : {bookData.print_length}
-            </p>
+        <div className="w-1/2">
+          <h2 className="text-4xl">{bookData.book_name}</h2>
+          <p className="py-4 px-0">
+            <strong>Tác giả: </strong>
+            {bookData.author_name}
+          </p>
+          <strong>Mô tả: </strong>
+          <p
+            className="py-4 px-0 leading-7"
+            dangerouslySetInnerHTML={{ __html: formattedDescription }}
+          ></p>
+          <p>
+            <b>Language</b>: {bookData.language}
+          </p>
+          <p>
+            <b>Book Length</b> : {bookData.print_length}
+          </p>
 
-            <h3 className="text-2xl	pt-4 text-primary-color-bright">
-              {bookData.price}
-            </h3>
+          <h3 className="text-2xl	pt-4 text-primary-color-bright">
+            {bookData.price}
+          </h3>
 
-            <a className="inline-block py-4 px-8 bg-primary-color-bright text-white no-underline mt-8 shadow-md transition duration-200 ease-in border-none font-chivo-mono text-base">
-              Add To Cart
-            </a>
-          </div>
+          <a className="inline-block py-4 px-8 bg-primary-color-bright text-white no-underline mt-8 shadow-md transition duration-200 ease-in border-none font-chivo-mono text-base">
+            Add To Cart
+          </a>
         </div>
       </div>
     </section>
