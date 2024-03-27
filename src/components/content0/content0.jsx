@@ -4,13 +4,8 @@ import "swiper/swiper-bundle.css";
 import "./content0.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSearch,
-  faHeart,
-  faEye,
-  faLightbulb,
-  faStar,
-} from "@fortawesome/free-solid-svg-icons";
+
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 import Bleach1 from "./../../assets/truyen/bleach5.png";
 import C from "./../../assets/khoahoc/c.png";
@@ -52,10 +47,9 @@ const Content0 = () => {
     });
     content0_featureSwiper.update();
   }, []);
-
   return (
     <section className="content0_feature">
-      <div className="content0_head">
+      <div className="content0_title">
         <span>
           <FontAwesomeIcon
             icon={faStar}
@@ -67,6 +61,7 @@ const Content0 = () => {
           </span>
         </span>
       </div>
+
       <div
         className="swiper content0_feature-slider"
         style={{ width: "100%", maxWidth: "1100px" }}
