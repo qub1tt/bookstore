@@ -12,11 +12,6 @@
     grid-template-columns: 1fr 1fr;
 }
 
-@media (max-width: 1300px) { 
-    .content2{
-        grid-template-columns: 1fr;
-    }
-}
 
 /* -------------------------------------------- */
 
@@ -81,7 +76,7 @@
 
 .content2_left_below_describe {
     flex: 1;
-    padding: 30px 0 0 0;
+    padding-top: 30px;
 }
 
 .content2_left_below_describe strong {
@@ -145,4 +140,124 @@
 
 .content2_right_theloai_public_book a{
     color: rgb(255, 3, 3);
+}
+
+
+
+
+@media (min-width: 1280px) { 
+    .content2_left_below_describe_book .span2{
+        display: none;
+    }
+}
+
+@media (max-width: 1280px) { 
+    .content2{
+        grid-template-columns: 1fr;
+    }
+    .content2_left_below_describe_book .span1{
+        display: none;
+    }
+}
+
+@media (max-width: 960px) { 
+    .content2_left_below_describe_book .span2{
+        display: none;
+    }
+    .content2_left_below_describe_book .span1{
+        display: contents;
+    }
+    .content2_right_below{
+        gap: 30px;
+    }
+    .content2_right_theloai{
+        padding: 20px 5px;
+    }
+}
+
+@media (max-width: 830px) { 
+    .content2_left_below_describe_book .span1{
+        display: none;
+    }
+    .content2_right_below{
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) { 
+    .content2_left_below_describe_book .span1{
+        display: contents;
+    }
+}
+
+@media (max-width: 580px) { 
+    .content2_left_below_describe_book .span1{
+        display: none;
+    }
+    .content2_left_below{
+        flex-direction: column;
+    }
+    .content2_left_below img{
+        margin: 0 auto;
+    }
+    .content2_left_below_describe{
+        padding-top: 0;
+        margin: auto 10px;
+    }
+    .content2_left_below_describe *{
+        text-align: center;
+    }
+    .content2_right_below{
+        gap: 10px;
+        grid-template-columns: 1fr;
+    }
+    .content2_right_theloai{
+        padding: 20px 0 20px 20px;
+    }
+}
+
+@media (max-width: 420px) { 
+    .content2{
+        padding: 0;
+    }
+    .content2_left_above{
+        margin: auto;
+    }
+    .content2_left_below{
+        margin: auto;
+    }
+    .content2_right_above{
+        margin: 20px 0 0 0;
+    }
+    .content2_right_below{
+        margin: auto;
+    }
+}
+
+@media (max-width: 385px) { 
+    .content2{
+        margin: 0;
+    }
+    .content2_left{
+        width: 200px;
+        margin: 20px auto;
+    }
+    .content2_left_above{
+        flex-direction: column;
+    }
+    .content2_left_above_left{
+        padding: 0;
+        margin : auto;
+    }
+    .content2_left_above_right{
+        padding: 0;
+        margin : auto;
+    }
+    .content2_left_below img{
+        height: 240px;
+    }
+    .content2_right{
+        width: 200px;
+        margin: auto;
+    }
 }

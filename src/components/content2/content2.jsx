@@ -74,9 +74,19 @@ const Content2 = () => {
                 style={{ color: "#FFD43B" }}
               />
               <div className="content2_left_below_describe_book">
-                Some books on algorithms are rigorous but incomplete; others
-                cover masses of material but lack rigor. Introduction to
-                Algorithms...
+                <span className="span1">
+                  Some books on algorithms are rigorous but incomplete; others
+                  cover masses of material but lack rigor. Introduction to
+                  Algorithms...
+                </span>
+                <span className="span2">
+                  Some books on algorithms are rigorous but incomplete; others
+                  cover masses of material but lack rigor. Introduction to
+                  Algorithms uniquely combines rigor and comprehensiveness. It
+                  covers a broad range of algorithms in depth, yet makes their
+                  design and analysis accessible to all levels of readers, with
+                  self-contained chapters and algorithms in pseudocode...
+                </span>
               </div>
               <div className="content2_left_below_describe_add_to_cart">
                 <a style={{ textDecoration: "none" }} href="#">
