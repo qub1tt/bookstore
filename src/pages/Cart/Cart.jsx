@@ -175,8 +175,6 @@ export default function Cart() {
                     <button class="bot_item--pay">Thanh toán</button>
                   </div>
                 </div>
-
-                
               </div>
             </div>
           </div>

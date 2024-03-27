@@ -20,6 +20,8 @@ const HomePage = () => {
         <Content1 />
         <Content2 />
         <Content0 />
+      </div>
+      <div className="footer">
         <Footer />
       </div>
     </div>
