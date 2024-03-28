@@ -13,7 +13,7 @@
 * ReactJS
 * NodeJS
 
-## Mô tả ứng dụng:
+## Giới thiệu đồ án:
 
 ## Workflow:
 
