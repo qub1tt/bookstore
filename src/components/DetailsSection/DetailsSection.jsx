@@ -4,8 +4,8 @@ import { BookData } from "../../util/BookData";
 
 export default function DetailsSection() {
   const { id } = useParams();
-  const [bookData, setBookData] = useState({});
-  const [formattedDescription, setFormattedDescription] = useState("");
+  const [ bookData, setBookData ] = useState({});
+  const [ formattedDescription, setFormattedDescription ] = useState("");
   useEffect(() => {
     let newData = BookData.filter((book) => book.id === parseInt(id));
     setBookData(newData[0]);
@@ -40,10 +40,13 @@ export default function DetailsSection() {
             {bookData.author_name}
           </p>
           <strong>Mô tả: </strong>
-          <p
+          <div style={{
+            height: '600px',
+            overflow: 'auto',
+          }}><p
             className="py-4 px-0 leading-7"
             dangerouslySetInnerHTML={{ __html: formattedDescription }}
-          ></p>
+          ></p></div>
           <p>
             <b>Language</b>: {bookData.language}
           </p>
