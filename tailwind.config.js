@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         "chivo-mono": ["Chivo Mono", "monospace"], // Change this to your desired font
       },
+      height: { 500: "500px" },
     },
   },
   plugins: [],

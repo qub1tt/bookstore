@@ -416,6 +416,8 @@ export default function Profile() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="footer">
         <Footer />
       </div>
     </div>

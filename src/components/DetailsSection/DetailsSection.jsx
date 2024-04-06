@@ -24,12 +24,13 @@ export default function DetailsSection() {
 
   return (
     <section className="pt-12 pb-32">
-      <div className="flex items-center gap-12">
+      <div className="flex items-center gap-12 ">
         <div className="w-3/4	">
           <img
-            className="h-auto border border-solid"
+            className=" border border-solid"
             src={bookData.book_image}
             alt="book"
+            style={{ border: "1px solid black" }}
           />
         </div>
 
@@ -40,10 +41,12 @@ export default function DetailsSection() {
             {bookData.author_name}
           </p>
           <strong>Mô tả: </strong>
+
           <p
-            className="py-4 px-0 leading-7"
+            className="py-4 px-0 leading-7 h-500 overflow-auto mb-10	"
             dangerouslySetInnerHTML={{ __html: formattedDescription }}
           ></p>
+
           <p>
             <b>Language</b>: {bookData.language}
           </p>

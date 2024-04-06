@@ -1,47 +1,38 @@
-import os
 from PIL import Image
+import os
 
-def resize_image(input_path, output_path, target_size):
-    """
-    Resize an image to a target size.
-    
-    Args:
-    - input_path (str): Path to the input image file.
-    - output_path (str): Path to save the resized image.
-    - target_size (tuple): Target size (width, height) in pixels.
-    """
-    try:
-        image = Image.open(input_path)
-        resized_image = image.resize(target_size, Image.LANCZOS)
-        resized_image.save(output_path)
-        print(f"Resized {input_path} successfully.")
-    except Exception as e:
-        print(f"Failed to resize {input_path}: {e}")
+def scale_images(input_folder, output_folder, target_width, target_height):
+    # Tạo thư mục đầu ra nếu nó chưa tồn tại
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
 
-def resize_images_to_match_selected(selected_image_path, folder_path):
-    """
-    Resize all images in a folder to match the dimensions of a selected image.
-    
-    Args:
-    - selected_image_path (str): Path to the selected image file.
-    - folder_path (str): Path to the folder containing images.
-    """
-    try:
-        selected_image = Image.open(selected_image_path)
-        selected_image = selected_image.convert("RGBA")
-        selected_size = selected_image.size
-    except Exception as e:
-        print(f"Failed to open the selected image: {e}")
-        return
-    
-    for root, dirs, files in os.walk(folder_path):
-        for file in files:
-            if file.endswith(('.jpg', '.jpeg', '.png', '.gif')):
-                input_path = os.path.join(root, file)
-                output_path = os.path.join(root, f"resized_{file}")
-                resize_image(input_path, output_path, selected_size)
+    # Lặp qua tất cả các file trong thư mục đầu vào
+    for filename in os.listdir(input_folder):
+        # Đường dẫn đầy đủ đến file ảnh đầu vào
+        input_path = os.path.join(input_folder, filename)
 
-if __name__ == "__main__":
-    selected_image_path = "src\\assets\\tamly\\cho-sua-nham-cay.png"
-    folder_path = "src\\assets"
-    resize_images_to_match_selected(selected_image_path, folder_path)
+        # Đường dẫn đầy đủ đến file ảnh đầu ra
+        output_path = os.path.join(output_folder, filename)
+
+        try:
+            # Mở ảnh
+            image = Image.open(input_path)
+            
+            # Scale ảnh về kích thước mong muốn
+            scaled_image = image.resize((target_width, target_height))
+
+            # Lưu ảnh đã scale vào thư mục đầu ra
+            scaled_image.save(output_path)
+            
+            print(f"{filename} scaled successfully!")
+        except Exception as e:
+            print(f"Error scaling {filename}: {str(e)}")
+
+# Thay đổi các thông số sau để phù hợp với nhu cầu của bạn
+input_folder = r"src\assets\khoahoc"
+output_folder = r"src\assets\khoahoc"
+target_width = 1535
+target_height = 2435
+
+# Gọi hàm scale_images để thực hiện việc scale ảnh
+scale_images(input_folder, output_folder, target_width, target_height)

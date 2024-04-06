@@ -21,9 +21,8 @@ const HomePage = () => {
         <Content2 />
         <Content0 />
       </div>
-      <div className="footer">
-        <Footer />
-      </div>
+
+      <Footer />
     </div>
   );
 };

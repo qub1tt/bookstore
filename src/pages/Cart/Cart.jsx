@@ -2,6 +2,7 @@ import "./Cart.css";
 import Sidebar from "../../components/sidebar/sidebar";
 import Abovenav from "../../components/abovenav/abovenav";
 import image from "../../assets/khoahoc/c.png";
+import Footer from "../../components/footer/footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 export default function Cart() {
@@ -178,6 +179,9 @@ export default function Cart() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="footer">
+          <Footer />
         </div>
       </div>
     </>
