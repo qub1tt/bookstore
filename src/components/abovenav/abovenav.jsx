@@ -12,7 +12,7 @@ const Abovenav = () => {
   return (
     <nav className="abovenav">
       <div class="abovenav_trangchu">
-        <a href="">
+        <a href="/">
           <h1>Trang chủ</h1>
         </a>
       </div>
@@ -38,7 +38,7 @@ const Abovenav = () => {
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/cart">
             <FontAwesomeIcon
               icon={faCartShopping}
               size="2xl"
@@ -47,7 +47,7 @@ const Abovenav = () => {
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/profile">
             <FontAwesomeIcon
               icon={faCircleUser}
               size="2xl"

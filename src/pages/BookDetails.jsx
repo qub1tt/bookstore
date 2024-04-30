@@ -15,7 +15,7 @@ export default function BookDetailsPage() {
       <div className="content">
         <DetailsSection />
       </div>
-      <Footer />
+         <Footer />
     </div>
   );
 }
