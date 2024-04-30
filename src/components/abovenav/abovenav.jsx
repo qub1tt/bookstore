@@ -5,16 +5,20 @@ import {
   faBell,
   faCartShopping,
   faCircleUser,
+  faBars
 } from "@fortawesome/free-solid-svg-icons";
 import "./abovenav.css";
 
-const Abovenav = () => {
+const Abovenav = ({ toggle }) => {
+  
   return (
     <nav className="abovenav">
-      <div class="abovenav_trangchu">
-        <a href="/">
-          <h1>Trang chủ</h1>
-        </a>
+      <div class="abovenav_open_close">
+        <button onClick={toggle}><FontAwesomeIcon
+              icon={faBars}
+              size="2xl"
+              style={{ color: "#737373" }}
+            /></button>
       </div>
       <div class="abovenav_searchbox">
         <input type="text" placeholder="Search..." />
