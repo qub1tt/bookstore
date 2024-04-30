@@ -1,3 +1,4 @@
+import React, {useState, useEffect} from "react";
 import "./Cart.css";
 import Sidebar from "../../components/sidebar/sidebar";
 import Abovenav from "../../components/abovenav/abovenav";
@@ -5,15 +6,32 @@ import image from "../../assets/khoahoc/c.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 export default function Cart() {
+  const [isOpen, setIsOpen] = useState(window.innerWidth > 768);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsOpen(window.innerWidth > 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <>
       <div className="contain">
-        <div className="sidebar">
-          <Sidebar />
-        </div>
-        <div className="navbar">
-          <Abovenav />
-        </div>
+      <div className="sidebar">
+        <Sidebar isOpen={isOpen} toggle={toggleSidebar}/>
+      </div>
+      <div className="navbar">
+        <Abovenav toggle={toggleSidebar} />
+      </div>
         <div className="content">
           <div class="article">
             <div class="contentt">

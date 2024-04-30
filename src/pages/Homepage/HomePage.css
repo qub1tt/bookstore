@@ -29,15 +29,29 @@
   border-left: none;
 }
 
+@media screen and (min-width: 768px) {
+  .abovenav_open_close{display: none;}
+  .abovenav_searchbox{margin-left: 150px;}
+}
+
 /* Media query to hide sidebar when screen width is less than 768px */
 @media screen and (max-width: 768px) {
+  .abovenav_items{
+    margin-right: 20px;
+  }
+  .abovenav_open_close{
+    margin-left: 20px;
+  }
   .contain {
     flex-direction: column;
   }
-
   .sidebar {
+    margin-top: 92px;
+  }
+  .main_logo{
     display: none;
   }
+
   .content {
     margin-left: 0; /* Loại bỏ margin-left để nội dung chiếm toàn bộ chiều rộng */
     width: 100%; /* Đặt chiều rộng của nội dung là 100% */

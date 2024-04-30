@@ -1,12 +1,19 @@
 .sidebar {
-  background-color: white;
   width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: white;
+  transition: left 0.3s ease;
   padding-top: 22px;
-  position: fixed; 
-  top: 0; 
-  bottom: 0; 
-  left: 0; 
+  z-index: 1000;
 }
+
+.sidebar.open {
+  left: 0;
+}
+
 
 .main_logo {
   text-align: center;
