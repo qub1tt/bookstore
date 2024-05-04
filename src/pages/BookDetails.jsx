@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Abovenav from "../components/abovenav/abovenav";
 import Sidebar from "../components/sidebar/sidebar";
 import DetailsSection from "../components/DetailsSection/DetailsSection";
 import Footer from "../components/footer/footer";
-export default function BookDetailsPage() {
+export default function BookDetailsPage(props) {
   const [isOpen, setIsOpen] = useState(window.innerWidth > 768);
 
   const toggleSidebar = () => {
@@ -24,15 +24,21 @@ export default function BookDetailsPage() {
   return (
     <div className="contain">
       <div className="sidebar">
-        <Sidebar isOpen={isOpen} toggle={toggleSidebar}/>
+        <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
       </div>
       <div className="navbar">
         <Abovenav toggle={toggleSidebar} />
       </div>
       <div className="content">
-        <DetailsSection />
+        <DetailsSection
+          mproductDetail={props.mproductDetail}
+          nameCategory={props.nameCategory}
+          namePublisher={props.namePublisher}
+          id_book={props.id_book}
+          nameAuthor={props.nameAuthor}
+        />
       </div>
-         <Footer />
+      <Footer />
     </div>
   );
 }
