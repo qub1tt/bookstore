@@ -1,0 +1,246 @@
+.selectedCategory{
+    font-size: larger;
+}
+
+
+.categorysection{
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.categorysection_above {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 20px 0 20px;
+}
+
+.categorysection_above_left {
+  flex: 1;
+  padding-left: 10px;
+  padding-top: 10px;
+  margin-bottom: 15px;
+}
+
+.categorysection_above_right {
+    flex: 0;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+/* -------------------------------------------------------------------*/
+
+.categorysection_below img {
+  width: 120px;
+  height: 180px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.categorysection_below_book_img{
+    width: 120px;
+    height: 180px;
+    position: relative;
+    display: inline-block;
+    margin: auto;
+}
+
+.categorysection_below_book_img_hover-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 100px;
+    height: 30px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    padding-top: 5px;
+}
+
+.categorysection_below_book_img:hover .categorysection_below_book_img_hover-button {
+    opacity: 1;
+}
+
+.categorysection_below_book_img:hover img {
+    filter: blur(2px); /* Áp dụng hiệu ứng mờ */
+}
+
+
+
+/* ----------------------------------------------------------- */
+
+.categorysection_below_book_describe{
+    width: 100px;
+    margin: auto;
+    overflow-wrap: break-word; 
+}
+
+.categorysection_below_above{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0px;
+    row-gap: 50px;
+    padding-bottom: 30px;
+}
+
+.categorysection_below_box{
+    display: flex;
+    /* margin-left: 30px;
+    padding: 15px; */
+    padding: 15px 0;
+    margin: 0 auto;
+    border-radius: 10px;
+    width: 270px;
+    background-color: antiquewhite;
+}
+
+@media (max-width: 1250px) { /* Điều chỉnh cho màn hình nhỏ hơn hoặc bằng 768px */
+    .categorysection_below_above {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 940px) { /* Điều chỉnh cho màn hình nhỏ hơn hoặc bằng 768px */
+    .categorysection_above {
+        padding: 0;
+    }
+    .categorysection_below_above {
+        grid-template-columns: 1fr; /* Chuyển sang 2 cột khi màn hình nhỏ hơn hoặc bằng 768px */
+        margin: 0 auto;
+    }
+    .categorysection_below_box{
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 390px) { 
+    .categorysection_below_book_describe{
+        display: none;
+    }
+    .categorysection_below_box{
+        margin: 0 auto;
+        width: 150px;
+    }
+    .categorysection_above_left strong{
+        display: none;
+    }
+}
+
+/* -------------------------------------------------------------- */
+
+.categorysection_xemthem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding-bottom: 30px;
+    border-radius: 0 0 10px 10px;
+}
+
+.categorysection_xemthem_bt{
+
+  width: 100px;
+  height: 30px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  padding-top: 5px;
+}
+
+.categorysection_below_book_img:hover .categorysection_below_book_img_hover-button {
+  opacity: 1;
+}
+
+.categorysection_below_book_img:hover img {
+  filter: blur(2px); /* Áp dụng hiệu ứng mờ */
+}
+
+/* ----------------------------------------------------------- */
+
+.categorysection_below_book_describe {
+  width: 100px;
+  margin: auto;
+  overflow-wrap: break-word;
+}
+
+.categorysection_below_above {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 0px;
+  row-gap: 50px;
+  padding-bottom: 30px;
+}
+
+.categorysection_below_box {
+  display: flex;
+  /* margin-left: 30px;
+    padding: 15px; */
+  padding: 15px 0;
+  margin: 0 auto;
+  border-radius: 10px;
+  width: 270px;
+  background-color: antiquewhite;
+}
+
+@media (max-width: 1250px) {
+  /* Điều chỉnh cho màn hình nhỏ hơn hoặc bằng 768px */
+  .categorysection_below_above {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 940px) {
+  /* Điều chỉnh cho màn hình nhỏ hơn hoặc bằng 768px */
+  .categorysection_below_above {
+    grid-template-columns: 1fr; /* Chuyển sang 2 cột khi màn hình nhỏ hơn hoặc bằng 768px */
+    margin: 0 auto;
+  }
+  .categorysection_below_box {
+    margin: 0 auto;
+  }
+}
+
+/* -------------------------------------------------------------- */
+
+.categorysection_xemthem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding-bottom: 30px;
+  border-radius: 0 0 10px 10px;
+}
+
+.categorysection_xemthem_bt {
+  width: 100px;
+  height: 30px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  padding-top: 5px;
+}
+
+
+.categorysection_dropdown select{
+    background-color: antiquewhite;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+}
