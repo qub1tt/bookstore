@@ -54,6 +54,7 @@
 
 .content0_price
   span {
+  margin: 0 3px;
   font-size: 15px;
   color: #666;
   text-decoration: line-through;
@@ -98,4 +99,10 @@
 
 .content0_btn:hover {
   background: #219150;
+}
+
+.content0_feature_content h3 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
