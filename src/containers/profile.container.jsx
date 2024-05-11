@@ -19,15 +19,12 @@ class ProfileContainer extends Component {
       phone_number: null,
       notiupdatePassword: null,
       isAuthed: true,
+      isUpdatingInfo: false, // Thêm biến này
     };
   }
   async componentDidMount() {
     let res = await this.props.actions.auth();
     if (res === false) this.setState({ isAuthed: false });
-    // console.log(this.props.params.email)
-    //console.log(storeConfig.getUser().email)
-    // if(this.props.match.params.email !==  storeConfig.getUser().email)
-    //     this.props.history.push('/')
     if (storeConfig.getUser() !== null) {
       this.setState({
         email: storeConfig.getUser().email,
@@ -38,6 +35,22 @@ class ProfileContainer extends Component {
       });
     }
   }
+  updateInfor = async () => {
+    // Đặt isUpdatingInfo thành true khi bắt đầu quá trình cập nhật
+    this.setState({ isUpdatingInfo: true });
+
+    // Tiến hành cập nhật thông tin người dùng
+    await this.props.profileActions.updateInfor(
+      this.state.email,
+      this.state.firstName,
+      this.state.lastName,
+      this.state.address,
+      this.state.phone_number
+    );
+
+    // Sau khi quá trình cập nhật hoàn thành, đặt isUpdatingInfo thành false
+    this.setState({ isUpdatingInfo: false });
+  };
   componentWillUnmount() {
     this.props.profileActions.resetProfile();
   }
@@ -67,38 +80,36 @@ class ProfileContainer extends Component {
       return <Navigate to="/" />;
     }
     if (this.props.islogin) {
-      return (
-        <div>
-          <Profile
-            islogin={this.props.islogin}
-            logout={() => this.props.actions.logout()}
-            email={this.state.email}
-            firstName={this.state.firstName}
-            lastName={this.state.lastName}
-            address={this.state.address}
-            phone_number={this.state.phone_number}
-            setFirstName={(value) => this.setState({ firstName: value })}
-            setLastName={(value) => this.setState({ lastName: value })}
-            setAddress={(value) => this.setState({ address: value })}
-            setPhoneNumber={(value) => this.setState({ phone_number: value })}
-            updateInfor={() =>
-              this.props.profileActions.updateInfor(
-                this.state.email,
-                this.state.firstName,
-                this.state.lastName,
-                this.state.address,
-                this.state.phone_number
-              )
-            }
-            isupdate={this.props.isupdate}
-            updatePassword={(oldpassword, newpassword) =>
-              this.updatePassword(oldpassword, newpassword)
-            }
-            notiupdatePassword={this.state.notiupdatePassword}
-            resetUpdatePassword={() => this.resetUpdatePassword()}
-          />
-        </div>
-      );
+      if (this.state.isUpdatingInfo) {
+        // Hiển thị Loading khi đang trong quá trình cập nhật
+        return <Loading />;
+      } else {
+        // Hiển thị Profile khi không trong quá trình cập nhật
+        return (
+          <div>
+            <Profile
+              islogin={this.props.islogin}
+              logout={() => this.props.actions.logout()}
+              email={this.state.email}
+              firstName={this.state.firstName}
+              lastName={this.state.lastName}
+              address={this.state.address}
+              phone_number={this.state.phone_number}
+              setFirstName={(value) => this.setState({ firstName: value })}
+              setLastName={(value) => this.setState({ lastName: value })}
+              setAddress={(value) => this.setState({ address: value })}
+              setPhoneNumber={(value) => this.setState({ phone_number: value })}
+              updateInfor={() => this.updateInfor()}
+              isupdate={this.props.isupdate}
+              updatePassword={(oldpassword, newpassword) =>
+                this.updatePassword(oldpassword, newpassword)
+              }
+              notiupdatePassword={this.state.notiupdatePassword}
+              resetUpdatePassword={() => this.resetUpdatePassword()}
+            />
+          </div>
+        );
+      }
     } else {
       return <Loading />;
     }
