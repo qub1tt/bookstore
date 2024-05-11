@@ -3,7 +3,15 @@ import Abovenav from "../components/abovenav/abovenav";
 import Sidebar from "../components/sidebar/sidebar";
 import DetailsSection from "../components/DetailsSection/DetailsSection";
 import Footer from "../components/footer/footer";
+import { useLocation } from 'react-router-dom';
 export default function BookDetailsPage(props) {
+
+  const location = useLocation();
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+  }, [location]);
+
   const [isOpen, setIsOpen] = useState(window.innerWidth > 768);
 
   const toggleSidebar = () => {
