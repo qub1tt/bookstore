@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { Component } from "react";
 import Abovenav from "../../components/abovenav/abovenav";
 import Sidebar from "../../components/sidebar/sidebar";
 import Content1 from "../../components/content1/content1";
@@ -8,45 +8,46 @@ import Footer from "../../components/footer/footer";
 import Book_Carousel from "../../components/book_carousel/book_carousel";
 import "./HomePage.css";
 
-const HomePage = () => {
-  const [isOpen, setIsOpen] = useState(window.innerWidth > 768);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
+class HomePage extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isOpen: window.innerWidth > 768,
+    };
+  }
+  toggleSidebar = () => {
+    this.setState((prevState) => ({
+      isOpen: !prevState.isOpen,
+    }));
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsOpen(window.innerWidth > 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  return (
-    <div className="contain">
-      <div className="sidebar">
-        <Sidebar isOpen={isOpen} toggle={toggleSidebar}/>
-      </div>
-      <div className="navbar">
-        <Abovenav toggle={toggleSidebar} />
-      </div>
-    
-      <div className="content">
-        <div className="book_carousel">
-          <Book_Carousel />
+  render() {
+    return (
+      <div className="contain">
+        <div className="sidebar">
+          <Sidebar
+            isOpen={this.isOpen}
+            toggle={this.toggleSidebar}
+            islogin={this.props.islogin}
+            logout={() => this.props.logout()}
+          />
         </div>
-        <Content1 />
-        <Content2 />
-        <Content0 />
-      </div>
+        <div className="navbar">
+          <Abovenav toggle={this.toggleSidebar} />
+        </div>
 
-      <Footer />
-    </div>
-  );
-};
+        <div className="content">
+          <div className="book_carousel">
+            <Book_Carousel />
+          </div>
+          <Content1 />
+          <Content2 />
+          <Content0 />
+        </div>
+
+        <Footer />
+      </div>
+    );
+  }
+}
 
 export default HomePage;
