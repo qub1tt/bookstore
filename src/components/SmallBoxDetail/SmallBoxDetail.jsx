@@ -5,6 +5,7 @@ import {
     faCartShopping,
     faHeart,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom"; // Import Link
 
 export default function SmallBoxDetail(props) {
     const [bookData, setBookData] = useState(null);
@@ -15,15 +16,11 @@ export default function SmallBoxDetail(props) {
             .then(response => response.json())
             .then(data => {
                 setBookData(data.data);
-                // Lấy id_author từ dữ liệu sách
                 const authorId = data.data.id_author;
-                // Gọi API để lấy thông tin tác giả
                 fetch(`http://localhost:8080/author/`)
                     .then(response => response.json())
                     .then(authorData => {
-                        // Tìm tên tác giả dựa trên id_author
                         const author = authorData.data.find(author => author._id === authorId);
-                        // Nếu tìm thấy tác giả, lưu tên vào state
                         if (author) {
                             setAuthorName(author.name);
                         }
@@ -32,6 +29,24 @@ export default function SmallBoxDetail(props) {
             })
             .catch(error => console.error('Error fetching book data:', error));
     }, [props.bookId]);
+
+    const truncateBookName = (name, maxLength) => {
+        if (name.length > maxLength) {
+            const words = name.split(' ');
+            let truncatedName = '';
+            let length = 0;
+            for (const word of words) {
+                if (length + word.length <= maxLength) {
+                    truncatedName += word + ' ';
+                    length += word.length;
+                } else {
+                    break;
+                }
+            }
+            return truncatedName.trim() + '...';
+        }
+        return name;
+    };
 
     if (!bookData || !authorName) {
         return <div>Loading...</div>;
@@ -46,34 +61,13 @@ export default function SmallBoxDetail(props) {
                 </button>
             </div>
             <div className="content1_below_book_describe">
-                <strong>{bookData.name}</strong>
+                <strong>
+                    {/* Wrap book name in Link */}
+                    <Link to={`/book/${props.bookId}`}>{truncateBookName(bookData.name, 25)}</Link>
+                </strong>
                 <div style={{ padding: "4px 0 4px 0" }}>{authorName}</div>
                 <div style={{ padding: "4px 0 4px 0" }}>
-                    <FontAwesomeIcon
-                        icon={faStar}
-                        size="2xs"
-                        style={{ color: "#FFD43B" }}
-                    />
-                    <FontAwesomeIcon
-                        icon={faStar}
-                        size="2xs"
-                        style={{ color: "#FFD43B" }}
-                    />
-                    <FontAwesomeIcon
-                        icon={faStar}
-                        size="2xs"
-                        style={{ color: "#FFD43B" }}
-                    />
-                    <FontAwesomeIcon
-                        icon={faStar}
-                        size="2xs"
-                        style={{ color: "#FFD43B" }}
-                    />
-                    <FontAwesomeIcon
-                        icon={faStar}
-                        size="2xs"
-                        style={{ color: "#FFD43B" }}
-                    />
+                    {/* Star ratings */}
                 </div>
                 <div style={{ padding: "4px 0 8px 0" }}>
                     <strong>{bookData.price}đ</strong>

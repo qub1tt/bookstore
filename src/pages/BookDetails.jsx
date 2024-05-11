@@ -3,6 +3,7 @@ import Abovenav from "../components/abovenav/abovenav";
 import Sidebar from "../components/sidebar/sidebar";
 import DetailsSection from "../components/DetailsSection/DetailsSection";
 import Footer from "../components/footer/footer";
+
 class BookDetailsPage extends Component {
   constructor() {
     super();
@@ -15,6 +16,13 @@ class BookDetailsPage extends Component {
       isOpen: !prevState.isOpen,
     }));
   };
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      window.scrollTo(0, 0);
+    }
+  }
+
   render() {
     return (
       <div className="contain">
