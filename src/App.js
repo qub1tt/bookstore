@@ -10,6 +10,8 @@ import VerifyRegisterAccountContainer from "./containers/verify.register.contain
 import ForgotPasswordContainer from "./containers/forgot.password.container";
 import HistoryPurchase from "./containers/history.purchase.container";
 import HomePageContainer from "./containers/home.container";
+import Category from "./pages/Category/Category";
+
 const App = () => {
   return (
     <Router>
@@ -26,6 +28,7 @@ const App = () => {
           element={<VerifyRegisterAccountContainer />}
         />
         <Route path="/purchase_history" element={<HistoryPurchase />} />
+        <Route path="/category/:id" element= {<Category />} />
       </Routes>
     </Router>
   );
