@@ -1,0 +1,22 @@
+.purchase_history_menu-custom_btn{
+    margin-bottom: 10px;
+}
+
+.purchase_state li :hover{
+    color: rgb(107, 114, 128);
+}
+
+.purchase_history_container{
+    text-align: center;
+}
+
+.purchase_state{
+    display: flex;
+    justify-content: space-around;
+}
+
+.purchase_history_bill-title h2{
+    margin-bottom: 30px;
+    font-size: larger;
+    font-weight: bold;
+}
