@@ -13,32 +13,57 @@ export default function BestSeller(props) {
     const [longDescription, setLongDescription] = useState('');
 
     useEffect(() => {
+        fetchBookData();
+    }, [props.bookId]);
+
+    const fetchBookData = () => {
         fetch(`http://localhost:8080/book/${props.bookId}`)
             .then(response => response.json())
             .then(data => {
                 setBookData(data.data);
-                // Lấy id_author từ dữ liệu sách
                 const authorId = data.data.id_author;
-                // Gọi API để lấy thông tin tác giả
                 fetch(`http://localhost:8080/author/`)
                     .then(response => response.json())
                     .then(authorData => {
-                        // Tìm tên tác giả dựa trên id_author
                         const author = authorData.data.find(author => author._id === authorId);
-                        // Nếu tìm thấy tác giả, lưu tên vào state
                         if (author) {
                             setAuthorName(author.name);
                         }
                     })
                     .catch(error => console.error('Error fetching author data:', error));
                 
-                // Cắt đoạn mô tả ngắn và dài
                 const description = data.data.describe;
                 setShortDescription(description.slice(0, 130));
                 setLongDescription(description.slice(0, 350));
             })
             .catch(error => console.error('Error fetching book data:', error));
-    }, [props.bookId]);
+    };
+
+    const handleSelectChange = (event) => {
+        const selectedOption = event.target.value;
+        if (selectedOption === "daily") {
+            // Fetch book data based on daily selection
+            fetchBookDataForDaily();
+        } else if (selectedOption === "monthly") {
+            // Fetch book data based on monthly selection
+            fetchBookDataForMonthly();
+        } else if (selectedOption === "yearly") {
+            // Fetch book data based on yearly selection
+            fetchBookDataForYearly();
+        }
+    };
+
+    const fetchBookDataForDaily = () => {
+        // Implement logic to fetch book data for daily selection
+    };
+
+    const fetchBookDataForMonthly = () => {
+        // Implement logic to fetch book data for monthly selection
+    };
+
+    const fetchBookDataForYearly = () => {
+        // Implement logic to fetch book data for yearly selection
+    };
 
     if (!bookData || !authorName) {
         return <div>Loading...</div>;
