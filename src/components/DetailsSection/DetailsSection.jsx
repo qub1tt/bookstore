@@ -103,12 +103,12 @@ class DetailsSection extends Component {
     }
     this.props.submitComment(
       this.state.name,
-      this.state.email,
       this.state.comment,
       this.props.id_book
     );
     this.setState({ comment: "" });
   };
+
   submitOrder = () => {
     if (this.state.quantity < 0) {
       this.setState({ noti: false });
@@ -116,10 +116,10 @@ class DetailsSection extends Component {
     } else {
       this.setState({ noti: true });
     }
-    let product = this.props.mproductDetail;
-    product.count = this.state.quantity;
+    let product = { ...this.props.mproductDetail, count: this.state.quantity };
     this.props.addToCart(product);
   };
+
   render() {
     let xhtml = "";
     console.log(this.state.noti);

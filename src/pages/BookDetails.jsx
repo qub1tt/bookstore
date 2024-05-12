@@ -45,8 +45,8 @@ class BookDetailsPage extends Component {
             namePublicsher={this.props.namePublicsher}
             islogin={this.props.islogin}
             id_book={this.props.id_book}
-            submitComment={(name, email, comment, id_book) =>
-              this.props.submitComment(name, email, comment, id_book)
+            submitComment={(name, comment, id_book) =>
+              this.props.submitComment(name, comment, id_book)
             }
             comment={this.props.comment}
             nameAuthor={this.props.nameAuthor}

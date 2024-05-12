@@ -49,8 +49,8 @@ const BooksDetailContainer = ({
           islogin={islogin}
           logout={() => actions.logout()}
           id_book={id}
-          submitComment={(name, email, comment, id_book) =>
-            productActions.submitComment(name, email, comment, id_book)
+          submitComment={(name, comment, id_book) =>
+            productActions.submitComment(name, comment, id_book)
           }
           comment={comment}
           nameAuthor={nameAuthor}
