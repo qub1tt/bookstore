@@ -247,20 +247,21 @@ export default function ContentLoginRegister({
     <section className="homePage">
       <div className="login-register">
         <div className="menu-profile">
-          <ul>
-            <li>
-              <button onClick={handleLogin} className="menu-custom btn">
-                Đăng Nhập
-              </button>
-            </li>
-            <li>
-              {" "}
-              <button onClick={handleRegister} className="menu-custom btn ">
-                Đăng Ký
-              </button>
-            </li>
-          </ul>
-          <hr className="my-4" />
+          <div className="btn-container w-48">
+            <ul className="flex">
+              <li className="w-1/2">
+                <button onClick={handleLogin} className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 my-4 mx-2">
+                  Đăng Nhập
+                </button>
+              </li>
+              <li className="w-1/2">
+                <button onClick={handleRegister} className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 my-4 mx-4">
+                  Đăng Ký
+                </button>
+              </li>
+            </ul>
+          </div>
+          <hr/>
         </div>
         <div>
           {xhtmlRegister}
@@ -268,5 +269,5 @@ export default function ContentLoginRegister({
         </div>
       </div>
     </section>
-  );
+  );  
 }

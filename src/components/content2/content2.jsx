@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./content2.css";
 import BestSeller from "./BestSeller";
 import CategoryList from "./CategoryList";
 
 const Content2 = () => {
-  const bookId = "66332e02947ee52ee7b691f9"
+  const [selectedOption, setSelectedOption] = useState("daily");
+  const [bookId, setBookId] = useState("66333909ee037e1ef7ae8161"); // ID sách mặc định
+
+  const handleSelectChange = (event) => {
+    setSelectedOption(event.target.value);
+    // Tùy thuộc vào lựa chọn, cập nhật ID sách tương ứng
+    if (event.target.value === "daily") {
+      setBookId("66333909ee037e1ef7ae8161"); // ID sách trong ngày
+    } else if (event.target.value === "monthly") {
+      setBookId("66336837a5708bd447a48f5d"); // ID sách trong tháng
+    } else if (event.target.value === "yearly") {
+      setBookId("66336a20a5708bd447a48f62"); // ID sách trong năm
+    }
+  };
+
   return (
     <div className="content2">
       <div className="content2_left">
@@ -16,18 +30,19 @@ const Content2 = () => {
           </div>
 
           <div className="content2_left_above_right">
-            <select id="content2_left_above_right_dropdown">
-              <option value="date">Trong ngày</option>
-              <option value="month">Trong tháng</option>
-              <option value="year">Trong năm</option>
+            <select
+              id="content2_left_above_right_dropdown"
+              value={selectedOption}
+              onChange={handleSelectChange}
+            >
+              <option value="daily">Trong ngày</option>
+              <option value="monthly">Trong tháng</option>
+              <option value="yearly">Trong năm</option>
             </select>
           </div>
         </div>
 
-
-        <BestSeller bookId={bookId}/>
-
-
+        <BestSeller bookId={bookId} />
       </div>
 
       <div className="content2_right">
@@ -40,7 +55,6 @@ const Content2 = () => {
         </div>
 
         <CategoryList />
-
       </div>
     </div>
   );
