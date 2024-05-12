@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom"; // Import thêm Link từ React Router
 import {
     faStar,
     faCartShopping,
@@ -39,32 +40,6 @@ export default function BestSeller(props) {
             .catch(error => console.error('Error fetching book data:', error));
     };
 
-    const handleSelectChange = (event) => {
-        const selectedOption = event.target.value;
-        if (selectedOption === "daily") {
-            // Fetch book data based on daily selection
-            fetchBookDataForDaily();
-        } else if (selectedOption === "monthly") {
-            // Fetch book data based on monthly selection
-            fetchBookDataForMonthly();
-        } else if (selectedOption === "yearly") {
-            // Fetch book data based on yearly selection
-            fetchBookDataForYearly();
-        }
-    };
-
-    const fetchBookDataForDaily = () => {
-        // Implement logic to fetch book data for daily selection
-    };
-
-    const fetchBookDataForMonthly = () => {
-        // Implement logic to fetch book data for monthly selection
-    };
-
-    const fetchBookDataForYearly = () => {
-        // Implement logic to fetch book data for yearly selection
-    };
-
     if (!bookData || !authorName) {
         return <div>Loading...</div>;
     }
@@ -72,9 +47,10 @@ export default function BestSeller(props) {
     return (
         <div className="content2_left_below">
             <div className="content2_left_below_img">
-                <a href="">
+                {/* Thay thế thẻ a bằng thẻ Link */}
+                <Link to={`/book/${props.bookId}`}>
                     <img src={bookData.img} alt="" />
-                </a>
+                </Link>
             </div>
 
             <div className="content2_left_below_describe">
