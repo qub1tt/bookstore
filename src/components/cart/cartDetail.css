@@ -1,0 +1,45 @@
+.cart_product img {
+    margin: 0 auto;
+    width: 100px;
+}
+
+.cart_quantity_input {
+    width: 45px;
+}
+
+.cart_product p {
+    text-align: center;
+}
+
+.cart_total p {
+    text-align: center;
+}
+
+.cart_price{
+    text-align: center;
+}
+
+.cart_quantity_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart_quantity_up{
+    margin-right: 5px;
+}
+
+.cart_quantity_down{
+    margin-left: 5px;
+}
+
+.cart_title th {
+    text-align: center;
+}
+
+.cart_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

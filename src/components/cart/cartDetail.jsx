@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTrash
+} from "@fortawesome/free-solid-svg-icons";
+import './cartDetail.css'
 class ContentCart extends Component {
   constructor() {
     super();
@@ -123,7 +128,7 @@ class ContentCart extends Component {
             <div className="bg-gray-100">
               <table className="min-w-full divide-y divide-gray-200">
                 <thead>
-                  <tr className="bg-gray-50">
+                  <tr className="cart_title bg-gray-50">
                     <th
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
@@ -169,35 +174,35 @@ class ContentCart extends Component {
                       <tr>
                         <td className="cart_product">
                           <a href="">
-                            <img src={element.img} alt="" />
+                            <img src={element.img} alt="" className="cart_image" />
                           </a>
                         </td>
                         <td className="cart_description">
                           <h4>
-                            <a href="">{element.name}</a>
+                            {element.name}
                           </h4>
                         </td>
                         <td className="cart_price">
                           <p>{element.price}</p>
-                        </td>
+                        </td>                      
                         <td className="cart_quantity">
                           <div className="cart_quantity_button">
-                            <span
+                            <button
                               className="cart_quantity_up"
                               onClick={() => updateCount(element.count + 1)}
                             >
                               {" "}
                               +{" "}
-                            </span>
+                            </button>
                             <input
                               className="cart_quantity_input"
                               type="text"
                               name="quantity"
                               value={element.count}
-                              autocomplete="off"
+                              autoComplete="off"
                               size="2"
                             />
-                            <span
+                            <button
                               className="cart_quantity_down"
                               onClick={() => {
                                 if (element.count === 1) {
@@ -208,7 +213,7 @@ class ContentCart extends Component {
                             >
                               {" "}
                               -{" "}
-                            </span>
+                            </button>
                           </div>
                         </td>
                         <td className="cart_total">
@@ -220,14 +225,14 @@ class ContentCart extends Component {
                           </p>
                         </td>
                         <td className="cart_delete">
-                          <a
-                            className="cart_quantity_delete"
+                          <button
+                            className="cart_quantity_delete flex items-center justify-center hover:text-red-700"
                             onClick={() =>
                               this.props.deteleProductInCart(element._id)
                             }
                           >
-                            <i className="fa fa-times" />
-                          </a>
+                            <FontAwesomeIcon icon={faTrash} />
+                          </button>
                         </td>
                       </tr>
                     );

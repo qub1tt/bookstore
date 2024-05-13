@@ -19,14 +19,14 @@ class Cart extends Component {
     return (
       <>
         <div className="contain">
-          <div className="sidebar">
+          {/* <div className="sidebar">
             <Sidebar
               isOpen={this.isOpen}
               toggleSidebar={this.toggleSidebar}
               islogin={this.props.islogin}
               logout={() => this.props.logout()}
             />
-          </div>
+          </div> */}
           <div className="navbar">
             <Abovenav toggle={this.toggleSidebar} />
           </div>
@@ -46,9 +46,9 @@ class Cart extends Component {
               ispay={this.props.ispay}
             />
           </div>
-          <div className="footer">
+          {/* <div className="footer">
             <Footer />
-          </div>
+          </div> */}
         </div>
       </>
     );
