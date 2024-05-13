@@ -234,26 +234,10 @@ export default function ContentLoginRegister({
 
   return (
     <section>
-      {/* <div className="menu-profile">
-           <ul>
-             <li>
-               <button onClick={handleLogin} className="menu-custom btn">
-                 Đăng Nhập
-               </button>
-             </li>
-             <li>
-               {" "}
-               <button onClick={handleRegister} className="menu-custom btn ">
-                 Đăng Ký
-               </button>
-             </li>
-           </ul>
-           <hr className="my-4" />
-         </div> */}
       <div>
         {xhtmlRegister}
         {xhtmlLogin}
       </div>
     </section>
-  );  
+  );
 }
