@@ -60,8 +60,7 @@ export const deteleProductInCart =
 
 export const paymentSuccess = () => ({
   type: cartTypes.PAYMENT_SUCCESS,
-});
-export const paymentFail = () => ({
+});export const paymentFail = () => ({
   type: cartTypes.PAYMENT_FAIL,
 });
 export const resetPayment = () => ({

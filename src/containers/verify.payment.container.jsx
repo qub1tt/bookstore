@@ -1,30 +1,25 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import VerifyPayment from "../components/verify.payment/verify.payment";
 import NotFound from "../components/404/NotFound";
-class VerifyPaymentContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isconfirm: true,
-    };
-  }
-  async componentDidMount() {
-    try {
-      await axios.get(
-        "http://localhost:8080/bill/verify/" + this.props.match.params.token
-      );
-    } catch (err) {
-      console.log(err);
-      this.setState({ isconfirm: false });
+import { useParams } from "react-router-dom";
+
+function VerifyPaymentContainer() {
+  const [isConfirm, setIsConfirm] = useState(true);
+  const { token } = useParams();
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        await axios.get(`http://localhost:8080/bill/verify/${token}`);
+      } catch (err) {
+        setIsConfirm(false);
+      }
     }
-  }
-  render() {
-    if (this.state.isconfirm) {
-      return <VerifyPayment />;
-    } else {
-      return <NotFound />;
-    }
-  }
+    fetchData();
+  }, [token]);
+
+  return isConfirm ? <VerifyPayment /> : <NotFound />;
 }
+
 export default VerifyPaymentContainer;

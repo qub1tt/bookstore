@@ -25,22 +25,30 @@ class ContentCart extends Component {
         Number(this.props.cart[i].price) * Number(this.props.cart[i].count);
     }
   }
-  componentDidUpdate(nextProps) {
-    if (nextProps.cart !== this.props.cart) {
+  componentDidUpdate(prevProps) {
+    // Kiểm tra nếu giỏ hàng đã thay đổi
+    if (prevProps.cart !== this.props.cart) {
       let total = 0;
-      for (let i = 0; i < nextProps.cart.length; i++) {
+      // Tính tổng tiền của các mặt hàng trong giỏ hàng mới
+      for (let i = 0; i < this.props.cart.length; i++) {
         total +=
-          Number(nextProps.cart[i].price) * Number(nextProps.cart[i].count);
+          Number(this.props.cart[i].price) * Number(this.props.cart[i].count);
       }
+      // Cập nhật state với tổng tiền mới
       this.setState({ total: total });
     }
-    if (nextProps.ispay !== this.props.ispay && nextProps.ispay === true) {
-      this.setState({ ispay: true });
+
+    // Kiểm tra nếu trạng thái thanh toán đã thay đổi và đã được thanh toán thành công
+    if (prevProps.ispay !== this.props.ispay && this.props.ispay === true) {
+      this.setState({ ispay: true, showpaymentfail: false });
     }
-    if (nextProps.ispay !== this.props.ispay && nextProps.ispay === false) {
-      this.setState({ showpaymentfail: true });
+
+    // Kiểm tra nếu trạng thái thanh toán đã thay đổi và đã gặp lỗi
+    if (prevProps.ispay !== this.props.ispay && this.props.ispay === false) {
+      this.setState({ ispay: false, showpaymentfail: true });
     }
   }
+
   reset = () => {
     this.setState({
       show: false,
@@ -153,6 +161,10 @@ class ContentCart extends Component {
                 </thead>
                 <tbody>
                   {this.props.cart.map((element, index) => {
+                    const updateCount = (newCount) => {
+                      const updatedElement = { ...element, count: newCount };
+                      this.props.updateProductInCart(updatedElement);
+                    };
                     return (
                       <tr>
                         <td className="cart_product">
@@ -172,10 +184,7 @@ class ContentCart extends Component {
                           <div className="cart_quantity_button">
                             <span
                               className="cart_quantity_up"
-                              onClick={() => {
-                                element.count += 1;
-                                this.props.updateProductInCart(element);
-                              }}
+                              onClick={() => updateCount(element.count + 1)}
                             >
                               {" "}
                               +{" "}
@@ -194,8 +203,7 @@ class ContentCart extends Component {
                                 if (element.count === 1) {
                                   return;
                                 }
-                                element.count -= 1;
-                                this.props.updateProductInCart(element);
+                                updateCount(element.count - 1);
                               }}
                             >
                               {" "}
@@ -229,155 +237,147 @@ class ContentCart extends Component {
             </div>
           </div>
         </section>
-        <section
-          id="do_action"
-          className="rounded-lg  my-5"
-        >
-              <div>
-                <div class="total_area bg-gray-200">
-                  <ul className="text-sm my-4 py-4">
-                    <li className="flex justify-between mx-4 mb-2">
-                      Phí Vận Chuyển
-                      <span className="font-medium mx-2">
-                        0<sup>đ</sup>{" "}
-                      </span>
-                    </li>
-                    <li className="flex justify-between mx-4">
-                      Tổng Tiền{" "}
-                      <span className="font-medium mx-2">
-                        {" "}
-                        {new Intl.NumberFormat("de-DE", {
-                          currency: "EUR",
-                        }).format(this.state.total)}
-                        <sup>đ</sup>
-                      </span>
-                    </li>
-                  </ul>
-                  <Modal
-                    show={this.state.show}
-                    onHide={() => this.setState({ show: false })}
-                    container={this}
-                    aria-labelledby="contained-modal-title"
-                  >
-                    <Modal.Header closeButton>
-                      <Modal.Title id="contained-modal-title">
-                        Notification
-                      </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>Vui Lòng Đăng Nhập Để Thanh Toán</Modal.Body>
-                    <Modal.Footer>
-                      <Button onClick={() => this.setState({ show: false })}>
-                        <a>Cancel</a>
-                      </Button>
-                      <Button onClick={this.handleHide}>
-                        <Link to="/login">Login</Link>
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
+        <section id="do_action" className="rounded-lg  my-5">
+          <div>
+            <div class="total_area bg-gray-200">
+              <ul className="text-sm my-4 py-4">
+                <li className="flex justify-between mx-4 mb-2">
+                  Phí Vận Chuyển
+                  <span className="font-medium mx-2">
+                    0<sup>đ</sup>{" "}
+                  </span>
+                </li>
+                <li className="flex justify-between mx-4">
+                  Tổng Tiền{" "}
+                  <span className="font-medium mx-2">
+                    {" "}
+                    {new Intl.NumberFormat("de-DE", {
+                      currency: "EUR",
+                    }).format(this.state.total)}
+                    <sup>đ</sup>
+                  </span>
+                </li>
+              </ul>
+              <Modal
+                show={this.state.show}
+                onHide={() => this.setState({ show: false })}
+                container={this}
+                aria-labelledby="contained-modal-title"
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title id="contained-modal-title">
+                    Notification
+                  </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Vui Lòng Đăng Nhập Để Thanh Toán</Modal.Body>
+                <Modal.Footer>
+                  <Button onClick={() => this.setState({ show: false })}>
+                    <a>Cancel</a>
+                  </Button>
+                  <Button onClick={this.handleHide}>
+                    <Link to="/login">Login</Link>
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+            </div>
+          </div>
+          <div className="col-md-12  bg-gray-200 py-4">
+            <div className="chose_area mx-4">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
+                <div className="user_option flex-1 mr-4">
+                  <label className="block">Name</label>
+                  <input
+                    type="text"
+                    value={this.state.name}
+                    onChange={(e) => this.setState({ name: e.target.value })}
+                    className="border border-gray-300 rounded-md p-2 w-full md:w-auto lg:w-96"
+                  />
+                  <span>{this.state.notiName}</span>
+                </div>
+                <div className="user_option flex-1 mr-4">
+                  <label className="block">Phone</label>
+                  <input
+                    type="text"
+                    value={this.state.phone}
+                    onChange={(e) => this.setState({ phone: e.target.value })}
+                    className="border border-gray-300 rounded-md p-2 w-full md:w-auto lg:w-96"
+                  />
+                  <span>{this.state.notiPhone}</span>
+                </div>
+                <div className="user_option flex-1">
+                  <label className="block">Address</label>
+                  <input
+                    type="text"
+                    value={this.state.address}
+                    onChange={(e) => this.setState({ address: e.target.value })}
+                    className="border border-gray-300 rounded-md p-2 w-full md:w-auto lg:w-96"
+                  />
+                  <span>{this.state.notiDetailAddress}</span>
                 </div>
               </div>
-              <div className="col-md-12  bg-gray-200 py-4">
-                <div className="chose_area mx-4">
-                  <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
-                    <div className="user_option flex-1 mr-4">
-                      <label className="block">Name</label>
-                      <input
-                        type="text"
-                        value={this.state.name}
-                        onChange={(e) =>
-                          this.setState({ name: e.target.value })
-                        }
-                        className="border border-gray-300 rounded-md p-2 w-full md:w-auto lg:w-96"
-                      />
-                      <span>{this.state.notiName}</span>
-                    </div>
-                    <div className="user_option flex-1 mr-4">
-                      <label className="block">Phone</label>
-                      <input
-                        type="text"
-                        value={this.state.phone}
-                        onChange={(e) =>
-                          this.setState({ phone: e.target.value })
-                        }
-                        className="border border-gray-300 rounded-md p-2 w-full md:w-auto lg:w-96"
-                      />
-                      <span>{this.state.notiPhone}</span>
-                    </div>
-                    <div className="user_option flex-1">
-                      <label className="block">Address</label>
-                      <input
-                        type="text"
-                        value={this.state.address}
-                        onChange={(e) =>
-                          this.setState({ address: e.target.value })
-                        }
-                        className="border border-gray-300 rounded-md p-2 w-full md:w-auto lg:w-96"
-                      />
-                      <span>{this.state.notiDetailAddress}</span>
-                    </div>
-                  </div>
 
-                  <Modal
-                    show={this.state.ispay}
-                    onHide={() => this.setState({ ispay: false })}
-                    container={this}
-                    aria-labelledby="contained-modal-title"
+              <Modal
+                show={this.state.ispay}
+                onHide={() => this.setState({ ispay: false })}
+                container={this}
+                aria-labelledby="contained-modal-title"
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title id="contained-modal-title">
+                    Notification
+                  </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  Đặt Hàng Thành Công, Vui Lòng Vào Đơn Hàng Để Xem Chi Tiết
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button
+                    onClick={() => {
+                      this.reset();
+                      window.location.reload();
+                    }}
                   >
-                    <Modal.Header closeButton>
-                      <Modal.Title id="contained-modal-title">
-                        Notification
-                      </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      Đặt Hàng Thành Công, Vui Lòng Vào Đơn Hàng Để Xem Chi Tiết
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button
-                        onClick={() => {
-                          this.reset();
-                          window.location.reload();
-                        }}
-                      >
-                        <a>OK</a>
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
+                    <a>OK</a>
+                  </Button>
+                </Modal.Footer>
+              </Modal>
 
-                  <Modal
-                    show={this.state.showpaymentfail}
-                    onHide={() => this.setState({ showpaymentfail: false })}
-                    container={this}
-                    aria-labelledby="contained-modal-title"
+              <Modal
+                show={this.state.showpaymentfail}
+                onHide={() => this.setState({ showpaymentfail: false })}
+                container={this}
+                aria-labelledby="contained-modal-title"
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title id="contained-modal-title">
+                    Notification
+                  </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Đặt Hàng Thất Bại</Modal.Body>
+                <Modal.Footer>
+                  <Button
+                    onClick={() => this.setState({ showpaymentfail: false })}
                   >
-                    <Modal.Header closeButton>
-                      <Modal.Title id="contained-modal-title">
-                        Notification
-                      </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>Đặt Hàng Thất Bại</Modal.Body>
-                    <Modal.Footer>
-                      <Button
-                        onClick={() =>
-                          this.setState({ showpaymentfail: false })
-                        }
-                      >
-                        <a>Cancel</a>
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
-                  <div className="cart-option flex justify-between">
-                    <button
-                      className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mr-2 mt-6 w-48"
-                      onClick={() => this.handlePayment()}
-                    >
-                      Payment
-                    </button>
-                    <Link className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mt-6 w-48 flex items-center justify-center" to={"/"}>
-                      Continue shopping
-                    </Link>
-                  </div>
-                </div>
+                    <a>Cancel</a>
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+              <div className="cart-option flex justify-between">
+                <button
+                  className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mr-2 mt-6 w-48"
+                  onClick={() => this.handlePayment()}
+                >
+                  Payment
+                </button>
+                <Link
+                  className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mt-6 w-48 flex items-center justify-center"
+                  to={"/"}
+                >
+                  Continue shopping
+                </Link>
               </div>
+            </div>
+          </div>
         </section>
       </div>
     );
