@@ -106,7 +106,7 @@ class ContentCart extends Component {
 
   render() {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+      <div>
         <section
           id="cart_items"
           className="md:col-span-2 overflow-hidden border border-gray-200 rounded-lg"
@@ -231,22 +231,20 @@ class ContentCart extends Component {
         </section>
         <section
           id="do_action"
-          className="bg-gray-200 p-4 rounded-lg flex justify-between items-center"
+          className="rounded-lg  my-5"
         >
-          <div>
-            <div>
               <div>
-                <div class="total_area">
-                  <ul className="text-sm">
-                    <li className="flex items-center">
+                <div class="total_area bg-gray-200">
+                  <ul className="text-sm my-4 py-4">
+                    <li className="flex justify-between mx-4 mb-2">
                       Phí Vận Chuyển
-                      <span className="font-medium mr-2">
+                      <span className="font-medium mx-2">
                         0<sup>đ</sup>{" "}
                       </span>
                     </li>
-                    <li className="flex items-center">
+                    <li className="flex justify-between mx-4">
                       Tổng Tiền{" "}
-                      <span className="font-medium mr-2">
+                      <span className="font-medium mx-2">
                         {" "}
                         {new Intl.NumberFormat("de-DE", {
                           currency: "EUR",
@@ -278,8 +276,8 @@ class ContentCart extends Component {
                   </Modal>
                 </div>
               </div>
-              <div className="col-md-12">
-                <div className="chose_area">
+              <div className="col-md-12  bg-gray-200 py-4">
+                <div className="chose_area mx-4">
                   <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
                     <div className="user_option flex-1 mr-4">
                       <label className="block">Name</label>
@@ -356,7 +354,7 @@ class ContentCart extends Component {
                         Notification
                       </Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Đặt Hang Thất Bại</Modal.Body>
+                    <Modal.Body>Đặt Hàng Thất Bại</Modal.Body>
                     <Modal.Footer>
                       <Button
                         onClick={() =>
@@ -367,21 +365,19 @@ class ContentCart extends Component {
                       </Button>
                     </Modal.Footer>
                   </Modal>
-                  <div className="cart-option">
+                  <div className="cart-option flex justify-between">
                     <button
-                      className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2 mt-6"
+                      className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mr-2 mt-6 w-48"
                       onClick={() => this.handlePayment()}
                     >
                       Payment
                     </button>
-                    <Link className="text-blue-500 hover:underline " to={"/"}>
+                    <Link className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mt-6 w-48 flex items-center justify-center" to={"/"}>
                       Continue shopping
                     </Link>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
         </section>
       </div>
     );

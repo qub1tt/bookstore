@@ -17,7 +17,6 @@ const LoginPage = ({
   loginSubmit,
   islogin,
   logout,
-  history,
 }) => (
   <div>
     <ContentLoginRegister
@@ -34,7 +33,6 @@ const LoginPage = ({
       notificationLogin={notificationLogin}
       registerSubmit={() => registerSubmit()}
       loginSubmit={() => loginSubmit()}
-      history={history}
     />
   </div>
 );

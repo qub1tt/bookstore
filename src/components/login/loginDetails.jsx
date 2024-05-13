@@ -255,5 +255,5 @@ export default function ContentLoginRegister({
         {xhtmlLogin}
       </div>
     </section>
-  );
+  );  
 }

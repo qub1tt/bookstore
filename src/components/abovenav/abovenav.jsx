@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import storeConfig from "../../config/storage.config";
 import { Link, Navigate } from "react-router-dom";
-
+import SearchBar from "./Search";
+import storeConfig from "../../config/storage.config";
 import {
-  faMagnifyingGlass,
   faBell,
   faCartShopping,
   faCircleUser,
@@ -21,6 +20,7 @@ class Abovenav extends Component {
       isAcc: false,
     };
   }
+
   componentDidMount() {
     if (storeConfig.getUser() !== null) {
       this.setState({
@@ -28,6 +28,7 @@ class Abovenav extends Component {
       });
     }
   }
+
   componentDidUpdate(prevProps) {
     if (prevProps.islogin !== this.props.islogin) {
       if (!this.props.islogin) {
@@ -49,6 +50,7 @@ class Abovenav extends Component {
       this.setState({ isAcc: true });
     }
   };
+
   hoverlogin = () => {
     if (this.props.islogin) {
       return (
@@ -56,7 +58,6 @@ class Abovenav extends Component {
           <li onClick={() => this.handleProfile()}>
             <Link to={"/"}>Hồ Sơ </Link>
           </li>
-
           <li>
             <Link to="/purchase_history">Đơn Hàng </Link>
           </li>
@@ -64,13 +65,15 @@ class Abovenav extends Component {
       );
     }
   };
+
   render() {
     if (this.state.isAcc) {
       return <Navigate to={`/profile/${this.state.email}`} />;
     }
+
     return (
       <nav className="abovenav">
-        <div class="abovenav_open_close">
+        <div className="abovenav_open_close">
           <button onClick={this.state.toggle}>
             <FontAwesomeIcon
               icon={faBars}
@@ -79,16 +82,8 @@ class Abovenav extends Component {
             />
           </button>
         </div>
-        <div class="abovenav_searchbox">
-          <input type="text" placeholder="Search..." />
-          <span className="abovenav_search-icon">
-            <a href="#">
-              <FontAwesomeIcon
-                icon={faMagnifyingGlass}
-                style={{ color: "#737373" }}
-              />
-            </a>
-          </span>
+        <div className="abovenav_searchbox">
+          <SearchBar />
         </div>
         <div className="abovenav_items">
           <li>

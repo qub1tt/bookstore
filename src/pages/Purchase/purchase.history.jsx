@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Abovenav from "../../components/abovenav/abovenav";
 import Sidebar from "../../components/sidebar/sidebar";
 import Footer from "../../components/footer/footer";
+import "./purchase.css"
 class HistoryPurchase extends Component {
   constructor(props) {
     super(props);
@@ -337,17 +338,19 @@ class HistoryPurchase extends Component {
         </div>
 
         <div className="content">
+
+
           <section id="cart_items">
-            <div>
-              <div className="bill-title">
+            <div className="purchase_history_container">
+              <div className="purchase_history_bill-title">
                 <h2>Đơn Hàng Của Bạn</h2>
               </div>
-              <div className="menu-profile container">
-                <ul>
+              <div className="purchase_history_menu-profile">
+                <ul className="purchase_state">
                   <li>
                     <button
                       onClick={() => this.handleClick99()}
-                      className="menu-custom btn"
+                      className="purchase_history_menu-custom_btn"
                     >
                       Đang Chờ Xử Lý
                     </button>
@@ -356,7 +359,7 @@ class HistoryPurchase extends Component {
                     {" "}
                     <button
                       onClick={() => this.handleClick0()}
-                      className="menu-custom btn"
+                      className="purchase_history_menu-custom_btn"
                     >
                       Đang Giao Hàng
                     </button>
@@ -365,17 +368,20 @@ class HistoryPurchase extends Component {
                     {" "}
                     <button
                       onClick={() => this.handleClick1()}
-                      className="menu-custom btn"
+                      className="purchase_history_menu-custom_btn"
                     >
                       Đã Giao Hàng
                     </button>
                   </li>
                 </ul>
-                <hr></hr>
+                <hr style={{marginBottom: "20px",}}/>
               </div>
               {this.renderBill()}
             </div>
           </section>
+
+
+          
         </div>
 
         <div className="footer">
