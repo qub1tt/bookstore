@@ -134,19 +134,25 @@ export const setComment = (data) => ({
   data,
 });
 
-export const addToCart = (product) => async (getState) => {
+export const addToCart = (product) => async (dispatch, getState) => {
   if (getState().userReducers.login.islogin) {
     let res;
     try {
-      res = await axios.post("http://localhost:8080/cart/addtocard", {
+      res = await axios.post("http://localhost:8080/cart/addtocart", {
         id_user: storeConfig.getUser().id,
         products: [product],
       });
+      // Dispatch an action to update the state after the operation is completed
+      dispatch({ type: "ADD_TO_CART_SUCCESS", payload: res.data.data });
     } catch (err) {
       console.log(JSON.stringify(err.response));
+      // Dispatch an action for error handling if needed
+      dispatch({ type: "ADD_TO_CART_ERROR", payload: err });
       return;
     }
   } else {
     storeConfig.addProductToCart(product);
+    // Dispatch an action if needed for the non-logged in scenario
+    dispatch({ type: "ADD_TO_CART_NON_LOGGED_IN", payload: product });
   }
 };

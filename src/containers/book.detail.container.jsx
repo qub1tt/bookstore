@@ -1,4 +1,4 @@
-import React, { useEffect, Component } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import BookDetailsPage from "../pages/BookDetails";
@@ -25,7 +25,7 @@ const BooksDetailContainer = ({
     productActions.getBookDetail(id);
     productActions.getBookRelated(id);
     productActions.getCommentByIDBook(id);
-  }, [id, productActions]);
+  }, [id, productActions, actions]);
 
   useEffect(() => {
     if (mproductDetail) {

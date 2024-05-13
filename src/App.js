@@ -21,7 +21,10 @@ const App = () => {
         <Route path="/cart" element={<CartContainer />} />
         <Route path="/profile/:email" element={<ProfileContainer />} />
         <Route path="/loading" element={<NotFound />} />
-        <Route path="/login" element={<LoginRegisterContainer />} />
+        <Route path="//* The `login` function is rendering the `LoginRegisterContainer` component when
+        the route path is `/login`. This component likely contains the login
+        functionality for the application, allowing users to log in to their accounts. */
+        login" element={<LoginRegisterContainer />} />
         <Route path="/forgotpass/" element={<ForgotPasswordContainer />} />
         <Route
           path="/confirm/:token"
