@@ -60,7 +60,8 @@ export const deteleProductInCart =
 
 export const paymentSuccess = () => ({
   type: cartTypes.PAYMENT_SUCCESS,
-});export const paymentFail = () => ({
+});
+export const paymentFail = () => ({
   type: cartTypes.PAYMENT_FAIL,
 });
 export const resetPayment = () => ({
@@ -76,6 +77,7 @@ export const payment =
       console.log(name);
       res = await axios.post("http://localhost:8080/bill/add", {
         id_user: storeConfig.getUser().id,
+        email: storeConfig.getUser().email,
         address: address,
         phone: phone,
         name: name,

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import VerifyPayment from "../components/verify.payment/verify.payment";
+import VerifyPayment from "../components/verify_payment/verify.payment";
 import NotFound from "../components/404/NotFound";
 import { useParams } from "react-router-dom";
 

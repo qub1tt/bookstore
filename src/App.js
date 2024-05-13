@@ -7,6 +7,7 @@ import ProfileContainer from "./containers/profile.container";
 import NotFound from "./components/404/NotFound";
 import LoginRegisterContainer from "./containers/login.container";
 import VerifyRegisterAccountContainer from "./containers/verify.register.container";
+import VerifyPaymentContainer from "./containers/verify.payment.container";
 import ForgotPasswordContainer from "./containers/forgot.password.container";
 import HistoryPurchase from "./containers/history.purchase.container";
 import HomePageContainer from "./containers/home.container";
@@ -21,17 +22,16 @@ const App = () => {
         <Route path="/cart" element={<CartContainer />} />
         <Route path="/profile/:email" element={<ProfileContainer />} />
         <Route path="/loading" element={<NotFound />} />
-        <Route path="//* The `login` function is rendering the `LoginRegisterContainer` component when
-        the route path is `/login`. This component likely contains the login
-        functionality for the application, allowing users to log in to their accounts. */
-        login" element={<LoginRegisterContainer />} />
+        <Route path="/login" element={<LoginRegisterContainer />} />
         <Route path="/forgotpass/" element={<ForgotPasswordContainer />} />
         <Route
           path="/confirm/:token"
           element={<VerifyRegisterAccountContainer />}
         />
+        <Route path="/payment/:token" element={<VerifyPaymentContainer />} />
+
         <Route path="/purchase_history" element={<HistoryPurchase />} />
-        <Route path="/category/:id" element= {<Category />} />
+        <Route path="/category/:id" element={<Category />} />
       </Routes>
     </Router>
   );
