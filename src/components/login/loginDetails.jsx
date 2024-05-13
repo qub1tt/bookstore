@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import "./style.css"
+import "./style.css";
 export default function ContentLoginRegister({
   setEmailLogin,
   setPasswordlogin,
@@ -58,7 +58,7 @@ export default function ContentLoginRegister({
               />
               <i class="bx bx-user"></i>
             </div>
-            
+
             <div class="input-box">
               <input
                 type="password"
@@ -82,10 +82,7 @@ export default function ContentLoginRegister({
             </div>
             <div class="two-col">
               <div class="two">
-                <Link
-                  to="/forgotpass/"
-                  className="two"
-                >
+                <Link to="/forgotpass/" className="two">
                   Forgot Password?
                 </Link>
               </div>
@@ -235,10 +232,9 @@ export default function ContentLoginRegister({
     );
   }
 
-   return (
-     <section>
-       
-         {/* <div className="menu-profile">
+  return (
+    <section>
+      {/* <div className="menu-profile">
            <ul>
              <li>
                <button onClick={handleLogin} className="menu-custom btn">
@@ -254,11 +250,10 @@ export default function ContentLoginRegister({
            </ul>
            <hr className="my-4" />
          </div> */}
-         <div>
-           {xhtmlRegister}
-           {xhtmlLogin}
-         </div>
-       
-     </section>
-   );
+      <div>
+        {xhtmlRegister}
+        {xhtmlLogin}
+      </div>
+    </section>
+  );
 }
