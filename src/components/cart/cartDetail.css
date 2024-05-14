@@ -43,3 +43,40 @@
     object-fit: cover;
 }
 
+
+/* cartDetail.css */
+@media (max-width: 950px) {
+    .cart_info p{
+        font-size: smaller;
+    }
+    .cart_price {
+        font-size: x-small;
+    }
+    .cart_total{
+        font-size: x-small;
+    }
+    .cart_quantity_input{
+        width: 40px;
+        font-size: smaller;
+    }
+}
+
+@media (max-width: 390px) {
+    .cart-option{
+        font-size: smaller;
+    }
+}
+
+.success-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
