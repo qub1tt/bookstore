@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+
 export default function ContentLoginRegister({
   setEmailLogin,
   setPasswordlogin,
@@ -17,20 +18,22 @@ export default function ContentLoginRegister({
 }) {
   const [Login, setLogin] = useState(true);
   const [Register, setRegister] = useState(false);
-  function handleLogin(event) {
-    event.preventDefault(); // Ngăn chặn hành vi mặc định của nút
 
+  function handleLogin(event) {
+    event.preventDefault();
     setLogin(true);
     setRegister(false);
   }
-  function handleRegister(event) {
-    event.preventDefault(); // Ngăn chặn hành vi mặc định của nút
 
+  function handleRegister(event) {
+    event.preventDefault();
     setRegister(true);
     setLogin(false);
   }
+
   let xhtmlLogin = "";
   let xhtmlRegister = "";
+
   if (Login) {
     xhtmlLogin = (
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -247,23 +250,31 @@ export default function ContentLoginRegister({
     <section className="homePage">
       <div className="login-register">
         <div className="menu-profile">
-          <div className="btn-container w-48">
-            <ul className="flex">
-              <li className="w-1/2">
+          <div className="btn-container w-full flex justify-center">
+            <ul className="flex w-full justify-evenly space-x-4">
+              <li className="flex-1">
                 <button
                   onClick={handleLogin}
-                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 my-4 mx-2"
+                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 my-4"
                 >
                   Đăng Nhập
                 </button>
               </li>
-              <li className="w-1/2">
+              <li className="flex-1">
                 <button
                   onClick={handleRegister}
-                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 my-4 mx-4"
+                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 my-4"
                 >
                   Đăng Ký
                 </button>
+              </li>
+              <li className="flex-1">
+                <a
+                  href="/"
+                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 my-4"
+                >
+                  Home
+                </a>
               </li>
             </ul>
           </div>
