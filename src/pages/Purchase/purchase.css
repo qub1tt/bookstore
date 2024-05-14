@@ -10,6 +10,12 @@
     text-align: center;
 }
 
+.null-cart img{
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+}
+
 .purchase_state{
     display: flex;
     justify-content: space-around;
