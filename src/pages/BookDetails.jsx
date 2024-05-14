@@ -43,7 +43,7 @@ function BookDetailsPage(props) {
         <DetailsSection
           mproductDetail={props.mproductDetail}
           nameCategory={props.nameCategory}
-          namePublicsher={props.namePublicsher}
+          namePublisher={props.namePublisher}
           islogin={props.islogin}
           id_book={props.id_book}
           submitComment={(name, comment, id_book) =>

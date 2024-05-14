@@ -29,7 +29,7 @@ export const getNameCategoryByID = (id) => async (dispatch) => {
   }
   dispatch(setNameCategory(res.data.name));
 };
-export const getNamePubliserByID = (id) => async (dispatch) => {
+export const getNamePublisherByID = (id) => async (dispatch) => {
   let res;
   try {
     res = await axios.get("http://localhost:8080/publisher/name/" + id);
