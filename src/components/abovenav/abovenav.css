@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   border-bottom: none;
 }
 
@@ -26,17 +26,12 @@ a {
   border: 1px solid #737373;
   border-radius: 10px;
   padding: 5px;
-  padding-left: 35px; /* Để tạo không gian cho icon */
+  padding-left: 15px;
   width: 100%;
   height: 40px;
   outline: none;
 }
 
-.abovenav_search-icon {
-  position: absolute;
-  left: 20px; /* Điều chỉnh vị trí của icon */
-  cursor: pointer;
-}
 
 .abovenav_items {
   display: flex;
@@ -58,49 +53,109 @@ li {
 }
 
 .suggestion_box{
+  width: 100%;
   border: 1px solid black;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   display: flex;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
+  overflow: hidden;
+  max-height: 150px;
 }
 
-.suggestion_box img{
-  width: 100px;
-  height: 150px;
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  margin: 10px 20px 10px 10px;
+.suggestion_box_describe{
+  margin-left: 5px;
 }
-
 
 .bn{
-  margin-top: 30px;
   font-size: larger;
   font-weight: bold;
 }
 
-.bn {
-  white-space: nowrap;
-  overflow: hidden;  
-  text-overflow: ellipsis;
-  width: 500px;   
-}
-
-
 .ba{
-  margin-top: 5px;
-  margin-left: 5px;
   font-style: italic;
 }
 
-.bp{
-  margin-top: 5px;
-  margin-left: 5px;
+.abovenav .dropdown .sub-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px;
+  margin: 0;
 }
 
-.suggestion_container {
-  max-height: 550px;
-  overflow-y: auto;
+.abovenav .dropdown:hover .sub-menu {
+  display: block;
+}
+
+
+@media screen and (max-width: 800px) {
+  .suggestion_box img{
+    max-width: 60px;
+    max-height: 90px;
+    border: 1px solid black;
+  }
+  .suggestion_search{
+    width: 120%;
+  }
+  .suggestion_box{
+    max-height: 90px;
+  }
+  .suggestion_box_describe{
+    font-size: xx-small;
+  }
+}
+
+
+@media screen and (min-width: 800px) {
+  .suggestion_box img{
+    max-width: 100px;
+    max-height: 150px;
+    border: 1px solid black;
+  }
+  .suggestion_box{
+    max-height: 150px;
+  }
+}
+
+.user-icon-container {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 100px;
+}
+
+.dropdown-menu a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  padding: 5px 5px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.red-dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  border-radius: 50%;
 }

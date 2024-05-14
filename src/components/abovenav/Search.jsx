@@ -63,7 +63,7 @@ const SearchBar = () => {
                 <div className='suggestion_container'>
                     {suggestions.map((book) => (
                         <div key={book._id} className='suggestion_box'>
-                            <Link to={`/book/${book._id}`}>
+                            <Link to={`/book/${book._id}`} className='suggestion_img'>
                                 <img src={book.img} alt={book.name} />
                             </Link>
                             <div className='suggestion_box_describe'>
