@@ -46,7 +46,7 @@ export default function CategorySection(props) {
     }, [id, categories]);
 
     return (
-        <div className="categorysection">
+        <div className="content1">
             <div className="categorysection_above">
                 <div className="categorysection_above_left">
                     <span>
@@ -72,8 +72,8 @@ export default function CategorySection(props) {
                 </div>
             </div>
 
-            <div className="categorysection_below">
-                <div className="categorysection_below_above">
+            <div className="content1_below">
+                <div className="content1_below_above">
                     {books.map(book => (
                         (id === "" || book.id_category === id) && <SmallBoxDetail key={book._id} bookId={book._id} />
                     ))}
