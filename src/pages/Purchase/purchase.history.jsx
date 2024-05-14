@@ -96,7 +96,7 @@ class HistoryPurchase extends Component {
                 <div className="delete-cart">
                   <button
                     onClick={() => this.props.deleteBill(element._id)}
-                    className="destroy btn btn-default"
+                    className="destroy btn btn-default bg-red-500 py-2 px-2"
                   >
                     Hủy Đơn Hàng
                   </button>
@@ -325,14 +325,14 @@ class HistoryPurchase extends Component {
     console.log(this.state.issend);
     return (
       <div className="contain">
-        <div className="sidebar">
+        {/* <div className="sidebar">
           <Sidebar
             isOpen={this.isOpen}
             toggle={this.toggleSidebar}
             islogin={this.props.islogin}
             logout={() => this.props.logout()}
           />
-        </div>
+        </div> */}
         <div className="navbar">
           <Abovenav toggle={this.toggleSidebar} />
         </div>
@@ -384,9 +384,9 @@ class HistoryPurchase extends Component {
           
         </div>
 
-        <div className="footer">
+        {/* <div className="footer">
           <Footer />
-        </div>
+        </div> */}
       </div>
     );
   }
