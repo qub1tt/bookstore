@@ -29,16 +29,12 @@
   border-left: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1150px) {
   .abovenav_open_close{display: none;}
-  .abovenav_searchbox{margin-left: 150px;}
+  .abovenav_searchbox{margin-left: 50px;}
 }
 
-/* Media query to hide sidebar when screen width is less than 768px */
-@media screen and (max-width: 768px) {
-  .abovenav_items{
-    margin-right: 20px;
-  }
+@media screen and (max-width: 1150px) {
   .abovenav_open_close{
     margin-left: 20px;
   }
@@ -46,18 +42,50 @@
     flex-direction: column;
   }
   .sidebar {
-    margin-top: 92px;
+    margin-top: 70px;
+    width: 250px;
   }
   .main_logo{
     display: none;
   }
 
   .content {
-    margin-left: 0; /* Loại bỏ margin-left để nội dung chiếm toàn bộ chiều rộng */
-    width: 100%; /* Đặt chiều rộng của nội dung là 100% */
+    margin-left: 0; 
+    width: 100%; 
+    padding: 120px 25px 25px 25px;
   }
   .navbar {
-    margin-left: 0; /* Loại bỏ margin-left để nội dung chiếm toàn bộ chiều rộng */
-    width: 100%; /* Đặt chiều rộng của nội dung là 100% */
+    margin-left: 0; 
+    width: 100%; 
+  }
+  .abovenav_items{
+    justify-content: flex-end;
+  }  
+  .content {
+    margin-left: 0; 
+    width: 100%; 
+    padding: 120px 10px 10px 10px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .sidebar {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .content {
+    margin-left: 0; 
+    width: 100%; 
+    padding: 120px 5px 5px 5px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .sidebar {
+    width: 150px;
+    font-size: smaller;
+    padding: 0;
   }
 }
