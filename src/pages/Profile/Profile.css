@@ -1,3 +1,21 @@
+/* .footer {
+  margin-left:20%;
+  width:80%;
+} */
+/* .chung{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110vh;
+    background: rgba(39, 39, 39, 0.4);
+} */
+  .shopper-informations{
+    
+    overflow-y: auto;
+  }
+.button-save {
+  text-align: center;
+}
 .dir-card {
   border-radius: 5px;
   margin-bottom: 30px;
@@ -14,7 +32,7 @@
 }
 .information {
   border-radius: 5px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   box-shadow: 0px 4px 20px 0px #2c65901a;
 }
 .info-header {
@@ -24,6 +42,7 @@
   line-height: 30px;
   font-weight: 500;
   margin: 5px 0px 10px;
+  text-align: center;
 }
 .info-content {
   display: flex;
@@ -31,8 +50,16 @@
   border-radius: 8px;
 }
 .info-left {
-  width: 553px;
-  padding: 16px 24px 16px 16px;
+  width: 100%;
+  /* padding: 16px 24px 16px 16px; */
+   padding-left:10%;
+  text-align:left;
+}
+.info-right {
+  width: 100%;
+  padding-left:10%;
+  display: flex;
+  flex-direction: column;
 }
 .info-title {
   font-size: 16px;
@@ -49,21 +76,22 @@
   display: flex;
   flex-direction: row;
 }
-.form-avatar {
-  margin-right: 16px;
-}
+
 .avatar {
+   text-align:center;
   background-color: #f0ffff;
   border-radius: 50%;
-  width: 112px;
-  height: 112px;
+  width: 150px;
+  height: 150px;
   border: 4px solid #c2ffff;
   position: relative;
   justify-content: center;
   display: flex;
   align-items: center;
+  margin: 0 auto;
 }
 .avatar-view {
+  text-align: center;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -106,12 +134,13 @@
   position: relative;
 }
 .input-label {
-  width: 110px;
-  min-width: 110px;
+ 
+  min-width: 25%;
   font-size: 14px;
   color: rgb(51, 51, 51);
-  margin-right: 16px;
+  /* margin-right: 16px; */
 }
+
 .content input {
   height: 36px;
   border-radius: 4px;
@@ -164,12 +193,7 @@
   border-left: 1px solid #ebebf0;
   margin: 16px 0px;
 }
-.info-right {
-  width: calc(100% - 553px);
-  padding: 16px 16px 16px 24px;
-  display: flex;
-  flex-direction: column;
-}
+
 .style-list-item {
   background-color: #ffffff;
   border-radius: 4px;
@@ -222,4 +246,38 @@
   background-color: #ffffff;
 }
 
-/* -------------------------------------------------- */
+--------------------------------------------------
+  /* smartphone
+  <740 */
+  @media only screen and ( max-width: 739px ) {
+   
+}
+/* 740 = <tablet <1024  */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+}
+/* tablet & smartphone */
+@media only screen and (max-width: 1023px) {
+  .info-content {
+    flex-direction:column;
+  }
+   .info-left{
+    text-align:center;
+    padding:0;
+      
+    }
+    .info-right{
+      text-align:center;
+       padding:0;
+    }
+    .shopper-informations {
+    max-height: 550px; /* Điều chỉnh chiều cao tối đa cho màn hình nhỏ hơn */
+  }
+  .form-control{
+    text-align:left;
+    padding:5%;
+  }
+
+}
+/* 1024 =<pc  */
+@media only screen and (min-width: 64em) {
+}

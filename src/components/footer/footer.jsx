@@ -11,7 +11,6 @@ import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="footer_below">
         <div className="footer_below_container">
           <div className="footer_below_content">
             <h2>DỊCH VỤ : </h2>
@@ -95,7 +94,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-      </div>
+      
     </div>
   );
 };

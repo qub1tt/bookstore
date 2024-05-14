@@ -86,23 +86,41 @@ class Profile extends Component {
   }
   render() {
     let xhtml = (
-      <div>
-        <div class="information">
-          <div class="info-header">
+      <div className="chung">
+        <div className="information">
+          <div className="info-header">
             Thông tin tài khoản
             <hr />
             <p className="error">{this.state.notiUpdateInfor}</p>
           </div>
-          <div class="info-body">
+
+          <div class="avatar">
+            <div class="avatar-view">
+              <img
+                src="https://frontend.tikicdn.com/_desktop-next/static/img/account/avatar.png"
+                alt="avatar"
+                class="default"
+              />
+              <div class="edit">
+                <img
+                  src="https://frontend.tikicdn.com/_desktop-next/static/img/account/edit.png"
+                  class="edit-img"
+                  alt
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="info-body">
             <div class="info-content">
               <div class="info-left">
                 <span class="info-title">Thông tin cá nhân</span>
                 <div class="account-info">
                   <form>
                     <div class="form-info">
-                      <div class="form-avatar">
+                      {/* <div class="form-avatar">
                         <div class="avatar">
-                          <div>
+                          
                             <div class="avatar-view">
                               <img
                                 src="https://frontend.tikicdn.com/_desktop-next/static/img/account/avatar.png"
@@ -117,9 +135,9 @@ class Profile extends Component {
                                 />
                               </div>
                             </div>
-                          </div>
+                        
                         </div>
-                      </div>
+                      </div> */}
                       <div class="form-name">
                         <div class="form-control">
                           <label class="input-label">Họ</label>
@@ -178,60 +196,63 @@ class Profile extends Component {
                       </div>
                     </div>
 
-                    <div class="form-control">
-                      <label class="input-label"></label>
-                      <button
-                        type="submit"
-                        onClick={() => this.props.updateInfor()}
-                        class="style-btn-submit"
-                      >
-                        Lưu thay đổi
-                      </button>
+                   
+                  </form>
+                </div>
+              </div>
+
+              <div class="info-right">
+                <span class="info-title">Thông tin liên hệ</span>
+
+                <div class="account-info">
+                  <form>
+                    <div class="form-name">
+                      <div class="form-control">
+                        <label class="input-label">Số điện thoại</label>
+                        <div>
+                          <div class="style-input">
+                            <input
+                              class="input"
+                              type="search"
+                              name="userName"
+                              maxlength="128"
+                              placeholder="Phone"
+                              value={this.props.phone_number}
+                              onChange={(e) =>
+                                this.props.setPhoneNumber(e.target.value)
+                              }
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-control">
+                        <label class="input-label">Email</label>
+                        <div>
+                          <div class="style-input">
+                            <input
+                              className="input"
+                              type="search"
+                              name="userName"
+                              maxlength="128"
+                              placeholder="Email"
+                              value={this.props.email}
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </form>
                 </div>
               </div>
-              <div class="info-vertical"></div>
-              <div class="info-right">
-                <span class="info-title">Thông tin liên hệ</span>
-                <div class="style-list-item">
-                  <div class="form-name">
-                    <div class="form-control">
-                      <label class="input-label">Số điện thoại</label>
-                      <div>
-                        <div class="style-input">
-                          <input
-                            class="input"
-                            type="search"
-                            name="userName"
-                            maxlength="128"
-                            placeholder="Phone"
-                            value={this.props.phone_number}
-                            onChange={(e) =>
-                              this.props.setPhoneNumber(e.target.value)
-                            }
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-control">
-                      <label class="input-label">Email</label>
-                      <div>
-                        <div class="style-input">
-                          <input
-                            class="input"
-                            type="search"
-                            name="userName"
-                            maxlength="128"
-                            placeholder="Email"
-                            value={this.props.email}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            </div>
+            <div className="button-save">
+              <button
+                type="submit"
+                onClick={() => this.props.updateInfor()}
+                class="style-btn-submit"
+              >
+                Lưu thay đổi
+              </button>
             </div>
           </div>
         </div>
@@ -282,12 +303,12 @@ class Profile extends Component {
             islogin={this.props.islogin}
             logout={() => this.props.logout()}
           />
-        </div>
+        </div> 
         <div className="navbar">
           <Abovenav toggle={this.toggleSidebar} />
         </div>
 
-        <div className="shopper-informations content">
+        <div className="shopper-informations ">
           <ul class="grid grid-cols-2 gap-5">
             <li>
               <button
@@ -311,7 +332,7 @@ class Profile extends Component {
           <div>{xhtml}</div>
         </div>
 
-        <div className="footer">
+         <div className="footer">
           <Footer />
         </div>
       </div>
