@@ -144,16 +144,12 @@
 }
 
 
-
-
-/* Kích thước màn hình từ 1280px trở lên */
 @media (min-width: 1280px) {
     .content2_left_below_describe_book .span2 {
         display: none;
     }
 }
 
-/* Kích thước màn hình nhỏ hơn hoặc bằng 1280px */
 @media (max-width: 1280px) {
     .content2 {
         grid-template-columns: 1fr;
@@ -163,7 +159,6 @@
     }
 }
 
-/* Kích thước màn hình nhỏ hơn hoặc bằng 960px */
 @media (max-width: 960px) {
     .content2_left_below_describe_book .span2,
     .content2_left_below_describe_book .span1 {
@@ -180,82 +175,53 @@
     }
 }
 
-/* Kích thước màn hình nhỏ hơn hoặc bằng 830px */
-@media (max-width: 830px) {
-    .content2_left_below_describe_book .span1 {
-        display: none;
-    }
-    .content2_right_below {
-        gap: 10px;
-    }
-}
 
-/* Kích thước màn hình nhỏ hơn hoặc bằng 768px */
 @media (max-width: 768px) {
     .content2_left_below_describe_book .span1 {
         display: contents;
     }
 }
 
-/* Kích thước màn hình nhỏ hơn hoặc bằng 580px */
-@media (max-width: 580px) {
+@media (max-width: 470px) {
     .content2_left_below_describe_book .span1 {
-        display: none;
+        display: contents;
     }
-    .content2_left_below {
-        flex-direction: column;
+    .content2_left_below_img{
+        max-width: 180px;
+        max-height: 255px;
+        padding: 10px;
     }
-    .content2_left_below img {
+    .content2_left_below_img img{
+        max-width: 160px;
+        max-height: 235px;
+    }
+    .content2_left_below_describe{
+        font-size: x-small;
+    }
+    .content2_left_below_describe strong{
+        font-size: x-small;
+    }
+    .content2_right_theloai{
+        font-size: smaller;
+    }
+}
+
+@media (max-width: 360px) {
+    .content2_right_below{
+        grid-template-columns: 1fr;
+    }
+    .content2_right_theloai{
         margin: 0 auto;
     }
-    .content2_left_below_describe {
-        padding-top: 0;
-        margin: auto 10px;
-        text-align: center;
+}
+
+@media (max-width: 350px) {
+    .content2_left_below_describe{
+        display: none;
     }
-    .content2_right_below {
-        gap: 10px;
-        grid-template-columns: 1fr;
-        padding-left: 20px;
-    }
-    .content2_right_theloai {
-        padding: 20px 0 20px 20px;
+    .content2_left_below_img{
+        margin: 0 auto;
     }
 }
 
-/* Kích thước màn hình nhỏ hơn hoặc bằng 420px */
-@media (max-width: 420px) {
-    .content2 {
-        padding: 0;
-    }
-    .content2_left_above,
-    .content2_left_below,
-    .content2_right_below {
-        margin: auto;
-    }
-    .content2_right_above {
-        margin-top: 20px;
-    }
-}
 
-/* Kích thước màn hình nhỏ hơn hoặc bằng 385px */
-@media (max-width: 385px) {
-    .content2 {
-        margin: 0;
-    }
-    .content2_left,
-    .content2_right {
-        width: 200px;
-        margin: 20px auto;
-    }
-    .content2_left_above,
-    .content2_left_below,
-    .content2_left_above_left,
-    .content2_left_above_right,
-    .content2_right {
-        padding: 0;
-    }
-    .content2_left_below img {
-        height: 240px;
-    }
-}

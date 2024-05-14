@@ -191,6 +191,11 @@
   .content1_below_box img{
     height: 112.5px;
   }
+
+  .content1_below_book_img_hover-button {
+    width: 50px;
+    height: 20px;
+}
 }
 
 @media (max-width: 725px) { 
