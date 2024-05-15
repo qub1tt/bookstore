@@ -50,11 +50,6 @@ class Category extends Component {
           </div>
           {/* <Footer /> */}
         </div>
-        <div className="content">
-          <CategorySection />
-        </div>
-        {/* <Footer /> */}
-      </div>
     );
   }
 }
