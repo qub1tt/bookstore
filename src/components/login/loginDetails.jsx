@@ -100,6 +100,10 @@ export default function ContentLoginRegister({
               >
                 Sign in
               </button>
+              <div className="flex justify-between my-4">
+                <p>Do you have an account?</p>
+                <button onClick={handleRegister} className="font-semibold text-indigo-600 hover:text-indigo-500">Đăng Ký</button>
+              </div>
             </div>
           </div>
         </div>
@@ -250,33 +254,7 @@ export default function ContentLoginRegister({
     <section className="homePage">
       <div className="login-register">
         <div className="menu-profile">
-          <div className="btn-container w-full flex justify-center">
-            <ul className="flex w-full justify-evenly space-x-4">
-              <li className="flex-1">
-                <button
-                  onClick={handleLogin}
-                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 my-4"
-                >
-                  Đăng Nhập
-                </button>
-              </li>
-              <li className="flex-1">
-                <button
-                  onClick={handleRegister}
-                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 my-4"
-                >
-                  Đăng Ký
-                </button>
-              </li>
-              <li className="flex-1">
-                <a
-                  href="/"
-                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 my-4"
-                >
-                  Home
-                </a>
-              </li>
-            </ul>
+          <div className="btn-container flex justify-center">
           </div>
           <hr />
         </div>

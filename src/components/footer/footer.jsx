@@ -110,13 +110,6 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <hr></hr>
-
-                <div className="sb-footer-below">
-                    <div className="sb-footer-copyright">
-                        <p>@{new Date().getFullYear()} All right reserved</p>
-                    </div>
-                </div>
         </div>
     </div>
   );
