@@ -11,7 +11,8 @@ import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 const Footer = () => {
   return (
     <div className="footer">
-        <div className="footer_below_container">
+      <div className="footer_below_container">
+        <div className="footer_below_content0">
           <div className="footer_below_content">
             <h2>DỊCH VỤ : </h2>
             <ul>
@@ -43,58 +44,58 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="foot_below_content2">
-            <h2 id="footer_contact_with_us">contact with us</h2>
-            <ul className="footer_above_icon">
-              <li>
-                <a href="">
-                  <FontAwesomeIcon
-                    icon={faTwitter}
-                    size="2xl"
-                    style={{ color: "#FFD43B" }}
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <FontAwesomeIcon
-                    icon={faFacebook}
-                    size="2xl"
-                    style={{ color: "#FFD43B" }}
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <FontAwesomeIcon
-                    icon={faEnvelope}
-                    size="2xl"
-                    style={{ color: "#FFD43B" }}
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <FontAwesomeIcon
-                    icon={faPhone}
-                    size="2xl"
-                    style={{ color: "#FFD43B" }}
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <FontAwesomeIcon
-                    icon={faMapLocationDot}
-                    size="2xl"
-                    style={{ color: "#FFD43B" }}
-                  />
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
-      
+        <div className="foot_below_content2">
+          <h2 id="footer_contact_with_us">contact with us</h2>
+          <ul className="footer_above_icon">
+            <li>
+              <a href="">
+                <FontAwesomeIcon
+                  icon={faTwitter}
+                  size="2xl"
+                  style={{ color: "#FFD43B" }}
+                />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  size="2xl"
+                  style={{ color: "#FFD43B" }}
+                />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  size="2xl"
+                  style={{ color: "#FFD43B" }}
+                />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <FontAwesomeIcon
+                  icon={faPhone}
+                  size="2xl"
+                  style={{ color: "#FFD43B" }}
+                />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <FontAwesomeIcon
+                  icon={faMapLocationDot}
+                  size="2xl"
+                  style={{ color: "#FFD43B" }}
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

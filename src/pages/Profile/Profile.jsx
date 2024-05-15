@@ -390,13 +390,13 @@ class Profile extends Component {
         </div> */}
 
         <div className="shopper-informations ">
-          <ul class="grid grid-cols-2 gap-5">
+          <ul class="grid grid-cols-2 gap-4">
             <li className="btn0">
               <button
                 onClick={() => this.handleClickprofile()}
                 class="  text-white p-2 rounded bg-blue-500 shadow-md flex items-center justify-center w-full"
               >
-                Thông Tin Tài Khoản
+                Thông tin tài khoản
               </button>
             </li>
             <li className="btn0">
@@ -405,7 +405,7 @@ class Profile extends Component {
                 onClick={() => this.handleClickpassword()}
                 class=" text-white p-2 rounded bg-blue-500 shadow-md flex items-center justify-center w-full"
               >
-                Thay Đổi Mật Khẩu
+                Thay đổi mật khẩu
               </button>
             </li>
           </ul>
@@ -413,9 +413,9 @@ class Profile extends Component {
           <div>{xhtml}</div>
         </div>
 
-        {/* <div className="footer">
+        
           <Footer />
-        </div> */}
+        
       </div>
     );
   }

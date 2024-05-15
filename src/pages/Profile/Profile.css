@@ -4,6 +4,10 @@
   box-sizing: border-box;
   font-family: Hanken Grotesk;
 }
+.footer{
+
+
+}
 .navbar {
   margin-left: 20%;
   position: fixed;
@@ -34,6 +38,7 @@
   width:300px;
   border:solid 1px green;
   border-radius:4px;
+  margin-top:10px;
 }
 .input{
   
