@@ -11,13 +11,11 @@
 } */
 
 .navbar {
-  margin-left: 20%;
+  margin-left: 250px;
   position: fixed;
   top: 0;
-  width: 80%;
+  width: 100%;
   z-index: 999;
-  margin-right:0px;
-  text-align: right;
 }
 
 
@@ -35,9 +33,6 @@
 @media screen and (min-width: 1150px) {
   .abovenav_open_close{display: none;}
   .abovenav_searchbox{margin-left: 50px;}
-  .contain{
-    max-height:550px;
-  }
 }
 
 @media screen and (max-width: 1150px) {

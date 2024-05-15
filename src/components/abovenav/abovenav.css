@@ -1,5 +1,5 @@
 .abovenav {
-  width: 100%;
+  margin: 0 auto;
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -35,8 +35,7 @@ a {
 .abovenav_items {
   display: flex;
   gap: 20px;
-  /* width: 30%; */
-  margin-right: 5%;
+  width: 30%;
 }
 
 li {
@@ -50,6 +49,8 @@ li {
   left: 0;
   width: 100%;
   z-index: 1001;
+  max-height: 470px;
+  overflow-y: auto;
 }
 
 .suggestion_box {
@@ -65,16 +66,21 @@ li {
 
 .suggestion_box_describe {
   margin-left: 5px;
+  text-align: start;
 }
 
 .bn {
   font-size: larger;
   font-weight: bold;
+  text-align: start;
 }
+
 
 .ba {
   font-style: italic;
+  text-align: start;
 }
+
 
 .abovenav .dropdown .sub-menu {
   display: none;
@@ -104,6 +110,9 @@ li {
   }
   .suggestion_box_describe {
     font-size: xx-small;
+  }
+  .suggestion_search {
+    max-height: 300px;
   }
 }
 

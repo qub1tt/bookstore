@@ -331,9 +331,11 @@ class HistoryPurchase extends Component {
     console.log(this.state.issend);
     return (
       <div className="contain">
-        <div className="sidebar">
-          <Sidebar isOpen={this.state.isOpen} />
-        </div>
+          <Sidebar
+            isOpen={this.state.isOpen}
+            islogin={this.props.islogin}
+            logout={() => this.props.logout()}
+          />
         <div className="navbar">
           <Abovenav toggle={this.toggleSidebar} />
         </div>

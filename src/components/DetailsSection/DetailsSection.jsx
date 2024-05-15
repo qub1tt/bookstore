@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import storeConfig from "../../config/storage.config";
-import { Modal, Button } from "react-bootstrap";
+import './DetailsSection.css';
 
 function DetailsSection(props) {
   const [name, setName] = useState("");
@@ -8,9 +8,8 @@ function DetailsSection(props) {
   const [notificationComment, setNotificationComment] = useState("");
   const [comment, setComment] = useState("");
   const [quantity, setQuantity] = useState(1);
-  const [noti, setNoti] = useState(false);
-  const [showModal, setShowModal] = useState(false);
   const [pagination, setPagination] = useState([]);
+  const [showSuccessNotification, setShowSuccessNotification] = useState(false);
 
   useEffect(() => {
     let tmp = [];
@@ -33,6 +32,14 @@ function DetailsSection(props) {
       setEmail("");
     }
   }, [props.islogin]);
+
+  useEffect(() => {
+    if (showSuccessNotification) {
+      setTimeout(() => {
+        setShowSuccessNotification(false);
+      }, 2000);
+    }
+  }, [showSuccessNotification]);
 
   const renderPagination = () => {
     if (pagination.length === 0) {
@@ -72,13 +79,13 @@ function DetailsSection(props) {
 
   const submitComment = () => {
     if (name === "") {
-      setNotificationComment("Name must not be blank ");
+      setNotificationComment("Tên không được để trống");
       return;
     } else {
       setNotificationComment("");
     }
     if (comment === "") {
-      setNotificationComment("Comment must not be blank ");
+      setNotificationComment("Bình luận không được để trống");
       return;
     } else {
       setNotificationComment("");
@@ -89,156 +96,84 @@ function DetailsSection(props) {
 
   const submitOrder = () => {
     if (quantity <= 0) {
-      setNoti(false);
       return;
     } else {
-      setNoti(true);
+      let product = { ...props.mproductDetail, count: quantity };
+      props.addToCart(product);
+      setShowSuccessNotification(true);
     }
-    let product = { ...props.mproductDetail, count: quantity };
-    props.addToCart(product);
   };
 
-  let xhtml = noti ? (
-    <div className="aler-box">
-      <div className="btn-close" onClick={() => setNoti(false)}>
-        X
-      </div>
-      <div className="aler-title">
-        <h3 className="title">Thông Tin Đơn Hàng</h3>
-      </div>
-      <div className="aler-body">Đặt Hàng thành công</div>
-      <div className="alert-footer">
-        <button className="roduct-variation" onClick={() => setNoti(false)}>
-          Cancel
-        </button>
-      </div>
-    </div>
-  ) : null;
-
   return (
-    <section className="pt-12 pb-32">
-      <div className="flex items-center gap-12">
-        <div className="w-3/4">
-          <img
-            className="border border-solid"
-            src={props.mproductDetail.img}
-            alt="book"
-            style={{ border: "1px solid black" }}
-          />
+    <div className="book_detail_container">
+      <div className="book_detail_img_describe">
+        <div className="book_detail_img">
+          <img src={props.mproductDetail.img} alt="book"/>
         </div>
-
-        <div className="w-1/2">
-          <h2 className="text-4xl">{props.mproductDetail.name}</h2>
-          <p className="py-4 px-0">
+        <div className="book_detail_describe">
+          <p className="book_detail_describe_name">{props.mproductDetail.name}</p>
+          <p className="book_detail_describe__">
             <strong>Tác giả: </strong>
-            {props.nameAuthor}
+            <span>{props.nameAuthor}</span>
           </p>
-          <p className="pb-4 px-0">
-            <strong>Nhà xuất bản: </strong> {props.namePublisher}
+          <p className="book_detail_describe__">
+            <strong>Nhà xuất bản: </strong>
+            <span>{props.namePublisher}</span>
           </p>
-          <p className="pb-4 px-0">
-            <strong>Thể loại: </strong> {props.nameCategory}
+          <p className="book_detail_describe__">
+            <strong>Thể loại: </strong>
+            <span>{props.nameCategory}</span>
           </p>
-
-          <p className="pb-4 px-0">
-            <strong>Ngày phát hành: </strong>{" "}
-            {new Date(props.mproductDetail.release_date).toDateString(
-              "yyyy-MM-dd"
-            )}
+          <p className="book_detail_describe__">
+            <strong>Ngày phát hành: </strong>
+            <span>{new Date(props.mproductDetail.release_date).toDateString("yyyy-MM-dd")}</span>
           </p>
-
-          <strong>Mô tả: </strong>
-
-          <p className="py-4 px-0 leading-7 h-500 overflow-auto mb-10">
-            {props.mproductDetail.describe}
-          </p>
-
-          <h3 className="text-2xl	pt-4 text-primary-color-bright">
-            <strong>Giá: </strong>
-            {props.mproductDetail.price}
-          </h3>
-          <div className="count-product">
-            <p className="count">Số Lượng:</p>
-            <input
-              type="number"
-              min="0"
-              onChange={(e) => setQuantity(e.target.value)}
-              value={quantity}
-            />
+          <h3 className="book_detail_describe__"><strong>Giá: </strong><span>{props.mproductDetail.price}</span></h3>
+          <div>
+            <p className="book_detail_describe_numofbook"><strong>Số Lượng:</strong></p>
+            <input type="number" min="0" onChange={(e) => setQuantity(e.target.value)} value={quantity} className="book_detail_number" />
           </div>
-          <button
-            onClick={() => submitOrder()}
-            type="button"
-            className="inline-block py-4 px-8 bg-primary-color-bright text-white no-underline mt-8 shadow-md transition duration-200 ease-in border-none font-chivo-mono text-base"
-          >
-            <i className="fa fa-shopping-cart" />
-            Add to cart
+          <button onClick={() => submitOrder()} type="button" className="addtocartbtn">
+            Thêm vào giỏ hàng
           </button>
-
-          <Modal
-            show={showModal}
-            onHide={() => setShowModal(false)}
-            container={this}
-            aria-labelledby="contained-modal-title"
-          >
-            <Modal.Header closeButton>
-              <Modal.Title id="contained-modal-title">showfication</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>Đặt Hàng Thành Công</Modal.Body>
-            <Modal.Footer>
-              <Button onClick={() => setShowModal(false)}>
-                <a>Cancel</a>
-              </Button>
-            </Modal.Footer>
-          </Modal>
-
-          {xhtml}
-
-          <div className="col-sm-12 review-product">
-            <div>
-              <h3>Review Sách</h3>
-            </div>
-          </div>
-          <div className="tab-content">
-            <div className="tab-pane fade active in" id="reviews">
-              <div className="col-sm-12">
-                <div className="content-conment">
-                  {props.comment.map((element, index) => {
-                    return (
-                      <p key={index}>
-                        <span>{element.name}:</span> {element.comment}
-                      </p>
-                    );
-                  })}
-                  <div className="Pagination-flex">{renderPagination()}</div>
-                </div>
-                <hr />
-                <p style={{ color: "#5BBCEC" }}>{notificationComment}</p>
-                <p>
-                  <h4>
-                    <b>Bình Luận</b>
-                  </h4>
-                </p>
-
-                <form action="#">
-                  <textarea
-                    value={comment}
-                    onChange={(e) => setComment(e.target.value)}
-                  />
-                  <button
-                    type="button"
-                    className="btn btn-default pull-right"
-                    onClick={() => submitComment()}
-                  >
-                    Bình Luận
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
-    </section>
+      <div className="book_detail_super_describe">
+        <strong>Mô tả: </strong>
+        <p>{props.mproductDetail.describe}</p>
+      </div>
+      <div className="book_detail_comment">
+        <div>
+          <strong>Đánh giá sản phẩm</strong>
+        </div>
+        <div>
+          <div className="client_comment_field">
+            {props.comment.map((element, index) => {
+              return (
+                <p key={index}>
+                  <span>{element.name}:</span> {element.comment}
+                </p>
+              );
+            })}
+            <div>{renderPagination()}</div>
+          </div>
+          <hr />
+          <p>{notificationComment}</p>
+          <p>
+            <h4><b>Bình Luận</b></h4>
+          </p>
+          <form action="#">
+            <textarea value={comment} onChange={(e) => setComment(e.target.value)} className="comment_field"/>
+          </form>
+          <button type="button" onClick={() => submitComment()} className="cmbtn">Bình Luận</button>
+        </div>            
+      </div>
+      {showSuccessNotification && (
+        <div className="success-notification">
+          Sản phẩm đã được thêm vào giỏ hàng!
+        </div>
+      )}
+    </div>
   );
 }
 

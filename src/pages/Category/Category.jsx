@@ -41,9 +41,14 @@ class Category extends Component {
             islogin={this.props.islogin}
             logout={() => this.props.logout()}
           />
-        </div>
-        <div className="navbar">
-          <Abovenav toggle={this.toggleSidebar} />
+          </div>
+          <div className="navbar">
+            <Abovenav toggle={this.toggleSidebar} />
+          </div>
+          <div className="content">
+            <CategorySection/>
+          </div>
+          {/* <Footer /> */}
         </div>
         <div className="content">
           <CategorySection />

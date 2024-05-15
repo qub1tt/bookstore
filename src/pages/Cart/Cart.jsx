@@ -35,7 +35,11 @@ class Cart extends Component {
       <>
         <div className="contain">
           <div className="sidebar">
-            <Sidebar isOpen={this.state.isOpen} />
+          <Sidebar
+            isOpen={this.state.isOpen}
+            islogin={this.props.islogin}
+            logout={() => this.props.logout()}
+          />
           </div>
           <div className="navbar">
             <Abovenav toggle={this.toggleSidebar} />
