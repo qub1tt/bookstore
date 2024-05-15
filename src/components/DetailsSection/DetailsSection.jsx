@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import storeConfig from "../../config/storage.config";
-import './DetailsSection.css';
+import "./DetailsSection.css";
 
 function DetailsSection(props) {
   const [name, setName] = useState("");
@@ -108,10 +108,12 @@ function DetailsSection(props) {
     <div className="book_detail_container">
       <div className="book_detail_img_describe">
         <div className="book_detail_img">
-          <img src={props.mproductDetail.img} alt="book"/>
+          <img src={props.mproductDetail.img} alt="book" />
         </div>
         <div className="book_detail_describe">
-          <p className="book_detail_describe_name">{props.mproductDetail.name}</p>
+          <p className="book_detail_describe_name">
+            {props.mproductDetail.name}
+          </p>
           <p className="book_detail_describe__">
             <strong>Tác giả: </strong>
             <span>{props.nameAuthor}</span>
@@ -126,14 +128,33 @@ function DetailsSection(props) {
           </p>
           <p className="book_detail_describe__">
             <strong>Ngày phát hành: </strong>
-            <span>{new Date(props.mproductDetail.release_date).toDateString("yyyy-MM-dd")}</span>
+            <span>
+              {new Date(props.mproductDetail.release_date).toDateString(
+                "yyyy-MM-dd"
+              )}
+            </span>
           </p>
-          <h3 className="book_detail_describe__"><strong>Giá: </strong><span>{props.mproductDetail.price}</span></h3>
+          <h3 className="book_detail_describe__">
+            <strong>Giá: </strong>
+            <span>{props.mproductDetail.price}</span>
+          </h3>
           <div>
-            <p className="book_detail_describe_numofbook"><strong>Số Lượng:</strong></p>
-            <input type="number" min="0" onChange={(e) => setQuantity(e.target.value)} value={quantity} className="book_detail_number" />
+            <p className="book_detail_describe_numofbook">
+              <strong>Số Lượng:</strong>
+            </p>
+            <input
+              type="number"
+              min="0"
+              onChange={(e) => setQuantity(e.target.value)}
+              value={quantity}
+              className="book_detail_number"
+            />
           </div>
-          <button onClick={() => submitOrder()} type="button" className="addtocartbtn">
+          <button
+            onClick={() => submitOrder()}
+            type="button"
+            className="addtocartbtn"
+          >
             Thêm vào giỏ hàng
           </button>
         </div>
@@ -155,18 +176,29 @@ function DetailsSection(props) {
                 </p>
               );
             })}
-            <div>{renderPagination()}</div>
           </div>
           <hr />
           <p>{notificationComment}</p>
           <p>
-            <h4><b>Bình Luận</b></h4>
+            <h4>
+              <b>Bình Luận</b>
+            </h4>
           </p>
           <form action="#">
-            <textarea value={comment} onChange={(e) => setComment(e.target.value)} className="comment_field"/>
+            <textarea
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              className="comment_field"
+            />
           </form>
-          <button type="button" onClick={() => submitComment()} className="cmbtn">Bình Luận</button>
-        </div>            
+          <button
+            type="button"
+            onClick={() => submitComment()}
+            className="cmbtn"
+          >
+            Bình Luận
+          </button>
+        </div>
       </div>
       {showSuccessNotification && (
         <div className="success-notification">

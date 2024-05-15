@@ -1,7 +1,7 @@
 // Layout.js
 import React from "react";
 import { useEffect } from "react";
-
+import "./style.css";
 const Chatbot = () => {
   useEffect(() => {
     const chatbotToggler = document.querySelector(".chatbot-toggler");
