@@ -260,35 +260,103 @@ class Profile extends Component {
     );
     if (this.state.profile) {
       xhtml = (
-        <div className="login-form">
-          <div className="login-content col-sm-6">
-            <div className="shopper-info">
-              <p>UPDATE PASSWORD</p>
+        <div className="chung">
+          <div className="information">
+            <div className="infor-header2">
+              Thay đổi mật khẩu
+              <hr />
               <p className="error">{this.state.notiUpdatePassword}</p>
-              <input
-                value={this.state.oldPassword}
-                onChange={(e) => this.setState({ oldPassword: e.target.value })}
-                type="password"
-                placeholder="Old password"
-              />
-              <input
-                value={this.state.newPassword}
-                onChange={(e) => this.setState({ newPassword: e.target.value })}
-                type="password"
-                placeholder="New Password"
-              />
-              <input
-                value={this.state.confirm}
-                onChange={(e) => this.setState({ confirm: e.target.value })}
-                type="password"
-                placeholder="Confirm"
-              />
-              <button
-                onClick={() => this.handleUpdatePassword()}
-                className="btn btn-default"
-              >
-                update
-              </button>
+            </div>
+            <div className="infor-body">
+              <div className="infro-content">
+                <div class="account-info">
+                  <form>
+                    <div class="form-name2">
+                      <div class="form-control2">
+                        <label class="input-label">Old Password</label>
+                        <div>
+                          <div class="style-input">
+                            <input
+                              className="input2"
+                              
+                              value={this.state.oldPassword}
+                              onChange={(e) =>
+                                this.setState({ oldPassword: e.target.value })
+                              }
+                              type="password"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-control2">
+                        <label class="input-label">New Password</label>
+                        <div>
+                          <div class="style-input">
+                            <input
+                              className="input2"
+                              maxlength="128"
+                              value={this.state.newPassword}
+                              onChange={(e) =>
+                                this.setState({ newPassword: e.target.value })
+                              }
+                              type="password"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-control2">
+                        <label class="input-label">Confirm password</label>
+                        <div>
+                          <div class="style-input">
+                            <input
+                              className="input2"
+          
+                              value={this.state.confirm}
+                              onChange={(e) =>
+                                this.setState({ confirm: e.target.value })
+                              }
+                              type="password"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                {/* <input
+                  value={this.state.oldPassword}
+                  onChange={(e) =>
+                    this.setState({ oldPassword: e.target.value })
+                  }
+                  type="password"
+                  placeholder="Old password"
+                />
+                <input
+                  value={this.state.newPassword}
+                  onChange={(e) =>
+                    this.setState({ newPassword: e.target.value })
+                  }
+                  type="password"
+                  placeholder="New Password"
+                />
+                <input
+                  value={this.state.confirm}
+                  onChange={(e) => this.setState({ confirm: e.target.value })}
+                  type="password"
+                  placeholder="Confirm"
+                /> */}
+                <div className="button-save">
+                  <button
+                    type="submit"
+                    onClick={() => this.handleUpdatePassword()}
+                    className="style-btn-submit"
+                  >
+                    Update
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -323,19 +391,19 @@ class Profile extends Component {
 
         <div className="shopper-informations ">
           <ul class="grid grid-cols-2 gap-5">
-            <li>
+            <li className="btn0">
               <button
                 onClick={() => this.handleClickprofile()}
-                class=" btn text-white p-4 rounded bg-blue-500 shadow-md flex items-center justify-center w-full"
+                class="  text-white p-2 rounded bg-blue-500 shadow-md flex items-center justify-center w-full"
               >
                 Thông Tin Tài Khoản
               </button>
             </li>
-            <li>
+            <li className="btn0">
               {" "}
               <button
                 onClick={() => this.handleClickpassword()}
-                class="btn text-white p-4 rounded bg-blue-500 shadow-md flex items-center justify-center w-full"
+                class=" text-white p-2 rounded bg-blue-500 shadow-md flex items-center justify-center w-full"
               >
                 Thay Đổi Mật Khẩu
               </button>
