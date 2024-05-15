@@ -414,7 +414,7 @@ class Profile extends Component {
         </div>
 
         
-          <Footer />
+        <Footer />
         
       </div>
     );

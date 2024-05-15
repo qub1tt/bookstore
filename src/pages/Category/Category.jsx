@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Abovenav from "../../components/abovenav/abovenav";
 import Sidebar from "../../components/sidebar/sidebar";
+import Footer from "../../components/footer/footer";
 import "./Category.css";
 import CategorySection from "../../components/CategorySection/CategorySection";
 
@@ -48,7 +49,7 @@ class Category extends Component {
         <div className="content">
           <CategorySection />
         </div>
-        {/* <Footer /> */}
+          <Footer />
       </div>
     );
   }

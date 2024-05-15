@@ -60,9 +60,7 @@ class Cart extends Component {
               ispay={this.props.ispay}
             />
           </div>
-          {/* <div className="footer">
             <Footer />
-          </div> */}
         </div>
       </>
     );

@@ -59,6 +59,7 @@ function BookDetailsPage(props) {
           setPage={(page) => props.setPage(page)}
         />
       </div>
+      <Footer />
     </div>
   );
 }

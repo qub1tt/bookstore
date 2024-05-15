@@ -387,9 +387,7 @@ class HistoryPurchase extends Component {
           
         </div>
 
-        {/* <div className="footer">
-          <Footer />
-        </div> */}
+        <Footer />
       </div>
     );
   }
