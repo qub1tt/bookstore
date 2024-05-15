@@ -46,8 +46,10 @@ class HomePage extends Component {
             logout={() => this.props.logout()}
           />
         </div>
-        <div className="navbar">
-          <Abovenav toggle={this.toggleSidebar} />
+        <div className="navbar2">
+          <div className="navbar">
+            <Abovenav toggle={this.toggleSidebar} />
+          </div>
         </div>
         <div className="content">
           <div className="book_carousel">

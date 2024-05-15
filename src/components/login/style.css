@@ -9,7 +9,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background: url("/public/images/bookstore/bookstore.jpg");
+    background-color: white;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -20,7 +20,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 110vh;
-    background: rgba(39, 39, 39, 0.4);
+    background: white;
 }
 .nav{
     position: fixed;
@@ -81,7 +81,7 @@ body{
 }
 .form-box{
     border-radius:10%;
-    background: rgba(39, 39, 39, 0.4);
+    background: #FFFAF0;
     position: relative;
     display: flex;
     align-items: center;
@@ -108,7 +108,7 @@ body{
     transition: .5s ease-in-out;
 }
 .top span{
-    color: #fff;
+    color: black;
     font-size: small;
     
     display: flex;
@@ -117,12 +117,12 @@ body{
 }
 .top span a{
     font-weight: 500;
-    color: #fff;
+    color: black;
     margin-left: 5px;
     text-decoration:underline;
 }
 .top header{
-    color: #fff;
+    color: black;
     font-size: 30px;
     text-align: center;
     padding: 10px 0 0 0;
@@ -149,7 +149,7 @@ body{
     background: rgba(255, 255, 255, 0.25);
 }
 .input-field::-webkit-input-placeholder {
-    color: #fff; /* Đổi màu placeholder thành màu trắng trên các trình duyệt WebKit */
+    color: black; /* Đổi màu placeholder thành màu trắng trên các trình duyệt WebKit */
 }
 
 .input-box i{
@@ -182,7 +182,7 @@ body{
 .two-col{
     display: flex;
     justify-content: space-between;
-    color: #fff;
+    color: black;
     font-size: small;
     margin-top: 10px;
 }
@@ -192,7 +192,7 @@ body{
 }
 .two label a{
     text-decoration: none;
-    color: #fff;
+    color: black;
 }
 .two label a:hover{
     text-decoration: underline;

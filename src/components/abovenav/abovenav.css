@@ -1,5 +1,5 @@
 .abovenav {
-  margin: 0 auto;
+  width: 100%;
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -32,18 +32,18 @@ a {
   outline: none;
 }
 
-
 .abovenav_items {
   display: flex;
   gap: 20px;
-  width: 30%;
+  /* width: 30%; */
+  margin-right: 5%;
 }
 
 li {
   list-style: none;
 }
 
-.suggestion_search{
+.suggestion_search {
   background-color: white;
   position: relative;
   top: 100%;
@@ -52,7 +52,7 @@ li {
   z-index: 1001;
 }
 
-.suggestion_box{
+.suggestion_box {
   width: 100%;
   border: 1px solid black;
   margin-bottom: 5px;
@@ -63,16 +63,16 @@ li {
   max-height: 150px;
 }
 
-.suggestion_box_describe{
+.suggestion_box_describe {
   margin-left: 5px;
 }
 
-.bn{
+.bn {
   font-size: larger;
   font-weight: bold;
 }
 
-.ba{
+.ba {
   font-style: italic;
 }
 
@@ -90,32 +90,30 @@ li {
   display: block;
 }
 
-
 @media screen and (max-width: 800px) {
-  .suggestion_box img{
+  .suggestion_box img {
     max-width: 60px;
     max-height: 90px;
     border: 1px solid black;
   }
-  .suggestion_search{
+  .suggestion_search {
     width: 120%;
   }
-  .suggestion_box{
+  .suggestion_box {
     max-height: 90px;
   }
-  .suggestion_box_describe{
+  .suggestion_box_describe {
     font-size: xx-small;
   }
 }
 
-
 @media screen and (min-width: 800px) {
-  .suggestion_box img{
+  .suggestion_box img {
     max-width: 100px;
     max-height: 150px;
     border: 1px solid black;
   }
-  .suggestion_box{
+  .suggestion_box {
     max-height: 150px;
   }
 }
