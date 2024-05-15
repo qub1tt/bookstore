@@ -298,22 +298,35 @@ class Profile extends Component {
       <div className="contain">
         <div className="sidebar">
           <Sidebar
-            isOpen={this.isOpen}
-            toggle={this.toggleSidebar}
+            isOpen={this.state.isOpen}
+          
             islogin={this.props.islogin}
             logout={() => this.props.logout()}
           />
         </div> 
-        <div className="navbar">
-          <Abovenav toggle={this.toggleSidebar} />
+        <div className="navbar2">
+          <div className="navbar">
+            <Abovenav toggle={this.toggleSidebar} />
+          </div>
         </div>
+        {/* <div className="sidebar">
+          <Sidebar
+            isOpen={this.state.isOpen}
+        
+          />
+        </div>
+        <div className="navbar2">
+          <div className="navbar">
+            <Abovenav toggle={this.toggleSidebar} />
+          </div>
+        </div> */}
 
         <div className="shopper-informations ">
           <ul class="grid grid-cols-2 gap-5">
             <li>
               <button
                 onClick={() => this.handleClickprofile()}
-                class="text-white p-4 rounded bg-blue-500 shadow-md flex items-center justify-center w-full"
+                class=" btn text-white p-4 rounded bg-blue-500 shadow-md flex items-center justify-center w-full"
               >
                 Thông Tin Tài Khoản
               </button>
@@ -322,7 +335,7 @@ class Profile extends Component {
               {" "}
               <button
                 onClick={() => this.handleClickpassword()}
-                class="text-white p-4 rounded bg-blue-500 shadow-md flex items-center justify-center w-full"
+                class="btn text-white p-4 rounded bg-blue-500 shadow-md flex items-center justify-center w-full"
               >
                 Thay Đổi Mật Khẩu
               </button>
@@ -332,9 +345,9 @@ class Profile extends Component {
           <div>{xhtml}</div>
         </div>
 
-         <div className="footer">
+        {/* <div className="footer">
           <Footer />
-        </div>
+        </div> */}
       </div>
     );
   }

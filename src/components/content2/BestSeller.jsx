@@ -13,6 +13,10 @@ export default function BestSeller(props) {
     const [shortDescription, setShortDescription] = useState('');
     const [longDescription, setLongDescription] = useState('');
 
+    const [quantity, setQuantity] = useState(1);
+
+    
+
     useEffect(() => {
         fetchBookData();
     }, [props.bookId]);
@@ -47,7 +51,6 @@ export default function BestSeller(props) {
     return (
         <div className="content2_left_below">
             <div className="content2_left_below_img">
-                {/* Thay thế thẻ a bằng thẻ Link */}
                 <Link to={`/book/${props.bookId}`}>
                     <img src={bookData.img} alt="" />
                 </Link>
@@ -92,13 +95,13 @@ export default function BestSeller(props) {
                     <span className="span2">{longDescription}</span>
                 </div>
                 <div className="content2_left_below_describe_add_to_cart">
-                    <a style={{ textDecoration: "none" }} href="#">
+                    <button style={{ textDecoration: "none" }} href="#">
                         <FontAwesomeIcon
                             icon={faCartShopping}
                             size="xl"
                             style={{ color: "#FFD43B", margin: "10px 0 0 10px" }}
                         />
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>

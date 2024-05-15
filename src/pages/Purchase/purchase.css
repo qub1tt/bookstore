@@ -3,11 +3,17 @@
 }
 
 .purchase_state li :hover{
-    color: rgb(107, 114, 128);
+    color: red;
 }
 
 .purchase_history_container{
     text-align: center;
+}
+
+.null-cart img{
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
 }
 
 .purchase_state{
@@ -19,4 +25,22 @@
     margin-bottom: 30px;
     font-size: larger;
     font-weight: bold;
+}
+
+.quantity{
+    padding: 0 4px;
+}
+
+.cart_menu .image,
+.cart_menu .description,
+.cart_menu .price,
+.cart_menu .quantity,
+.cart_menu .total {
+    width: 20%;
+}
+
+@media (max-width: 450px) {
+    .cart_description{
+        font-size: x-small;
+    }
 }

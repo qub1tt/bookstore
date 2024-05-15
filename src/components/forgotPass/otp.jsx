@@ -1,35 +1,48 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+
 const OTP = ({ setOTP, submitOTP, notificationOTP }) => (
-  <div className="container text-center">
-    <div className="logo-404">
-      <div className="null-cart">
-        <Link to="/">
-          <img
-            src={require("../../assets/logo1.gif")}
-            className="rounded-full w-72 mx-auto"
-          />
-        </Link>
-      </div>
+  <div className="flex flex-col items-center justify-center h-screen bg-white-100 text-center relative">
+    <div className="absolute top-0 mt-8">
+      <Link to="/">
+        <img
+          src={require("../../assets/forgot.webp")}
+          className="w-96 mx-auto"
+          alt="Logo"
+        />
+      </Link>
     </div>
-    <div className="content-404 forgotpass">
-      <h1>
+    <div className="bg-white p-10 rounded-lg shadow-lg w-full max-w-md mt-20">
+      <h1 className="text-4xl font-bold mb-4">
         <b>ENTER OTP</b>
       </h1>
-      <span>{notificationOTP}</span>
-      <input
-        type="number"
-        placeholder="Otp code"
-        onChange={(e) => setOTP(e.target.value)}
-      />
-      <br />
-      <button className="btn btn-default" onClick={() => submitOTP()}>
-        submit
+      {notificationOTP && (
+        <span className="text-red-500">{notificationOTP}</span>
+      )}
+      <div className="my-4">
+        <input
+          type="number"
+          placeholder="OTP code"
+          onChange={(e) => setOTP(e.target.value)}
+          className="w-full p-2 border border-gray-300 rounded-lg"
+        />
+      </div>
+      <button
+        className="bg-blue-500 text-white py-2 px-6 rounded-lg text-xl hover:bg-blue-700 mb-4"
+        onClick={() => submitOTP()}
+      >
+        Submit
       </button>
       <h2>
-        <Link to="/">Bring me back Home</Link>
+        <Link
+          to="/"
+          className="bg-gray-500 text-white py-2 px-6 rounded-lg text-xl hover:bg-gray-700"
+        >
+          Bring me back Home
+        </Link>
       </h2>
     </div>
   </div>
 );
+
 export default OTP;

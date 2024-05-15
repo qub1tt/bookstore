@@ -1,19 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const VerifyPayment = () => (
-  <div className="container text-center">
-    <div className="logo-404">
-      <div className="null-cart">
-        <img src={require("../../assets/logo1.gif")} alt="" />
-      </div>
+  <div className="flex flex-col items-center justify-center h-screen text-center">
+    <div className="mb-8">
+      <img
+        src={require("../../assets/payment.avif")}
+        alt="Logo"
+        className="w-96"
+      />
     </div>
-    <div className="content-404">
-      <h1>
-        <b>Congratulations!!!</b> You have verified payment
-      </h1>
-      <h2>
-        <Link to="/">Trở Về Trang Chủ</Link>
-      </h2>
+    <div className="text-3xl font-bold mb-4">
+      <b>Congratulations!!!</b> You have verified payment
+    </div>
+    <div className="text-xl">
+      <Link to="/">
+        <button className="bg-blue-500 text-white py-2 px-6 rounded-lg text-xl hover:bg-blue-700">
+          Trở Về Trang Chủ
+        </button>
+      </Link>
     </div>
   </div>
 );

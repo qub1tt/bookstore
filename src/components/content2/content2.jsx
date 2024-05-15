@@ -5,17 +5,16 @@ import CategoryList from "./CategoryList";
 
 const Content2 = () => {
   const [selectedOption, setSelectedOption] = useState("daily");
-  const [bookId, setBookId] = useState("66333909ee037e1ef7ae8161"); // ID sách mặc định
+  const [bookId, setBookId] = useState("66333909ee037e1ef7ae8161");
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
-    // Tùy thuộc vào lựa chọn, cập nhật ID sách tương ứng
     if (event.target.value === "daily") {
-      setBookId("66333909ee037e1ef7ae8161"); // ID sách trong ngày
+      setBookId("66333909ee037e1ef7ae8161"); 
     } else if (event.target.value === "monthly") {
-      setBookId("66336837a5708bd447a48f5d"); // ID sách trong tháng
+      setBookId("66336837a5708bd447a48f5d"); 
     } else if (event.target.value === "yearly") {
-      setBookId("66336a20a5708bd447a48f62"); // ID sách trong năm
+      setBookId("66336a20a5708bd447a48f62"); 
     }
   };
 

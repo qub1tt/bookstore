@@ -4,7 +4,6 @@ import { Link, Navigate } from "react-router-dom";
 import SearchBar from "./Search";
 import storeConfig from "../../config/storage.config";
 import {
-  faBell,
   faCartShopping,
   faCircleUser,
   faBars,
@@ -16,8 +15,8 @@ class Abovenav extends Component {
     super(props);
     this.state = {
       email: "Account",
-      toggle: true,
       isAcc: false,
+      dropdownVisible: false,
     };
   }
 
@@ -51,19 +50,8 @@ class Abovenav extends Component {
     }
   };
 
-  hoverlogin = () => {
-    if (this.props.islogin) {
-      return (
-        <ul className="sub-menu">
-          <li onClick={() => this.handleProfile()}>
-            <Link to={"/"}>Hồ Sơ </Link>
-          </li>
-          <li>
-            <Link to="/purchase_history">Đơn Hàng </Link>
-          </li>
-        </ul>
-      );
-    }
+  toggleDropdown = (visible) => {
+    this.setState({ dropdownVisible: visible });
   };
 
   render() {
@@ -74,7 +62,7 @@ class Abovenav extends Component {
     return (
       <nav className="abovenav">
         <div className="abovenav_open_close">
-          <button onClick={this.state.toggle}>
+          <button onClick={this.props.toggle}>
             <FontAwesomeIcon
               icon={faBars}
               size="2xl"
@@ -87,15 +75,6 @@ class Abovenav extends Component {
         </div>
         <div className="abovenav_items">
           <li>
-            <a href="#">
-              <FontAwesomeIcon
-                icon={faBell}
-                size="2xl"
-                style={{ color: "#737373" }}
-              />
-            </a>
-          </li>
-          <li>
             <a href="/cart">
               <FontAwesomeIcon
                 icon={faCartShopping}
@@ -104,13 +83,24 @@ class Abovenav extends Component {
               />
             </a>
           </li>
-          <li className="dropdown relative">
-            <FontAwesomeIcon
-              icon={faCircleUser}
-              size="2xl"
-              className="text-gray-700 mr-2 cursor-pointer"
-            />
-            {this.hoverlogin()}
+          <li
+            onMouseEnter={() => this.toggleDropdown(true)}
+            onMouseLeave={() => this.toggleDropdown(false)}
+            className="user-icon-container"
+          >
+            <a href="#">
+              <FontAwesomeIcon
+                icon={faCircleUser}
+                size="2xl"
+                style={{ color: "#737373" }}
+              />
+            </a>
+            {this.state.dropdownVisible && (
+              <div className="dropdown-menu">
+                <a href="/profile/${this.state.email}">Hồ sơ</a>
+                <a href="/purchase_history">Đơn hàng</a>
+              </div>
+            )}
           </li>
         </div>
       </nav>
@@ -119,3 +109,5 @@ class Abovenav extends Component {
 }
 
 export default Abovenav;
+
+

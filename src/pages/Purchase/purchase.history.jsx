@@ -4,18 +4,33 @@ import Sidebar from "../../components/sidebar/sidebar";
 import Footer from "../../components/footer/footer";
 import "./purchase.css"
 class HistoryPurchase extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      issend: "99",
-      isOpen: window.innerWidth > 768,
+      isOpen: window.innerWidth > 1150,
     };
   }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  }
+
+  handleResize = () => {
+    this.setState({
+      isOpen: window.innerWidth > 1150,
+    });
+  };
+
   toggleSidebar = () => {
     this.setState((prevState) => ({
       isOpen: !prevState.isOpen,
     }));
   };
+
   caculatorTotalBill = (products) => {
     let total = 0;
     products.map((element, index) => {
@@ -96,7 +111,7 @@ class HistoryPurchase extends Component {
                 <div className="delete-cart">
                   <button
                     onClick={() => this.props.deleteBill(element._id)}
-                    className="destroy btn btn-default"
+                    className="destroy btn btn-default bg-red-500 py-2 px-2"
                   >
                     Hủy Đơn Hàng
                   </button>
@@ -112,9 +127,6 @@ class HistoryPurchase extends Component {
           <div className="no-bill">
             <div className="logo-404">
               <div>
-                <div className="null-cart">
-                  <img src={require("../../assets/logo1.gif")} alt="" />
-                </div>
                 <h3 className="title">Không Có Đơn Hàng</h3>
               </div>
             </div>
@@ -203,9 +215,6 @@ class HistoryPurchase extends Component {
           <div className="no-bill">
             <div className="logo-404">
               <div>
-                <div className="null-cart">
-                  <img src="/assets/images/home/logo1.gif" alt="" />
-                </div>
                 <h3 className="title">Không Có Đơn Hàng</h3>
               </div>
             </div>
@@ -294,9 +303,6 @@ class HistoryPurchase extends Component {
           <div className="no-bill">
             <div className="logo-404">
               <div>
-                <div className="null-cart">
-                  <img src="/assets/images/home/logo1.gif" alt="" />
-                </div>
                 <h3 className="title">Không Có Đơn Hàng</h3>
               </div>
             </div>
@@ -326,12 +332,7 @@ class HistoryPurchase extends Component {
     return (
       <div className="contain">
         <div className="sidebar">
-          <Sidebar
-            isOpen={this.isOpen}
-            toggle={this.toggleSidebar}
-            islogin={this.props.islogin}
-            logout={() => this.props.logout()}
-          />
+          <Sidebar isOpen={this.state.isOpen} />
         </div>
         <div className="navbar">
           <Abovenav toggle={this.toggleSidebar} />
@@ -384,9 +385,9 @@ class HistoryPurchase extends Component {
           
         </div>
 
-        <div className="footer">
+        {/* <div className="footer">
           <Footer />
-        </div>
+        </div> */}
       </div>
     );
   }

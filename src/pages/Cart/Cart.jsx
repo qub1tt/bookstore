@@ -7,9 +7,24 @@ class Cart extends Component {
   constructor() {
     super();
     this.state = {
-      isOpen: window.innerWidth > 768,
+      isOpen: window.innerWidth > 1150,
     };
   }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  }
+
+  handleResize = () => {
+    this.setState({
+      isOpen: window.innerWidth > 1150,
+    });
+  };
+
   toggleSidebar = () => {
     this.setState((prevState) => ({
       isOpen: !prevState.isOpen,
@@ -20,12 +35,7 @@ class Cart extends Component {
       <>
         <div className="contain">
           <div className="sidebar">
-            <Sidebar
-              isOpen={this.isOpen}
-              toggleSidebar={this.toggleSidebar}
-              islogin={this.props.islogin}
-              logout={() => this.props.logout()}
-            />
+            <Sidebar isOpen={this.state.isOpen} />
           </div>
           <div className="navbar">
             <Abovenav toggle={this.toggleSidebar} />
@@ -46,9 +56,9 @@ class Cart extends Component {
               ispay={this.props.ispay}
             />
           </div>
-          <div className="footer">
+          {/* <div className="footer">
             <Footer />
-          </div>
+          </div> */}
         </div>
       </>
     );

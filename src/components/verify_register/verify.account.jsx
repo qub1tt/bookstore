@@ -1,26 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const VerifyRegisterAccount = () => (
-  <div className=" text-center">
-    <div>
+  <div className="flex flex-col items-center justify-center h-screen text-center">
+    <div className="mb-8">
       <img
-        src={require("../../assets/logo1.gif")}
-        alt=""
-        className="rounded-full w-72 mx-auto"
+        src={require("../../assets/payment.avif")}
+        alt="Logo"
+        className="w-96"
       />
     </div>
-    <div>
-      <h1 className="mt-16">
-        <b>Congratulations!!!</b> You have verified login successfully
-      </h1>
-      <h2>
-        <Link
-          to="/"
-          className="mt-8 inline-block py-2 px-4 bg-blue-500 text-white rounded-md text-lg font-semibold text-center"
-        >
+    <div className="text-3xl font-bold mb-4">
+      <b>Congratulations!!!</b> You have verified login successfully
+    </div>
+    <div className="text-xl">
+      <Link to="/">
+        <button className="bg-blue-500 text-white py-2 px-6 rounded-lg text-xl hover:bg-blue-700">
           Trở Về Trang Chủ
-        </Link>
-      </h2>
+        </button>
+      </Link>
     </div>
   </div>
 );

@@ -1,76 +1,59 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-class EnterNewPassword extends Component {
-  constructor() {
-    super();
-    this.state = {
-      newpassword: "",
-      confirm: "",
-      noti: "",
-    };
-  }
-  handleSubmit() {
-    if (this.state.newpassword.length < 6) {
-      this.setState({ noti: "Password must contain at least 6 characters" });
-      return;
-    } else {
-      this.setState({ noti: "" });
-    }
-    if (this.state.confirm !== this.state.newpassword) {
-      this.setState({
-        noti: "Confirm invalid",
-      });
-      return;
-    } else {
-      this.setState({ noti: "" });
-    }
-    this.props.submitEnterNewPassword();
-  }
-  render() {
-    return (
-      <div className="container text-center">
-        <div className="logo-404">
-          <div className="null-cart">
-            <Link to="/">
-              <img src={require("../../assets/logo1.gif")} alt="" />
-            </Link>
-          </div>
-        </div>
-        <div className="content-404 forgotpass">
-          <h1>
-            <b>ENTER NEW PASSWORD</b>
-          </h1>
-          <p style={{ color: "tomato" }}>{this.state.noti}</p>
-          <input
-            type="password"
-            placeholder="New Password"
-            onChange={(e) => {
-              this.props.setNewPassword(e.target.value);
-              this.setState({ newpassword: e.target.value });
-            }}
-          />
-          <br />
-          <input
-            type="password"
-            placeholder="Confirm"
-            onChange={(e) => {
-              this.props.setConfirm(e.target.value);
-              this.setState({ confirm: e.target.value });
-            }}
-          />
-          <br />
-          <button
-            className="btn btn-default"
-            onClick={() => this.handleSubmit()}
-          >
-            submit
-          </button>
-          <h2>
-            <Link to="/">Bring me back Home</Link>
-          </h2>
-        </div>
+
+const EnterNewPassword = ({
+  setNewPassword,
+  setConfirm,
+  submitEnterNewPassword,
+  notification,
+}) => (
+  <div className="flex flex-col items-center justify-center h-screen bg-white-100 text-center">
+    <div className="absolute top-0 mt-8">
+      <Link to="/">
+        <img
+          src={require("../../assets/forgot.webp")}
+          className="w-96 mx-auto"
+          alt="Logo"
+        />
+      </Link>
+    </div>
+    <div className="bg-white p-10 rounded-lg shadow-lg w-full max-w-md mt-20">
+      <h1 className="text-4xl font-bold mb-4">
+        <b>ENTER NEW PASSWORD</b>
+      </h1>
+      {notification && <span className="text-red-500">{notification}</span>}
+      <div className="my-4">
+        <input
+          type="password"
+          placeholder="New Password"
+          onChange={(e) => setNewPassword(e.target.value)}
+          className="w-full p-2 border border-gray-300 rounded-lg"
+        />
       </div>
-    );
-  }
-}
+      <div className="my-4">
+        <input
+          type="password"
+          placeholder="Confirm"
+          onChange={(e) => setConfirm(e.target.value)}
+          className="w-full p-2 border border-gray-300 rounded-lg"
+        />
+      </div>
+      <button
+        className="bg-blue-500 text-white py-2 px-6 rounded-lg text-xl hover:bg-blue-700 mb-4"
+        onClick={submitEnterNewPassword}
+      >
+        Submit
+      </button>
+      <h2>
+        <Link
+          to="/"
+          className="bg-gray-500 text-white py-2 px-6 rounded-lg text-xl hover:bg-gray-700"
+        >
+          Bring me back Home
+        </Link>
+      </h2>
+    </div>
+  </div>
+);
+
 export default EnterNewPassword;

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Modal, Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import './cartDetail.css';
+
 class ContentCart extends Component {
   constructor() {
     super();
@@ -16,34 +19,31 @@ class ContentCart extends Component {
       notiDetailAddress: "",
       ispay: false,
       showpaymentfail: false,
+      showSuccessNotification: false,
     };
   }
+
   componentDidMount() {
     let total = 0;
     for (let i = 0; i < this.props.cart.length; i++) {
-      total +=
-        Number(this.props.cart[i].price) * Number(this.props.cart[i].count);
+      total += Number(this.props.cart[i].price) * Number(this.props.cart[i].count);
     }
+    this.setState({ total });
   }
+
   componentDidUpdate(prevProps) {
-    // Kiểm tra nếu giỏ hàng đã thay đổi
     if (prevProps.cart !== this.props.cart) {
       let total = 0;
-      // Tính tổng tiền của các mặt hàng trong giỏ hàng mới
       for (let i = 0; i < this.props.cart.length; i++) {
-        total +=
-          Number(this.props.cart[i].price) * Number(this.props.cart[i].count);
+        total += Number(this.props.cart[i].price) * Number(this.props.cart[i].count);
       }
-      // Cập nhật state với tổng tiền mới
-      this.setState({ total: total });
+      this.setState({ total });
     }
 
-    // Kiểm tra nếu trạng thái thanh toán đã thay đổi và đã được thanh toán thành công
     if (prevProps.ispay !== this.props.ispay && this.props.ispay === true) {
       this.setState({ ispay: true, showpaymentfail: false });
     }
 
-    // Kiểm tra nếu trạng thái thanh toán đã thay đổi và đã gặp lỗi
     if (prevProps.ispay !== this.props.ispay && this.props.ispay === false) {
       this.setState({ ispay: false, showpaymentfail: true });
     }
@@ -63,6 +63,7 @@ class ContentCart extends Component {
       showpaymentfail: false,
     });
   };
+
   handlePayment = () => {
     if (!this.props.islogin) {
       this.setState({ show: true });
@@ -72,38 +73,33 @@ class ContentCart extends Component {
     }
     let check = true;
     if (this.state.name.length < 3) {
-      this.setState({
-        notiName: "Name invalid",
-      });
+      this.setState({ notiName: "Name invalid" });
       check = false;
     } else {
-      this.setState({
-        notiName: "",
-      });
+      this.setState({ notiName: "" });
     }
     if (!this.isvaidPhone(this.state.phone)) {
-      this.setState({
-        notiPhone: "Phone invalid",
-      });
+      this.setState({ notiPhone: "Phone invalid" });
       check = false;
     } else {
       this.setState({ notiPhone: "" });
     }
-
     if (this.state.address === "") {
       this.setState({ notiDetailAddress: "Address invalid" });
       check = false;
     } else {
       this.setState({ notiDetailAddress: "" });
     }
-    if (check === false) return;
-    this.props.payment(
-      this.state.address,
-      this.state.phone,
-      this.state.name,
-      this.state.total
-    );
+    if (!check) return;
+    this.props.payment(this.state.address, this.state.phone, this.state.name, this.state.total).then(() => {
+      this.setState({ showSuccessNotification: true });
+      setTimeout(() => {
+        this.setState({ showSuccessNotification: false });
+        window.location.reload(); 
+      }, 1000);
+    });
   };
+
   isvaidPhone = (phone) => {
     if (phone.length < 10 || phone.length > 11) return false;
     for (let i = 0; i < phone.length; i++) {
@@ -112,49 +108,50 @@ class ContentCart extends Component {
     return true;
   };
 
+  renderSuccessNotification = () => {
+    if (!this.state.showSuccessNotification) {
+      return null;
+    }
+    return (
+      <div className="success-notification">
+        Order Successfully!
+      </div>
+    );
+  };
+
   render() {
+    if (this.props.cart.length === 0) {
+      return (
+        <div className="text-center mt-8">
+          <p>Không có sản phẩm trong giỏ hàng.</p>
+        </div>
+      );
+    }
     return (
       <div>
-        <section
-          id="cart_items"
-          className="md:col-span-2 overflow-hidden border border-gray-200 rounded-lg"
-        >
+        {this.renderSuccessNotification()}
+        <section id="cart_items" className="md:col-span-2 overflow-hidden border border-gray-200 rounded-lg">
           <div>
             <div className="bg-gray-100">
               <table className="min-w-full divide-y divide-gray-200">
                 <thead>
-                  <tr className="bg-gray-50">
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
+                  <tr className="cart_title bg-gray-50">
+                    <th scope="col" className="text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Item
                     </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
+                    <th scope="col" className="py-2 text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Description
                     </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
+                    <th scope="col" className="text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Price
                     </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
+                    <th scope="col" className="px-2 text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Quantity
                     </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
+                    <th scope="col" className="text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Total
                     </th>
-                    <th scope="col" className="relative px-6 py-3">
+                    <th scope="col" className="relative">
                       <span className="sr-only">Delete</span>
                     </th>
                   </tr>
@@ -166,38 +163,33 @@ class ContentCart extends Component {
                       this.props.updateProductInCart(updatedElement);
                     };
                     return (
-                      <tr>
+                      <tr key={index} className="cart_info">
                         <td className="cart_product">
                           <a href="">
-                            <img src={element.img} alt="" />
+                            <img src={element.img} alt="" className="cart_image" />
                           </a>
                         </td>
                         <td className="cart_description">
-                          <h4>
-                            <a href="">{element.name}</a>
-                          </h4>
+                          <p>{element.name}</p>
                         </td>
                         <td className="cart_price">
-                          <p>{element.price}</p>
+                          <p>{element.price}đ</p>
                         </td>
                         <td className="cart_quantity">
                           <div className="cart_quantity_button">
-                            <span
-                              className="cart_quantity_up"
-                              onClick={() => updateCount(element.count + 1)}
-                            >
+                            <button className="cart_quantity_up" onClick={() => updateCount(element.count + 1)}>
                               {" "}
                               +{" "}
-                            </span>
+                            </button>
                             <input
                               className="cart_quantity_input"
                               type="text"
                               name="quantity"
                               value={element.count}
-                              autocomplete="off"
+                              autoComplete="off"
                               size="2"
                             />
-                            <span
+                            <button
                               className="cart_quantity_down"
                               onClick={() => {
                                 if (element.count === 1) {
@@ -208,26 +200,22 @@ class ContentCart extends Component {
                             >
                               {" "}
                               -{" "}
-                            </span>
+                            </button>
                           </div>
                         </td>
                         <td className="cart_total">
                           <p className="cart_total_price">
-                            {new Intl.NumberFormat("de-DE", {
-                              currency: "EUR",
-                            }).format(element.price * element.count)}
+                            {new Intl.NumberFormat("de-DE", { currency: "EUR" }).format(element.price * element.count)}
                             <sup>đ</sup>
                           </p>
                         </td>
                         <td className="cart_delete">
-                          <a
-                            className="cart_quantity_delete"
-                            onClick={() =>
-                              this.props.deteleProductInCart(element._id)
-                            }
+                          <button
+                            className="cart_quantity_delete flex items-center justify-center hover:text-red-700"
+                            onClick={() => this.props.deteleProductInCart(element._id)}
                           >
-                            <i className="fa fa-times" />
-                          </a>
+                            <FontAwesomeIcon icon={faTrash} />
+                          </button>
                         </td>
                       </tr>
                     );
@@ -237,9 +225,9 @@ class ContentCart extends Component {
             </div>
           </div>
         </section>
-        <section id="do_action" className="rounded-lg  my-5">
+        <section id="do_action" className="rounded-lg my-5">
           <div>
-            <div class="total_area bg-gray-200">
+            <div className="total_area bg-gray-200">
               <ul className="text-sm my-4 py-4">
                 <li className="flex justify-between mx-4 mb-2">
                   Phí Vận Chuyển
@@ -248,43 +236,20 @@ class ContentCart extends Component {
                   </span>
                 </li>
                 <li className="flex justify-between mx-4">
-                  Tổng Tiền{" "}
+                  Tổng Tiền
                   <span className="font-medium mx-2">
                     {" "}
-                    {new Intl.NumberFormat("de-DE", {
-                      currency: "EUR",
-                    }).format(this.state.total)}
+                    {new Intl.NumberFormat("de-DE", { currency: "EUR" }).format(this.state.total)}
                     <sup>đ</sup>
                   </span>
                 </li>
               </ul>
-              <Modal
-                show={this.state.show}
-                onHide={() => this.setState({ show: false })}
-                container={this}
-                aria-labelledby="contained-modal-title"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title id="contained-modal-title">
-                    Notification
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Vui Lòng Đăng Nhập Để Thanh Toán</Modal.Body>
-                <Modal.Footer>
-                  <Button onClick={() => this.setState({ show: false })}>
-                    <a>Cancel</a>
-                  </Button>
-                  <Button onClick={this.handleHide}>
-                    <Link to="/login">Login</Link>
-                  </Button>
-                </Modal.Footer>
-              </Modal>
             </div>
           </div>
-          <div className="col-md-12  bg-gray-200 py-4">
+          <div className="col-md-12 bg-gray-200 py-4">
             <div className="chose_area mx-4">
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
-                <div className="user_option flex-1 mr-4">
+                <div className="user_option flex-1">
                   <label className="block">Name</label>
                   <input
                     type="text"
@@ -294,13 +259,14 @@ class ContentCart extends Component {
                   />
                   <span>{this.state.notiName}</span>
                 </div>
-                <div className="user_option flex-1 mr-4">
+                <div className="user_option flex-1">
                   <label className="block">Phone</label>
                   <input
                     type="text"
                     value={this.state.phone}
                     onChange={(e) => this.setState({ phone: e.target.value })}
-                    className="border border-gray-300 rounded-md p-2 w-full md:w-auto lg:w-96"
+                    className="border border-gray-300 rounded-md p-2 w-full md:w-auto
+                    lg:w-96"
                   />
                   <span>{this.state.notiPhone}</span>
                 </div>
@@ -315,64 +281,11 @@ class ContentCart extends Component {
                   <span>{this.state.notiDetailAddress}</span>
                 </div>
               </div>
-
-              <Modal
-                show={this.state.ispay}
-                onHide={() => this.setState({ ispay: false })}
-                container={this}
-                aria-labelledby="contained-modal-title"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title id="contained-modal-title">
-                    Notification
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  Đặt Hàng Thành Công, Vui Lòng Vào Đơn Hàng Để Xem Chi Tiết
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button
-                    onClick={() => {
-                      this.reset();
-                      window.location.reload();
-                    }}
-                  >
-                    <a>OK</a>
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-
-              <Modal
-                show={this.state.showpaymentfail}
-                onHide={() => this.setState({ showpaymentfail: false })}
-                container={this}
-                aria-labelledby="contained-modal-title"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title id="contained-modal-title">
-                    Notification
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Đặt Hàng Thất Bại</Modal.Body>
-                <Modal.Footer>
-                  <Button
-                    onClick={() => this.setState({ showpaymentfail: false })}
-                  >
-                    <a>Cancel</a>
-                  </Button>
-                </Modal.Footer>
-              </Modal>
               <div className="cart-option flex justify-between">
-                <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mr-2 mt-6 w-48"
-                  onClick={() => this.handlePayment()}
-                >
+                <button className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mr-2 mt-6 w-48" onClick={() => this.handlePayment()}>
                   Payment
                 </button>
-                <Link
-                  className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mt-6 w-48 flex items-center justify-center"
-                  to={"/"}
-                >
+                <Link className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mt-6 w-48 flex items-center justify-center" to={"/"}>
                   Continue shopping
                 </Link>
               </div>
@@ -383,4 +296,5 @@ class ContentCart extends Component {
     );
   }
 }
+
 export default ContentCart;

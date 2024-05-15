@@ -30,7 +30,7 @@ const BooksDetailContainer = ({
   useEffect(() => {
     if (mproductDetail) {
       productActions.getNameCategoryByID(mproductDetail.id_category);
-      productActions.getNamePubliserByID(mproductDetail.id_nsx);
+      productActions.getNamePublisherByID(mproductDetail.id_nsx);
       productActions.getNameAuthorByID(mproductDetail.id_author);
     }
   }, [mproductDetail, productActions]);
@@ -45,7 +45,7 @@ const BooksDetailContainer = ({
         <BookDetailsPage
           mproductDetail={mproductDetail}
           nameCategory={nameCategory}
-          namePublicsher={namePublisher}
+          namePublisher={namePublisher}
           islogin={islogin}
           logout={() => actions.logout()}
           id_book={id}

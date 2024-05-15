@@ -15,7 +15,6 @@ class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: true,
       isLoggedIn: false,
     };
   }
@@ -41,7 +40,7 @@ class Sidebar extends Component {
       return <Navigate to="/" />;
     }
     return (
-      <div className={`sidebar ${this.state.isOpen ? "open" : ""}`}>
+      <div className={`sidebar ${this.props.isOpen ? "open" : ""}`}>
         <div className="sidebar-content">
           <div class="main_logo">
             <a href="/">
@@ -58,7 +57,7 @@ class Sidebar extends Component {
                     style={{ color: "#737373" }}
                   />
                 </span>
-                <a href="#" class="sidebar_title">
+                <a href="/" class="sidebar_title">
                   Trang chủ
                 </a>
               </li>
@@ -71,7 +70,7 @@ class Sidebar extends Component {
                   />
                 </span>
                 <a href="#" class="sidebar_title">
-                  Danh mục sản phẩm
+                  Thể loại
                 </a>
                 <ul class="subitems">
                   <li>
@@ -82,8 +81,8 @@ class Sidebar extends Component {
                         style={{ color: "#737373" }}
                       />
                     </span>
-                    <a href="#" class="sidebar_title">
-                      Sách trong nước
+                    <a href="/category/662a796042e68c567e688052" class="sidebar_title">
+                      Tâm lý
                     </a>
                   </li>
                   <li>
@@ -94,8 +93,8 @@ class Sidebar extends Component {
                         style={{ color: "#737373" }}
                       />
                     </span>
-                    <a href="#" class="sidebar_title">
-                      Sách kinh tế
+                    <a href="/category/662a796642e68c567e688053" class="sidebar_title">
+                      Kinh tế
                     </a>
                   </li>
                   <li>
@@ -106,8 +105,8 @@ class Sidebar extends Component {
                         style={{ color: "#737373" }}
                       />
                     </span>
-                    <a href="#" class="sidebar_title">
-                      Sách ngoại ngữ
+                    <a href="/category/662a796a42e68c567e688054" class="sidebar_title">
+                      Văn học
                     </a>
                   </li>
                   <li>
@@ -118,8 +117,32 @@ class Sidebar extends Component {
                         style={{ color: "#737373" }}
                       />
                     </span>
-                    <a href="#" class="sidebar_title">
-                      Sách văn học
+                    <a href="/category/662a796d42e68c567e688055" class="sidebar_title">
+                      Truyện tranh
+                    </a>
+                  </li>
+                  <li>
+                    <span class="subsidebar_icon">
+                      <FontAwesomeIcon
+                        icon={faBook}
+                        size="2xl"
+                        style={{ color: "#737373" }}
+                      />
+                    </span>
+                    <a href="/category/662a7a5142e68c567e688057" class="sidebar_title">
+                      Khoa học
+                    </a>
+                  </li>
+                  <li>
+                    <span class="subsidebar_icon">
+                      <FontAwesomeIcon
+                        icon={faBook}
+                        size="2xl"
+                        style={{ color: "#737373" }}
+                      />
+                    </span>
+                    <a href="/category/662a7a5842e68c567e688058" class="sidebar_title">
+                      Sách giáo khoa
                     </a>
                   </li>
                 </ul>
@@ -133,7 +156,7 @@ class Sidebar extends Component {
                   />
                 </span>
                 <a href="#" class="sidebar_title">
-                  Admin Dashboard
+                  Admin
                 </a>
                 <ul class="subitems">
                   <li>
@@ -144,8 +167,8 @@ class Sidebar extends Component {
                         style={{ color: "#737373" }}
                       />
                     </span>
-                    <a href="#" class="sidebar_title">
-                      Dashboard
+                    <a href="/profile/${this.state.email}" class="sidebar_title">
+                      Hồ sơ
                     </a>
                   </li>
                   <li>
@@ -156,35 +179,11 @@ class Sidebar extends Component {
                         style={{ color: "#737373" }}
                       />
                     </span>
-                    <a href="#" class="sidebar_title">
-                      Extrapage
+                    <a href="/purchase_history" class="sidebar_title">
+                      Đơn hàng
                     </a>
                   </li>
                 </ul>
-              </li>
-              <li>
-                <span class="sidebar_icon">
-                  <FontAwesomeIcon
-                    icon={faBook}
-                    size="2xl"
-                    style={{ color: "#737373" }}
-                  />
-                </span>
-                <a href="#" class="sidebar_title">
-                  Sách yêu thích
-                </a>
-              </li>
-              <li>
-                <span class="sidebar_icon">
-                  <FontAwesomeIcon
-                    icon={faBook}
-                    size="2xl"
-                    style={{ color: "#737373" }}
-                  />
-                </span>
-                <a href="#" class="sidebar_title">
-                  Sách PDF
-                </a>
               </li>
               <li>
                 <span class="sidebar_icon">
@@ -205,3 +204,5 @@ class Sidebar extends Component {
 }
 
 export default Sidebar;
+
+
