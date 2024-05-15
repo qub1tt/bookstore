@@ -5,6 +5,7 @@ import Content1 from "../../components/content1/content1";
 import Content0 from "../../components/content0/content0";
 import Content2 from "../../components/content2/content2";
 import Footer from "../../components/footer/footer";
+import Chatbot from "../../components/Chatbot/Chatbot";
 import Book_Carousel from "../../components/book_carousel/book_carousel";
 import "./HomePage.css";
 
@@ -56,9 +57,8 @@ class HomePage extends Component {
           <Content1 />
           <Content2 />
           <Content0 />
+          <Chatbot />
         </div>
-
-
       </div>
     );
   }

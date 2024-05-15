@@ -7,7 +7,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import { thunk } from "redux-thunk";
 import reducers from "./reducers";
-import ChatBot from "./components/Chatbot/chat";
+
 const store = configureStore({
   reducer: reducers,
   middleware: (getDefaultMiddleware) =>
@@ -19,6 +19,5 @@ const root = ReactDOM.createRoot(document.getElementById("app"));
 root.render(
   <Provider store={store}>
     <App />
-    <ChatBot />
   </Provider>
 );

@@ -12,7 +12,6 @@ import ForgotPasswordContainer from "./containers/forgot.password.container";
 import HistoryPurchase from "./containers/history.purchase.container";
 import HomePageContainer from "./containers/home.container";
 import CategoryContainer from "./containers/category.container";
-
 const App = () => {
   return (
     <Router>
