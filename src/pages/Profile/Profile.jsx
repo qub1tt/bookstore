@@ -407,8 +407,9 @@ class Profile extends Component {
           </ul>
           <hr></hr>
           <div>{xhtml}</div>
+          <Chatbot />
         </div>
-
+        
         <Footer />
       </div>
     );

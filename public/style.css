@@ -192,4 +192,8 @@ header h2 {
   .chatbot header span {
     display: block;
   }
+  .chatbot{
+    max-height: 400px;
+    max-width: 250px;
+  }
 }
