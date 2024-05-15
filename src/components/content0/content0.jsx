@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; 
-import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper and SwiperSlide from swiper/react
-import "swiper/swiper-bundle.css";
+import React, { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./content0.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const Content0 = () => {
   const [books, setBooks] = useState([]);
+  const scrollContainerRef = useRef(null);
 
   useEffect(() => {
     // Function to fetch data from API
@@ -22,8 +21,8 @@ const Content0 = () => {
         const sortedBooks = data.data.sort((a, b) => b.view_counts - a.view_counts);
         // Take top 10 books
         const top10Books = sortedBooks.slice(0, 10);
-        // Set the fetched data to the state
-        setBooks(top10Books);
+        // Duplicate the books array to create an infinite loop effect
+        setBooks([...top10Books, ...top10Books, ...top10Books]);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -32,6 +31,62 @@ const Content0 = () => {
     // Call the fetchData function
     fetchData();
   }, []);
+
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    const handleMouseDown = (e) => {
+      isDown = true;
+      scrollContainer.classList.add('active');
+      startX = e.pageX - scrollContainer.offsetLeft;
+      scrollLeft = scrollContainer.scrollLeft;
+    };
+
+    const handleMouseLeave = () => {
+      isDown = false;
+      scrollContainer.classList.remove('active');
+    };
+
+    const handleMouseUp = () => {
+      isDown = false;
+      scrollContainer.classList.remove('active');
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - scrollContainer.offsetLeft;
+      const walk = (x - startX) * 2; //scroll-fast
+      scrollContainer.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleScroll = () => {
+      // When scrolled to the end, reset scroll position to the middle set of books
+      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+        scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3 - scrollContainer.clientWidth;
+      } else if (scrollContainer.scrollLeft <= 0) {
+        scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3;
+      }
+    };
+
+    scrollContainer.addEventListener('mousedown', handleMouseDown);
+    scrollContainer.addEventListener('mouseleave', handleMouseLeave);
+    scrollContainer.addEventListener('mouseup', handleMouseUp);
+    scrollContainer.addEventListener('mousemove', handleMouseMove);
+    scrollContainer.addEventListener('scroll', handleScroll);
+
+    return () => {
+      scrollContainer.removeEventListener('mousedown', handleMouseDown);
+      scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
+      scrollContainer.removeEventListener('mouseup', handleMouseUp);
+      scrollContainer.removeEventListener('mousemove', handleMouseMove);
+      scrollContainer.removeEventListener('scroll', handleScroll);
+    };
+  }, [books]);
 
   return (
     <section className="content0_feature">
@@ -44,17 +99,9 @@ const Content0 = () => {
         </span>
       </div>
 
-      <Swiper
-        className="content0_feature-slider"
-        spaceBetween={10}
-        loop={true}
-        centeredSlides={true}
-        autoplay={{ delay: 9500, disableOnInteraction: false }}
-        navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}
-        breakpoints={{ 0: { slidesPerView: 1 }, 450: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } }}
-      >
-        {books.map((book) => (
-          <SwiperSlide key={book._id} className="box">
+      <div className="content0_scroll_container" ref={scrollContainerRef}>
+        {books.map((book, index) => (
+          <div key={`${book._id}-${index}`} className="content0_scroll_item">
             <div className="content0_feature_image">
               <img src={book.img} alt={book.name} title={book.name} />
             </div>
@@ -72,9 +119,9 @@ const Content0 = () => {
                 </a>
               </div>
             </div>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+      </div>
     </section>
   );
 };
