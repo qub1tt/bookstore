@@ -3,7 +3,7 @@ import Abovenav from "../../components/abovenav/abovenav";
 import Sidebar from "../../components/sidebar/sidebar";
 import "./Category.css";
 import CategorySection from "../../components/CategorySection/CategorySection";
-
+import Chatbot from "../../components/Chatbot/Chatbot";
 class Category extends Component {
   constructor() {
     super();
@@ -47,7 +47,9 @@ class Category extends Component {
         </div>
         <div className="content">
           <CategorySection />
+          <Chatbot />
         </div>
+
         {/* <Footer /> */}
       </div>
     );

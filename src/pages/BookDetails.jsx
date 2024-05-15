@@ -3,9 +3,9 @@ import Abovenav from "../components/abovenav/abovenav";
 import Sidebar from "../components/sidebar/sidebar";
 import DetailsSection from "../components/DetailsSection/DetailsSection";
 import Footer from "../components/footer/footer";
+import Chatbot from "../components/Chatbot/Chatbot";
 
 function BookDetailsPage(props) {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [props.location]);
@@ -17,7 +17,7 @@ function BookDetailsPage(props) {
   };
 
   const toggleSidebar = () => {
-    setIsOpen(prevState => !prevState);
+    setIsOpen((prevState) => !prevState);
   };
 
   useEffect(() => {
@@ -58,6 +58,7 @@ function BookDetailsPage(props) {
           nextPage={() => props.nextPage()}
           setPage={(page) => props.setPage(page)}
         />
+        <Chatbot />
       </div>
     </div>
   );

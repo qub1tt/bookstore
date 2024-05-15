@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Abovenav from "../../components/abovenav/abovenav";
 import Sidebar from "../../components/sidebar/sidebar";
 import Footer from "../../components/footer/footer";
-import "./purchase.css"
+import Chatbot from "../../components/Chatbot/Chatbot";
+import "./purchase.css";
 class HistoryPurchase extends Component {
   constructor() {
     super();
@@ -331,18 +332,16 @@ class HistoryPurchase extends Component {
     console.log(this.state.issend);
     return (
       <div className="contain">
-          <Sidebar
-            isOpen={this.state.isOpen}
-            islogin={this.props.islogin}
-            logout={() => this.props.logout()}
-          />
+        <Sidebar
+          isOpen={this.state.isOpen}
+          islogin={this.props.islogin}
+          logout={() => this.props.logout()}
+        />
         <div className="navbar">
           <Abovenav toggle={this.toggleSidebar} />
         </div>
 
         <div className="content">
-
-
           <section id="cart_items">
             <div className="purchase_history_container">
               <div className="purchase_history_bill-title">
@@ -377,14 +376,12 @@ class HistoryPurchase extends Component {
                     </button>
                   </li>
                 </ul>
-                <hr style={{marginBottom: "20px",}}/>
+                <hr style={{ marginBottom: "20px" }} />
               </div>
               {this.renderBill()}
             </div>
           </section>
-
-
-          
+          <Chatbot />
         </div>
 
         {/* <div className="footer">

@@ -3,6 +3,7 @@ import ContentCart from "../../components/cart/cartDetail";
 import Abovenav from "../../components/abovenav/abovenav";
 import Sidebar from "../../components/sidebar/sidebar";
 import Footer from "../../components/footer/footer";
+import Chatbot from "../../components/Chatbot/Chatbot";
 class Cart extends Component {
   constructor() {
     super();
@@ -35,11 +36,11 @@ class Cart extends Component {
       <>
         <div className="contain">
           <div className="sidebar">
-          <Sidebar
-            isOpen={this.state.isOpen}
-            islogin={this.props.islogin}
-            logout={() => this.props.logout()}
-          />
+            <Sidebar
+              isOpen={this.state.isOpen}
+              islogin={this.props.islogin}
+              logout={() => this.props.logout()}
+            />
           </div>
           <div className="navbar">
             <Abovenav toggle={this.toggleSidebar} />
@@ -59,6 +60,7 @@ class Cart extends Component {
               }
               ispay={this.props.ispay}
             />
+            <Chatbot />
           </div>
           {/* <div className="footer">
             <Footer />

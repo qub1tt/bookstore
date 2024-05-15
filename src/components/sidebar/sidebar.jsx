@@ -18,7 +18,6 @@ class Sidebar extends Component {
       isLoggedIn: false,
     };
   }
-  
 
   handlelogin = () => {
     if (this.props.islogin) {
@@ -85,12 +84,12 @@ class Sidebar extends Component {
                         style={{ color: "#737373" }}
                       />
                     </span>
-                    <a
-                      href="/category/662a796042e68c567e688052"
+                    <Link
+                      to="/category/662a796042e68c567e688052"
                       className="sidebar_title"
                     >
                       Tâm lý
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <span className="subsidebar_icon">
@@ -100,12 +99,12 @@ class Sidebar extends Component {
                         style={{ color: "#737373" }}
                       />
                     </span>
-                    <a
-                      href="/category/662a796642e68c567e688053"
+                    <Link
+                      to="/category/662a796642e68c567e688053"
                       className="sidebar_title"
                     >
                       Kinh tế
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <span className="subsidebar_icon">
@@ -115,12 +114,12 @@ class Sidebar extends Component {
                         style={{ color: "#737373" }}
                       />
                     </span>
-                    <a
-                      href="/category/662a796a42e68c567e688054"
+                    <Link
+                      to="/category/662a796a42e68c567e688054"
                       className="sidebar_title"
                     >
                       Văn học
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <span className="subsidebar_icon">
@@ -130,12 +129,12 @@ class Sidebar extends Component {
                         style={{ color: "#737373" }}
                       />
                     </span>
-                    <a
-                      href="/category/662a796d42e68c567e688055"
+                    <Link
+                      to="/category/662a796d42e68c567e688055"
                       className="sidebar_title"
                     >
                       Truyện tranh
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <span className="subsidebar_icon">
@@ -145,12 +144,12 @@ class Sidebar extends Component {
                         style={{ color: "#737373" }}
                       />
                     </span>
-                    <a
-                      href="/category/662a7a5142e68c567e688057"
+                    <Link
+                      to="/category/662a7a5142e68c567e688057"
                       className="sidebar_title"
                     >
                       Khoa học
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <span className="subsidebar_icon">
@@ -160,12 +159,12 @@ class Sidebar extends Component {
                         style={{ color: "#737373" }}
                       />
                     </span>
-                    <a
-                      href="/category/662a7a5842e68c567e688058"
+                    <Link
+                      to="/category/662a7a5842e68c567e688058"
                       className="sidebar_title"
                     >
                       Sách giáo khoa
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>

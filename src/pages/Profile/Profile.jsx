@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Abovenav from "../../components/abovenav/abovenav";
 import Sidebar from "../../components/sidebar/sidebar";
 import Footer from "../../components/footer/footer";
+import Chatbot from "../../components/Chatbot/Chatbot";
 import "./Profile.css";
 class Profile extends Component {
   constructor() {
@@ -195,8 +196,6 @@ class Profile extends Component {
                         </div>
                       </div>
                     </div>
-
-                   
                   </form>
                 </div>
               </div>
@@ -278,7 +277,6 @@ class Profile extends Component {
                           <div class="style-input">
                             <input
                               className="input2"
-                              
                               value={this.state.oldPassword}
                               onChange={(e) =>
                                 this.setState({ oldPassword: e.target.value })
@@ -312,7 +310,6 @@ class Profile extends Component {
                           <div class="style-input">
                             <input
                               className="input2"
-          
                               value={this.state.confirm}
                               onChange={(e) =>
                                 this.setState({ confirm: e.target.value })
@@ -367,11 +364,10 @@ class Profile extends Component {
         <div className="sidebar">
           <Sidebar
             isOpen={this.state.isOpen}
-          
             islogin={this.props.islogin}
             logout={() => this.props.logout()}
           />
-        </div> 
+        </div>
         <div className="navbar2">
           <div className="navbar">
             <Abovenav toggle={this.toggleSidebar} />
@@ -389,14 +385,14 @@ class Profile extends Component {
           </div>
         </div> */}
 
-        <div className="shopper-informations ">
-          <ul class="grid grid-cols-2 gap-5">
+        <div className="shopper-informations">
+          <ul class="grid grid-cols-2 gap-4">
             <li className="btn0">
               <button
                 onClick={() => this.handleClickprofile()}
                 class="  text-white p-2 rounded bg-blue-500 shadow-md flex items-center justify-center w-full"
               >
-                Thông Tin Tài Khoản
+                Thông tin tài khoản
               </button>
             </li>
             <li className="btn0">
@@ -405,17 +401,13 @@ class Profile extends Component {
                 onClick={() => this.handleClickpassword()}
                 class=" text-white p-2 rounded bg-blue-500 shadow-md flex items-center justify-center w-full"
               >
-                Thay Đổi Mật Khẩu
+                Thay đổi mật khẩu
               </button>
             </li>
           </ul>
           <hr></hr>
           <div>{xhtml}</div>
         </div>
-
-        {/* <div className="footer">
-          <Footer />
-        </div> */}
       </div>
     );
   }

@@ -1,5 +1,5 @@
 /* Import Google font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 * {
   margin: 0;
@@ -8,7 +8,7 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background: #E3F2FD;
+  background: #e3f2fd;
 }
 .chatbot-toggler {
   position: fixed;
@@ -34,7 +34,7 @@ body.show-chatbot .chatbot-toggler {
   position: absolute;
 }
 .chatbot-toggler span:last-child,
-body.show-chatbot .chatbot-toggler span:first-child  {
+body.show-chatbot .chatbot-toggler span:first-child {
   opacity: 0;
 }
 body.show-chatbot .chatbot-toggler span:last-child {
@@ -52,8 +52,8 @@ body.show-chatbot .chatbot-toggler span:last-child {
   pointer-events: none;
   transform: scale(0.5);
   transform-origin: bottom right;
-  box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
-              0 32px 64px -48px rgba(0,0,0,0.5);
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+    0 32px 64px -48px rgba(0, 0, 0, 0.5);
   transition: all 0.1s ease;
 }
 body.show-chatbot .chatbot {
@@ -67,7 +67,7 @@ body.show-chatbot .chatbot {
   text-align: center;
   color: #fff;
   background: #724ae8;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .chatbot header span {
   position: absolute;
