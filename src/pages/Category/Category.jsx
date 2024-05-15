@@ -45,11 +45,6 @@ class Category extends Component {
         <div className="navbar">
           <Abovenav toggle={this.toggleSidebar} />
         </div>
-        <div className="content">
-          <CategorySection />
-        </div>
-        {/* <Footer /> */}
-      </div>
     );
   }
 }
