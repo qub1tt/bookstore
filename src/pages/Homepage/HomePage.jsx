@@ -58,6 +58,7 @@ class HomePage extends Component {
           <Content0 />
         </div>
 
+
       </div>
     );
   }
