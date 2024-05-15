@@ -5,40 +5,40 @@ import DetailsSection from "../components/DetailsSection/DetailsSection";
 import Footer from "../components/footer/footer";
 
 function BookDetailsPage(props) {
-  const [isOpen, setIsOpen] = useState(window.innerWidth > 768);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [props.location]);
+
+  const [isOpen, setIsOpen] = useState(window.innerWidth > 1150);
+
+  const handleResize = () => {
+    setIsOpen(window.innerWidth > 1150);
+  };
 
   const toggleSidebar = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(prevState => !prevState);
   };
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsOpen(window.innerWidth > 768);
-    };
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [props.location]);
-
   return (
     <div className="contain">
       <div className="sidebar">
         <Sidebar
           isOpen={isOpen}
-          toggle={toggleSidebar}
           islogin={props.islogin}
-          logout={() => props.logout()}
+          logout={props.logout}
         />
       </div>
       <div className="navbar">
         <Abovenav toggle={toggleSidebar} />
       </div>
-
       <div className="content">
         <DetailsSection
           mproductDetail={props.mproductDetail}
@@ -59,8 +59,6 @@ function BookDetailsPage(props) {
           setPage={(page) => props.setPage(page)}
         />
       </div>
-
-      <Footer />
     </div>
   );
 }

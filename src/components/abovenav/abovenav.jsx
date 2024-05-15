@@ -21,9 +21,10 @@ class Abovenav extends Component {
   }
 
   componentDidMount() {
-    if (storeConfig.getUser() !== null) {
+    const user = storeConfig.getUser();
+    if (user !== null) {
       this.setState({
-        email: storeConfig.getUser().email,
+        email: user.email,
       });
     }
   }
@@ -35,9 +36,12 @@ class Abovenav extends Component {
           email: "Account",
         });
       } else {
-        this.setState({
-          email: storeConfig.getUser().email,
-        });
+        const user = storeConfig.getUser();
+        if (user !== null) {
+          this.setState({
+            email: user.email,
+          });
+        }
       }
     }
   }
@@ -58,6 +62,9 @@ class Abovenav extends Component {
     if (this.state.isAcc) {
       return <Navigate to={`/profile/${this.state.email}`} />;
     }
+
+    const { email, dropdownVisible } = this.state;
+    const isLoggedIn = email !== "Account";
 
     return (
       <nav className="abovenav">
@@ -95,10 +102,18 @@ class Abovenav extends Component {
                 style={{ color: "#737373" }}
               />
             </a>
-            {this.state.dropdownVisible && (
-              <div className="dropdown-menu">
-                <a href="/profile/${this.state.email}">Hồ sơ</a>
-                <a href="/purchase_history">Đơn hàng</a>
+            {dropdownVisible && (
+              <div className="dropdown-menu text-center">
+                {isLoggedIn ? (
+                  <>
+                    <a href={`/profile/${email}`}>Hồ sơ</a>
+                    <a href="/purchase_history">Đơn hàng</a>
+                  </>
+                ) : (
+                  <>
+                    <a href="/login">Login</a>
+                  </>
+                )}
               </div>
             )}
           </li>
@@ -109,5 +124,3 @@ class Abovenav extends Component {
 }
 
 export default Abovenav;
-
-

@@ -20,6 +20,7 @@ class ContentCart extends Component {
       ispay: false,
       showpaymentfail: false,
       showSuccessNotification: false,
+      notification: "",
     };
   }
 
@@ -66,11 +67,16 @@ class ContentCart extends Component {
 
   handlePayment = () => {
     if (!this.props.islogin) {
-      this.setState({ show: true });
+      // Hiển thị thông báo yêu cầu đăng nhập
+      this.setState({ 
+        show: true,
+        notification: "Vui lòng đăng nhập để thanh toán."
+      });
       return;
     } else {
       this.setState({ show: false });
     }
+
     let check = true;
     if (this.state.name.length < 3) {
       this.setState({ notiName: "Name invalid" });
@@ -109,12 +115,12 @@ class ContentCart extends Component {
   };
 
   renderSuccessNotification = () => {
-    if (!this.state.showSuccessNotification) {
+    if (!this.state.showSuccessNotification && !this.state.notification) {
       return null;
     }
     return (
       <div className="success-notification">
-        Order Successfully!
+        {this.state.showSuccessNotification ? "Order Successfully!" : this.state.notification}
       </div>
     );
   };
@@ -204,7 +210,7 @@ class ContentCart extends Component {
                           </div>
                         </td>
                         <td className="cart_total">
-                          <p className="cart_total_price">
+                        <p className="cart_total_price">
                             {new Intl.NumberFormat("de-DE", { currency: "EUR" }).format(element.price * element.count)}
                             <sup>đ</sup>
                           </p>
@@ -297,4 +303,4 @@ class ContentCart extends Component {
   }
 }
 
-export default ContentCart;
+export default ContentCart;                         
