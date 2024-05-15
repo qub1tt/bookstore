@@ -62,9 +62,7 @@ class Cart extends Component {
             />
             <Chatbot />
           </div>
-          {/* <div className="footer">
             <Footer />
-          </div> */}
         </div>
       </>
     );

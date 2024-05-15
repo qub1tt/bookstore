@@ -4,6 +4,8 @@
   box-sizing: border-box;
   font-family: Hanken Grotesk;
 }
+.footer {
+}
 .navbar {
   margin-left: 20%;
   position: fixed;
@@ -28,10 +30,12 @@
 .form-name2 {
   padding-bottom: 30px;
 }
+
 .input2 {
   width: 300px;
   border: solid 1px green;
   border-radius: 4px;
+  margin-top: 10px;
 }
 .input {
   border: solid 1px green;
@@ -410,4 +414,14 @@
     font-size: smaller;
     width: 20px;
   }
+}
+.input {
+  width: 150px;
+  border: solid 1px green;
+  border-radius: 4px;
+  text-align: left;
+}
+.input-label {
+  font-size: smaller;
+  width: 20px;
 }

@@ -60,6 +60,7 @@ function BookDetailsPage(props) {
         />
         <Chatbot />
       </div>
+      <Footer />
     </div>
   );
 }

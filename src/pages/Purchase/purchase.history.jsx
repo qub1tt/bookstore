@@ -384,9 +384,7 @@ class HistoryPurchase extends Component {
           <Chatbot />
         </div>
 
-        {/* <div className="footer">
-          <Footer />
-        </div> */}
+        <Footer />
       </div>
     );
   }

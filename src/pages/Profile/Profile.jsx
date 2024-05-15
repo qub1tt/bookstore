@@ -385,7 +385,7 @@ class Profile extends Component {
           </div>
         </div> */}
 
-        <div className="shopper-informations">
+        <div className="shopper-informations ">
           <ul class="grid grid-cols-2 gap-4">
             <li className="btn0">
               <button
@@ -408,6 +408,8 @@ class Profile extends Component {
           <hr></hr>
           <div>{xhtml}</div>
         </div>
+
+        <Footer />
       </div>
     );
   }

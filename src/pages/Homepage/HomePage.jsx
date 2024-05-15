@@ -58,7 +58,9 @@ class HomePage extends Component {
           <Content2 />
           <Content0 />
           <Chatbot />
+          
         </div>
+          <Footer />
       </div>
     );
   }
