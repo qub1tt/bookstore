@@ -4,6 +4,10 @@
   box-sizing: border-box;
   font-family: Hanken Grotesk;
 }
+.footer{
+
+
+}
 .navbar {
   margin-left: 20%;
   position: fixed;
@@ -34,6 +38,7 @@
   width:300px;
   border:solid 1px green;
   border-radius:4px;
+  margin-top:10px;
 }
 .input{
   
@@ -303,8 +308,46 @@
   background-color: #ffffff;
 }
 
+--------------------------------------------------
+ 
 
-@media screen and (min-width: 1150px) {
+  /* @media only screen and ( max-width: 739px ) {
+   
+}
+
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+}
+
+@media only screen and (max-width: 1023px) {
+  .info-content {
+    flex-direction:column;
+  }
+   .info-left{
+    text-align:center;
+    padding:0;
+      
+    }
+    .info-right{
+      text-align:center;
+       padding:0;
+    }
+    .shopper-informations {
+    max-height: 550px; 
+  }
+  .form-control{
+    text-align:left;
+    padding:5%;
+  }
+  .contain{
+    max-height: 550px;
+  } 
+ 
+
+ } */
+/* 1024 =<pc  */
+
+
+@media screen and (min-width: 1023px) {
   /* .abovenav_open_close{display: none;} */
   .abovenav_searchbox{margin-left: 50px;}
   .contain{
@@ -314,7 +357,7 @@
  
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1024px) {
  
   .abovenav_open_close{
     margin-left: 20px;
