@@ -11,7 +11,7 @@ import VerifyPaymentContainer from "./containers/verify.payment.container";
 import ForgotPasswordContainer from "./containers/forgot.password.container";
 import HistoryPurchase from "./containers/history.purchase.container";
 import HomePageContainer from "./containers/home.container";
-import Category from "./pages/Category/Category";
+import CategoryContainer from "./containers/category.container";
 
 const App = () => {
   return (
@@ -31,7 +31,7 @@ const App = () => {
         <Route path="/payment/:token" element={<VerifyPaymentContainer />} />
 
         <Route path="/purchase_history" element={<HistoryPurchase />} />
-        <Route path="/category/:id" element={<Category />} />
+        <Route path="/category/:id" element={<CategoryContainer />} />
       </Routes>
     </Router>
   );
