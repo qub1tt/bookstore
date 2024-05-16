@@ -16,5 +16,5 @@
 ## Giới thiệu đồ án:
 
 ## Workflow:
-
+![Nhom12_Ban thiet ke chuc nang web](https://github.com/qub1tt/bookstore/assets/91910146/59fd61bd-22b4-44cd-bfc1-8e3166779eed)
 
