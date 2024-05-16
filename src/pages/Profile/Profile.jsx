@@ -8,7 +8,7 @@ class Profile extends Component {
   constructor() {
     super();
     this.state = {
-      isOpen: window.innerWidth > 768,
+      isOpen: window.innerWidth > 1150,
       notiUpdateInfor: "",
       oldPassword: "",
       newPassword: "",
@@ -25,6 +25,7 @@ class Profile extends Component {
     }));
   };
   componentDidMount() {
+    window.addEventListener("resize", this.handleResize);
     if (this.props.isupdate) {
       this.setState({ notiUpdateInfor: "UPDATE SUCCESS" });
     } else if (this.props.isupdate === false) {
@@ -33,6 +34,22 @@ class Profile extends Component {
       this.setState({ notiUpdateInfor: "" });
     }
   }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  }
+
+  handleResize = () => {
+    this.setState({
+      isOpen: window.innerWidth > 1150,
+    });
+  };
+
+  toggleSidebar = () => {
+    this.setState((prevState) => ({
+      isOpen: !prevState.isOpen,
+    }));
+  };
+
   handleClickprofile() {
     this.setState({
       profile: false,
@@ -92,7 +109,7 @@ class Profile extends Component {
           <div className="info-header">
             Thông tin tài khoản
             <hr />
-            <p className="error">{this.state.notiUpdateInfor}</p>
+            <p className="hmmerror">{this.state.notiUpdateInfor}</p>
           </div>
 
           <div class="avatar">
@@ -145,7 +162,7 @@ class Profile extends Component {
                           <div>
                             <div class="style-input">
                               <input
-                                class="input"
+                                class="input123"
                                 type="search"
                                 name="userName"
                                 maxlength="128"
@@ -163,7 +180,7 @@ class Profile extends Component {
                           <div>
                             <div class="style-input">
                               <input
-                                class="input"
+                                class="input123"
                                 type="search"
                                 name="userName"
                                 maxlength="128"
@@ -181,7 +198,7 @@ class Profile extends Component {
                           <div>
                             <div class="style-input">
                               <input
-                                class="input"
+                                class="input123"
                                 type="search"
                                 name="userName"
                                 maxlength="128"
@@ -211,7 +228,7 @@ class Profile extends Component {
                         <div>
                           <div class="style-input">
                             <input
-                              class="input"
+                              class="input123"
                               type="search"
                               name="userName"
                               maxlength="128"
@@ -229,7 +246,7 @@ class Profile extends Component {
                         <div>
                           <div class="style-input">
                             <input
-                              className="input"
+                              className="input123"
                               type="search"
                               name="userName"
                               maxlength="128"
@@ -264,7 +281,7 @@ class Profile extends Component {
             <div className="infor-header2">
               Thay đổi mật khẩu
               <hr />
-              <p className="error">{this.state.notiUpdatePassword}</p>
+              <p className="hmmerror">{this.state.notiUpdatePassword}</p>
             </div>
             <div className="infor-body">
               <div className="infro-content">
@@ -291,7 +308,7 @@ class Profile extends Component {
                         <label class="input-label">New Password</label>
                         <div>
                           <div class="style-input">
-                            <input
+                            <input  
                               className="input2"
                               maxlength="128"
                               value={this.state.newPassword}
@@ -368,10 +385,8 @@ class Profile extends Component {
             logout={() => this.props.logout()}
           />
         </div>
-        <div className="navbar2">
-          <div className="navbar">
-            <Abovenav toggle={this.toggleSidebar} />
-          </div>
+        <div className="navbar">
+          <Abovenav toggle={this.toggleSidebar} />
         </div>
         {/* <div className="sidebar">
           <Sidebar
@@ -385,7 +400,7 @@ class Profile extends Component {
           </div>
         </div> */}
 
-        <div className="shopper-informations ">
+        <div className="content">
           <ul class="grid grid-cols-2 gap-4">
             <li className="btn0">
               <button

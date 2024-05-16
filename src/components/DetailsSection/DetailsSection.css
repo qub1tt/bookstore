@@ -7,6 +7,7 @@
   padding: 40px 0;
 }
 
+
 .book_detail_img img {
   border-radius: 10px;
   max-width: 500px;
@@ -27,9 +28,6 @@
   font-style: italic;
 }
 
-.book_detail_number {
-  outline: none;
-}
 
 .book_detail_comment {
   background-color: #f9f9f9;
@@ -63,9 +61,15 @@
   font-size: larger;
 }
 
+.book_detail_number{
+  border: 1px solid black;
+  padding: 2px;
+  outline: none;
+}
+
 .comment_field {
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   max-height: 200px;
   overflow-y: auto;
   border: 1px solid black;
@@ -80,10 +84,6 @@
   margin-top: 20px;
 }
 
-.client_comment_field {
-  height: 200px;
-  border: 1px solid black;
-}
 
 .book_detail_comment strong {
   font-size: larger;
@@ -99,6 +99,13 @@
   background-color: orange;
 }
 
+.client_comment_field{
+  height: 200px;
+  overflow-y: auto;
+  border: 1px solid black;
+  padding: 10px;
+}
+
 @media screen and (max-width: 1250px) {
   .book_detail_img img {
     max-width: 450px;
@@ -111,6 +118,10 @@
   }
   .book_detail_img_describe {
     padding: 20px 0;
+  }
+  .client_comment_field{
+    height: 150px;
+    overflow-y: auto;
   }
 }
 
@@ -137,6 +148,10 @@
   .comment_field {
     padding: 10px;
     max-height: 150px;
+    overflow-y: auto;
+  }
+  .client_comment_field{
+    height: 120px;
     overflow-y: auto;
   }
 }
@@ -183,6 +198,10 @@
   .book_detail_comment strong {
     font-size: 12px;
   }
+  .client_comment_field{
+    height: 100px;
+    overflow-y: auto;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -211,7 +230,7 @@
   }
   .comment_field {
     padding: 5px;
-    max-height: 80px;
+    max-height: 40px;
     overflow-y: auto;
   }
   .book_detail_comment strong {
@@ -220,6 +239,10 @@
   .cmbtn {
     font-size: smaller;
     padding: 5px 10px;
+  }
+  .client_comment_field{
+    height: 80px;
+    overflow-y: auto;
   }
 }
 
@@ -234,5 +257,9 @@
   }
   .book_detail_describe_name {
     font-size: 12px;
+  }
+    .client_comment_field{
+    height: 60px;
+    overflow-y: auto;
   }
 }
