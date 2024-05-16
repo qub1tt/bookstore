@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./content1.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLightbulb,
-} from "@fortawesome/free-solid-svg-icons";
+import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
 import SmallBoxDetail from "../SmallBoxDetail/SmallBoxDetail";
 
 export default function Content1(props) {
@@ -12,20 +10,20 @@ export default function Content1(props) {
 
   useEffect(() => {
     fetch("http://localhost:8080/book")
-      .then(response => response.json())
-      .then(data => {
-        const ids = data.data.map(book => book._id);
+      .then((response) => response.json())
+      .then((data) => {
+        const ids = data.data.map((book) => book._id);
         setBookIds(ids);
         // Ban đầu, hiển thị 6 cuốn sách ngẫu nhiên
         setDisplayedBooks(shuffleArray(ids).slice(0, 6));
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error fetching book data:", error);
       });
   }, []);
 
   // Hàm trộn mảng ngẫu nhiên
-  const shuffleArray = array => {
+  const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -50,7 +48,7 @@ export default function Content1(props) {
               style={{ color: "#FFD43B" }}
             />
             <span style={{ paddingLeft: "10px" }}>
-              <strong>Sách ngẫu nhiên:</strong>
+              <strong>Gợi ý:</strong>
             </span>
           </span>
         </div>
@@ -65,7 +63,7 @@ export default function Content1(props) {
 
       <div className="content1_below">
         <div className="content1_below_above">
-          {displayedBooks.map(bookId => (
+          {displayedBooks.map((bookId) => (
             <SmallBoxDetail key={bookId} bookId={bookId} />
           ))}
         </div>
