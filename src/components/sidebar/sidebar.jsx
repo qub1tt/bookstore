@@ -73,7 +73,7 @@ class Sidebar extends Component {
                     style={{ color: "#737373" }}
                   />
                 </span>
-                <a href="/allbook/page=1" className="sidebar_title">
+                <a href="/allbook/page/1" className="sidebar_title">
                   Tất cả sách
                 </a>
               </li>
@@ -85,9 +85,7 @@ class Sidebar extends Component {
                     style={{ color: "#737373" }}
                   />
                 </span>
-                <a className="sidebar_title">
-                  Thể loại
-                </a>
+                <a className="sidebar_title">Thể loại</a>
                 <ul className="subitems">
                   <li>
                     <span className="subsidebar_icon">
@@ -189,7 +187,7 @@ class Sidebar extends Component {
                       size="2xl"
                       style={{ color: "#737373" }}
                     />
-                  </span> 
+                  </span>
                   <a href="#" className="sidebar_title">
                     User
                   </a>

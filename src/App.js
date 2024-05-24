@@ -33,7 +33,7 @@ const App = () => {
 
         <Route path="/purchase_history" element={<HistoryPurchase />} />
         <Route path="/category/:id" element={<CategoryContainer />} />
-        <Route path="/allbook/page=1" element={<BookPageContainer />} />
+        <Route path="/allbook/page/:pageNumber" element={<BookPageContainer />} />
       </Routes>
     </Router>
   );

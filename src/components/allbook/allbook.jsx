@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "./allbook.css";
 import SmallBoxDetail from "../SmallBoxDetail/SmallBoxDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,33 +7,36 @@ import {
   faAngleLeft,
   faAngleRight,
   faAnglesLeft,
-  faAnglesRight
+  faAnglesRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function AllBook(props) {
+const AllBook = (props) => {
   const [bookIds, setBookIds] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  const { pageNumber } = useParams(); // Use useParams to get the page number from the URL
+  const currentPage = pageNumber ? parseInt(pageNumber) : 1; // Convert the page number to an integer
   const booksPerPage = 12;
 
   useEffect(() => {
     fetch("http://localhost:8080/book")
-      .then(response => response.json())
-      .then(data => {
-        const ids = data.data.map(book => book._id);
+      .then((response) => response.json())
+      .then((data) => {
+        const ids = data.data.map((book) => book._id);
         setBookIds(ids);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error fetching book data:", error);
       });
   }, []);
 
   useEffect(() => {
-    const url = `/allbook/page=${currentPage}`;
-    window.history.pushState({ path: url }, '', url);
+    const url = `/allbook/page/${currentPage}`;
+    window.history.pushState({ path: url }, "", url);
   }, [currentPage]);
 
   const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
+    const url = `/allbook/page/${pageNumber}`;
+    window.history.pushState({ path: url }, "", url);
+    window.location.reload();
   };
 
   const totalPages = Math.ceil(bookIds.length / booksPerPage);
@@ -65,12 +69,11 @@ export default function AllBook(props) {
         <div className="categorysection_above_left">
           <strong>Tất cả sách:</strong>
         </div>
-        <div className="categorysection_above_right">
-        </div>
+        <div className="categorysection_above_right"></div>
       </div>
       <div className="content1_below">
         <div className="content1_below_above">
-          {displayedBooks.map(bookId => (
+          {displayedBooks.map((bookId) => (
             <SmallBoxDetail key={bookId} bookId={bookId} />
           ))}
         </div>
@@ -78,26 +81,36 @@ export default function AllBook(props) {
       <div className="bookpagination">
         {currentPage > 1 && (
           <>
-            <button onClick={() => handlePageChange(1)}><FontAwesomeIcon icon={faAnglesLeft} /></button>
-            <button onClick={() => handlePageChange(currentPage - 1)}><FontAwesomeIcon icon={faAngleLeft} /></button>
+            <button onClick={() => handlePageChange(1)}>
+              <FontAwesomeIcon icon={faAnglesLeft} />
+            </button>
+            <button onClick={() => handlePageChange(currentPage - 1)}>
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </button>
           </>
         )}
-        {getPagination().map(page => (
+        {getPagination().map((page) => (
           <button
             key={page}
             onClick={() => handlePageChange(page)}
-            className={currentPage === page ? 'active' : ''}
+            className={currentPage === page ? "active" : ""}
           >
             {page}
           </button>
         ))}
         {currentPage < totalPages && (
           <>
-            <button onClick={() => handlePageChange(currentPage + 1)}><FontAwesomeIcon icon={faAngleRight} /></button>
-            <button onClick={() => handlePageChange(totalPages)}><FontAwesomeIcon icon={faAnglesRight} /></button>
+            <button onClick={() => handlePageChange(currentPage + 1)}>
+              <FontAwesomeIcon icon={faAngleRight} />
+            </button>
+            <button onClick={() => handlePageChange(totalPages)}>
+              <FontAwesomeIcon icon={faAnglesRight} />
+            </button>
           </>
         )}
       </div>
     </div>
   );
-}
+};
+
+export default AllBook;
