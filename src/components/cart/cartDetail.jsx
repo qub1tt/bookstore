@@ -129,7 +129,7 @@ class ContentCart extends Component {
     if (this.props.cart.length === 0) {
       return (
         <div className="text-center mt-8">
-          <p>Không có sản phẩm trong giỏ hàng.</p>
+          <p className="pb-72">Không có sản phẩm trong giỏ hàng.</p>
         </div>
       );
     }

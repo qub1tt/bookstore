@@ -176,9 +176,9 @@ class Sidebar extends Component {
                       size="2xl"
                       style={{ color: "#737373" }}
                     />
-                  </span>
+                  </span> 
                   <a href="#" className="sidebar_title">
-                    Admin
+                    User
                   </a>
                   <ul className="subitems">
                     <li>

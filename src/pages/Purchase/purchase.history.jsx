@@ -127,7 +127,7 @@ class HistoryPurchase extends Component {
         xhtml = (
           <div className="no-bill">
             <div className="logo-404">
-              <div>
+              <div className="pb-72">
                 <h3 className="title">Không Có Đơn Hàng</h3>
               </div>
             </div>

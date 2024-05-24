@@ -73,11 +73,7 @@ export const setNameAuthor = (name) => ({
 
 export const submitComment = (name, comment, id_book) => async (dispatch) => {
   let id = null;
-  if (
-    storeConfig.getUser() &&
-    storeConfig.getUser().id &&
-    storeConfig.getUser().id
-  )
+  if (storeConfig.getUser() && storeConfig.getUser().id)
     id = storeConfig.getUser().id;
   let res;
   try {
@@ -93,40 +89,17 @@ export const submitComment = (name, comment, id_book) => async (dispatch) => {
   }
   dispatch(getCommentByIDBook(id_book));
 };
-export const setTotalPage = (totalpage) => ({
-  type: productTypes.SET_TOTAL_PAGE,
-  totalpage,
-});
-export const setPage = (page) => ({
-  type: productTypes.SET_PAGE,
-  page,
-});
-export const backPage = () => (dispatch, getState) => {
-  let page = getState().bookReducers.book.page;
-  if (page > 1) {
-    dispatch(setPage(parseInt(page) - 1));
-  }
-};
 
-export const nextPage = () => (dispatch, getState) => {
-  let page = getState().bookReducers.book.page;
-  let totalpage = getState().bookReducers.book.totalpage;
-  if (page < totalpage) {
-    dispatch(setPage(parseInt(page) + 1));
-  }
-};
 export const getCommentByIDBook = (id) => async (dispatch, getState) => {
   let res;
   try {
     res = await axios.post("http://localhost:8080/comment/book", {
       id_book: id,
-      page: getState().bookReducers.book.page,
     });
   } catch (err) {
     console.log(JSON.stringify(err.response));
     return;
   }
-  dispatch(setTotalPage(res.data.totalPage));
   dispatch(setComment(res.data.data));
 };
 export const setComment = (data) => ({

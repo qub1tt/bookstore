@@ -91,7 +91,10 @@ class LoginRegisterContainer extends Component {
         address: this.state.address,
         phone_number: this.state.phone,
       });
-      this.setState({ registerSuccess: true ,registerSuccessMessage: "Đăng ký thành công"});
+      this.setState({
+        registerSuccess: true,
+        registerSuccessMessage: "Đăng ký thành công",
+      });
     } catch (err) {
       if (err.response.data.msg === "Email already exist")
         this.setState({ notificationRegister: "Email already exist" });
@@ -129,18 +132,49 @@ class LoginRegisterContainer extends Component {
       return;
     }
     this.props.actions.loginSuccess(res.data.token, res.data.user);
-    this.setState({ isLoggedIn: true, loginSuccessMessage: "Đăng nhập thành công" });
+    this.setState({
+      isLoggedIn: true,
+      loginSuccessMessage: "Đăng nhập thành công",
+    });
     setTimeout(() => {
       this.setState({ redirectToHome: true });
     }, 1000);
   };
   render() {
-    const { isLoggedIn, loginSuccessMessage, registerSuccess, redirectToHome, registerSuccessMessage } = this.state;
+    const {
+      isLoggedIn,
+      loginSuccessMessage,
+      registerSuccess,
+      redirectToHome,
+      registerSuccessMessage,
+    } = this.state;
 
     if (isLoggedIn) {
       return (
-        <div style={{ position: "fixed", bottom: "20px", right: "20px", width: "250px", display: "flex", justifyContent: "center", alignItems: "center", padding: "10px" , backgroundColor: "green", borderRadius: "10px"}}>
-          <p style={{ color: "white", height: "30px", fontSize: "16px", textAlign: "center" }}>{loginSuccessMessage}</p>
+        <div
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            width: "250px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "10px",
+            backgroundColor: "green",
+            borderRadius: "10px",
+          }}
+        >
+          <p
+            style={{
+              color: "white",
+              height: "30px",
+              fontSize: "16px",
+              textAlign: "center",
+            }}
+          >
+            {loginSuccessMessage}
+          </p>
           {redirectToHome && <Navigate to="/" />}
         </div>
       );
@@ -150,12 +184,34 @@ class LoginRegisterContainer extends Component {
         window.location.reload();
       }, 1000);
       return (
-        <div style={{ position: "fixed", bottom: "20px", right: "20px", width: "250px", display: "flex", justifyContent: "center", alignItems: "center", padding: "10px" , backgroundColor: "green", borderRadius: "10px"}}>
-          <p style={{ color: "white", height: "30px", fontSize: "16px", textAlign: "center" }}>{registerSuccessMessage}</p>
+        <div
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            width: "250px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "10px",
+            backgroundColor: "green",
+            borderRadius: "10px",
+          }}
+        >
+          <p
+            style={{
+              color: "white",
+              height: "30px",
+              fontSize: "16px",
+              textAlign: "center",
+            }}
+          >
+            {registerSuccessMessage}
+          </p>
         </div>
       );
     }
-    
+
     return (
       <div>
         <LoginPage
@@ -176,7 +232,6 @@ class LoginRegisterContainer extends Component {
           logout={() => this.props.actions.logout()}
           history={this.props.history}
         />
-        
       </div>
     );
   }

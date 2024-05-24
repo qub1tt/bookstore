@@ -1,34 +1,34 @@
-.purchase_history_menu-custom_btn{
-    margin-bottom: 10px;
+.purchase_history_menu-custom_btn {
+  margin-bottom: 10px;
 }
 
-.purchase_state li :hover{
-    color: red;
+.purchase_state li :hover {
+  color: red;
 }
 
-.purchase_history_container{
-    text-align: center;
+.purchase_history_container {
+  text-align: center;
 }
 
-.null-cart img{
-    width: 250px;
-    height: 250px;
-    margin: 0 auto;
+.null-cart img {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
 }
 
-.purchase_state{
-    display: flex;
-    justify-content: space-around;
+.purchase_state {
+  display: flex;
+  justify-content: space-around;
 }
 
-.purchase_history_bill-title h2{
-    margin-bottom: 30px;
-    font-size: larger;
-    font-weight: bold;
+.purchase_history_bill-title h2 {
+  margin-bottom: 30px;
+  font-size: larger;
+  font-weight: bold;
 }
 
-.quantity{
-    padding: 0 4px;
+.quantity {
+  padding: 0 4px;
 }
 
 .cart_menu .image,
@@ -36,11 +36,11 @@
 .cart_menu .price,
 .cart_menu .quantity,
 .cart_menu .total {
-    width: 20%;
-}
+  width: 30%;
+}   
 
 @media (max-width: 450px) {
-    .cart_description{
-        font-size: x-small;
-    }
+  .cart_description {
+    font-size: x-small;
+  }
 }

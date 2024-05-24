@@ -7,7 +7,6 @@
   padding: 40px 0;
 }
 
-
 .book_detail_img img {
   border-radius: 10px;
   max-width: 500px;
@@ -27,7 +26,6 @@
 .book_detail_describe__ span {
   font-style: italic;
 }
-
 
 .book_detail_comment {
   background-color: #f9f9f9;
@@ -61,7 +59,7 @@
   font-size: larger;
 }
 
-.book_detail_number{
+.book_detail_number {
   border: 1px solid black;
   padding: 2px;
   outline: none;
@@ -84,7 +82,6 @@
   margin-top: 20px;
 }
 
-
 .book_detail_comment strong {
   font-size: larger;
 }
@@ -99,7 +96,7 @@
   background-color: orange;
 }
 
-.client_comment_field{
+.client_comment_field {
   height: 200px;
   overflow-y: auto;
   border: 1px solid black;
@@ -119,7 +116,7 @@
   .book_detail_img_describe {
     padding: 20px 0;
   }
-  .client_comment_field{
+  .client_comment_field {
     height: 150px;
     overflow-y: auto;
   }
@@ -150,7 +147,7 @@
     max-height: 150px;
     overflow-y: auto;
   }
-  .client_comment_field{
+  .client_comment_field {
     height: 120px;
     overflow-y: auto;
   }
@@ -198,7 +195,7 @@
   .book_detail_comment strong {
     font-size: 12px;
   }
-  .client_comment_field{
+  .client_comment_field {
     height: 100px;
     overflow-y: auto;
   }
@@ -240,7 +237,7 @@
     font-size: smaller;
     padding: 5px 10px;
   }
-  .client_comment_field{
+  .client_comment_field {
     height: 80px;
     overflow-y: auto;
   }
@@ -258,7 +255,7 @@
   .book_detail_describe_name {
     font-size: 12px;
   }
-    .client_comment_field{
+  .client_comment_field {
     height: 60px;
     overflow-y: auto;
   }
