@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
   faList,
+  faBookOpen,
   faBook,
   faChessBoard,
   faUser,
@@ -67,12 +68,24 @@ class Sidebar extends Component {
               <li>
                 <span className="sidebar_icon">
                   <FontAwesomeIcon
+                    icon={faBookOpen}
+                    size="2xl"
+                    style={{ color: "#737373" }}
+                  />
+                </span>
+                <a href="/allbook/page=1" className="sidebar_title">
+                  Tất cả sách
+                </a>
+              </li>
+              <li>
+                <span className="sidebar_icon">
+                  <FontAwesomeIcon
                     icon={faList}
                     size="2xl"
                     style={{ color: "#737373" }}
                   />
                 </span>
-                <a href="#" className="sidebar_title">
+                <a className="sidebar_title">
                   Thể loại
                 </a>
                 <ul className="subitems">

@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./CategorySection.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
+import { 
+  faLightbulb,
+  faAngleLeft,
+  faAngleRight,
+  faAnglesLeft,
+  faAnglesRight
+} from "@fortawesome/free-solid-svg-icons";
 import SmallBoxDetail from "../SmallBoxDetail/SmallBoxDetail";
 
 export default function CategorySection(props) {
@@ -10,6 +16,8 @@ export default function CategorySection(props) {
   const [books, setBooks] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategoryName, setSelectedCategoryName] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const booksPerPage = 12;
 
   useEffect(() => {
     fetchCategories();
@@ -44,6 +52,34 @@ export default function CategorySection(props) {
       setSelectedCategoryName(category.name);
     }
   }, [id, categories]);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const filteredBooks = books.filter(book => id === "" || book.id_category === id);
+  const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
+  const startIndex = (currentPage - 1) * booksPerPage;
+  const endIndex = startIndex + booksPerPage;
+  const displayedBooks = filteredBooks.slice(startIndex, endIndex);
+
+  const getPagination = () => {
+    const pagination = [];
+    const maxPagesToShow = 5;
+    let startPage = Math.max(currentPage - Math.floor(maxPagesToShow / 2), 1);
+    let endPage = startPage + maxPagesToShow - 1;
+
+    if (endPage > totalPages) {
+      endPage = totalPages;
+      startPage = Math.max(endPage - maxPagesToShow + 1, 1);
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      pagination.push(i);
+    }
+
+    return pagination;
+  };
 
   return (
     <div className="content1">
@@ -84,13 +120,43 @@ export default function CategorySection(props) {
 
       <div className="content1_below">
         <div className="content1_below_above">
-          {books.map(
-            (book) =>
-              (id === "" || book.id_category === id) && (
-                <SmallBoxDetail key={book._id} bookId={book._id} />
-              )
-          )}
+          {displayedBooks.map(book => (
+            <SmallBoxDetail key={book._id} bookId={book._id} />
+          ))}
         </div>
+      </div>
+
+      <div className="bookpagination">
+        {currentPage > 1 && (
+          <>
+            <button onClick={() => handlePageChange(1)} aria-label="First Page">
+              <FontAwesomeIcon icon={faAnglesLeft} />
+            </button>
+            <button onClick={() => handlePageChange(currentPage - 1)} aria-label="Previous Page">
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </button>
+          </>
+        )}
+        {getPagination().map(page => (
+          <button
+            key={page}
+            onClick={() => handlePageChange(page)}
+            className={currentPage === page ? 'active' : ''}
+            aria-label={`Page ${page}`}
+          >
+            {page}
+          </button>
+        ))}
+        {currentPage < totalPages && (
+          <>
+            <button onClick={() => handlePageChange(currentPage + 1)} aria-label="Next Page">
+              <FontAwesomeIcon icon={faAngleRight} />
+            </button>
+            <button onClick={() => handlePageChange(totalPages)} aria-label="Last Page">
+              <FontAwesomeIcon icon={faAnglesRight} />
+            </button>
+          </>
+        )}
       </div>
     </div>
   );

@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useEffect } from 'react';
 import "./book_carousel.css";
 
 import bs1 from "../../assets/bookstore/bookstore.jpg";
@@ -32,26 +30,20 @@ function Bcarousel() {
     setCurrentIndex(newIndex);
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   return (
     <div className="carousel-container group">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="carousel-slide"
       ></div>
-
-      <div
-        className="carousel-button left group-hover:block"
-        onClick={prevSlide}
-      >
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </div>
-
-      <div
-        className="carousel-button right group-hover:block"
-        onClick={nextSlide}
-      >
-        <FontAwesomeIcon icon={faArrowRight} />
-      </div>
     </div>
   );
 }

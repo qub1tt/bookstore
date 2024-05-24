@@ -45,7 +45,7 @@ export default function BestSeller(props) {
     };
 
     if (!bookData || !authorName) {
-        return <div>Loading...</div>;
+        return <div className="flex justify-center items-center">Loading...</div>;
     }
 
     return (

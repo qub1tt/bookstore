@@ -12,6 +12,7 @@ import ForgotPasswordContainer from "./containers/forgot.password.container";
 import HistoryPurchase from "./containers/history.purchase.container";
 import HomePageContainer from "./containers/home.container";
 import CategoryContainer from "./containers/category.container";
+import BookPage from "./pages/BookPage/BookPage";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
 
         <Route path="/purchase_history" element={<HistoryPurchase />} />
         <Route path="/category/:id" element={<CategoryContainer />} />
+        <Route path="/allbook/page=1" element={<BookPage />} />
       </Routes>
     </Router>
   );
