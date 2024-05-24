@@ -6,6 +6,7 @@ import * as productActions from "../API/product.action";
 import * as userActions from "../API/user.action";
 import { useParams } from "react-router-dom";
 import Loading from "../components/loading/Loading";
+
 const BooksDetailContainer = ({
   actions,
   mproductDetail,
@@ -18,8 +19,9 @@ const BooksDetailContainer = ({
   comment,
   totalpage,
 }) => {
-  const { id } = useParams();
 
+  const { id } = useParams();
+  const encodedId = btoa(id); // Mã hóa id thành base-64
   useEffect(() => {
     actions.auth();
     productActions.getBookDetail(id);
