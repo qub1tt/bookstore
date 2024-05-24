@@ -46,10 +46,10 @@ class BookPage extends Component {
             <Abovenav toggle={this.toggleSidebar} />
           </div>
           <div className="content">
-            <AllBook/>
+            <AllBook />
             <Chatbot />
           </div>
-            <Footer />
+          <Footer />
         </div>
       </>
     );
