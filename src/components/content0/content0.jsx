@@ -18,7 +18,9 @@ const Content0 = () => {
         }
         const data = await response.json();
         // Sort books by view_counts in descending order
-        const sortedBooks = data.data.sort((a, b) => b.view_counts - a.view_counts);
+        const sortedBooks = data.data.sort(
+          (a, b) => b.view_counts - a.view_counts
+        );
         // Take top 10 books
         const top10Books = sortedBooks.slice(0, 10);
         // Duplicate the books array to create an infinite loop effect
@@ -41,19 +43,19 @@ const Content0 = () => {
 
     const handleMouseDown = (e) => {
       isDown = true;
-      scrollContainer.classList.add('active');
+      scrollContainer.classList.add("active");
       startX = e.pageX - scrollContainer.offsetLeft;
       scrollLeft = scrollContainer.scrollLeft;
     };
 
     const handleMouseLeave = () => {
       isDown = false;
-      scrollContainer.classList.remove('active');
+      scrollContainer.classList.remove("active");
     };
 
     const handleMouseUp = () => {
       isDown = false;
-      scrollContainer.classList.remove('active');
+      scrollContainer.classList.remove("active");
     };
 
     const handleMouseMove = (e) => {
@@ -66,25 +68,29 @@ const Content0 = () => {
 
     const handleScroll = () => {
       // When scrolled to the end, reset scroll position to the middle set of books
-      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
-        scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3 - scrollContainer.clientWidth;
+      if (
+        scrollContainer.scrollLeft >=
+        scrollContainer.scrollWidth - scrollContainer.clientWidth
+      ) {
+        scrollContainer.scrollLeft =
+          scrollContainer.scrollWidth / 3 - scrollContainer.clientWidth;
       } else if (scrollContainer.scrollLeft <= 0) {
         scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3;
       }
     };
 
-    scrollContainer.addEventListener('mousedown', handleMouseDown);
-    scrollContainer.addEventListener('mouseleave', handleMouseLeave);
-    scrollContainer.addEventListener('mouseup', handleMouseUp);
-    scrollContainer.addEventListener('mousemove', handleMouseMove);
-    scrollContainer.addEventListener('scroll', handleScroll);
+    scrollContainer.addEventListener("mousedown", handleMouseDown);
+    scrollContainer.addEventListener("mouseleave", handleMouseLeave);
+    scrollContainer.addEventListener("mouseup", handleMouseUp);
+    scrollContainer.addEventListener("mousemove", handleMouseMove);
+    scrollContainer.addEventListener("scroll", handleScroll);
 
     return () => {
-      scrollContainer.removeEventListener('mousedown', handleMouseDown);
-      scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
-      scrollContainer.removeEventListener('mouseup', handleMouseUp);
-      scrollContainer.removeEventListener('mousemove', handleMouseMove);
-      scrollContainer.removeEventListener('scroll', handleScroll);
+      scrollContainer.removeEventListener("mousedown", handleMouseDown);
+      scrollContainer.removeEventListener("mouseleave", handleMouseLeave);
+      scrollContainer.removeEventListener("mouseup", handleMouseUp);
+      scrollContainer.removeEventListener("mousemove", handleMouseMove);
+      scrollContainer.removeEventListener("scroll", handleScroll);
     };
   }, [books]);
 
@@ -92,7 +98,11 @@ const Content0 = () => {
     <section className="content0_feature">
       <div className="content0_title">
         <span>
-          <FontAwesomeIcon icon={faStar} size="2xl" style={{ color: "#FFD43B" }} />
+          <FontAwesomeIcon
+            icon={faStar}
+            size="2xl"
+            style={{ color: "#FFD43B" }}
+          />
           <span style={{ paddingLeft: "10px" }}>
             <strong>Sách yêu thích:</strong>
           </span>
@@ -108,10 +118,10 @@ const Content0 = () => {
             <div className="content0_feature_content">
               <h3>{book.name}</h3>
               <div className="content0_price">
-                {book.price}đ <span>{(book.price * 1.3)}đ</span>
+                {book.price}đ <span>{book.price * 1.3}đ</span>
               </div>
               <div className="content0_content_btn">
-                <Link to={`/book/${book._id}`} className="content0_btn">
+                <Link to={`/book/${btoa(book._id)}`} className="content0_btn">
                   Detail book
                 </Link>
                 <a href="#" className="content0_btn">

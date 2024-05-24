@@ -121,7 +121,7 @@ export default function CategorySection(props) {
       <div className="content1_below">
         <div className="content1_below_above">
           {displayedBooks.map(book => (
-            <SmallBoxDetail key={book._id} bookId={book._id} />
+            <SmallBoxDetail key={btoa(book._id)} bookId={btoa(book._id)} />
           ))}
         </div>
       </div>

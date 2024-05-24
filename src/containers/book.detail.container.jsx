@@ -19,9 +19,8 @@ const BooksDetailContainer = ({
   comment,
   totalpage,
 }) => {
-
   const { id } = useParams();
-  const encodedId = btoa(id); // Mã hóa id thành base-64
+  const encodedID = btoa(id);
   useEffect(() => {
     actions.auth();
     productActions.getBookDetail(id);

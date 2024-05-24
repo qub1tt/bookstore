@@ -12,7 +12,7 @@ export default function Content1(props) {
     fetch("http://localhost:8080/book")
       .then((response) => response.json())
       .then((data) => {
-        const ids = data.data.map((book) => book._id);
+        const ids = data.data.map((book) => btoa(book._id));
         setBookIds(ids);
         // Ban đầu, hiển thị 6 cuốn sách ngẫu nhiên
         setDisplayedBooks(shuffleArray(ids).slice(0, 6));
