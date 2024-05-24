@@ -1,0 +1,43 @@
+
+.bookpagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .bookpagination button {
+    margin: 0 5px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .bookpagination button:hover {
+    background-color: #ddd;
+  }
+  
+  .bookpagination button.active {
+    background-color: #007bff;
+    color: white;
+  }
+
+  @media screen and (max-width: 915px) {
+    .bookpagination{
+        font-size: x-small;
+    }
+    .bookpagination button {
+        padding: 8px 12px;
+      }
+  }
+  @media screen and (max-width: 450px) {
+    .bookpagination{
+        font-size: xx-small;
+    }
+    .bookpagination button {
+        padding: 6px 10px;
+      }
+  }
+  

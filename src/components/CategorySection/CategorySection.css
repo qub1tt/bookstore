@@ -3,13 +3,6 @@
 }
 
 
-.categorysection{
-    border-radius: 10px;
-    background-color: white;
-    border: 1px solid black;
-    margin: 0 auto;
-    margin-top: 30px;
-}
 
 .categorysection_above {
     display: flex;
