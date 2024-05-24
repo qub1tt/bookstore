@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./CategorySection.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
+import {
   faLightbulb,
   faAngleLeft,
   faAngleRight,
   faAnglesLeft,
-  faAnglesRight
+  faAnglesRight,
 } from "@fortawesome/free-solid-svg-icons";
 import SmallBoxDetail from "../SmallBoxDetail/SmallBoxDetail";
 
@@ -47,7 +47,7 @@ export default function CategorySection(props) {
   };
 
   useEffect(() => {
-    const category = categories.find((cat) => cat._id === id);
+    const category = categories.find((cat) => cat._id === atob(id));
     if (category) {
       setSelectedCategoryName(category.name);
     }
@@ -57,7 +57,9 @@ export default function CategorySection(props) {
     setCurrentPage(pageNumber);
   };
 
-  const filteredBooks = books.filter(book => id === "" || book.id_category === id);
+  const filteredBooks = books.filter(
+    (book) => id === "" || book.id_category === atob(id)
+  );
   const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
   const startIndex = (currentPage - 1) * booksPerPage;
   const endIndex = startIndex + booksPerPage;
@@ -109,7 +111,7 @@ export default function CategorySection(props) {
               }
             >
               {categories.map((category) => (
-                <option key={category._id} value={category._id}>
+                <option key={btoa(category._id)} value={btoa(category._id)}>
                   {category.name}
                 </option>
               ))}
@@ -120,7 +122,7 @@ export default function CategorySection(props) {
 
       <div className="content1_below">
         <div className="content1_below_above">
-          {displayedBooks.map(book => (
+          {displayedBooks.map((book) => (
             <SmallBoxDetail key={btoa(book._id)} bookId={btoa(book._id)} />
           ))}
         </div>
@@ -132,16 +134,19 @@ export default function CategorySection(props) {
             <button onClick={() => handlePageChange(1)} aria-label="First Page">
               <FontAwesomeIcon icon={faAnglesLeft} />
             </button>
-            <button onClick={() => handlePageChange(currentPage - 1)} aria-label="Previous Page">
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              aria-label="Previous Page"
+            >
               <FontAwesomeIcon icon={faAngleLeft} />
             </button>
           </>
         )}
-        {getPagination().map(page => (
+        {getPagination().map((page) => (
           <button
             key={page}
             onClick={() => handlePageChange(page)}
-            className={currentPage === page ? 'active' : ''}
+            className={currentPage === page ? "active" : ""}
             aria-label={`Page ${page}`}
           >
             {page}
@@ -149,10 +154,16 @@ export default function CategorySection(props) {
         ))}
         {currentPage < totalPages && (
           <>
-            <button onClick={() => handlePageChange(currentPage + 1)} aria-label="Next Page">
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              aria-label="Next Page"
+            >
               <FontAwesomeIcon icon={faAngleRight} />
             </button>
-            <button onClick={() => handlePageChange(totalPages)} aria-label="Last Page">
+            <button
+              onClick={() => handlePageChange(totalPages)}
+              aria-label="Last Page"
+            >
               <FontAwesomeIcon icon={faAnglesRight} />
             </button>
           </>

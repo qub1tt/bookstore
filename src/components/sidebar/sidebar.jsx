@@ -96,7 +96,7 @@ class Sidebar extends Component {
                       />
                     </span>
                     <Link
-                      to="/category/662a796042e68c567e688052"
+                      to="/category/NjYyYTc5NjA0MmU2OGM1NjdlNjg4MDUy"
                       className="sidebar_title"
                     >
                       Tâm lý
@@ -111,7 +111,7 @@ class Sidebar extends Component {
                       />
                     </span>
                     <Link
-                      to="/category/662a796642e68c567e688053"
+                      to="/category/NjYyYTc5NjY0MmU2OGM1NjdlNjg4MDUz"
                       className="sidebar_title"
                     >
                       Kinh tế
@@ -126,7 +126,7 @@ class Sidebar extends Component {
                       />
                     </span>
                     <Link
-                      to="/category/662a796a42e68c567e688054"
+                      to="/category/NjYyYTc5NmE0MmU2OGM1NjdlNjg4MDU0"
                       className="sidebar_title"
                     >
                       Văn học
@@ -141,7 +141,7 @@ class Sidebar extends Component {
                       />
                     </span>
                     <Link
-                      to="/category/662a796d42e68c567e688055"
+                      to="/category/NjYyYTc5NmQ0MmU2OGM1NjdlNjg4MDU1"
                       className="sidebar_title"
                     >
                       Truyện tranh
@@ -156,7 +156,7 @@ class Sidebar extends Component {
                       />
                     </span>
                     <Link
-                      to="/category/662a7a5142e68c567e688057"
+                      to="/category/NjYyYTdhNTE0MmU2OGM1NjdlNjg4MDU3"
                       className="sidebar_title"
                     >
                       Khoa học
@@ -171,7 +171,7 @@ class Sidebar extends Component {
                       />
                     </span>
                     <Link
-                      to="/category/662a7a5842e68c567e688058"
+                      to="/category/NjYyYTdhNTg0MmU2OGM1NjdlNjg4MDU4"
                       className="sidebar_title"
                     >
                       Sách giáo khoa

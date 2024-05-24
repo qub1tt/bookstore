@@ -50,10 +50,10 @@ export default function Category(props) {
   return (
     <div className="content2_right_below">
       {categories.map((category) => (
-        <div className="content2_right_theloai" key={category._id}>
+        <div className="content2_right_theloai" key={btoa(category._id)}>
           {getCategoryIcon(category.name)}
           <span className="content2_right_theloai_title">
-            <Link to={`/category/${category._id}`}>{category.name}</Link>
+            <Link to={`/category/${btoa(category._id)}`}>{category.name}</Link>
           </span>
           <div className="content2_right_theloai_public_book">
             <p>
