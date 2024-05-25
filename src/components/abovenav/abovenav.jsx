@@ -106,7 +106,7 @@ class Abovenav extends Component {
               <div className="dropdown-menu text-center">
                 {isLoggedIn ? (
                   <>
-                    <a href={`/profile/${email}`}>Hồ sơ</a>
+                    <a href={`/profile/${btoa(email)}`}>Hồ sơ</a>
                     <a href="/purchase_history">Đơn hàng</a>
                   </>
                 ) : (

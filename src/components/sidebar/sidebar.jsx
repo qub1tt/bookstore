@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./sidebar.css";
+import storeConfig from "../../config/storage.config";
 import { Link, Navigate } from "react-router-dom";
 import logo from "./../../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,7 +18,16 @@ class Sidebar extends Component {
     super(props);
     this.state = {
       isLoggedIn: false,
+      email: null,
     };
+  }
+  componentDidMount() {
+    const user = storeConfig.getUser();
+    if (user !== null) {
+      this.setState({
+        email: user.email,
+      });
+    }
   }
 
   handlelogin = () => {
@@ -201,7 +211,7 @@ class Sidebar extends Component {
                         />
                       </span>
                       <a
-                        href={`/profile/${this.state.email}`}
+                        href={`/profile/${btoa(this.state.email)}`}
                         className="sidebar_title"
                       >
                         Hồ sơ

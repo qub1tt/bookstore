@@ -35,6 +35,7 @@ class ProfileContainer extends Component {
       });
     }
   }
+
   updateInfor = async () => {
     // Đặt isUpdatingInfo thành true khi bắt đầu quá trình cập nhật
     this.setState({ isUpdatingInfo: true });
@@ -84,7 +85,7 @@ class ProfileContainer extends Component {
         // Hiển thị Loading khi đang trong quá trình cập nhật
         return <Loading />;
       } else {
-        // Hiển thị Profile khi không trong quá trình cập nhật
+        // Hiển thị Profile khi không trong quá trình cập nhật và email hợp lệ
         return (
           <div>
             <Profile

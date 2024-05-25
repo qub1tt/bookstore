@@ -308,7 +308,7 @@ class Profile extends Component {
                         <label class="input-label">New Password</label>
                         <div>
                           <div class="style-input">
-                            <input  
+                            <input
                               className="input2"
                               maxlength="128"
                               value={this.state.newPassword}
@@ -424,7 +424,7 @@ class Profile extends Component {
           <div>{xhtml}</div>
           <Chatbot />
         </div>
-        
+
         <Footer />
       </div>
     );
