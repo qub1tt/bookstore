@@ -1,0 +1,90 @@
+.Modal_container{
+    position: fixed;
+}
+
+.Close_modal{
+    height: 50px;
+    background-color: white;
+    max-width: 600px;
+}
+
+.Modal_content{
+    width:600px;
+    display: flex;
+    background-color: white;
+    padding-bottom: 30px;
+}
+
+.Modal_describe_name{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.BesideImage{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    max-width: 280px;
+    margin: 30px 0 30px 30px;
+}
+
+.Modal_describe__{
+    margin-left: 20px;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.Modal_describe_price{
+    color: red;
+}
+
+.Modal_img{
+    margin-left: 30px;
+}
+
+.Modal_img img{
+    width: 230px;
+    height: 350px;
+}
+
+.Modal_number {
+    display: flex;
+    align-items: center;
+}
+
+.Modal_quantity-button {
+    border: 1px solid #ccc;
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Modal_quantity-input {
+    width: 55px;
+    text-align: center;
+    border: 1px solid #ccc;
+    height: 35px;
+    outline: none;
+}
+
+.BesideImageBelow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ModalAddToCart{
+    background-color: rgb(253 164 175);
+    margin-top: 10px;
+    padding: 10px 50px;
+    border-radius: 5px;
+}
+
+.ModalAddToCart:hover{
+    background-color: rgb(244 63 94);
+}

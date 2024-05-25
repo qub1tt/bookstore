@@ -6,10 +6,17 @@ import {
     faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom"; // Import Link
+import Modal from "../Modal/Modal";
 
 export default function SmallBoxDetail(props) {
     const [bookData, setBookData] = useState(null);
     const [authorName, setAuthorName] = useState(null);
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
 
     useEffect(() => {
         fetch(`http://localhost:8080/book/${props.bookId}`)
@@ -74,14 +81,24 @@ export default function SmallBoxDetail(props) {
                 </div>
                 <div>
                     <span>
-                        <a style={{ textDecoration: "none" }} href="#">
+                        <button style={{ textDecoration: "none" }} onClick={openModal}>
                             <FontAwesomeIcon
                                 icon={faCartShopping}
                                 size="xl"
                                 style={{ color: "#FFD43B" }}
                             />
-                        </a>
+                        </button>
+                        {isModalOpen && (
+                            <Modal 
+                                mproductDetail={props.mproductDetail}
+                                id_book={props.id_book}
+                                addToCart={(product) => props.addToCart(product)}
+                                nameAuthor={props.nameAuthor}
+                                closeModal={() => setIsModalOpen(false)}
+                            />
+                        )}
                     </span>
+                    
                     <span style={{ paddingLeft: "10px" }}>
                         <a style={{ textDecoration: "none" }} href="#">
                             <FontAwesomeIcon
