@@ -4,16 +4,23 @@ import { Link } from "react-router-dom"; // Import thêm Link từ React Router
 import {
     faStar,
     faCartShopping,
-    faHeart,
 } from "@fortawesome/free-solid-svg-icons";
+import ModalContainer from "../../containers/modal.container"
 
 export default function BestSeller(props) {
     const [bookData, setBookData] = useState(null);
     const [authorName, setAuthorName] = useState(null);
     const [shortDescription, setShortDescription] = useState('');
     const [longDescription, setLongDescription] = useState('');
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const [quantity, setQuantity] = useState(1);
+    const handleCartClick = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
     
 
@@ -95,15 +102,21 @@ export default function BestSeller(props) {
                     <span className="span2">{longDescription}</span>
                 </div>
                 <div className="content2_left_below_describe_add_to_cart">
-                    <button style={{ textDecoration: "none" }} href="#">
+                    <button style={{ textDecoration: "none" }} onClick={handleCartClick}>
                         <FontAwesomeIcon
                             icon={faCartShopping}
-                            size="xl"
+                            size="2xl"
                             style={{ color: "#FFD43B", margin: "10px 0 0 10px" }}
                         />
                     </button>
                 </div>
             </div>
+            {isModalOpen && (
+                <ModalContainer
+                    bookId={props.bookId}
+                    closeModal={closeModal}
+                />
+            )}
         </div>
     );
 }

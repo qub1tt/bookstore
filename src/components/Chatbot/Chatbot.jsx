@@ -1,7 +1,7 @@
 // Layout.js
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import "./style.css";
+
 const Chatbot = () => {
   useEffect(() => {
     const chatbotToggler = document.querySelector(".chatbot-toggler");
@@ -9,6 +9,7 @@ const Chatbot = () => {
     const chatbox = document.querySelector(".chatbox");
     const chatInput = document.querySelector(".chat-input textarea");
     const sendChatBtn = document.querySelector(".chat-input span");
+    const chatbot = document.querySelector(".chatbot");
 
     let userMessage = null; // Variable to store user's message
     const inputInitHeight = chatInput.scrollHeight;
@@ -98,6 +99,13 @@ const Chatbot = () => {
     chatbotToggler.addEventListener("click", () =>
       document.body.classList.toggle("show-chatbot")
     );
+
+    // Close chatbot when clicking outside of it
+    document.addEventListener("click", (e) => {
+      if (!chatbot.contains(e.target) && !chatbotToggler.contains(e.target)) {
+        document.body.classList.remove("show-chatbot");
+      }
+    });
   }, []);
 
   return (

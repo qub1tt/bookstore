@@ -43,10 +43,6 @@
   transition: transform 0.3s;
 }
 
-.content0_scroll_item:hover {
-  transform: scale(1.05);
-}
-
 /* Feature Image */
 .content0_feature_image {
   margin: 10px;

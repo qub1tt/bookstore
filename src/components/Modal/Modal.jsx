@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Modal.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus, faX } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function Modal(props) {
     const [quantity, setQuantity] = useState(1);
@@ -62,7 +63,7 @@ function Modal(props) {
                     <div className="BesideImage">
                         <div className="Modal_describe">
                             <p className="Modal_describe_name">
-                                {props.mproductDetail.name}
+                                <Link to={`/book/${props.bookId}`}>{props.mproductDetail.name}</Link>
                             </p>
                             <p className="Modal_describe__">
                                 <strong>Tác giả: </strong>

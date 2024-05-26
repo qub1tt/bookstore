@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faCartShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import ModalContainer from "../../containers/modal.container"
 
@@ -62,7 +62,7 @@ export default function SmallBoxDetail(props) {
         <div className="content1_below_box">
             <div className="content1_below_book_img">
                 <img src={bookData.img} alt="" />
-                <button className="content1_below_book_img_hover-button">
+                <button className="content1_below_book_img_hover-button" onClick={handleCartClick}>
                     Mua ngay
                 </button>
             </div>
@@ -86,16 +86,6 @@ export default function SmallBoxDetail(props) {
                                 style={{ color: "#FFD43B" }}
                             />
                         </button>
-                    </span>
-                    
-                    <span style={{ paddingLeft: "10px" }}>
-                        <a style={{ textDecoration: "none" }} href="#">
-                            <FontAwesomeIcon
-                                icon={faHeart}
-                                size="xl"
-                                style={{ color: "#FFD43B" }}
-                            />
-                        </a>
                     </span>
                 </div>
             </div>
