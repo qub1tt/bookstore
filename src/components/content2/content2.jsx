@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./content2.css";
-import BestSeller2 from "./BestSeller";
 import CategoryList from "./CategoryList";
-import BestSellerContainer from "../../containers/bestseller.container";
+import BestSeller from "./BestSeller";
 
 const Content2 = () => {
   const [selectedOption, setSelectedOption] = useState("daily");
@@ -42,7 +41,7 @@ const Content2 = () => {
           </div>
         </div>
 
-        <BestSellerContainer bookId={bookId} />
+        <BestSeller bookId={bookId} />
       </div>
 
       <div className="content2_right">

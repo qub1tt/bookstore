@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./allbook.css";
 import SmallBoxDetail from "../SmallBoxDetail/SmallBoxDetail";
-import SmallboxContainer from "../../containers/smallbox.container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleLeft,
@@ -75,7 +74,7 @@ const AllBook = (props) => {
       <div className="content1_below">
         <div className="content1_below_above">
           {displayedBooks.map((bookId, index) => (
-            <SmallboxContainer key={index} bookId={bookId} />
+            <SmallBoxDetail key={index} bookId={bookId} />
           ))}
         </div>
       </div>

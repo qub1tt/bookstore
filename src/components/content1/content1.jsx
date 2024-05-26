@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./content1.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
-import SmallboxContainer from "../../containers/smallbox.container";
+import modalContainer from "../../containers/modal.container";
+import SmallBoxDetail from "../SmallBoxDetail/SmallBoxDetail";
 
 export default function Content1(props) {
   const [bookIds, setBookIds] = useState([]);
@@ -64,7 +65,7 @@ export default function Content1(props) {
       <div className="content1_below">
         <div className="content1_below_above">
         {displayedBooks.map((bookId, index) => (
-            <SmallboxContainer key={index} bookId={bookId} />
+            <SmallBoxDetail key={index} bookId={bookId}/>
           ))}
         </div>
       </div>

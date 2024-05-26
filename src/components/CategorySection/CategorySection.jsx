@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./CategorySection.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SmallboxContainer from "../../containers/smallbox.container";
 import {
   faLightbulb,
   faAngleLeft,
@@ -124,7 +123,7 @@ export default function CategorySection(props) {
       <div className="content1_below">
         <div className="content1_below_above">
           {displayedBooks.map((book) => (
-            <SmallboxContainer key={btoa(book._id)} bookId={btoa(book._id)} />
+            <SmallBoxDetail key={btoa(book._id)} bookId={btoa(book._id)} />
           ))}
         </div>
       </div>

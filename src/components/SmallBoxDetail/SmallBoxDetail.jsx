@@ -1,22 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faStar,
-    faCartShopping,
-    faHeart,
-} from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom"; // Import Link
-import Modal from "../Modal/Modal";
+import { faStar, faCartShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import ModalContainer from "../../containers/modal.container"
 
 export default function SmallBoxDetail(props) {
     const [bookData, setBookData] = useState(null);
     const [authorName, setAuthorName] = useState(null);
-
     const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
 
     useEffect(() => {
         fetch(`http://localhost:8080/book/${props.bookId}`)
@@ -55,6 +46,14 @@ export default function SmallBoxDetail(props) {
         return name;
     };
 
+    const handleCartClick = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     if (!bookData || !authorName) {
         return <div className="flex justify-center items-center">Loading...</div>;
     }
@@ -69,7 +68,6 @@ export default function SmallBoxDetail(props) {
             </div>
             <div className="content1_below_book_describe">
                 <strong>
-                    {/* Wrap book name in Link */}
                     <Link to={`/book/${props.bookId}`}>{truncateBookName(bookData.name, 25)}</Link>
                 </strong>
                 <div style={{ padding: "4px 0 4px 0" }}>{authorName}</div>
@@ -81,22 +79,13 @@ export default function SmallBoxDetail(props) {
                 </div>
                 <div>
                     <span>
-                        <button style={{ textDecoration: "none" }} onClick={openModal}>
+                        <button style={{ textDecoration: "none" }} onClick={handleCartClick}>
                             <FontAwesomeIcon
                                 icon={faCartShopping}
                                 size="xl"
                                 style={{ color: "#FFD43B" }}
                             />
                         </button>
-                        {isModalOpen && (
-                            <Modal 
-                                mproductDetail={props.mproductDetail}
-                                id_book={props.id_book}
-                                addToCart={(product) => props.addToCart(product)}
-                                nameAuthor={props.nameAuthor}
-                                closeModal={() => setIsModalOpen(false)}
-                            />
-                        )}
                     </span>
                     
                     <span style={{ paddingLeft: "10px" }}>
@@ -110,6 +99,13 @@ export default function SmallBoxDetail(props) {
                     </span>
                 </div>
             </div>
+
+            {isModalOpen && (
+                <ModalContainer
+                    bookId={props.bookId}
+                    closeModal={closeModal}
+                />
+            )}
         </div>
     );
 }
