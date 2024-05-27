@@ -6,6 +6,7 @@ import {
     faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
 import ModalContainer from "../../containers/modal.container"
+import Loading from "../loading/Loading";
 
 export default function BestSeller(props) {
     const [bookData, setBookData] = useState(null);
@@ -52,7 +53,7 @@ export default function BestSeller(props) {
     };
 
     if (!bookData || !authorName) {
-        return <div className="flex justify-center items-center">Loading...</div>;
+        return <Loading />
     }
 
     return (

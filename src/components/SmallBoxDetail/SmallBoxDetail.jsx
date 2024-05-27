@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import ModalContainer from "../../containers/modal.container"
+import Loading from "../loading/Loading";
 
 export default function SmallBoxDetail(props) {
     const [bookData, setBookData] = useState(null);
@@ -55,7 +56,7 @@ export default function SmallBoxDetail(props) {
     };
 
     if (!bookData || !authorName) {
-        return <div className="flex justify-center items-center">Loading...</div>;
+        return <Loading />
     }
 
     return (

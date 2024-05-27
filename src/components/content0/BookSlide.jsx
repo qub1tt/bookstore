@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ModalContainer from "../../containers/modal.container";
+import Loading from "../loading/Loading";
 
 export default function BookSlide(props) {
     const [bookData, setBookData] = useState(null);
@@ -35,7 +36,7 @@ export default function BookSlide(props) {
     };
 
     if (!bookData ) {
-        return <div className="flex justify-center items-center">Loading...</div>;
+        return <Loading />
     }
 
     return (
