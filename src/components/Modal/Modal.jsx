@@ -38,6 +38,9 @@ function Modal(props) {
             props.addToCart(product);
             setShowSuccessNotification(true);
         }
+        setTimeout(() => {
+            window.location.reload();
+        }, 500);
     };
 
     const incrementQuantity = () => {

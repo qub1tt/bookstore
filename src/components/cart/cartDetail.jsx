@@ -218,7 +218,8 @@ class ContentCart extends Component {
                         <td className="cart_delete">
                           <button
                             className="cart_quantity_delete flex items-center justify-center hover:text-red-700"
-                            onClick={() => this.props.deteleProductInCart(element._id)}
+                            onClick={() => {this.props.deteleProductInCart(element._id); window.location.reload();}}
+                            
                           >
                             <FontAwesomeIcon icon={faTrash} />
                           </button>

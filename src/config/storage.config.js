@@ -68,14 +68,23 @@ exports.updateProductInCart = (product) => {
 exports.deteleProductInCart = (id_product) => {
     let cart = this.getCart()
     if(cart === null) {
+        window.location.reload();
         return false
     }
     let index = cart.findIndex(element => id_product=== element._id)
     if(index === -1) {
+        window.location.reload();
         return false
     } else {
         cart.splice(index, 1)
     }
     localStorage.setItem('cart', JSON.stringify(cart))
+    window.location.reload();
     return true
 }
+
+exports.getCartCount = () => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    return cart.length;
+};
+

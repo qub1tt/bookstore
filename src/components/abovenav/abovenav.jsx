@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import SearchBar from "./Search";
 import storeConfig from "../../config/storage.config";
+import axios from "axios"; // Import axios
+
 import {
   faCartShopping,
   faCircleUser,
@@ -17,16 +19,12 @@ class Abovenav extends Component {
       email: "Account",
       isAcc: false,
       dropdownVisible: false,
+      cartCount: 0,
     };
   }
 
   componentDidMount() {
-    const user = storeConfig.getUser();
-    if (user !== null) {
-      this.setState({
-        email: user.email,
-      });
-    }
+    this.updateCartCount(); // Fetch cart count when component mounts
   }
 
   componentDidUpdate(prevProps) {
@@ -46,6 +44,25 @@ class Abovenav extends Component {
     }
   }
 
+  updateCartCount = () => {
+    const user = storeConfig.getUser();
+    if (user !== null) {
+      // If user is logged in, fetch cart count from API
+      axios.get(`http://localhost:8080/cart/${user.id}`)
+        .then(response => {
+          const cartCount = response.data.data.products.length;
+          this.setState({ cartCount });
+        })
+        .catch(error => {
+          console.error("Error fetching cart data:", error);
+        });
+    } else {
+      // If user is not logged in, fetch cart count from storage config
+      const cartCount = storeConfig.getCartCount();
+      this.setState({ cartCount });
+    }
+  };
+
   handleProfile = () => {
     if (this.state.email === "Account") {
       return;
@@ -63,7 +80,7 @@ class Abovenav extends Component {
       return <Navigate to={`/profile/${this.state.email}`} />;
     }
 
-    const { email, dropdownVisible } = this.state;
+    const { email, dropdownVisible, cartCount } = this.state;
     const isLoggedIn = email !== "Account";
 
     return (
@@ -82,12 +99,15 @@ class Abovenav extends Component {
         </div>
         <div className="abovenav_items">
           <li>
-            <a href="/cart">
+            <a href="/cart" className="cart-icon">
               <FontAwesomeIcon
                 icon={faCartShopping}
                 size="2xl"
                 style={{ color: "#737373" }}
               />
+              {cartCount > 0 && (
+                <span className="cart-badge">{cartCount}</span>
+              )}
             </a>
           </li>
           <li
