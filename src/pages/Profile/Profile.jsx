@@ -3,6 +3,8 @@ import Abovenav from "../../components/abovenav/abovenav";
 import Sidebar from "../../components/sidebar/sidebar";
 import Footer from "../../components/footer/footer";
 import Chatbot from "../../components/Chatbot/Chatbot";
+import { Image } from "antd";
+
 import "./Profile.css";
 class Profile extends Component {
   constructor() {
@@ -103,6 +105,8 @@ class Profile extends Component {
     this.props.updatePassword(this.state.oldPassword, this.state.newPassword);
   }
   render() {
+    const IMAGE_URL =
+      "https://frontend.tikicdn.com/_desktop-next/static/img/account/avatar.png";
     let xhtml = (
       <div className="chung">
         <div className="information">
@@ -114,16 +118,29 @@ class Profile extends Component {
 
           <div class="avatar">
             <div class="avatar-view">
-              <img
-                src="https://frontend.tikicdn.com/_desktop-next/static/img/account/avatar.png"
-                alt="avatar"
-                class="default"
+              <Image
+                style={{
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                  objectFit: "cover",
+                }}
+                src={this.props.imageBase64 || this.props.avatar || IMAGE_URL}
               />
-              <div class="edit">
-                <img
-                  src="https://frontend.tikicdn.com/_desktop-next/static/img/account/edit.png"
-                  class="edit-img"
-                  alt
+              <div className="edit">
+                <label htmlFor="avatar_id">
+                  <img
+                    src="https://frontend.tikicdn.com/_desktop-next/static/img/account/edit.png"
+                    className="edit-img"
+                    alt=""
+                    style={{ cursor: "pointer" }}
+                  />
+                </label>
+                <input
+                  className="hidden"
+                  id="avatar_id"
+                  type="file"
+                  accept="image/png, image/gif, image/jpeg"
+                  onChange={(e) => this.props.changeImage(e)}
                 />
               </div>
             </div>

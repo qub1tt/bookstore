@@ -17,9 +17,11 @@ class ProfileContainer extends Component {
       lastName: null,
       address: null,
       phone_number: null,
+      avatar: "",
       notiupdatePassword: null,
       isAuthed: true,
       isUpdatingInfo: false, // Thêm biến này
+      imageBase64: "",
     };
   }
   async componentDidMount() {
@@ -32,6 +34,7 @@ class ProfileContainer extends Component {
         lastName: storeConfig.getUser().lastName,
         address: storeConfig.getUser().address,
         phone_number: storeConfig.getUser().phone_number,
+        avatar: storeConfig.getUser().avatar_url,
       });
     }
   }
@@ -46,7 +49,8 @@ class ProfileContainer extends Component {
       this.state.firstName,
       this.state.lastName,
       this.state.address,
-      this.state.phone_number
+      this.state.phone_number,
+      this.state.imageBase64
     );
 
     // Sau khi quá trình cập nhật hoàn thành, đặt isUpdatingInfo thành false
@@ -55,6 +59,23 @@ class ProfileContainer extends Component {
   componentWillUnmount() {
     this.props.profileActions.resetProfile();
   }
+
+  changeImage = (e) => {
+    const image = e.target.files[0];
+    if (image) {
+      const reader = new FileReader();
+      reader.readAsDataURL(image);
+      reader.onloadend = () => {
+        this.setState({ imageBase64: reader.result });
+      };
+      reader.onerror = () => {
+        console.error("AHHHHHHHH!!");
+      };
+    } else {
+      this.setState({ imageBase64: null });
+    }
+  };
+
   updatePassword = async (oldpassword, newpassword) => {
     let res = null;
     try {
@@ -96,6 +117,9 @@ class ProfileContainer extends Component {
               lastName={this.state.lastName}
               address={this.state.address}
               phone_number={this.state.phone_number}
+              avatar={this.state.avatar}
+              imageBase64={this.state.imageBase64}
+              changeImage={(e) => this.changeImage(e)} // Add the changeImage method to Profile props
               setFirstName={(value) => this.setState({ firstName: value })}
               setLastName={(value) => this.setState({ lastName: value })}
               setAddress={(value) => this.setState({ address: value })}
