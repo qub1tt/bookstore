@@ -36,7 +36,7 @@ export const resetProfile = () => ({
   type: profileTypes.RESET_PROFILE,
 });
 export const updateInfor =
-  (email, firstName, lastName, address, phone_number) =>
+  (email, firstName, lastName, address, phone_number, avatarBase64) =>
   async (dispatch, getState) => {
     let res;
     try {
@@ -46,6 +46,7 @@ export const updateInfor =
         lastName: lastName,
         address: address,
         phone_number: phone_number,
+        avatarBase64: avatarBase64,
       });
     } catch (err) {
       console.log(err);

@@ -64,8 +64,8 @@ export default function Content1(props) {
 
       <div className="content1_below">
         <div className="content1_below_above">
-        {displayedBooks.map((bookId, index) => (
-            <SmallBoxDetail key={index} bookId={bookId}/>
+          {displayedBooks.map((bookId, index) => (
+            <SmallBoxDetail key={index} bookId={bookId} />
           ))}
         </div>
       </div>
