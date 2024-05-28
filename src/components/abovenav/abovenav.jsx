@@ -25,24 +25,34 @@ class Abovenav extends Component {
 
   componentDidMount() {
     this.updateCartCount(); // Fetch cart count when component mounts
+    const user = storeConfig.getUser();
+    if (user !== null) {
+      this.setState({
+        email: user.email,
+      });
+    }
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.islogin !== this.props.islogin) {
-      if (!this.props.islogin) {
-        this.setState({
-          email: "Account",
-        });
-      } else {
-        const user = storeConfig.getUser();
-        if (user !== null) {
-          this.setState({
-            email: user.email,
-          });
-        }
-      }
+      this.updateUserEmail();
     }
   }
+
+  updateUserEmail = () => {
+    if (this.props.islogin) {
+      const user = storeConfig.getUser();
+      if (user !== null) {
+        this.setState({
+          email: user.email,
+        });
+      }
+    } else {
+      this.setState({
+        email: "Account",
+      });
+    }
+  };
 
   updateCartCount = () => {
     const user = storeConfig.getUser();
@@ -75,72 +85,70 @@ class Abovenav extends Component {
     this.setState({ dropdownVisible: visible });
   };
 
-  render() {
-    if (this.state.isAcc) {
-      return <Navigate to={`/profile/${this.state.email}`} />;
-    }
+render() {
+  if (this.state.isAcc) {
+    return <Navigate to={`/profile/${this.state.email}`} />;
+  }
 
-    const { email, dropdownVisible, cartCount } = this.state;
-    const isLoggedIn = email !== "Account";
+  const { email, dropdownVisible, cartCount } = this.state;
+  const isLoggedIn = email !== "Account";
 
-    return (
-      <nav className="abovenav">
-        <div className="abovenav_open_close">
-          <button onClick={this.props.toggle}>
+  return (
+    <nav className="abovenav">
+      <div className="abovenav_open_close">
+        <button onClick={this.props.toggle}>
+          <FontAwesomeIcon
+            icon={faBars}
+            size="2xl"
+            style={{ color: "#737373" }}
+          />
+        </button>
+      </div>
+      <div className="abovenav_searchbox">
+        <SearchBar />
+      </div>
+      <div className="abovenav_items">
+        <li>
+          <a href="/cart" className="cart-icon">
             <FontAwesomeIcon
-              icon={faBars}
+              icon={faCartShopping}
               size="2xl"
               style={{ color: "#737373" }}
             />
-          </button>
-        </div>
-        <div className="abovenav_searchbox">
-          <SearchBar />
-        </div>
-        <div className="abovenav_items">
-          <li>
-            <a href="/cart" className="cart-icon">
-              <FontAwesomeIcon
-                icon={faCartShopping}
-                size="2xl"
-                style={{ color: "#737373" }}
-              />
-              {cartCount > 0 && (
-                <span className="cart-badge">{cartCount}</span>
-              )}
-            </a>
-          </li>
-          <li
-            onMouseEnter={() => this.toggleDropdown(true)}
-            onMouseLeave={() => this.toggleDropdown(false)}
-            className="user-icon-container"
-          >
-            <a href="#">
-              <FontAwesomeIcon
-                icon={faCircleUser}
-                size="2xl"
-                style={{ color: "#737373" }}
-              />
-            </a>
-            {dropdownVisible && (
-              <div className="dropdown-menu text-center">
-                {isLoggedIn ? (
-                  <>
-                    <a href={`/profile/${btoa(email)}`}>Hồ sơ</a>
-                    <a href="/purchase_history">Đơn hàng</a>
-                  </>
-                ) : (
-                  <>
-                    <a href="/login">Login</a>
-                  </>
-                )}
-              </div>
+            {cartCount > 0 && (
+              <span className="cart-badge">{cartCount}</span>
             )}
-          </li>
-        </div>
-      </nav>
-    );
-  }
+          </a>
+        </li>
+        <li
+          onMouseEnter={() => this.toggleDropdown(true)}
+          onMouseLeave={() => this.toggleDropdown(false)}
+          className="user-icon-container"
+        >
+          <a href="#">
+            <FontAwesomeIcon
+              icon={faCircleUser}
+              size="2xl"
+              style={{ color: "#737373" }}
+            />
+          </a>
+          {dropdownVisible && (
+            <div className="dropdown-menu text-center">
+              {isLoggedIn ? (
+                <>
+                  <a href={`/profile/${btoa(email)}`}>Hồ sơ</a>
+                  <a href="/purchase_history">Đơn hàng</a>
+                </>
+              ) : (
+                <a href="/login">Login</a>
+              )}
+            </div>
+          )}
+        </li>
+      </div>
+    </nav>
+  );
+}
 }
 
 export default Abovenav;
