@@ -10,7 +10,7 @@ import {
   faAnglesRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-const AllBook = (props) => {
+const AllBookaz = (props) => {
   const [bookIds, setBookIds] = useState([]);
   const { pageNumber } = useParams(); // Use useParams to get the page number from the URL
   const currentPage = pageNumber ? parseInt(pageNumber) : 1; // Convert the page number to an integer
@@ -20,7 +20,9 @@ const AllBook = (props) => {
     fetch("http://localhost:8080/book")
       .then((response) => response.json())
       .then((data) => {
-        const ids = data.data.map((book) => btoa(book._id));
+        // Sort the books by name
+        const sortedBooks = data.data.sort((a, b) => a.name.localeCompare(b.name));
+        const ids = sortedBooks.map((book) => btoa(book._id));
         setBookIds(ids);
       })
       .catch((error) => {
@@ -29,12 +31,12 @@ const AllBook = (props) => {
   }, []);
 
   useEffect(() => {
-    const url = `/allbook/page/${currentPage}`;
+    const url = `/allbook/page/az/${currentPage}`;
     window.history.pushState({ path: url }, "", url);
   }, [currentPage]);
 
   const handlePageChange = (pageNumber) => {
-    const url = `/allbook/page/${pageNumber}`;
+    const url = `/allbook/page/az/${pageNumber}`;
     window.history.pushState({ path: url }, "", url);
     window.location.reload();
   };
@@ -70,13 +72,14 @@ const AllBook = (props) => {
           <strong>Tất cả sách:</strong>
         </div>
         <div className="categorysection_above_right">
-          <select onChange={(e) => window.location.href = e.target.value}>
+        <select defaultValue="/allbook/page/az/1" onChange={(e) => window.location.href = e.target.value}>
             <option value="/allbook/page/1">Mặc định</option>
             <option value="/allbook/page/az/1">A - Z</option>
             <option value="/allbook/page/za/1">Z - A</option>
             <option value="/allbook/page/priceHighToLow/1">Giá cao - thấp</option>
             <option value="/allbook/page/priceLowToHigh/1">Giá thấp - cao</option>
           </select>
+
         </div>
       </div>
       <div className="content1_below mt-5">
@@ -121,4 +124,4 @@ const AllBook = (props) => {
   );
 };
 
-export default AllBook;
+export default AllBookaz;

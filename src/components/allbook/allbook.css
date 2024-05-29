@@ -41,3 +41,9 @@
       }
   }
   
+.categorysection_above_right select{
+  background-color: antiquewhite;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+}

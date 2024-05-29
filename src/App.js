@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import BooksDetailContainer from "./containers/book.detail.container";
 import CartContainer from "./containers/cart.container";
 import ProfileContainer from "./containers/profile.container";
@@ -13,6 +12,10 @@ import HistoryPurchase from "./containers/history.purchase.container";
 import HomePageContainer from "./containers/home.container";
 import CategoryContainer from "./containers/category.container";
 import BookPageContainer from "./containers/allbook.container";
+import BookPageContaineraz from "./containers/allbookaz.container";
+import BookPageContainerza from "./containers/allbookza.container";
+import BookPageContainerhighlow from "./containers/allbookhighlow.container";
+import BookPageContainerlowhigh from "./containers/allbooklowhigh.container";
 
 const App = () => {
   return (
@@ -33,10 +36,11 @@ const App = () => {
 
         <Route path="/purchase_history" element={<HistoryPurchase />} />
         <Route path="/category/:id" element={<CategoryContainer />} />
-        <Route
-          path="/allbook/page/:pageNumber"
-          element={<BookPageContainer />}
-        />
+        <Route path="/allbook/page/:pageNumber" element={<BookPageContainer />}/>
+        <Route path="/allbook/page/az/:pageNumber" element={<BookPageContaineraz />}/>
+        <Route path="/allbook/page/za/:pageNumber" element={<BookPageContainerza />}/>
+        <Route path="/allbook/page/priceHighToLow/:pageNumber" element={<BookPageContainerhighlow />}/>
+        <Route path="/allbook/page/priceLowToHigh/:pageNumber" element={<BookPageContainerlowhigh />}/>
       </Routes>
     </Router>
   );
