@@ -107,6 +107,14 @@ function DetailsSection(props) {
     }, 500);
   };
 
+  const incrementQuantity = () => {
+    setQuantity(prevQuantity => prevQuantity + 1);
+  };
+
+  const decrementQuantity = () => {
+      setQuantity(prevQuantity => Math.max(prevQuantity - 1, 1));
+  };
+
   return (
     <div className="book_detail_container">
       <div className="book_detail_img_describe">
@@ -141,18 +149,27 @@ function DetailsSection(props) {
             <strong>Giá: </strong>
             <span>{props.mproductDetail.price}</span>
           </h3>
-          <div>
-            <p className="book_detail_describe_numofbook">
-              <strong>Số Lượng:</strong>
-            </p>
-            <input
-              type="number"
-              min="0"
-              onChange={(e) => setQuantity(e.target.value)}
-              value={quantity}
-              className="book_detail_number"
-            />
-          </div>
+          <div className="Modal_number mt-4">
+                <button
+                    className="Modal_quantity-button"
+                    onClick={decrementQuantity}
+                >
+                    -
+                </button>
+                <input
+                    type="number"
+                    min="1"
+                    readOnly
+                    value={quantity}
+                    className="Modal_quantity-input"
+                />
+                <button
+                    className="Modal_quantity-button"
+                    onClick={incrementQuantity}
+                >
+                    +
+                </button>
+            </div>
           <button
             onClick={() => submitOrder()}
             type="button"
