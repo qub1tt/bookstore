@@ -229,7 +229,7 @@ class ContentCart extends Component {
                     return (
                       <tr key={index} className="cart_info">
                         <td className="cart_product">
-                          <a href="">
+                          <a>
                             <img
                               src={element.img}
                               alt=""

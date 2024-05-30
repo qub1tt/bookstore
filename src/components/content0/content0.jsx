@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./content0.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import BookSlide from "./BookSlide";
 
 export default function Content0(props) {
@@ -9,24 +9,21 @@ export default function Content0(props) {
     const [displayedBooks, setDisplayedBooks] = useState([]);
     const scrollContainerRef = useRef(null);
 
-
     useEffect(() => {
         fetch("http://localhost:8080/book")
           .then((response) => response.json())
           .then((data) => {
-            // Sắp xếp mảng sách theo view_counts giảm dần
             const sortedBooks = data.data.sort((a, b) => b.view_counts - a.view_counts);
             const top10Books = sortedBooks.slice(0, 10);
             const ids = top10Books.map((book) => btoa(book._id));
-            setBookIds([...ids,...ids,...ids]);
+            // Triple the books for infinite scrolling
+            setBookIds([...ids, ...ids, ...ids]);
             setDisplayedBooks(ids);
           })
           .catch((error) => {
             console.error("Error fetching book data:", error);
           });
     }, []);
-    
-
 
     useEffect(() => {
         const scrollContainer = scrollContainerRef.current;
@@ -61,15 +58,16 @@ export default function Content0(props) {
         };
 
         const handleScroll = () => {
-            // When scrolled to the end, reset scroll position to the middle set of books
-            if (
-                scrollContainer.scrollLeft >=
-                scrollContainer.scrollWidth - scrollContainer.clientWidth
-            ) {
-                scrollContainer.scrollLeft =
-                    scrollContainer.scrollWidth / 3 - scrollContainer.clientWidth;
-            } else if (scrollContainer.scrollLeft <= 0) {
-                scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3;
+            const totalWidth = scrollContainer.scrollWidth;
+            const visibleWidth = scrollContainer.clientWidth;
+            const scrollLeft = scrollContainer.scrollLeft;
+
+            if (scrollLeft + visibleWidth >= totalWidth - 1) {
+                // Reached the end
+                scrollContainer.scrollLeft = totalWidth / 3 - visibleWidth;
+            } else if (scrollLeft <= 0) {
+                // Reached the start
+                scrollContainer.scrollLeft = totalWidth / 3;
             }
         };
 
@@ -88,15 +86,11 @@ export default function Content0(props) {
         };
     }, [bookIds]);
 
-    const scrollLeft = () => {
-        const container = scrollContainerRef.current;
-        container.scrollLeft -= 200; 
-    };
-
-    const scrollRight = () => {
-        const container = scrollContainerRef.current;
-        container.scrollLeft += 200; 
-    };
+    useEffect(() => {
+        const scrollContainer = scrollContainerRef.current;
+        // Initialize the scroll position to the middle set of books
+        scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3;
+    }, [bookIds]);
 
     return (
         <section className="content0_feature">
@@ -114,10 +108,10 @@ export default function Content0(props) {
             </div>
 
             <div className="content0_scroll_container" ref={scrollContainerRef}>
-                {displayedBooks.map((bookId, index) => (
+                {bookIds.map((bookId, index) => (
                     <BookSlide key={index} bookId={bookId} />
                 ))}
             </div>
         </section>
     );
-};
+}

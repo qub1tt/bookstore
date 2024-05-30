@@ -1,3 +1,14 @@
+.Modal_overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 1000;
+}
+
+
 .Modal_container{
     position: fixed;
     top: 50%;
@@ -5,19 +16,19 @@
     transform: translate(-50%, -50%);
     z-index: 1000;
     border: 1px solid black;
-    background-color: rgb(229 231 235);
+    background-color: white;
 }
 
 .Close_modal{
     height: 50px;
-    background-color: rgb(229 231 235);
+    background-color: white;
     max-width: 700px;
 }
 
 .Modal_content{
     width:700px;
     display: flex;
-    background-color: rgb(229 231 235);
+    background-color: white;
     padding-bottom: 30px;
 }
 

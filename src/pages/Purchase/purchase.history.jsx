@@ -101,7 +101,7 @@ class HistoryPurchase extends Component {
                     return (
                       <tr>
                         <td className="cart_product">
-                          <a href="">
+                          <a>
                             <img src={item.img} />
                           </a>
                         </td>
@@ -231,7 +231,7 @@ class HistoryPurchase extends Component {
                     return (
                       <tr>
                         <td className="cart_product">
-                          <a href="">
+                          <a>
                             <img src={item.img} />
                           </a>
                         </td>
@@ -352,7 +352,7 @@ class HistoryPurchase extends Component {
                     return (
                       <tr className="cart_info">
                         <td className="cart_product" >
-                        <a href="">
+                        <a>
                             <img
                               src={item.img}
                               alt=""
