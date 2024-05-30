@@ -140,11 +140,11 @@ class HistoryPurchase extends Component {
                 </tbody>
               </table>
               </div>
-              <div className="login-form">
+              <div className="cancel-purchase bg-gray-100">
                 <div className="delete-cart">
                   <button
                     onClick={() => this.props.deleteBill(element._id)}
-                    className="destroy btn btn-default bg-red-500 py-2 px-2"
+                    className="destroy btn btn-default bg-red-500 py-2 px-2 mb-4 rounded-lg hover:bg-red-600"
                   >
                     Hủy Đơn Hàng
                   </button>
