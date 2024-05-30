@@ -6,7 +6,6 @@
   left: -250px;
   background-color: white;
   transition: left 0.3s ease;
-  padding-top: 22px;
   z-index: 999;
 }
 
@@ -21,14 +20,21 @@
 }
 
 .main_logo img {
-  width: 150px;
-  height: 50px;
+  width: 180px;
+  height: 60px;
   margin: 0 auto;
+  margin-top: 10px;
 }
 
 .category {
-  margin-top: 30px;
   background-color: white;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 1150px) {
+  .category {
+    margin-top: 15px;
+  }
 }
 
 .sidebar_icon {

@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./sidebar.css";
 import storeConfig from "../../config/storage.config";
 import { Link, Navigate } from "react-router-dom";
-import logo from "./../../assets/logo.png";
+import logo1 from "./../../assets/logo.png";
+import logo from "./../../assets/logo/logo3.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
