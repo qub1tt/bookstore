@@ -15,6 +15,7 @@ const LoginPage = ({
   notificationLogin,
   registerSubmit,
   loginSubmit,
+  responseGoogle,
   islogin,
   logout,
 }) => (
@@ -33,6 +34,7 @@ const LoginPage = ({
       notificationLogin={notificationLogin}
       registerSubmit={() => registerSubmit()}
       loginSubmit={() => loginSubmit()}
+      responseGoogle={responseGoogle}
     />
   </div>
 );

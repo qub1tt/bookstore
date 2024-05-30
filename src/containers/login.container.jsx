@@ -140,6 +140,27 @@ class LoginRegisterContainer extends Component {
       this.setState({ redirectToHome: true });
     }, 1000);
   };
+
+  responseGoogle = async (response) => {
+    const { tokenId } = response;
+    try {
+      const res = await axios.post("http://localhost:8080/user/google-login", {
+        tokenId,
+      });
+
+      this.props.actions.loginSuccess(res.data.token, res.data.user);
+      this.setState({
+        isLoggedIn: true,
+        loginSuccessMessage: "Đăng nhập thành công",
+      });
+      setTimeout(() => {
+        this.setState({ redirectToHome: true });
+      }, 1000);
+    } catch (err) {
+      this.setState({ notificationLogin: "Some thing went wrong" });
+    }
+  };
+
   render() {
     const {
       isLoggedIn,
@@ -230,7 +251,7 @@ class LoginRegisterContainer extends Component {
           loginSubmit={() => this.loginSubmit()}
           islogin={this.props.islogin}
           logout={() => this.props.actions.logout()}
-          history={this.props.history}
+          responseGoogle={this.responseGoogle}
         />
       </div>
     );

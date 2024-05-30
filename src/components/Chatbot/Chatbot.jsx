@@ -99,13 +99,6 @@ const Chatbot = () => {
     chatbotToggler.addEventListener("click", () =>
       document.body.classList.toggle("show-chatbot")
     );
-
-    // Close chatbot when clicking outside of it
-    document.addEventListener("click", (e) => {
-      if (!chatbot.contains(e.target) && !chatbotToggler.contains(e.target)) {
-        document.body.classList.remove("show-chatbot");
-      }
-    });
   }, []);
 
   return (
