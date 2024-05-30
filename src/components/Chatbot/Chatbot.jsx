@@ -116,16 +116,16 @@ const Chatbot = () => {
       </button>
       <div className="chatbot">
         <header>
-          <h2>Chatbot</h2>
+          <h2>Trợ lý AI </h2>
           <span className="close-btn material-symbols-outlined">close</span>
         </header>
         <ul className="chatbox">
           <li className="chat incoming">
             <span className="material-symbols-outlined">smart_toy</span>
             <p>
-              Hi there 👋
+              Xin chào 👋
               <br />
-              How can I help you today?
+              Tôi có thể giúp gì cho bạn hôm nay?
             </p>
           </li>
         </ul>

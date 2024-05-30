@@ -60,9 +60,6 @@ export const sortTypes = {
 };
 export const cartTypes = {
   SET_CART: "SET_CART",
-  SET_CITY: "SET_CITY",
-  SET_DICTRICT: "SET_DISTRICT",
-  SET_WARD: "SET_WARD",
   PAYMENT_SUCCESS: "PAYMENT_SUCCESS",
   PAYMENT_FAIL: "PAYMENT_FAIL",
   RESET_PAYMENT: "RESET_PAYMENT",

@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import './cartDetail.css';
-
+import "./cartDetail.css";
+import { PayPalButton } from "react-paypal-button-v2";
+import * as PaymentService from "../../API/payment.action";
 class ContentCart extends Component {
   constructor() {
     super();
@@ -21,22 +22,31 @@ class ContentCart extends Component {
       showpaymentfail: false,
       showSuccessNotification: false,
       notification: "",
+      sdkReady: false,
     };
   }
 
   componentDidMount() {
     let total = 0;
     for (let i = 0; i < this.props.cart.length; i++) {
-      total += Number(this.props.cart[i].price) * Number(this.props.cart[i].count);
+      total +=
+        Number(this.props.cart[i].price) * Number(this.props.cart[i].count);
     }
     this.setState({ total });
+
+    if (!window.paypal) {
+      this.addPaypalScript();
+    } else {
+      this.setState({ sdkReady: true });
+    }
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.cart !== this.props.cart) {
       let total = 0;
       for (let i = 0; i < this.props.cart.length; i++) {
-        total += Number(this.props.cart[i].price) * Number(this.props.cart[i].count);
+        total +=
+          Number(this.props.cart[i].price) * Number(this.props.cart[i].count);
       }
       this.setState({ total });
     }
@@ -65,12 +75,24 @@ class ContentCart extends Component {
     });
   };
 
+  addPaypalScript = async () => {
+    const { data } = await PaymentService.getConfig();
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = `https://www.paypal.com/sdk/js?client-id=${data}`;
+    script.async = true;
+    script.onload = () => {
+      this.setState({ sdkReady: true });
+    };
+    document.body.appendChild(script);
+  };
+
   handlePayment = () => {
     if (!this.props.islogin) {
       // Hiển thị thông báo yêu cầu đăng nhập
-      this.setState({ 
+      this.setState({
         show: true,
-        notification: "Vui lòng đăng nhập để thanh toán."
+        notification: "Vui lòng đăng nhập để thanh toán.",
       });
       return;
     } else {
@@ -97,13 +119,20 @@ class ContentCart extends Component {
       this.setState({ notiDetailAddress: "" });
     }
     if (!check) return;
-    this.props.payment(this.state.address, this.state.phone, this.state.name, this.state.total).then(() => {
-      this.setState({ showSuccessNotification: true });
-      setTimeout(() => {
-        this.setState({ showSuccessNotification: false });
-        window.location.reload(); 
-      }, 1000);
-    });
+    this.props
+      .payment(
+        this.state.address,
+        this.state.phone,
+        this.state.name,
+        this.state.total
+      )
+      .then(() => {
+        this.setState({ showSuccessNotification: true });
+        setTimeout(() => {
+          this.setState({ showSuccessNotification: false });
+          window.location.reload();
+        }, 1000);
+      });
   };
 
   isvaidPhone = (phone) => {
@@ -120,7 +149,9 @@ class ContentCart extends Component {
     }
     return (
       <div className="success-notification">
-        {this.state.showSuccessNotification ? "Order Successfully!" : this.state.notification}
+        {this.state.showSuccessNotification
+          ? "Order Successfully!"
+          : this.state.notification}
       </div>
     );
   };
@@ -136,25 +167,43 @@ class ContentCart extends Component {
     return (
       <div>
         {this.renderSuccessNotification()}
-        <section id="cart_items" className="md:col-span-2 overflow-hidden border border-gray-200 rounded-lg">
+        <section
+          id="cart_items"
+          className="md:col-span-2 overflow-hidden border border-gray-200 rounded-lg"
+        >
           <div>
             <div className="bg-gray-100">
               <table className="min-w-full divide-y divide-gray-200">
                 <thead>
                   <tr className="cart_title bg-gray-50">
-                    <th scope="col" className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
                       Item
                     </th>
-                    <th scope="col" className="py-2 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th
+                      scope="col"
+                      className="py-2 text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
                       Description
                     </th>
-                    <th scope="col" className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
                       Price
                     </th>
-                    <th scope="col" className="px-2 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th
+                      scope="col"
+                      className="px-2 text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
                       Quantity
                     </th>
-                    <th scope="col" className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
                       Total
                     </th>
                     <th scope="col" className="relative">
@@ -172,7 +221,11 @@ class ContentCart extends Component {
                       <tr key={index} className="cart_info">
                         <td className="cart_product">
                           <a href="">
-                            <img src={element.img} alt="" className="cart_image" />
+                            <img
+                              src={element.img}
+                              alt=""
+                              className="cart_image"
+                            />
                           </a>
                         </td>
                         <td className="cart_description">
@@ -183,7 +236,10 @@ class ContentCart extends Component {
                         </td>
                         <td className="cart_quantity">
                           <div className="cart_quantity_button">
-                            <button className="cart_quantity_up" onClick={() => updateCount(element.count + 1)}>
+                            <button
+                              className="cart_quantity_up"
+                              onClick={() => updateCount(element.count + 1)}
+                            >
                               {" "}
                               +{" "}
                             </button>
@@ -210,16 +266,20 @@ class ContentCart extends Component {
                           </div>
                         </td>
                         <td className="cart_total">
-                        <p className="cart_total_price">
-                            {new Intl.NumberFormat("de-DE", { currency: "EUR" }).format(element.price * element.count)}
+                          <p className="cart_total_price">
+                            {new Intl.NumberFormat("de-DE", {
+                              currency: "EUR",
+                            }).format(element.price * element.count)}
                             <sup>đ</sup>
                           </p>
                         </td>
                         <td className="cart_delete">
                           <button
                             className="cart_quantity_delete flex items-center justify-center hover:text-red-700"
-                            onClick={() => {this.props.deteleProductInCart(element._id); window.location.reload();}}
-                            
+                            onClick={() => {
+                              this.props.deteleProductInCart(element._id);
+                              window.location.reload();
+                            }}
                           >
                             <FontAwesomeIcon icon={faTrash} />
                           </button>
@@ -246,7 +306,9 @@ class ContentCart extends Component {
                   Tổng Tiền
                   <span className="font-medium mx-2">
                     {" "}
-                    {new Intl.NumberFormat("de-DE", { currency: "EUR" }).format(this.state.total)}
+                    {new Intl.NumberFormat("de-DE", { currency: "EUR" }).format(
+                      this.state.total
+                    )}
                     <sup>đ</sup>
                   </span>
                 </li>
@@ -289,10 +351,35 @@ class ContentCart extends Component {
                 </div>
               </div>
               <div className="cart-option flex justify-between">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mr-2 mt-6 w-48" onClick={() => this.handlePayment()}>
-                  Payment
-                </button>
-                <Link className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mt-6 w-48 flex items-center justify-center" to={"/"}>
+                <div className="px-4 py-2 mr-2 mt-6 w-48">
+                  {this.state.sdkReady ? (
+                    <PayPalButton
+                      amount={(this.state.total / 25000).toFixed(2)}
+                      // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                      onSuccess={(details, data) => {
+                        // Call when PayPal payment is successful
+                        this.handlePayment();
+                        // OPTIONAL: Call your server to save the transaction
+                        return fetch("/paypal-transaction-complete", {
+                          method: "post",
+                          body: JSON.stringify({
+                            orderID: data.orderID,
+                          }),
+                        });
+                      }}
+                      onError={() => {
+                        alert("Error paypal");
+                      }}
+                    />
+                  ) : (
+                    console.log(2)
+                  )}
+                </div>
+
+                <Link
+                  className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mt-6 w-auto flex items-center justify-center"
+                  to={"/"}
+                >
                   Continue shopping
                 </Link>
               </div>
@@ -304,4 +391,4 @@ class ContentCart extends Component {
   }
 }
 
-export default ContentCart;                         
+export default ContentCart;
