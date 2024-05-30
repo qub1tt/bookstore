@@ -1,0 +1,83 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 99vh;
+    background-color: #e0ffff;
+}
+
+.login-form {
+    background-color: white;
+    padding: 50px 50px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+}
+
+.login-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.noti {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.login-input {
+    margin-bottom: 15px;
+}
+
+.login-input input[type="email"],
+.login-input input[type="password"],
+.login-input input[type="number"],
+.login-input input[type="text"] {
+    width: 100%;
+    outline: none;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+
+.login-button {
+    width: 60%;
+    padding: 10px 0;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+.login-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+.login-link:focus {
+    outline: none;
+}
+
+.login-form div {
+    margin-top: 10px;
+}
+
+.login-form p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+}
