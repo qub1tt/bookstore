@@ -3,7 +3,8 @@
 }
 
 .purchase_state li :hover {
-  color: red;
+  color: rgb(79 70 229);
+  text-decoration: underline;
 }
 
 .purchase_history_container {

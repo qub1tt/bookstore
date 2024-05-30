@@ -135,6 +135,14 @@ class ContentCart extends Component {
       });
   };
 
+  truncateWords = (text, wordLimit) => {
+    const words = text.split(" ");
+    if (words.length <= wordLimit) {
+      return text;
+    }
+    return words.slice(0, wordLimit).join(" ") + "...";
+  };
+
   isvaidPhone = (phone) => {
     if (phone.length < 10 || phone.length > 11) return false;
     for (let i = 0; i < phone.length; i++) {
@@ -173,44 +181,45 @@ class ContentCart extends Component {
         >
           <div>
             <div className="bg-gray-100">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead>
-                  <tr className="cart_title bg-gray-50">
-                    <th
-                      scope="col"
-                      className="text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                      Item
-                    </th>
-                    <th
-                      scope="col"
-                      className="py-2 text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                      Description
-                    </th>
-                    <th
-                      scope="col"
-                      className="text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                      Price
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-2 text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                      Quantity
-                    </th>
-                    <th
-                      scope="col"
-                      className="text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                      Total
-                    </th>
-                    <th scope="col" className="relative">
-                      <span className="sr-only">Delete</span>
-                    </th>
-                  </tr>
-                </thead>
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead>
+                <tr className="cart_title bg-gray-50">
+                  <th
+                    scope="col"
+                    className="text-xs font-medium text-gray-500 uppercase tracking-wider w-24 md:w-28 lg:w-28"
+                  >
+                    Item
+                  </th>
+                  <th
+                    scope="col"
+                    className="py-2 text-xs font-medium text-gray-500 uppercase tracking-wider w-24 md:w-40 lg:w-80"
+                    style={{ width: "200px" }}
+                  >
+                    Description
+                  </th>
+                  <th
+                    scope="col"
+                    className="text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                  >
+                    Price
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-2 text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                  >
+                    Quantity
+                  </th>
+                  <th
+                    scope="col"
+                    className="text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                  >
+                    Total
+                  </th>
+                  <th scope="col" className="relative w-10 md:w-16 lg:w-16">
+                    <span className="sr-only ">Delete</span>
+                  </th>
+                </tr>
+              </thead>
                 <tbody>
                   {this.props.cart.map((element, index) => {
                     const updateCount = (newCount) => {
@@ -229,10 +238,12 @@ class ContentCart extends Component {
                           </a>
                         </td>
                         <td className="cart_description">
-                          <p>{element.name}</p>
+                          <p>{this.truncateWords(element.name, 6)}</p>
                         </td>
                         <td className="cart_price">
-                          <p>{element.price}đ</p>
+                          <p>{new Intl.NumberFormat("de-DE", {
+                              currency: "EUR",
+                            }).format(element.price)}</p>
                         </td>
                         <td className="cart_quantity">
                           <div className="cart_quantity_button">
@@ -266,11 +277,11 @@ class ContentCart extends Component {
                           </div>
                         </td>
                         <td className="cart_total">
-                          <p className="cart_total_price">
+                          <p className="cart_total_price mr-2">
                             {new Intl.NumberFormat("de-DE", {
                               currency: "EUR",
                             }).format(element.price * element.count)}
-                            <sup>đ</sup>
+                            
                           </p>
                         </td>
                         <td className="cart_delete">
@@ -319,39 +330,39 @@ class ContentCart extends Component {
             <div className="chose_area mx-4">
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
                 <div className="user_option flex-1">
-                  <label className="block">Name</label>
                   <input
                     type="text"
                     value={this.state.name}
                     onChange={(e) => this.setState({ name: e.target.value })}
-                    className="border border-gray-300 rounded-md p-2 w-full md:w-auto lg:w-96"
+                    className="border border-gray-300 rounded-md p-2 w-full md:w-1/2 lg:w-96"
+                    placeholder="Name"
                   />
-                  <span>{this.state.notiName}</span>
+                  <span px-3 text-red-500>{this.state.notiName}</span>
                 </div>
                 <div className="user_option flex-1">
-                  <label className="block">Phone</label>
                   <input
                     type="text"
                     value={this.state.phone}
                     onChange={(e) => this.setState({ phone: e.target.value })}
-                    className="border border-gray-300 rounded-md p-2 w-full md:w-auto
+                    className="border border-gray-300 rounded-md p-2 w-full md:w-1/2
                     lg:w-96"
+                    placeholder="Phone"
                   />
-                  <span>{this.state.notiPhone}</span>
+                  <span px-3 text-red-500>{this.state.notiPhone}</span>
                 </div>
                 <div className="user_option flex-1">
-                  <label className="block">Address</label>
                   <input
                     type="text"
                     value={this.state.address}
                     onChange={(e) => this.setState({ address: e.target.value })}
-                    className="border border-gray-300 rounded-md p-2 w-full md:w-auto lg:w-96"
+                    className="border border-gray-300 rounded-md p-2 w-full md:w-1/2 lg:w-96"
+                    placeholder="Address"
                   />
-                  <span>{this.state.notiDetailAddress}</span>
+                  <span className="px-3 text-red-500">{this.state.notiDetailAddress}</span>
                 </div>
               </div>
               <div className="cart-option flex justify-between">
-                <div className="px-4 py-2 mr-2 mt-6 w-48">
+                <div className="ppip mr-2 mt-6 w-48">
                   {this.state.sdkReady ? (
                     <PayPalButton
                       amount={(this.state.total / 25000).toFixed(2)}
@@ -375,13 +386,14 @@ class ContentCart extends Component {
                     console.log(2)
                   )}
                 </div>
-
-                <Link
-                  className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mt-6 w-auto flex items-center justify-center"
-                  to={"/"}
-                >
-                  Continue shopping
-                </Link>
+                <div className="ctnsp flex justify-center items-center">
+                    <Link
+                      className=" bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mt-6 w-auto flex items-center justify-center"
+                      to={"/"}
+                    >
+                      Continue shopping
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

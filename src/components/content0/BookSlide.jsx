@@ -47,7 +47,11 @@ export default function BookSlide(props) {
             <div className="content0_feature_content">
                 <h3>{bookData.name}</h3>
                 <div className="content0_price">
-                    {bookData.price}đ <span>{bookData.price * 1.3}đ</span>
+                {new Intl.NumberFormat("de-DE", {
+                              currency: "EUR",
+                            }).format(bookData.price)}đ <span>{new Intl.NumberFormat("de-DE", {
+                                currency: "EUR",
+                              }).format(bookData.price * 1.3)}đ</span>
                 </div>
                 <div className="content0_content_btn">
                     <Link to={`/book/${props.bookId}`} className="content0_btn">

@@ -152,22 +152,23 @@ li {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
+  background-color: antiquewhite;
   border: 1px solid #ccc;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  width: 100px;
+  width: 120px;
 }
 
 .dropdown-menu a {
   display: block;
   color: black;
   text-decoration: none;
-  padding: 5px 5px;
+  padding: 8px 10px;
 }
 
 .dropdown-menu a:hover {
-  background-color: #f1f1f1;
+  background-color: #a7a5a5;
+  color: white;
 }
 
 .cart-icon {

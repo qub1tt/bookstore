@@ -47,26 +47,53 @@ class HistoryPurchase extends Component {
           count++;
           return (
             <div
-              className="table-responsive cart_info"
-              style={{ marginBottom: "50px" }}
+              className="table-responsive cart_info "
+              
             >
-              <span>
+              <span className="text-xl">
                 Date: {new Date(element.date).toDateString("yyyy-MM-dd")}
               </span>
-              <p className="cart_total_price">
-                Total: {this.caculatorTotalBill(element.products)}
+              <p className="cart_total_price text-red-500">
+                Total: {new Intl.NumberFormat("de-DE", {
+                              currency: "EUR",
+                            }).format(this.caculatorTotalBill(element.products))}
                 <sup>đ</sup>
               </p>
-
-              <table className="table table-condensed">
+            <div className="bg-gray-100">
+              <table className="table table-condensed min-w-full divide-y divide-gray-200">
                 <thead>
-                  <tr className="cart_menu">
-                    <td className="image">Item</td>
-                    <td className="description" />
-                    <td className="price">Price</td>
-                    <td className="quantity">Quantity</td>
-                    <td className="total">Total</td>
-                    <td />
+                  <tr className="cart_title bg-gray-50">
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider w-24 md:w-28 lg:w-28"
+                    >
+                      Item
+                    </th>
+                    <th
+                      scope="col"
+                      className="py-2 text-xs font-medium text-gray-500 uppercase tracking-wider w-24 md:w-40 lg:w-80"
+                      style={{ width: "200px" }}
+                    >
+                      Description
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                    >
+                      Price
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-2 text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                    >
+                      Quantity
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                    >
+                      Total
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -84,7 +111,9 @@ class HistoryPurchase extends Component {
                           </h4>
                         </td>
                         <td className="cart_price">
-                          <p>{item.price}</p>
+                          <p>{new Intl.NumberFormat("de-DE", {
+                              currency: "EUR",
+                            }).format(item.price)}</p>
                         </td>
                         <td className="cart_quantity">
                           <div className="cart_quantity_button">
@@ -100,7 +129,9 @@ class HistoryPurchase extends Component {
                         </td>
                         <td className="cart_total">
                           <p className="cart_total_price">
-                            {item.count * item.price}
+                          {new Intl.NumberFormat("de-DE", {
+                              currency: "EUR",
+                            }).format(item.count * item.price)}
                           </p>
                         </td>
                       </tr>
@@ -108,6 +139,7 @@ class HistoryPurchase extends Component {
                   })}
                 </tbody>
               </table>
+              </div>
               <div className="login-form">
                 <div className="delete-cart">
                   <button
@@ -127,8 +159,8 @@ class HistoryPurchase extends Component {
         xhtml = (
           <div className="no-bill">
             <div className="logo-404">
-              <div className="pb-72">
-                <h3 className="title">Không Có Đơn Hàng</h3>
+              <div className="pb-32">
+                <h3 className="title my-10 bg-gray-100 rounded-2xl py-32">Không Có Đơn Hàng</h3>
               </div>
             </div>
           </div>
@@ -145,25 +177,53 @@ class HistoryPurchase extends Component {
           return (
             <div
               className="table-responsive cart_info"
-              style={{ marginBottom: "50px" }}
+              
             >
-              <span>
+              <span className="text-xl">
                 Date: {new Date(element.date).toDateString("yyyy-MM-dd")}
               </span>
-              <p className="cart_total_price">
-                Total: {this.caculatorTotalBill(element.products)}
+              <p className="cart_total_price text-red-500">
+              
+                Total: {new Intl.NumberFormat("de-DE", {
+                              currency: "EUR",
+                            }).format(this.caculatorTotalBill(element.products))}
                 <sup>đ</sup>
               </p>
-
-              <table className="table table-condensed">
+              <div className="bg-gray-100">
+              <table className="table table-condensed min-w-full divide-y divide-gray-200">
                 <thead>
-                  <tr className="cart_menu">
-                    <td className="image">Item</td>
-                    <td className="description" />
-                    <td className="price">Price</td>
-                    <td className="quantity">Quantity</td>
-                    <td className="total">Total</td>
-                    <td />
+                  <tr className="cart_title bg-gray-50">
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider w-24 md:w-28 lg:w-28"
+                    >
+                      Item
+                    </th>
+                    <th
+                      scope="col"
+                      className="py-2 text-xs font-medium text-gray-500 uppercase tracking-wider w-24 md:w-40 lg:w-80"
+                      style={{ width: "200px" }}
+                    >
+                      Description
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                    >
+                      Price
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-2 text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                    >
+                      Quantity
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                    >
+                      Total
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -181,7 +241,10 @@ class HistoryPurchase extends Component {
                           </h4>
                         </td>
                         <td className="cart_price">
-                          <p>{item.price}</p>
+                          <p>
+                          {new Intl.NumberFormat("de-DE", {
+                              currency: "EUR",
+                            }).format(item.price)}</p>
                         </td>
                         <td className="cart_quantity">
                           <div className="cart_quantity_button">
@@ -197,7 +260,10 @@ class HistoryPurchase extends Component {
                         </td>
                         <td className="cart_total">
                           <p className="cart_total_price">
-                            {item.count * item.price}
+                          {new Intl.NumberFormat("de-DE", {
+                              currency: "EUR",
+                            }).format(item.count * item.price)}
+                            
                           </p>
                         </td>
                       </tr>
@@ -205,7 +271,7 @@ class HistoryPurchase extends Component {
                   })}
                 </tbody>
               </table>
-
+              </div>
               <hr />
             </div>
           );
@@ -215,8 +281,8 @@ class HistoryPurchase extends Component {
         xhtml = (
           <div className="no-bill">
             <div className="logo-404">
-              <div>
-                <h3 className="title">Không Có Đơn Hàng</h3>
+              <div className="pb-32">
+                <h3 className="title my-10 bg-gray-100 rounded-2xl py-32" >Không Có Đơn Hàng</h3>
               </div>
             </div>
           </div>
@@ -233,34 +299,65 @@ class HistoryPurchase extends Component {
           return (
             <div
               className="table-responsive cart_info"
-              style={{ marginBottom: "50px" }}
+              
             >
-              <span>
+              <span className="text-xl">
                 Date: {new Date(element.date).toDateString("yyyy-MM-dd")}
               </span>
-              <p className="cart_total_price">
-                Total: {this.caculatorTotalBill(element.products)}
+              <p className="cart_total_price text-red-500">
+                Total: {new Intl.NumberFormat("de-DE", {
+                              currency: "EUR",
+                            }).format(this.caculatorTotalBill(element.products))}
                 <sup>đ</sup>{" "}
               </p>
-
-              <table className="table table-condensed">
+            <div className="bg-gray-100 ">
+              <table className="table table-condensed min-w-full divide-y divide-gray-200 ">
                 <thead>
-                  <tr className="cart_menu">
-                    <td className="image">Item</td>
-                    <td className="description" />
-                    <td className="price">Price</td>
-                    <td className="quantity">Quantity</td>
-                    <td className="total">Total</td>
-                    <td />
+                  <tr className="cart_title bg-gray-50">
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider w-24 md:w-28 lg:w-28"
+                    >
+                      Item
+                    </th>
+                    <th
+                      scope="col"
+                      className="py-2 text-xs font-medium text-gray-500 uppercase tracking-wider w-24 md:w-40 lg:w-80"
+                      style={{ width: "200px" }}
+                    >
+                      Description
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                    >
+                      Price
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-2 text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                    >
+                      Quantity
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                    >
+                      Total
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {element.products.map((item, index) => {
                     return (
-                      <tr>
-                        <td className="cart_product">
-                          <a href="">
-                            <img src={item.img} />
+                      <tr className="cart_info">
+                        <td className="cart_product" >
+                        <a href="">
+                            <img
+                              src={item.img}
+                              alt=""
+                              className="cart_image"
+                            />
                           </a>
                         </td>
                         <td className="cart_description">
@@ -269,7 +366,9 @@ class HistoryPurchase extends Component {
                           </h4>
                         </td>
                         <td className="cart_price">
-                          <p>{item.price}</p>
+                          <p>{new Intl.NumberFormat("de-DE", {
+                              currency: "EUR",
+                            }).format(item.price)}</p>
                         </td>
                         <td className="cart_quantity">
                           <div className="cart_quantity_button">
@@ -285,7 +384,9 @@ class HistoryPurchase extends Component {
                         </td>
                         <td className="cart_total">
                           <p className="cart_total_price">
-                            {item.count * item.price}
+                          {new Intl.NumberFormat("de-DE", {
+                              currency: "EUR",
+                            }).format(item.count * item.price)}
                           </p>
                         </td>
                       </tr>
@@ -293,7 +394,7 @@ class HistoryPurchase extends Component {
                   })}
                 </tbody>
               </table>
-
+              </div>
               <hr />
             </div>
           );
@@ -303,8 +404,8 @@ class HistoryPurchase extends Component {
         xhtml = (
           <div className="no-bill">
             <div className="logo-404">
-              <div>
-                <h3 className="title">Không Có Đơn Hàng</h3>
+              <div className="pb-32">
+                <h3 className="title my-10 bg-gray-100 rounded-2xl py-32">Không Có Đơn Hàng</h3>
               </div>
             </div>
           </div>
@@ -343,41 +444,41 @@ class HistoryPurchase extends Component {
 
         <div className="content">
           <section id="cart_items">
-            <div className="purchase_history_container">
-              <div className="purchase_history_bill-title">
-                <h2>Đơn Hàng Của Bạn</h2>
+            <div className="purchase_history_container ">
+              <div className="purchase_history_bill-title bg-gray-100 rounded-2xl">
+                <h2 className="pl-4">Đơn Hàng Của Bạn</h2>
+                <div className="purchase_history_menu-profile">
+                  <ul className="purchase_state">
+                    <li>
+                      <button
+                        onClick={() => this.handleClick99()}
+                        className="purchase_history_menu-custom_btn"
+                      >
+                        Đang Chờ Xử Lý
+                      </button>
+                    </li>
+                    <li>
+                      {" "}
+                      <button
+                        onClick={() => this.handleClick0()}
+                        className="purchase_history_menu-custom_btn"
+                      >
+                        Đang Giao Hàng
+                      </button>
+                    </li>
+                    <li>
+                      {" "}
+                      <button
+                        onClick={() => this.handleClick1()}
+                        className="purchase_history_menu-custom_btn"
+                      >
+                        Đã Giao Hàng
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div className="purchase_history_menu-profile">
-                <ul className="purchase_state">
-                  <li>
-                    <button
-                      onClick={() => this.handleClick99()}
-                      className="purchase_history_menu-custom_btn"
-                    >
-                      Đang Chờ Xử Lý
-                    </button>
-                  </li>
-                  <li>
-                    {" "}
-                    <button
-                      onClick={() => this.handleClick0()}
-                      className="purchase_history_menu-custom_btn"
-                    >
-                      Đang Giao Hàng
-                    </button>
-                  </li>
-                  <li>
-                    {" "}
-                    <button
-                      onClick={() => this.handleClick1()}
-                      className="purchase_history_menu-custom_btn"
-                    >
-                      Đã Giao Hàng
-                    </button>
-                  </li>
-                </ul>
-                <hr style={{ marginBottom: "20px" }} />
-              </div>
+              
               {this.renderBill()}
             </div>
           </section>

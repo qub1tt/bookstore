@@ -76,7 +76,9 @@ export default function SmallBoxDetail(props) {
                     {/* Star ratings */}
                 </div>
                 <div style={{ padding: "4px 0 8px 0" }}>
-                    <strong>{bookData.price}đ</strong>
+                    <strong>{new Intl.NumberFormat("de-DE", {
+                              currency: "EUR",
+                            }).format(bookData.price)}đ</strong>
                 </div>
                 <div>
                     <span>
