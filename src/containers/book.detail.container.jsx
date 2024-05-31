@@ -24,7 +24,6 @@ const BooksDetailContainer = ({
   useEffect(() => {
     actions.auth();
     productActions.getBookDetail(id);
-    productActions.getBookRelated(id);
     productActions.getCommentByIDBook(id);
   }, [id, productActions, actions]);
 
