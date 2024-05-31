@@ -13,10 +13,10 @@ const SearchBar = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const bookResponse = await axios.get('http://localhost:8080/book/');
+                const bookResponse = await axios.get(`'${process.env.REACT_APP_API}/book/'`);
                 setBooks(bookResponse.data.data);
 
-                const authorResponse = await axios.get('http://localhost:8080/author');
+                const authorResponse = await axios.get(`'${process.env.REACT_APP_API}/author'`);
                 setAuthors(authorResponse.data.data);
             } catch (error) {
                 console.error('Error fetching data:', error);

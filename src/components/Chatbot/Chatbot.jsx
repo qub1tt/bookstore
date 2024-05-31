@@ -28,7 +28,7 @@ const Chatbot = () => {
     };
 
     const generateResponse = (chatElement) => {
-      const API_URL = "http://localhost:8080/chat";
+      const API_URL = `"${process.env.REACT_APP_API}/chat"`;
       const messageElement = chatElement.querySelector("p");
 
       // Define the properties and message for the API request

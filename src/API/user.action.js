@@ -12,7 +12,7 @@ export const loginSuccess = (token, user) => async (dispatch) => {
   if (cart !== null) {
     let res;
     try {
-      res = await axios.post("http://localhost:8080/cart/addtocart", {
+      res = await axios.post(`"${process.env.REACT_APP_API}/cart/addtocart"`, {
         id_user: user.id,
         products: cart,
       });
@@ -31,7 +31,7 @@ export const auth = () => async (dispatch) => {
   let token = storeConfig.getToken();
   let res;
   try {
-    res = await axios.post("http://localhost:8080/auth", {
+    res = await axios.post(`"${process.env.REACT_APP_API}/auth"`, {
       email: email,
       token: token,
     });
@@ -79,7 +79,7 @@ export const submitForgotPassword = (email) => async (dispatch) => {
   let res;
   try {
     res = await axios.get(
-      "http://localhost:8080/user/request/forgotpassword/" + email
+      `"${process.env.REACT_APP_API}/user/request/forgotpassword/` + email
     );
   } catch (err) {
     dispatch(forgotEmailFail());
@@ -91,10 +91,13 @@ export const submitForgotPassword = (email) => async (dispatch) => {
 export const submitOTP = (otp) => async (dispatch, getState) => {
   let res;
   try {
-    res = await axios.post("http://localhost:8080/user/verify/forgotpassword", {
-      email: getState().userReducers.forgotPassword.email,
-      otp: otp,
-    });
+    res = await axios.post(
+      `"${process.env.REACT_APP_API}/user/verify/forgotpassword"`,
+      {
+        email: getState().userReducers.forgotPassword.email,
+        otp: otp,
+      }
+    );
   } catch (err) {
     dispatch(verifyOTPFAIL());
     return;
@@ -113,11 +116,14 @@ export const submitEnterNewPassword =
   (newPassword) => async (dispatch, getState) => {
     let res;
     try {
-      res = await axios.post("http://localhost:8080/user/forgotpassword", {
-        email: getState().userReducers.forgotPassword.email,
-        otp: getState().userReducers.forgotPassword.otp,
-        newPassword: newPassword,
-      });
+      res = await axios.post(
+        `"${process.env.REACT_APP_API}/user/forgotpassword"`,
+        {
+          email: getState().userReducers.forgotPassword.email,
+          otp: getState().userReducers.forgotPassword.otp,
+          newPassword: newPassword,
+        }
+      );
     } catch (err) {
       dispatch(forgotPasswordFail());
       return;

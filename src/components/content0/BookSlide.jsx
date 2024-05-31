@@ -9,12 +9,12 @@ export default function BookSlide(props) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:8080/book/${props.bookId}`)
+        fetch(`${process.env.REACT_APP_API}/book/${props.bookId}`)
             .then(response => response.json())
             .then(data => {
                 setBookData(data.data);
                 const authorId = data.data.id_author;
-                fetch(`http://localhost:8080/author/`)
+                fetch(`${process.env.REACT_APP_API}/author/`)
                     .then(response => response.json())
                     .then(authorData => {
                         const author = authorData.data.find(author => author._id === authorId);

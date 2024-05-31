@@ -11,7 +11,7 @@ function VerifyRegisterAccountContainer() {
   useEffect(() => {
     async function fetchData() {
       try {
-        await axios.get(`http://localhost:8080/user/verify/${token}`);
+        await axios.get(`${process.env.REACT_APP_API}/user/verify/${token}`);
       } catch (err) {
         setIsConfirm(false);
       }

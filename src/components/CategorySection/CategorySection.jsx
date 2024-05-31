@@ -25,7 +25,7 @@ export default function CategorySection(props) {
   }, [id]);
 
   const fetchCategories = () => {
-    fetch("http://localhost:8080/category/")
+    fetch(`"${process.env.REACT_APP_API}/category/"`)
       .then((response) => response.json())
       .then((data) => {
         setCategories(data.data);
@@ -36,7 +36,7 @@ export default function CategorySection(props) {
   };
 
   const fetchBooks = () => {
-    fetch("http://localhost:8080/book/")
+    fetch(`"${process.env.REACT_APP_API}/book/"`)
       .then((response) => response.json())
       .then((data) => {
         setBooks(data.data);

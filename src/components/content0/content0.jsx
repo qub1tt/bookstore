@@ -10,7 +10,7 @@ export default function Content0(props) {
     const scrollContainerRef = useRef(null);
 
     useEffect(() => {
-        fetch("http://localhost:8080/book")
+        fetch(`"${process.env.REACT_APP_API}/book"`)
           .then((response) => response.json())
           .then((data) => {
             const sortedBooks = data.data.sort((a, b) => b.view_counts - a.view_counts);

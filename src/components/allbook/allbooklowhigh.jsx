@@ -17,7 +17,7 @@ const AllBooklowhigh = (props) => {
   const booksPerPage = 12;
 
   useEffect(() => {
-    fetch("http://localhost:8080/book")
+    fetch(`"${process.env.REACT_APP_API}/book"`)
       .then((response) => response.json())
       .then((data) => {
         // Sort the books by price in ascending order (from low to high)
@@ -72,12 +72,19 @@ const AllBooklowhigh = (props) => {
           <strong>Tất cả sách:</strong>
         </div>
         <div className="categorysection_above_right">
-          <select defaultValue="/allbook/page/priceLowToHigh/1" onChange={(e) => window.location.href = e.target.value}>
+          <select
+            defaultValue="/allbook/page/priceLowToHigh/1"
+            onChange={(e) => (window.location.href = e.target.value)}
+          >
             <option value="/allbook/page/1">Mặc định</option>
             <option value="/allbook/page/az/1">A - Z</option>
             <option value="/allbook/page/za/1">Z - A</option>
-            <option value="/allbook/page/priceHighToLow/1">Giá cao - thấp</option>
-            <option value="/allbook/page/priceLowToHigh/1">Giá thấp - cao</option>
+            <option value="/allbook/page/priceHighToLow/1">
+              Giá cao - thấp
+            </option>
+            <option value="/allbook/page/priceLowToHigh/1">
+              Giá thấp - cao
+            </option>
           </select>
         </div>
       </div>

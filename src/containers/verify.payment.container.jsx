@@ -11,7 +11,7 @@ function VerifyPaymentContainer() {
   useEffect(() => {
     async function fetchData() {
       try {
-        await axios.get(`http://localhost:8080/bill/verify/${token}`);
+        await axios.get(`${process.env.REACT_APP_API}/bill/verify/${token}`);
       } catch (err) {
         setIsConfirm(false);
       }

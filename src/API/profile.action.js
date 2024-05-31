@@ -8,7 +8,7 @@ export const auth = () => async (dispatch, getState) => {
   }
   const user = storeConfig.getUser();
   try {
-    await axios.post("http://localhost:8080/auth", {
+    await axios.post(`"${process.env.REACT_APP_API}/auth"`, {
       email: user.email,
       token: storeConfig.getToken(),
     });
@@ -40,7 +40,7 @@ export const updateInfor =
   async (dispatch, getState) => {
     let res;
     try {
-      res = await axios.post("http://localhost:8080/user/updateinfor", {
+      res = await axios.post(`"${process.env.REACT_APP_API}/user/updateinfor"`, {
         email: email,
         firstName: firstName,
         lastName: lastName,

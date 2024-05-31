@@ -79,7 +79,7 @@ export const submitComment = (name, comment, id_book) => async (dispatch) => {
   try {
     res = await axios.post("http://localhost:8080/comment", {
       id_user: id,
-      id_book: id_book,
+      id_book: atob(id_book),
       name: name,
       comment: comment,
     });
@@ -94,7 +94,7 @@ export const getCommentByIDBook = (id) => async (dispatch, getState) => {
   let res;
   try {
     res = await axios.post("http://localhost:8080/comment/book", {
-      id_book: id,
+      id_book:atob(id),
     });
   } catch (err) {
     console.log(JSON.stringify(err.response));

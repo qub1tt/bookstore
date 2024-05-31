@@ -58,7 +58,7 @@ class Abovenav extends Component {
     const user = storeConfig.getUser();
     if (user !== null) {
       // If user is logged in, fetch cart count from API
-      axios.get(`http://localhost:8080/cart/${user.id}`)
+      axios.get(`${process.env.REACT_APP_API}/cart/${user.id}`)
         .then(response => {
           const cartCount = response.data.data.products.length;
           this.setState({ cartCount });

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import BookDetailsPage from "../pages/BookDetails";
+import BookDetailsPage from "../pages/BookPage/BookDetails";
 import * as productActions from "../API/product.action";
 import * as userActions from "../API/user.action";
 import { useParams } from "react-router-dom";
@@ -20,7 +20,7 @@ const BooksDetailContainer = ({
   totalpage,
 }) => {
   const { id } = useParams();
-  const encodedID = btoa(id);
+
   useEffect(() => {
     actions.auth();
     productActions.getBookDetail(id);

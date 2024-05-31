@@ -10,7 +10,7 @@ export default function Content1(props) {
   const [displayedBooks, setDisplayedBooks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/book")
+    fetch(`"${process.env.REACT_APP_API}/book"`)
       .then((response) => response.json())
       .then((data) => {
         const ids = data.data.map((book) => btoa(book._id));

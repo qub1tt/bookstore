@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Abovenav from "../components/abovenav/abovenav";
-import Sidebar from "../components/sidebar/sidebar";
-import DetailsSection from "../components/DetailsSection/DetailsSection";
-import Footer from "../components/footer/footer";
-import Chatbot from "../components/Chatbot/Chatbot";
+import Abovenav from "../../components/abovenav/abovenav";
+import Sidebar from "../../components/sidebar/sidebar";
+import DetailsSection from "../../components/DetailsSection/DetailsSection";
+import Footer from "../../components/footer/footer";
+import Chatbot from "../../components/Chatbot/Chatbot";
 
 function BookDetailsPage(props) {
   useEffect(() => {
