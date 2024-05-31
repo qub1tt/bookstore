@@ -20,5 +20,6 @@ const root = ReactDOM.createRoot(document.getElementById("app"));
 root.render(
   <Provider store={store}>
     <App />
+    <SpeedInsights />
   </Provider>
 );
