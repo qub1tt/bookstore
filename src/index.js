@@ -7,6 +7,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import { thunk } from "redux-thunk";
 import reducers from "./reducers";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const store = configureStore({
   reducer: reducers,

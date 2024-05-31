@@ -11,15 +11,6 @@ export const getBookDetail = (id) => async (dispatch) => {
   dispatch(setProductDetail(res.data.data));
 };
 
-export const getBookRelated = (id) => async (dispatch) => {
-  let res;
-  try {
-    res = await axios.get("http://localhost:8080/book/related/" + id);
-  } catch (err) {
-    return;
-  }
-  dispatch(setBookRelated(res.data.data));
-};
 export const getNameCategoryByID = (id) => async (dispatch) => {
   let res;
   try {
@@ -62,10 +53,6 @@ export const setNamePubliser = (name) => ({
   name,
 });
 
-export const setBookRelated = (bookrelated) => ({
-  type: productTypes.SET_BOOK_RELATED,
-  bookrelated,
-});
 export const setNameAuthor = (name) => ({
   type: productTypes.SET_NAME_AUTHOR,
   name,
@@ -94,7 +81,7 @@ export const getCommentByIDBook = (id) => async (dispatch, getState) => {
   let res;
   try {
     res = await axios.post(`${process.env.REACT_APP_API}/comment/book`, {
-      id_book:atob(id),
+      id_book: atob(id),
     });
   } catch (err) {
     console.log(JSON.stringify(err.response));
