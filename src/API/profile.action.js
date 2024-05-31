@@ -40,7 +40,7 @@ export const updateInfor =
   async (dispatch, getState) => {
     let res;
     try {
-      res = await axios.post(`"${process.env.REACT_APP_API}/user/updateinfor"`, {
+      res = await axios.post(`${process.env.REACT_APP_API}/user/updateinfor`, {
         email: email,
         firstName: firstName,
         lastName: lastName,

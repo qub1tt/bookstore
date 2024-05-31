@@ -11,7 +11,7 @@ export const getPurchaseHitory = () => async (dispatch, getState) => {
     if(user === null) 
         return
     try {
-        res = await axios.get(`'${process.env.REACT_APP_API}/bill/'` + user.id)
+        res = await axios.get(`${process.env.REACT_APP_API}/bill/` + user.id)
     }
     catch(err) {
         console.log(err)
@@ -21,7 +21,7 @@ export const getPurchaseHitory = () => async (dispatch, getState) => {
 }
 export const deleteBill = (id) => async (dispatch, getState) => {
     try {
-        await axios.get(`'${process.env.REACT_APP_API}/bill/delete/'` + id)
+        await axios.get(`${process.env.REACT_APP_API}/bill/delete/` + id)
     }
     catch(err) {
         console.log(err.response)

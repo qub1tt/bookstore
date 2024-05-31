@@ -17,7 +17,7 @@ const AllBook = (props) => {
   const booksPerPage = 12;
 
   useEffect(() => {
-    fetch(`"${process.env.REACT_APP_API}/book"`)
+    fetch(`${process.env.REACT_APP_API}/book`)
       .then((response) => response.json())
       .then((data) => {
         const ids = data.data.map((book) => btoa(book._id));

@@ -12,7 +12,7 @@ export const loginSuccess = (token, user) => async (dispatch) => {
   if (cart !== null) {
     let res;
     try {
-      res = await axios.post(`"${process.env.REACT_APP_API}/cart/addtocart"`, {
+      res = await axios.post(`${process.env.REACT_APP_API}/cart/addtocart`, {
         id_user: user.id,
         products: cart,
       });
@@ -31,7 +31,7 @@ export const auth = () => async (dispatch) => {
   let token = storeConfig.getToken();
   let res;
   try {
-    res = await axios.post(`"${process.env.REACT_APP_API}/auth"`, {
+    res = await axios.post(`${process.env.REACT_APP_API}/auth`, {
       email: email,
       token: token,
     });
@@ -79,7 +79,7 @@ export const submitForgotPassword = (email) => async (dispatch) => {
   let res;
   try {
     res = await axios.get(
-      `"${process.env.REACT_APP_API}/user/request/forgotpassword/` + email
+      `${process.env.REACT_APP_API}/user/request/forgotpassword/` + email
     );
   } catch (err) {
     dispatch(forgotEmailFail());
@@ -92,7 +92,7 @@ export const submitOTP = (otp) => async (dispatch, getState) => {
   let res;
   try {
     res = await axios.post(
-      `"${process.env.REACT_APP_API}/user/verify/forgotpassword"`,
+      `${process.env.REACT_APP_API}/user/verify/forgotpassword`,
       {
         email: getState().userReducers.forgotPassword.email,
         otp: otp,
@@ -117,7 +117,7 @@ export const submitEnterNewPassword =
     let res;
     try {
       res = await axios.post(
-        `"${process.env.REACT_APP_API}/user/forgotpassword"`,
+        `${process.env.REACT_APP_API}/user/forgotpassword`,
         {
           email: getState().userReducers.forgotPassword.email,
           otp: getState().userReducers.forgotPassword.otp,

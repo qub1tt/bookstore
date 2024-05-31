@@ -83,7 +83,7 @@ class LoginRegisterContainer extends Component {
       this.setState({ notificationRegister: "" });
     }
     try {
-      await axios.post(`"${process.env.REACT_APP_API}/user/register"`, {
+      await axios.post(`${process.env.REACT_APP_API}/user/register`, {
         email: this.state.email,
         password: this.state.password,
         firstName: this.state.firstname,
@@ -112,7 +112,7 @@ class LoginRegisterContainer extends Component {
     }
     let res;
     try {
-      res = await axios.post(`"${process.env.REACT_APP_API}/user/login"`, {
+      res = await axios.post(`${process.env.REACT_APP_API}/user/login`, {
         email: this.state.emailLogin,
         password: this.state.passwordLogin,
       });
@@ -144,7 +144,7 @@ class LoginRegisterContainer extends Component {
   responseGoogle = async (response) => {
     const { tokenId } = response;
     try {
-      const res = await axios.post(`"${process.env.REACT_APP_API}/user/google-login"`, {
+      const res = await axios.post(`${process.env.REACT_APP_API}/user/google-login`, {
         tokenId,
       });
 

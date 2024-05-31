@@ -3,7 +3,7 @@ import { homeTypes, sortTypes } from "../constants/action.types";
 export const getCategory = () => async (dispatch, getState) => {
   let res;
   try {
-    res = await axios.get(`'${process.env.REACT_APP_API}/category'`);
+    res = await axios.get(`${process.env.REACT_APP_API}/category`);
   } catch (err) {
     return;
   }
@@ -13,7 +13,7 @@ export const getCategory = () => async (dispatch, getState) => {
 export const getPublisher = () => async (dispatch, getState) => {
   let res;
   try {
-    res = await axios.get(`'${process.env.REACT_APP_API}/publisher'`);
+    res = await axios.get(`${process.env.REACT_APP_API}/publisher`);
   } catch (err) {
     return;
   }
@@ -23,7 +23,7 @@ export const getPublisher = () => async (dispatch, getState) => {
 export const getAuthor = () => async (dispatch, getState) => {
   let res;
   try {
-    res = await axios.get(`'${process.env.REACT_APP_API}/author'`);
+    res = await axios.get(`${process.env.REACT_APP_API}/author`);
   } catch (err) {
     return;
   }

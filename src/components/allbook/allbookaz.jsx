@@ -17,7 +17,7 @@ const AllBookaz = (props) => {
   const booksPerPage = 12;
 
   useEffect(() => {
-    fetch(`"${process.env.REACT_APP_API}/book"`)
+    fetch(`${process.env.REACT_APP_API}/book`)
       .then((response) => response.json())
       .then((data) => {
         // Sort the books by name

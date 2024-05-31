@@ -79,7 +79,7 @@ class ProfileContainer extends Component {
   updatePassword = async (oldpassword, newpassword) => {
     let res = null;
     try {
-      res = await axios.post(`"${process.env.REACT_APP_API}/user/updatepassword"`, {
+      res = await axios.post(`${process.env.REACT_APP_API}/user/updatepassword`, {
         email: storeConfig.getUser().email,
         oldpassword: oldpassword,
         newpassword: newpassword,

@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Home from "../pages/Homepage/HomePage";
 import * as userActions from "../API/user.action";
-import * as homeActions from "../API/home.action";
-import * as productActions from "../API/product.action";
+
 
 class HomeContainer extends Component {
   constructor(props) {

@@ -15,7 +15,7 @@ export default function Category(props) {
   const [categoryCounts, setCategoryCounts] = useState({});
 
   useEffect(() => {
-    fetch(`"${process.env.REACT_APP_API}/category/"`)
+    fetch(`${process.env.REACT_APP_API}/category/`)
       .then((response) => response.json())
       .then((data) => {
         if (data && data.data) {
@@ -26,7 +26,7 @@ export default function Category(props) {
   }, []);
 
   useEffect(() => {
-    fetch(`"${process.env.REACT_APP_API}/book"`)
+    fetch(`${process.env.REACT_APP_API}/book`)
       .then((response) => response.json())
       .then((data) => {
         if (data && data.data) {

@@ -77,7 +77,7 @@ export const submitComment = (name, comment, id_book) => async (dispatch) => {
     id = storeConfig.getUser().id;
   let res;
   try {
-    res = await axios.post("http://localhost:8080/comment", {
+    res = await axios.post(`${process.env.REACT_APP_API}/comment`, {
       id_user: id,
       id_book: atob(id_book),
       name: name,
@@ -93,7 +93,7 @@ export const submitComment = (name, comment, id_book) => async (dispatch) => {
 export const getCommentByIDBook = (id) => async (dispatch, getState) => {
   let res;
   try {
-    res = await axios.post("http://localhost:8080/comment/book", {
+    res = await axios.post(`${process.env.REACT_APP_API}/comment/book`, {
       id_book:atob(id),
     });
   } catch (err) {
@@ -111,7 +111,7 @@ export const addToCart = (product) => async (dispatch, getState) => {
   if (getState().userReducers.login.islogin) {
     let res;
     try {
-      res = await axios.post("http://localhost:8080/cart/addtocart", {
+      res = await axios.post(`${process.env.REACT_APP_API}/cart/addtocart`, {
         id_user: storeConfig.getUser().id,
         products: [product],
       });

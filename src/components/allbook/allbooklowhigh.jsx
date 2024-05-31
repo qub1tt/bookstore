@@ -17,7 +17,7 @@ const AllBooklowhigh = (props) => {
   const booksPerPage = 12;
 
   useEffect(() => {
-    fetch(`"${process.env.REACT_APP_API}/book"`)
+    fetch(`${process.env.REACT_APP_API}/book`)
       .then((response) => response.json())
       .then((data) => {
         // Sort the books by price in ascending order (from low to high)
