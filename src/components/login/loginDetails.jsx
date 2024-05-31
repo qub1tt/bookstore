@@ -50,7 +50,7 @@ export default function ContentLoginRegister({
   if (Login) {
     xhtmlLogin = (
       <div className="login-page">
-        <div className="login-form">
+        <div className="login-form1">
           <h2 className="login-title">Login to your account</h2>
           <div className="noti">{notificationLogin}</div>
 
@@ -84,14 +84,15 @@ export default function ContentLoginRegister({
             {" "}
             Sign in{" "}
           </button>
-
-          <GoogleLogin
-            clientId={clientId}
-            buttonText="Login with Google"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={"single_host_origin"}
-          />
+          <div className="my-2">
+            <GoogleLogin
+              clientId={clientId}
+              buttonText="Login with Google"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy={"single_host_origin"}
+            />
+          </div>
 
           <div className="login-link">
             {" "}
@@ -101,11 +102,11 @@ export default function ContentLoginRegister({
             </Link>{" "}
           </div>
 
-          <div className="flex justify-between items-center">
+          <div className="login-link flex justify-between items-center my-5">
             <p>Don't have an account?</p>
             <Link
               onClick={handleRegister}
-              className="login-link text-indigo-600 text-base"
+              className="login-link text-base"
             >
               Sign up
             </Link>
@@ -119,7 +120,7 @@ export default function ContentLoginRegister({
     xhtmlRegister = (
       <div className="login-page">
         <div className="login-form">
-          <h2 className="login-title">Sign Up</h2>
+          <h2 className="login-title2">Sign Up</h2>
           <div className="noti">{notificationRegister}</div>
           <div className="login-input">
             <input
@@ -196,11 +197,11 @@ export default function ContentLoginRegister({
           >
             Sign up
           </button>
-          <div className="flex justify-between items-center">
+          <div className="login-link flex justify-between items-center">
             <p>Already have an account?</p>
             <Link
               onClick={handleLogin}
-              className="login-link text-indigo-600 text-base"
+              className="login-link text-base"
             >
               Sign in
             </Link>

@@ -83,6 +83,9 @@ li {
   text-align: start;
 }
 
+.cart-icon{
+  margin-left: 150px;
+}
 
 .abovenav .dropdown .sub-menu {
   display: none;
@@ -98,6 +101,19 @@ li {
   display: block;
 }
 
+@media screen and (max-width: 1650px) {
+  .cart-icon{
+    margin-left: 80px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .cart-icon{
+    margin-left: 50px;
+  }
+}
+
+
 @media screen and (max-width: 1300px) {
   .abovenav_searchbox input{
     margin-left: 50px;
@@ -105,7 +121,11 @@ li {
   .suggestion_search{
     margin-left: 50px;
   }
+  .cart-icon{
+    margin-left: 0px;
+  }
 }
+
 
 @media screen and (max-width: 800px) {
   .suggestion_box img {

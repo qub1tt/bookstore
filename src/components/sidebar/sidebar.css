@@ -75,6 +75,10 @@
   background-color: white;
 }
 
+.pic1 img{
+  width: 150px;
+}
+
 @media screen and (max-width: 400px) {
   .subsidebar_icon{
     padding-left: 30px;
