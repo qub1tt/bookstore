@@ -74,7 +74,11 @@ function Modal(props) {
                             </p>
                             <h3 className="Modal_describe__">
                                 <strong>Giá: </strong>
-                                <span className="Modal_describe_price">{props.mproductDetail.price}</span>
+                                <span className="Modal_describe_price">
+                                {new Intl.NumberFormat("de-DE", {
+                              currency: "EUR",
+                            }).format(this.caculatorTotalBill(props.mproductDetail.price))}
+                                    </span>
                             </h3>
                         </div>
                         <div className="BesideImageBelow">
