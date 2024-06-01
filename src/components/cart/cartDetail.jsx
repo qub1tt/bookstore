@@ -379,10 +379,10 @@ class ContentCart extends Component {
                         console.log(2)
                       )
                     ) : (
-                      <p className="text-red-500 w-56">Vui lòng nhập đầy đủ thông tin.</p>
+                      <p className="text-red-500 text-center ml-2">Vui lòng nhập đầy đủ thông tin.</p>
                     )
                   ) : (
-                    <p className="text-red-500 w-56">Đăng nhập để thanh toán.</p>
+                    <p className="text-red-500 text-center ml-2">Đăng nhập để thanh toán.</p>
                   )}
                 </div>
                 <div className="ctnsp flex justify-center items-center">
