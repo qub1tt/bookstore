@@ -8,6 +8,7 @@ import logger from "redux-logger";
 import { thunk } from "redux-thunk";
 import reducers from "./reducers";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 
 const store = configureStore({
   reducer: reducers,
@@ -21,5 +22,6 @@ root.render(
   <Provider store={store}>
     <App />
     <SpeedInsights />
+    <Analytics />
   </Provider>
 );
