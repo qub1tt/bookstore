@@ -79,7 +79,7 @@ function DetailsSection(props) {
 
   const submitComment = () => {
     if (name === "") {
-      setNotificationComment("Tên không được để trống");
+      setNotificationComment("Vui lòng đăng nhập trước khi bình luận");
       return;
     } else {
       setNotificationComment("");
@@ -108,11 +108,11 @@ function DetailsSection(props) {
   };
 
   const incrementQuantity = () => {
-    setQuantity(prevQuantity => prevQuantity + 1);
+    setQuantity((prevQuantity) => prevQuantity + 1);
   };
 
   const decrementQuantity = () => {
-      setQuantity(prevQuantity => Math.max(prevQuantity - 1, 1));
+    setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
   };
 
   return (
@@ -150,26 +150,26 @@ function DetailsSection(props) {
             <span>{props.mproductDetail.price}</span>
           </h3>
           <div className="Modal_number mt-4">
-                <button
-                    className="Modal_quantity-button"
-                    onClick={decrementQuantity}
-                >
-                    -
-                </button>
-                <input
-                    type="number"
-                    min="1"
-                    readOnly
-                    value={quantity}
-                    className="Modal_quantity-input"
-                />
-                <button
-                    className="Modal_quantity-button"
-                    onClick={incrementQuantity}
-                >
-                    +
-                </button>
-            </div>
+            <button
+              className="Modal_quantity-button"
+              onClick={decrementQuantity}
+            >
+              -
+            </button>
+            <input
+              type="number"
+              min="1"
+              readOnly
+              value={quantity}
+              className="Modal_quantity-input"
+            />
+            <button
+              className="Modal_quantity-button"
+              onClick={incrementQuantity}
+            >
+              +
+            </button>
+          </div>
           <button
             onClick={() => submitOrder()}
             type="button"
