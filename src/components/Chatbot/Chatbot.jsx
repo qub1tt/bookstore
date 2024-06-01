@@ -1,6 +1,6 @@
 // Layout.js
 import React, { useEffect } from "react";
-import "./style.css";
+import "./chatbot.css";
 
 const Chatbot = () => {
   useEffect(() => {
@@ -47,6 +47,19 @@ const Chatbot = () => {
         .then((res) => res.json())
         .then((data) => {
           messageElement.textContent = data.response.trim();
+
+          // Function to convert URLs in text to clickable links
+          const linkify = (text) => {
+            const urlPattern =
+              /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
+            return text.replace(
+              urlPattern,
+              (url) => `<a href="${url}" target="_blank">${url}</a>`
+            );
+          };
+
+          // Set the response text as inner HTML with linkified URLs
+          messageElement.innerHTML = linkify(messageElement.textContent);
         })
         .catch(() => {
           messageElement.classList.add("error");
