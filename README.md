@@ -139,6 +139,7 @@
 - Tailwindcss
 
 ### Hướng dẫn cài đặt:
+Khi muốn sử dụng trên local, vào file .env sửa REACT_APP_API thành "http://localhost:8080".
 
 1. Cài Nodejs phiên bản mới nhất.
 2. Clone repository này.
