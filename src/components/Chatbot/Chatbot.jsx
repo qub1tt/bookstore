@@ -104,7 +104,7 @@ const Chatbot = () => {
   return (
     <div>
       <button className="chatbot-toggler">
-        <span className="material-symbols-rounded">robot</span>
+        <span className="material-symbols-outlined">smart_toy</span>
         <span className="material-symbols-outlined">close</span>
       </button>
       <div className="chatbot">
