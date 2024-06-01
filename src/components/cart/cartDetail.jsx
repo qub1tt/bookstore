@@ -5,6 +5,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import "./cartDetail.css";
 import { PayPalButton } from "react-paypal-button-v2";
 import * as PaymentService from "../../API/payment.action";
+
 class ContentCart extends Component {
   constructor() {
     super();
@@ -88,17 +89,6 @@ class ContentCart extends Component {
   };
 
   handlePayment = () => {
-    if (!this.props.islogin) {
-      // Hiển thị thông báo yêu cầu đăng nhập
-      this.setState({
-        show: true,
-        notification: "Vui lòng đăng nhập để thanh toán.",
-      });
-      return;
-    } else {
-      this.setState({ show: false });
-    }
-
     let check = true;
     if (this.state.name.length < 3) {
       this.setState({ notiName: "Name invalid" });
@@ -118,21 +108,7 @@ class ContentCart extends Component {
     } else {
       this.setState({ notiDetailAddress: "" });
     }
-    if (!check) return;
-    this.props
-      .payment(
-        this.state.address,
-        this.state.phone,
-        this.state.name,
-        this.state.total
-      )
-      .then(() => {
-        this.setState({ showSuccessNotification: true });
-        setTimeout(() => {
-          this.setState({ showSuccessNotification: false });
-          window.location.reload();
-        }, 1000);
-      });
+    return check;
   };
 
   truncateWords = (text, wordLimit) => {
@@ -143,13 +119,25 @@ class ContentCart extends Component {
     return words.slice(0, wordLimit).join(" ") + "...";
   };
 
-  isvaidPhone = (phone) => {
+
+  handleInputChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+      notiName: name === 'name' && value.length < 3 ? "Name invalid" : "",
+      notiPhone: name === 'phone' && !this.isValidPhone(value) ? "Phone invalid" : "",
+      notiDetailAddress: name === 'address' && value === "" ? "Address invalid" : ""
+    });
+  };
+  
+  isValidPhone = (phone) => {
     if (phone.length < 10 || phone.length > 11) return false;
     for (let i = 0; i < phone.length; i++) {
       if (phone.charAt(i) < "0" || phone.charAt(i) > "9") return false;
     }
     return true;
   };
+  
 
   renderSuccessNotification = () => {
     if (!this.state.showSuccessNotification && !this.state.notification) {
@@ -172,6 +160,10 @@ class ContentCart extends Component {
         </div>
       );
     }
+    const isFormFilled =
+      this.state.name.length >= 3 &&
+      this.isvaidPhone(this.state.phone) &&
+      this.state.address !== "";
     return (
       <div>
         {this.renderSuccessNotification()}
@@ -330,68 +322,75 @@ class ContentCart extends Component {
             <div className="chose_area mx-4">
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
                 <div className="user_option flex-1">
-                  <input
+                <input
                     type="text"
+                    name="name"
                     value={this.state.name}
-                    onChange={(e) => this.setState({ name: e.target.value })}
+                    onChange={this.handleInputChange}
                     className="border border-gray-300 rounded-md p-2 w-full md:w-1/2 lg:w-96"
                     placeholder="Name"
                   />
-                  <span px-3 text-red-500>{this.state.notiName}</span>
+                  <span className="px-3 text-red-500">{this.state.notiName}</span>
                 </div>
                 <div className="user_option flex-1">
-                  <input
+                <input
                     type="text"
+                    name="phone"
                     value={this.state.phone}
-                    onChange={(e) => this.setState({ phone: e.target.value })}
-                    className="border border-gray-300 rounded-md p-2 w-full md:w-1/2
-                    lg:w-96"
+                    onChange={this.handleInputChange}
+                    className="border border-gray-300 rounded-md p-2 w-full md:w-1/2 lg:w-96"
                     placeholder="Phone"
                   />
-                  <span px-3 text-red-500>{this.state.notiPhone}</span>
+                  <span className="px-3 text-red-500">{this.state.notiPhone}</span>
                 </div>
                 <div className="user_option flex-1">
-                  <input
-                    type="text"
-                    value={this.state.address}
-                    onChange={(e) => this.setState({ address: e.target.value })}
-                    className="border border-gray-300 rounded-md p-2 w-full md:w-1/2 lg:w-96"
-                    placeholder="Address"
-                  />
+                    <input
+                        type="text"
+                        name="address"
+                        value={this.state.address}
+                        onChange={this.handleInputChange}
+                        className="border border-gray-300 rounded-md p-2 w-full md:w-1/2 lg:w-96"
+                        placeholder="Address"
+                      />
                   <span className="px-3 text-red-500">{this.state.notiDetailAddress}</span>
                 </div>
               </div>
               <div className="cart-option flex justify-between">
                 <div className="ppip mr-2 mt-6 w-48">
-                  {this.state.sdkReady ? (
-                    <PayPalButton
-                      amount={(this.state.total / 25000).toFixed(2)}
-                      // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-                      onSuccess={(details, data) => {
-                        // Call when PayPal payment is successful
-                        this.handlePayment();
-                        // OPTIONAL: Call your server to save the transaction
-                        return fetch("/paypal-transaction-complete", {
-                          method: "post",
-                          body: JSON.stringify({
-                            orderID: data.orderID,
-                          }),
-                        });
-                      }}
-                      onError={() => {
-                        alert("Error paypal");
-                      }}
-                    />
+                  {this.props.islogin ? (
+                    isFormFilled ? (
+                      this.state.sdkReady ? (
+                        <PayPalButton
+                          amount={(this.state.total / 25000).toFixed(2)}
+                          onSuccess={(details, data) => {
+                            this.handlePayment();
+                            return fetch("/paypal-transaction-complete", {
+                              method: "post",
+                              body: JSON.stringify({
+                                orderID: data.orderID,
+                              }),
+                            });
+                          }}
+                          onError={() => {
+                            alert("Error paypal");
+                          }}
+                        />
+                      ) : (
+                        console.log(2)
+                      )
+                    ) : (
+                      <p className="text-red-500 w-56">Vui lòng nhập đầy đủ thông tin.</p>
+                    )
                   ) : (
-                    console.log(2)
+                    <p className="text-red-500 w-56">Đăng nhập để thanh toán.</p>
                   )}
                 </div>
                 <div className="ctnsp flex justify-center items-center">
-                    <Link
-                      className=" bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mt-6 w-auto flex items-center justify-center"
-                      to={"/"}
-                    >
-                      Continue shopping
+                  <Link
+                    className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md mt-6 w-auto flex items-center justify-center"
+                    to={"/"}
+                  >
+                    Continue shopping
                   </Link>
                 </div>
               </div>

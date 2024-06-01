@@ -99,8 +99,8 @@ export default function BestSeller(props) {
                     />
                 </div>
                 <div className="content2_left_below_describe_book">
-                    <span className="span1">{shortDescription}</span>
-                    <span className="span2">{longDescription}</span>
+                    <span className="span1">{shortDescription}...</span>
+                    <span className="span2">{longDescription}...</span>
                 </div>
                 <div className="content2_left_below_describe_add_to_cart">
                     <button style={{ textDecoration: "none" }} onClick={handleCartClick}>
