@@ -42,7 +42,7 @@
 
   - Chatbot có khả năng tương tác trong phạm vi dữ liệu đã được cung cấp
 
-![Screenshot 2024-06-01 221032](https://github.com/qub1tt/bookstore/assets/91910146/3548288e-1e21-45de-a1c7-977220216a20)
+  ![Screenshot 2024-06-01 221032](https://github.com/qub1tt/bookstore/assets/91910146/3548288e-1e21-45de-a1c7-977220216a20)
 
 
 ### 3. Trang tất cả sách:
