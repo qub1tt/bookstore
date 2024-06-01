@@ -8,9 +8,11 @@
 
 ### 1. Đăng ký/Đăng nhập
 
-![image]("public\assets\anh1.png")
 
-![image]("public\assets\anh2.png")
+![Screenshot 2024-06-01 214248](https://github.com/qub1tt/bookstore/assets/91910146/47e82441-f874-4735-bb3c-2db953051fab)
+
+![Screenshot 2024-06-01 214302](https://github.com/qub1tt/bookstore/assets/91910146/ee217c48-9996-4a93-b325-027343acdc25)
+
 
 - **Mô tả:** Trang đăng nhập/đăng ký của người dùng
 - **Chức năng:**
@@ -21,9 +23,11 @@
 
 ### 2. Trang chủ:
 
-![image_2024-06-01_214857585](https://hackmd.io/_uploads/HJnJH3u4C.jpg)
+![Screenshot 2024-06-01 214633](https://github.com/qub1tt/bookstore/assets/91910146/a3b9f3ce-da73-494e-8dee-c08c79832ad1)
 
-![image_2024-06-01_215352124](https://hackmd.io/_uploads/r1ObL3uER.png)
+![Screenshot 2024-06-01 215304](https://github.com/qub1tt/bookstore/assets/91910146/b1784e58-e643-48bf-89a3-226ea3fc0eff)
+
+
 
 - **Mô tả:** Gồm những thành phần chính:
   - Sidebar
@@ -34,27 +38,31 @@
   - Chatbot
 - **Chức năng:**
   - Có thể thêm vào giỏ hàng khi bấm vào icon giỏ hàng
-  ![image](https://hackmd.io/_uploads/r1A_UndVR.png)
+![Screenshot 2024-06-01 215527](https://github.com/qub1tt/bookstore/assets/91910146/903f7b23-d48b-4cf7-a302-b11b5cd3a5dd)
+
   - Chatbot có khả năng tương tác trong phạm vi dữ liệu đã được cung cấp
-  ![image](https://hackmd.io/_uploads/Hk-e9n_E0.png)
+![Screenshot 2024-06-01 221032](https://github.com/qub1tt/bookstore/assets/91910146/3548288e-1e21-45de-a1c7-977220216a20)
+
 
 ### 3. Trang tất cả sách:
 
-![image](https://hackmd.io/_uploads/ryo0Dh_NC.png)
+![Screenshot 2024-06-01 215740](https://github.com/qub1tt/bookstore/assets/91910146/2adba6ee-8afb-4508-85b8-c71223bc3afb)
+
 
 - **Mô tả:** Đây là trang người dùng có thể xem tất cả các sách có trong web.
 - **Chức năng:** Có thể lựa chọn sắp xếp theo tùy chỉnh và nhấn vào icon giỏ hàng để đặt hàng
 
 ### 4. Trang thể loại sách:
 
-![image](https://hackmd.io/_uploads/SkQIdnOER.png)
+![Screenshot 2024-06-01 215851](https://github.com/qub1tt/bookstore/assets/91910146/52a4b494-8115-4917-9606-8fc0e41ca33c)
+
 
 - **Mô tả:** Đây là trang người dùng có thể xem các thể loại sách.
 - **Chức năng:** Có thể lựa chọn theo thể loại
 
 ### 5. Trang hồ sơ người dùng:
 
-![image](https://hackmd.io/_uploads/ByL3u3dER.png)
+![Screenshot 2024-06-01 220444](https://github.com/qub1tt/bookstore/assets/91910146/abe6b80b-6629-44eb-92aa-8955fa54d9a9)
 
 - **Mô tả:** Trang quản lý thông tin tài khoản
 - **Chức năng:**
@@ -63,7 +71,8 @@
 
 ### 6. Trang giỏ hàng:
 
-![image](https://hackmd.io/_uploads/HyXMY2dV0.png)
+![Screenshot 2024-06-01 220642](https://github.com/qub1tt/bookstore/assets/91910146/e516b4af-b56c-4917-9d11-32e00417a556)
+
 
 - **Mô tả:** Trang quản lý giỏ hàng
 - **Chức năng:**
@@ -73,7 +82,8 @@
 
 ### 7. Trang đơn hàng:
 
-![image](https://hackmd.io/_uploads/S1qDKh_VC.png)
+![Screenshot 2024-06-01 220815](https://github.com/qub1tt/bookstore/assets/91910146/05e86606-61ca-4e73-8c42-569ec248ca0f)
+
 
 - **Mô tả:** Trang quản lý đơn hàng
 - **Chức năng:**
