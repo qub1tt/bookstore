@@ -389,7 +389,7 @@ class ContentCart extends Component {
                       )
                     ) : (
                       <p className="text-red-500 text-center ml-2">
-                        Vui lòng nhập đầy đủ thông tin.
+                        Vui lòng nhập đầy đủ thông tin để thực hiện thanh toán.
                       </p>
                     )
                   ) : (
