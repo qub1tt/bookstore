@@ -6,7 +6,6 @@ import bs2 from "../../assets/bookstore/bookstore2.jpg";
 import bs3 from "../../assets/bookstore/bookstore3.jpg";
 import bs4 from "../../assets/bookstore/bookstore4.jpg";
 import bs5 from "../../assets/bookstore/bookstore1.jpg";
-
 function Bcarousel() {
   const slides = [
     { url: bs1 },

@@ -35,16 +35,6 @@ export default function ContentLoginRegister({
     setLogin(false);
   }
 
-  useEffect(() => {
-    function start() {
-      gapi.client.init({
-        clientId: clientId,
-        scope: "",
-      });
-    }
-    gapi.load("client:auth2", start);
-  });
-
   let xhtmlLogin = "";
   let xhtmlRegister = "";
   if (Login) {
@@ -104,10 +94,7 @@ export default function ContentLoginRegister({
 
           <div className="login-link flex justify-between items-center my-5">
             <p>Don't have an account?</p>
-            <Link
-              onClick={handleRegister}
-              className="login-link text-base"
-            >
+            <Link onClick={handleRegister} className="login-link text-base">
               Sign up
             </Link>
           </div>
@@ -199,10 +186,7 @@ export default function ContentLoginRegister({
           </button>
           <div className="login-link flex justify-between items-center">
             <p>Already have an account?</p>
-            <Link
-              onClick={handleLogin}
-              className="login-link text-base"
-            >
+            <Link onClick={handleLogin} className="login-link text-base">
               Sign in
             </Link>
           </div>
