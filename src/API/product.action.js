@@ -4,7 +4,7 @@ import storeConfig from "../config/storage.config";
 export const getBookDetail = (id) => async (dispatch) => {
   let res;
   try {
-    res = await axios.get("http://localhost:8080/book/" + id);
+    res = await axios.get(`${process.env.REACT_APP_API}/book/` + id);
   } catch (err) {
     return;
   }
@@ -14,7 +14,7 @@ export const getBookDetail = (id) => async (dispatch) => {
 export const getNameCategoryByID = (id) => async (dispatch) => {
   let res;
   try {
-    res = await axios.get("http://localhost:8080/category/name/" + id);
+    res = await axios.get(`${process.env.REACT_APP_API}/category/name/` + id);
   } catch (err) {
     return;
   }
@@ -23,7 +23,7 @@ export const getNameCategoryByID = (id) => async (dispatch) => {
 export const getNamePublisherByID = (id) => async (dispatch) => {
   let res;
   try {
-    res = await axios.get("http://localhost:8080/publisher/name/" + id);
+    res = await axios.get(`${process.env.REACT_APP_API}/publisher/name/` + id);
   } catch (err) {
     return;
   }
@@ -33,7 +33,7 @@ export const getNamePublisherByID = (id) => async (dispatch) => {
 export const getNameAuthorByID = (id) => async (dispatch) => {
   let res;
   try {
-    res = await axios.get("http://localhost:8080/author/name/" + id);
+    res = await axios.get(`${process.env.REACT_APP_API}/author/name/` + id);
   } catch (err) {
     return;
   }
