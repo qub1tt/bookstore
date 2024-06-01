@@ -246,6 +246,11 @@ class Sidebar extends Component {
             </ul>
           </div>
         </div>
+        <div className="main_logo1">
+            <a href="/">
+              <img src={logo} alt="logo" />
+            </a>
+          </div>
       </div>
     );
   }
