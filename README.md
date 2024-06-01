@@ -41,6 +41,7 @@
 ![Screenshot 2024-06-01 215527](https://github.com/qub1tt/bookstore/assets/91910146/903f7b23-d48b-4cf7-a302-b11b5cd3a5dd)
 
   - Chatbot có khả năng tương tác trong phạm vi dữ liệu đã được cung cấp
+
 ![Screenshot 2024-06-01 221032](https://github.com/qub1tt/bookstore/assets/91910146/3548288e-1e21-45de-a1c7-977220216a20)
 
 
