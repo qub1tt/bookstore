@@ -135,7 +135,7 @@
 
 - ReactJS
 - Axios
-- Redux
+- Redux/Redux Toolkit
 - Tailwindcss
 
 ### Hướng dẫn cài đặt:
