@@ -5,7 +5,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import "./cartDetail.css";
 import { PayPalButton } from "react-paypal-button-v2";
 import * as PaymentService from "../../API/payment.action";
-
+import Loading from "../loading/Loading";
 class ContentCart extends Component {
   constructor() {
     super();
@@ -108,7 +108,21 @@ class ContentCart extends Component {
     } else {
       this.setState({ notiDetailAddress: "" });
     }
-    return check;
+    if (check === false) return;
+    this.props
+      .payment(
+        this.state.address,
+        this.state.phone,
+        this.state.name,
+        this.state.total
+      )
+      .then(() => {
+        this.setState({ showSuccessNotification: true });
+        setTimeout(() => {
+          this.setState({ showSuccessNotification: false });
+          window.location.reload();
+        }, 1000);
+      });
   };
 
   truncateWords = (text, wordLimit) => {
@@ -147,7 +161,7 @@ class ContentCart extends Component {
       <div className="success-notification">
         {this.state.showSuccessNotification
           ? "Order Successfully!"
-          : this.state.notification}
+          : "Order FAILED!"}
       </div>
     );
   };
@@ -385,7 +399,7 @@ class ContentCart extends Component {
                           }}
                         />
                       ) : (
-                        console.log(2)
+                        <Loading />
                       )
                     ) : (
                       <p className="text-red-500 text-center ml-2">
