@@ -22,10 +22,13 @@
   - Tài khoản chưa xác thực sẽ được yêu cầu xác thực mới có thể sử dụng.
 
 ### 2. Trang chủ:
+![image](https://github.com/qub1tt/bookstore/assets/91910146/83930459-c051-472e-8853-c4d5a4691d2b)
 
-![Screenshot 2024-06-01 214633](https://github.com/qub1tt/bookstore/assets/91910146/a3b9f3ce-da73-494e-8dee-c08c79832ad1)
+![image](https://github.com/qub1tt/bookstore/assets/91910146/2a10ab0e-766a-4f54-9ce0-7b378f4fab32)
 
-![Screenshot 2024-06-01 215304](https://github.com/qub1tt/bookstore/assets/91910146/b1784e58-e643-48bf-89a3-226ea3fc0eff)
+
+![image](https://github.com/qub1tt/bookstore/assets/91910146/ad031e36-7785-4cb7-b661-a6c8f5fd1f9c)
+
 
 
 
@@ -41,8 +44,8 @@
 ![Screenshot 2024-06-01 215527](https://github.com/qub1tt/bookstore/assets/91910146/903f7b23-d48b-4cf7-a302-b11b5cd3a5dd)
 
   - Chatbot có khả năng tương tác trong phạm vi dữ liệu đã được cung cấp
+![image](https://github.com/qub1tt/bookstore/assets/91910146/475760a8-0a85-4fe4-a9a5-9fe94a48f1c1)
 
-  ![Screenshot 2024-06-01 221032](https://github.com/qub1tt/bookstore/assets/91910146/3548288e-1e21-45de-a1c7-977220216a20)
 
 
 ### 3. Trang tất cả sách:
