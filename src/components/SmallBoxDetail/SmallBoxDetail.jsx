@@ -71,11 +71,9 @@ export default function SmallBoxDetail(props) {
                 <strong>
                     <Link to={`/book/${props.bookId}`}>{truncateBookName(bookData.name, 25)}</Link>
                 </strong>
-                <div style={{ padding: "4px 0 4px 0" }}>{authorName}</div>
-                <div style={{ padding: "4px 0 4px 0" }}>
-                    {/* Star ratings */}
-                </div>
-                <div style={{ padding: "4px 0 8px 0" }}>
+                <div style={{ padding: "4px 0 2px 0" }}><i>{authorName}</i></div>
+                
+                <div style={{ padding: "2px 0 2px 0" }}>
                     <strong>{new Intl.NumberFormat("de-DE", {
                               currency: "EUR",
                             }).format(bookData.price)}đ</strong>

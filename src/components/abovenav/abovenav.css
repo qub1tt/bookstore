@@ -87,6 +87,10 @@ li {
   margin-left: 150px;
 }
 
+.user-icon-container{
+  margin-right: 10px;
+}
+
 .abovenav .dropdown .sub-menu {
   display: none;
   position: absolute;

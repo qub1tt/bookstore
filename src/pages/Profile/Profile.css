@@ -154,15 +154,10 @@
 }
 
 .hmmerror {
-  position: fixed;
-  bottom: 40px;
-  right: 100px;
-  background-color: #2dd34e;
-  color: white; 
-  font-weight: bold;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 10px;
+  color: red;
+  font-size: 18px;
 }
 
 .input2{
@@ -400,6 +395,7 @@ body.show-chatbot .chatbot-toggler span:last-child {
   box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
     0 32px 64px -48px rgba(0, 0, 0, 0.5);
   transition: all 0.1s ease;
+  z-index: 1001;
 }
 body.show-chatbot .chatbot {
   opacity: 1;

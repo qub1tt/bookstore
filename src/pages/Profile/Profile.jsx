@@ -76,14 +76,14 @@ class Profile extends Component {
     if (this.props.notiupdatePassword !== prevProps.notiupdatePassword) {
       if (this.props.notiupdatePassword === true) {
         this.setState({
-          notiUpdatePassword: "Update password success",
+          notiUpdatePassword: "UPDATE PASSWORD SUCCESS",
           oldPassword: "",
           newPassword: "",
           confirm: "",
         });
         this.props.resetUpdatePassword();
       } else if (this.props.notiupdatePassword === false) {
-        this.setState({ notiUpdatePassword: "Update password fail" });
+        this.setState({ notiUpdatePassword: "UPDATE PASSWORD FAIL" });
         this.props.resetUpdatePassword();
       }
     }
@@ -91,13 +91,13 @@ class Profile extends Component {
 
   handleUpdatePassword() {
     if (this.state.newPassword.length < 6) {
-      this.setState({ notiUpdatePassword: "New Password invalid" });
+      this.setState({ notiUpdatePassword: "NEW PASSWORD INVALID" });
       return;
     } else {
       this.setState({ notiUpdatePassword: "" });
     }
     if (this.state.confirm.length < 6) {
-      this.setState({ notiUpdatePassword: "Confirm Password invalid" });
+      this.setState({ notiUpdatePassword: "CONFIRM PASSWORD INVALID" });
       return;
     } else {
       this.setState({ notiUpdatePassword: "" });
@@ -113,7 +113,7 @@ class Profile extends Component {
           <div className="info-header">
             Thông tin tài khoản
             <hr />
-            <p className="hmmerror">{this.state.notiUpdateInfor}</p>
+            
           </div>
 
           <div class="avatar">
@@ -278,6 +278,7 @@ class Profile extends Component {
                 </div>
               </div>
             </div>
+            <p className="hmmerror">{this.state.notiUpdateInfor}</p>
             <div className="button-save">
               <button
                 type="submit"
@@ -298,7 +299,7 @@ class Profile extends Component {
             <div className="infor-header2">
               Thay đổi mật khẩu
               <hr />
-              <p className="hmmerror">{this.state.notiUpdatePassword}</p>
+              
             </div>
             <div className="infor-body">
               <div className="infro-content">
@@ -378,6 +379,7 @@ class Profile extends Component {
                   type="password"
                   placeholder="Confirm"
                 /> */}
+                <p className="hmmerror">{this.state.notiUpdatePassword}</p>
                 <div className="button-save">
                   <button
                     type="submit"

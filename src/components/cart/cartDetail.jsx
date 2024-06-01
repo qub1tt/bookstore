@@ -238,7 +238,7 @@ class ContentCart extends Component {
                           </a>
                         </td>
                         <td className="cart_description">
-                          <p>{this.truncateWords(element.name, 6)}</p>
+                          <p className="ml-2">{this.truncateWords(element.name, 6)}</p>
                         </td>
                         <td className="cart_price">
                           <p>{new Intl.NumberFormat("de-DE", {

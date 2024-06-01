@@ -193,9 +193,12 @@
   }
 
   .content1_below_book_img_hover-button {
-    width: 50px;
-    height: 20px;
-}
+      display: none;
+  }
+
+  .content1_below_book_img:hover img {
+      filter: blur(0px);
+  }
 }
 
 @media (max-width: 725px) { 
@@ -241,7 +244,7 @@
     margin-left: 5px;
   }
   .content1_below_book_img{
-    padding-left: 5px;
+    margin-left: 10px;
   }
 }
 

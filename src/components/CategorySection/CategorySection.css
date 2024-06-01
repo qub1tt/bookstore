@@ -32,6 +32,13 @@
     outline: none;
 }
 
+@media (max-width: 500px) { 
+  .selectedCategory{
+    display: none;
+  }
+}
+
+
 @media (max-width: 380px) { 
   .categorysection_above{
     font-size: x-small;
