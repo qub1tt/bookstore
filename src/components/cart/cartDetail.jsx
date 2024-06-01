@@ -96,7 +96,7 @@ class ContentCart extends Component {
     } else {
       this.setState({ notiName: "" });
     }
-    if (!this.isvaidPhone(this.state.phone)) {
+    if (!this.isValidPhone(this.state.phone)) {
       this.setState({ notiPhone: "Phone invalid" });
       check = false;
     } else {
@@ -119,17 +119,18 @@ class ContentCart extends Component {
     return words.slice(0, wordLimit).join(" ") + "...";
   };
 
-
   handleInputChange = (e) => {
     const { name, value } = e.target;
     this.setState({
       [name]: value,
-      notiName: name === 'name' && value.length < 3 ? "Name invalid" : "",
-      notiPhone: name === 'phone' && !this.isValidPhone(value) ? "Phone invalid" : "",
-      notiDetailAddress: name === 'address' && value === "" ? "Address invalid" : ""
+      notiName: name === "name" && value.length < 3 ? "Name invalid" : "",
+      notiPhone:
+        name === "phone" && !this.isValidPhone(value) ? "Phone invalid" : "",
+      notiDetailAddress:
+        name === "address" && value === "" ? "Address invalid" : "",
     });
   };
-  
+
   isValidPhone = (phone) => {
     if (phone.length < 10 || phone.length > 11) return false;
     for (let i = 0; i < phone.length; i++) {
@@ -137,7 +138,6 @@ class ContentCart extends Component {
     }
     return true;
   };
-  
 
   renderSuccessNotification = () => {
     if (!this.state.showSuccessNotification && !this.state.notification) {
@@ -162,7 +162,7 @@ class ContentCart extends Component {
     }
     const isFormFilled =
       this.state.name.length >= 3 &&
-      this.isvaidPhone(this.state.phone) &&
+      this.isValidPhone(this.state.phone) &&
       this.state.address !== "";
     return (
       <div>
@@ -173,45 +173,45 @@ class ContentCart extends Component {
         >
           <div>
             <div className="bg-gray-100">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead>
-                <tr className="cart_title bg-gray-50">
-                  <th
-                    scope="col"
-                    className="text-xs font-medium text-gray-500 uppercase tracking-wider w-24 md:w-28 lg:w-28"
-                  >
-                    Item
-                  </th>
-                  <th
-                    scope="col"
-                    className="py-2 text-xs font-medium text-gray-500 uppercase tracking-wider w-24 md:w-40 lg:w-80"
-                    style={{ width: "200px" }}
-                  >
-                    Description
-                  </th>
-                  <th
-                    scope="col"
-                    className="text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
-                  >
-                    Price
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-2 text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
-                  >
-                    Quantity
-                  </th>
-                  <th
-                    scope="col"
-                    className="text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
-                  >
-                    Total
-                  </th>
-                  <th scope="col" className="relative w-10 md:w-16 lg:w-16">
-                    <span className="sr-only ">Delete</span>
-                  </th>
-                </tr>
-              </thead>
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead>
+                  <tr className="cart_title bg-gray-50">
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider w-24 md:w-28 lg:w-28"
+                    >
+                      Item
+                    </th>
+                    <th
+                      scope="col"
+                      className="py-2 text-xs font-medium text-gray-500 uppercase tracking-wider w-24 md:w-40 lg:w-80"
+                      style={{ width: "200px" }}
+                    >
+                      Description
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                    >
+                      Price
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-2 text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                    >
+                      Quantity
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-xs font-medium text-gray-500 uppercase tracking-wider w-8 md:w-16 lg:w-16"
+                    >
+                      Total
+                    </th>
+                    <th scope="col" className="relative w-10 md:w-16 lg:w-16">
+                      <span className="sr-only ">Delete</span>
+                    </th>
+                  </tr>
+                </thead>
                 <tbody>
                   {this.props.cart.map((element, index) => {
                     const updateCount = (newCount) => {
@@ -230,12 +230,16 @@ class ContentCart extends Component {
                           </a>
                         </td>
                         <td className="cart_description">
-                          <p className="ml-2">{this.truncateWords(element.name, 6)}</p>
+                          <p className="ml-2">
+                            {this.truncateWords(element.name, 6)}
+                          </p>
                         </td>
                         <td className="cart_price">
-                          <p>{new Intl.NumberFormat("de-DE", {
+                          <p>
+                            {new Intl.NumberFormat("de-DE", {
                               currency: "EUR",
-                            }).format(element.price)}</p>
+                            }).format(element.price)}
+                          </p>
                         </td>
                         <td className="cart_quantity">
                           <div className="cart_quantity_button">
@@ -273,7 +277,6 @@ class ContentCart extends Component {
                             {new Intl.NumberFormat("de-DE", {
                               currency: "EUR",
                             }).format(element.price * element.count)}
-                            
                           </p>
                         </td>
                         <td className="cart_delete">
@@ -322,7 +325,7 @@ class ContentCart extends Component {
             <div className="chose_area mx-4">
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
                 <div className="user_option flex-1">
-                <input
+                  <input
                     type="text"
                     name="name"
                     value={this.state.name}
@@ -330,10 +333,12 @@ class ContentCart extends Component {
                     className="border border-gray-300 rounded-md p-2 w-full md:w-1/2 lg:w-96"
                     placeholder="Name"
                   />
-                  <span className="px-3 text-red-500">{this.state.notiName}</span>
+                  <span className="px-3 text-red-500">
+                    {this.state.notiName}
+                  </span>
                 </div>
                 <div className="user_option flex-1">
-                <input
+                  <input
                     type="text"
                     name="phone"
                     value={this.state.phone}
@@ -341,18 +346,22 @@ class ContentCart extends Component {
                     className="border border-gray-300 rounded-md p-2 w-full md:w-1/2 lg:w-96"
                     placeholder="Phone"
                   />
-                  <span className="px-3 text-red-500">{this.state.notiPhone}</span>
+                  <span className="px-3 text-red-500">
+                    {this.state.notiPhone}
+                  </span>
                 </div>
                 <div className="user_option flex-1">
-                    <input
-                        type="text"
-                        name="address"
-                        value={this.state.address}
-                        onChange={this.handleInputChange}
-                        className="border border-gray-300 rounded-md p-2 w-full md:w-1/2 lg:w-96"
-                        placeholder="Address"
-                      />
-                  <span className="px-3 text-red-500">{this.state.notiDetailAddress}</span>
+                  <input
+                    type="text"
+                    name="address"
+                    value={this.state.address}
+                    onChange={this.handleInputChange}
+                    className="border border-gray-300 rounded-md p-2 w-full md:w-1/2 lg:w-96"
+                    placeholder="Address"
+                  />
+                  <span className="px-3 text-red-500">
+                    {this.state.notiDetailAddress}
+                  </span>
                 </div>
               </div>
               <div className="cart-option flex justify-between">
@@ -379,10 +388,14 @@ class ContentCart extends Component {
                         console.log(2)
                       )
                     ) : (
-                      <p className="text-red-500 text-center ml-2">Vui lòng nhập đầy đủ thông tin.</p>
+                      <p className="text-red-500 text-center ml-2">
+                        Vui lòng nhập đầy đủ thông tin.
+                      </p>
                     )
                   ) : (
-                    <p className="text-red-500 text-center ml-2">Đăng nhập để thanh toán.</p>
+                    <p className="text-red-500 text-center ml-2">
+                      Đăng nhập để thanh toán.
+                    </p>
                   )}
                 </div>
                 <div className="ctnsp flex justify-center items-center">
