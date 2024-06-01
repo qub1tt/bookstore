@@ -1,4 +1,4 @@
-# Nhom12 - Selling Books Website
+# NT208 - Selling Books Website Project
 
 ## Giới thiệu đồ án:
 
@@ -9,12 +9,15 @@
 ### 1. Đăng ký/Đăng nhập
 
 
-![Screenshot 2024-06-01 214248](https://github.com/qub1tt/bookstore/assets/91910146/47e82441-f874-4735-bb3c-2db953051fab)
-
-![Screenshot 2024-06-01 214302](https://github.com/qub1tt/bookstore/assets/91910146/ee217c48-9996-4a93-b325-027343acdc25)
+![image](https://github.com/qub1tt/bookstore/assets/91910146/2b329c27-8e65-400c-ac9e-fd56da35d9eb)
 
 
-- **Mô tả:** Trang đăng nhập/đăng ký của người dùng
+![image](https://github.com/qub1tt/bookstore/assets/91910146/00fd526a-eb16-4b2e-b3c8-e5cdad1903a3)
+
+
+
+- **Mô tả:** Trang đăng nhập/đăng ký của người dùng.
+  
 - **Chức năng:**
   - Đăng nhập, tích hợp đăng nhập bằng google nếu như đã tạo tài khoản.
   - Đăng ký tài khoản.
@@ -22,7 +25,8 @@
   - Tài khoản chưa xác thực sẽ được yêu cầu xác thực mới có thể sử dụng.
 
 ### 2. Trang chủ:
-![image](https://github.com/qub1tt/bookstore/assets/91910146/83930459-c051-472e-8853-c4d5a4691d2b)
+![image](https://github.com/qub1tt/bookstore/assets/91910146/05e69ef3-6b0e-4cec-a20c-64af1bfe81ca)
+
 
 ![image](https://github.com/qub1tt/bookstore/assets/91910146/2a10ab0e-766a-4f54-9ce0-7b378f4fab32)
 
@@ -37,6 +41,8 @@
   - Sách bán chạy
   - Sách yêu thích
   - Chatbot
+  - Footer
+    
 - **Chức năng:**
   - Sử dụng sidebar để điều hướng sang các trang khác.
   - Thanh search tìm kiếm theo tên sách cần tìm.
@@ -60,7 +66,8 @@
 
 
 - **Mô tả:** Đây là trang người dùng có thể xem tất cả các sách có trong web.
-- **Chức năng:** Có thể lựa chọn sắp xếp theo tùy chỉnh và nhấn vào icon giỏ hàng để đặt hàng
+  
+- **Chức năng:** Có thể lựa chọn sắp xếp theo tùy chỉnh và nhấn vào icon giỏ hàng để đặt hàng.
 
 ### 4. Trang thể loại sách:
 
@@ -68,13 +75,15 @@
 
 
 - **Mô tả:** Đây là trang người dùng có thể xem các thể loại sách.
-- **Chức năng:** Có thể lựa chọn theo thể loại
+  
+- **Chức năng:** Có thể lựa chọn theo thể loại.
 
 ### 5. Trang hồ sơ người dùng:
 
 ![Screenshot 2024-06-01 220444](https://github.com/qub1tt/bookstore/assets/91910146/abe6b80b-6629-44eb-92aa-8955fa54d9a9)
 
-- **Mô tả:** Trang quản lý thông tin tài khoản
+- **Mô tả:** Trang quản lý thông tin tài khoản.
+  
 - **Chức năng:**
   - Update thông tin tài khoản, upload avatar.
   - Thay đổi mật khẩu tài khoản.
@@ -84,7 +93,8 @@
 ![image](https://github.com/qub1tt/bookstore/assets/91910146/164aa7c0-735b-4116-99fb-97fa83c7c279)
 ![image](https://github.com/qub1tt/bookstore/assets/91910146/f202fdb1-470a-46e7-8515-26f37646b895)
 
-- **Mô tả:** Trang thông tin của sách
+- **Mô tả:** Trang thông tin của sách.
+  
 - **Chức năng:**
   - Tùy chỉnh số lượng thêm vào giỏ hàng.
   - Đánh giá sách khi đã đăng nhập.
@@ -95,7 +105,8 @@
 ![Screenshot 2024-06-01 220642](https://github.com/qub1tt/bookstore/assets/91910146/e516b4af-b56c-4917-9d11-32e00417a556)
 
 
-- **Mô tả:** Trang quản lý giỏ hàng
+- **Mô tả:** Trang quản lý giỏ hàng.
+  
 - **Chức năng:**
   - Có thể thay đổi số lượng mua hàng, xóa giỏ hàng.
   - Nhập đầy đủ thông tin sẽ thanh toán bằng PayPal.
@@ -106,12 +117,19 @@
 ![Screenshot 2024-06-01 220815](https://github.com/qub1tt/bookstore/assets/91910146/05e86606-61ca-4e73-8c42-569ec248ca0f)
 
 
-- **Mô tả:** Trang quản lý đơn hàng
+- **Mô tả:** Trang quản lý đơn hàng.
+  
 - **Chức năng:**
   - Hủy đơn hàng.
   - Xem tình trạng của đơn hàng.
 
 ## Cài đặt môi trường và sử dụng:
+
+### Repositories:
+- Repositories BackEnd: https://github.com/qub1tt/Backend_NT208_Project
+- Repositories FrontEnd: https://github.com/qub1tt/bookstore
+- Repositories Admin: https://github.com/qub1tt/admin_bookstore
+
 
 ### Các công nghệ sử dụng:
 
@@ -131,11 +149,12 @@
 ### Tài khoản để test:
 
 - Tài khoản người dùng:
-  username: 22520329@gm.uit.edu.vn
-  password: 123456
+  - username: 22520329@gm.uit.edu.vn
+  - password: 123456
+    
 - Tài khoản PayPal:
-  username: sb-twek431005149@personal.example.com
-  password: Cg6(?ctF
+  - username: sb-twek431005149@personal.example.com
+  - password: Cg6(?ctF
 
 ## Domain Deploy:
 
