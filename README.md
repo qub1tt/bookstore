@@ -145,7 +145,7 @@ Khi muốn sử dụng trên local, vào file .env sửa REACT_APP_API thành "h
 2. Clone repository này.
 3. Thực hiện lệnh npm install --legacy-peer-deps để cài đặt các module cần thiết cho Frontend.
 4. Chạy lệnh npm start để khởi động web.
-5. Sau khi đã chạy backend thì có thể sử dụng được web.
+5. Sau khi đã chạy backend thì có thể sử dụng được web (Hướng dẫn cài đặt backend ở repo BackEnd)
 
 ### Tài khoản để test:
 
