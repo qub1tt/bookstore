@@ -30,8 +30,6 @@
 ![image](https://github.com/qub1tt/bookstore/assets/91910146/ad031e36-7785-4cb7-b661-a6c8f5fd1f9c)
 
 
-
-
 - **Mô tả:** Gồm những thành phần chính:
   - Sidebar
   - Navbar
@@ -40,11 +38,19 @@
   - Sách yêu thích
   - Chatbot
 - **Chức năng:**
+  - Sử dụng sidebar để điều hướng sang các trang khác.
+  - Thanh search tìm kiếm theo tên sách cần tìm.
+    
+    ![image](https://github.com/qub1tt/bookstore/assets/91910146/e0553690-0b39-40cc-bd32-c99a1ed9e8e7)
+  - Icon giỏ hàng để điều hướng đến trang giỏ hàng.
+  - Icon hồ sơ sẽ có hai lựa chọn điều hướng tới trang quản lý thông tin tài khoản hoặc là trang quản lý đơn hàng.
   - Có thể thêm vào giỏ hàng khi bấm vào icon giỏ hàng
-![Screenshot 2024-06-01 215527](https://github.com/qub1tt/bookstore/assets/91910146/903f7b23-d48b-4cf7-a302-b11b5cd3a5dd)
+    
+     ![Screenshot 2024-06-01 215527](https://github.com/qub1tt/bookstore/assets/91910146/903f7b23-d48b-4cf7-a302-b11b5cd3a5dd)
 
   - Chatbot có khả năng tương tác trong phạm vi dữ liệu đã được cung cấp
-![image](https://github.com/qub1tt/bookstore/assets/91910146/475760a8-0a85-4fe4-a9a5-9fe94a48f1c1)
+    
+    ![image](https://github.com/qub1tt/bookstore/assets/91910146/475760a8-0a85-4fe4-a9a5-9fe94a48f1c1)
 
 
 
@@ -72,8 +78,19 @@
 - **Chức năng:**
   - Update thông tin tài khoản, upload avatar.
   - Thay đổi mật khẩu tài khoản.
+    
+### 6. Trang thông tin sách
 
-### 6. Trang giỏ hàng:
+![image](https://github.com/qub1tt/bookstore/assets/91910146/164aa7c0-735b-4116-99fb-97fa83c7c279)
+![image](https://github.com/qub1tt/bookstore/assets/91910146/f202fdb1-470a-46e7-8515-26f37646b895)
+
+- **Mô tả:** Trang thông tin của sách
+- **Chức năng:**
+  - Tùy chỉnh số lượng thêm vào giỏ hàng.
+  - Đánh giá sách khi đã đăng nhập.
+
+
+### 7. Trang giỏ hàng:
 
 ![Screenshot 2024-06-01 220642](https://github.com/qub1tt/bookstore/assets/91910146/e516b4af-b56c-4917-9d11-32e00417a556)
 
@@ -84,7 +101,7 @@
   - Nhập đầy đủ thông tin sẽ thanh toán bằng PayPal.
   - Vào email để xác nhận thanh toán.
 
-### 7. Trang đơn hàng:
+### 8. Trang đơn hàng:
 
 ![Screenshot 2024-06-01 220815](https://github.com/qub1tt/bookstore/assets/91910146/05e86606-61ca-4e73-8c42-569ec248ca0f)
 
