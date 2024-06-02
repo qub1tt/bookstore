@@ -4,6 +4,10 @@
 
 "BookstoREe" là một ứng dụng web bán sách trực tuyến sử dụng công nghệ MERN stack (MongoDB, Express.js, React.js, Node.js), tích hợp với API Gemini để cung cấp tính năng chatbot hỗ trợ khách hàng.
 
+Sơ đồ chức năng của web:
+
+![Peach Yellow Grid Mind Map Brainstorm (1)](https://github.com/qub1tt/bookstore/assets/91910146/32cd1b36-d9fe-47ca-87ce-396fbb16bd0b)
+
 ## Mô tả các trang:
 
 ### 1. Đăng ký/Đăng nhập
