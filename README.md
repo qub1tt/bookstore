@@ -145,7 +145,7 @@ Sơ đồ chức năng của web:
 ### Hướng dẫn cài đặt:
 Khi muốn sử dụng trên local, vào file .env sửa REACT_APP_API thành "http://localhost:8080".
 
-1. Cài đặt Nodejs phiên bản mới nhất.
+1. Cài đặt Nodejs phiên bản mới nhất tại https://nodejs.org/en/download/prebuilt-installer.
 2. Mở terminal clone repository này.
 > git clone https://github.com/qub1tt/bookstore
 
