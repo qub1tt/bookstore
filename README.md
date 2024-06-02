@@ -141,6 +141,7 @@ Khi muốn sử dụng trên local, vào file .env sửa giá trị biến REACT
 - Tài khoản người dùng:
   - username: 22520329@gm.uit.edu.vn
   - password: 123456
+
 - Tài khoản PayPal:
   - username: sb-twek431005149@personal.example.com
   - password: Cg6(?ctF
