@@ -130,9 +130,9 @@ Sơ đồ chức năng của web:
 ## Cài đặt môi trường và sử dụng:
 
 ### Repositories:
-- Repositories BackEnd: https://github.com/qub1tt/Backend_NT208_Project
-- Repositories FrontEnd: https://github.com/qub1tt/bookstore
-- Repositories Admin: https://github.com/qub1tt/admin_bookstore
+- Repository BackEnd: https://github.com/qub1tt/Backend_NT208_Project
+- Repository FrontEnd: https://github.com/qub1tt/bookstore
+- Repository Admin: https://github.com/qub1tt/admin_bookstore (Trang này dành cho admin quản lý dữ liệu của web)
 
 
 ### Các công nghệ sử dụng:
@@ -145,11 +145,11 @@ Sơ đồ chức năng của web:
 ### Hướng dẫn cài đặt:
 Khi muốn sử dụng trên local, vào file .env sửa REACT_APP_API thành "http://localhost:8080".
 
-1. Cài Nodejs phiên bản mới nhất.
+1. Cài đặt Nodejs phiên bản mới nhất.
 2. Clone repository này.
-3. Thực hiện lệnh npm install --legacy-peer-deps để cài đặt các module cần thiết cho Frontend.
-4. Chạy lệnh npm start để khởi động web.
-5. Sau khi đã chạy backend thì có thể sử dụng được web (Hướng dẫn cài đặt backend ở repo BackEnd)
+3. Thực hiện lệnh  `npm install --legacy-peer-deps` để cài đặt các module cần thiết cho Frontend.
+4. Chạy lệnh `npm start` để khởi động web.
+5. Sau khi đã khởi động Backend thì có thể sử dụng được web (Hướng dẫn cài đặt Backend ở repo BackEnd)
 
 ### Tài khoản để test:
 
