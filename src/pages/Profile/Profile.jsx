@@ -107,13 +107,19 @@ class Profile extends Component {
   render() {
     const IMAGE_URL =
       "https://frontend.tikicdn.com/_desktop-next/static/img/account/avatar.png";
+    // Check if imageBase64 is not an empty string and use it, otherwise fallback to avatar and then IMAGE_URL
+    const avatarSrc =
+      this.props.imageBase64 && this.props.imageBase64.trim() !== ""
+        ? this.props.imageBase64
+        : this.props.avatar && this.props.avatar.trim() !== ""
+        ? this.props.avatar
+        : IMAGE_URL;
     let xhtml = (
       <div className="chung">
         <div className="information">
           <div className="info-header">
             Thông tin tài khoản
             <hr />
-            
           </div>
 
           <div class="avatar">
@@ -124,7 +130,7 @@ class Profile extends Component {
                   overflow: "hidden",
                   objectFit: "cover",
                 }}
-                src={this.props.imageBase64 || this.props.avatar || IMAGE_URL}
+                src={avatarSrc}
               />
               <div className="edit">
                 <label htmlFor="avatar_id">
@@ -299,7 +305,6 @@ class Profile extends Component {
             <div className="infor-header2">
               Thay đổi mật khẩu
               <hr />
-              
             </div>
             <div className="infor-body">
               <div className="infro-content">

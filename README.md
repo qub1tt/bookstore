@@ -1,7 +1,11 @@
-# Nhom12 - Selling Books Website
+# NT208 - Selling Books Website Project
 
 ## Giới thiệu đồ án:
 "BookstoREe" là một ứng dụng web bán sách trực tuyến sử dụng công nghệ MERN stack (MongoDB, Express.js, React.js, Node.js), tích hợp với API Gemini để cung cấp tính năng chatbot hỗ trợ khách hàng.
+
+Sơ đồ chức năng của web:
+
+![Peach Yellow Grid Mind Map Brainstorm (1)](https://github.com/qub1tt/bookstore/assets/91910146/32cd1b36-d9fe-47ca-87ce-396fbb16bd0b)
 
 ## Mô tả các trang:
 ### 1. Đăng ký/Đăng nhập
@@ -86,9 +90,9 @@
 ### Hướng dẫn cài đặt:
 1. Cài Nodejs phiên bản mới nhất.
 2. Clone repository này.
-3. Thực hiện lệnh npm install --legacy-peer-deps để cài đặt các module cần thiết cho Frontend.
-4. Chạy lệnh npm start để khởi động web.
-5. Sau khi đã chạy backend thì có thể sử dụng được web.
+3. Thực hiện lệnh  `npm install --legacy-peer-deps` để cài đặt các module cần thiết cho Frontend.
+4. Chạy lệnh `npm start` để khởi động web.
+5. Sau khi đã khởi động Backend thì có thể sử dụng được web (Hướng dẫn cài đặt Backend ở repo BackEnd)
 
 ### Tài khoản để test:
 * Tài khoản người dùng:
