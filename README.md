@@ -125,13 +125,16 @@ Sơ đồ chức năng của web:
 
 ### Hướng dẫn cài đặt:
 
-Khi muốn sử dụng trên local, vào file .env sửa REACT_APP_API thành "http://localhost:8080".
+Khi muốn sử dụng trên local, vào file .env sửa giá trị biến REACT_APP_API = "http://localhost:8080".
 
 1. Cài đặt Nodejs phiên bản mới nhất tại https://nodejs.org/en/download/prebuilt-installer.
 2. Mở terminal clone repository này.
-   > git clone https://github.com/qub1tt/bookstore
-
-> cd bookstore 3. Thực hiện lệnh `npm install --legacy-peer-deps` để cài đặt các module cần thiết cho Frontend. 4. Chạy lệnh `npm start` để khởi động web. 5. Sau khi đã khởi động Backend thì có thể sử dụng được web (Hướng dẫn cài đặt Backend ở repo BackEnd)
+> git clone https://github.com/qub1tt/bookstore
+> 
+> cd bookstore
+3. Thực hiện lệnh `npm install --legacy-peer-deps` để cài đặt các module cần thiết cho Frontend.
+4. Chạy lệnh `npm start` để khởi động web.
+5. Sau khi đã khởi động Backend thì có thể sử dụng được web (Hướng dẫn cài đặt Backend ở repo BackEnd)
 
 ### Tài khoản để test:
 
