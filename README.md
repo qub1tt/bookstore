@@ -132,7 +132,7 @@ Sơ đồ chức năng của web:
 ### Repositories:
 - Repository BackEnd: https://github.com/qub1tt/Backend_NT208_Project
 - Repository FrontEnd: https://github.com/qub1tt/bookstore
-- Repository Admin: https://github.com/qub1tt/admin_bookstore (Trang này dành cho admin quản lý dữ liệu của web)
+- Repository Admin: https://github.com/qub1tt/admin_bookstore (Trang dành cho admin quản lý dữ liệu của web)
 
 
 ### Các công nghệ sử dụng:
