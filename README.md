@@ -1,5 +1,7 @@
 # NT208 - Selling Books Website Project
 
+## Giải đáp các câu hỏi cho buổi Seminar chủ đề "Boostrap & TailwindCSS" [Click here](https://drive.google.com/file/d/1DlvRWpOSdEbrk5AHQNsuT-t9RP6PKvUt/view?usp=sharing)
+
 ## Giới thiệu đồ án:
 
 "BookstoREe" là một ứng dụng web bán sách trực tuyến sử dụng công nghệ MERN stack (MongoDB, Express.js, React.js, Node.js), tích hợp với API Gemini để cung cấp tính năng chatbot hỗ trợ khách hàng.
